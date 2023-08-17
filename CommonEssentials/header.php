@@ -1,5 +1,5 @@
 <header class="main-header">
-    <nav class="navbar navbar-static-top">
+    <nav class="main-header navbar navbar-expand-md navbar-light bg-warning">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="dashboard.php" class="navbar-brand"><b>Teacher</b> Portal</a>
