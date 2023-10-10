@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $isCorrect = $validate ->checkTeacherCreds($username, $password);
     
     if($isCorrect){
+        $_SESSION['admin'] = false;
         $_SESSION['teacher'] = true;
         // Do not allow admin to login as teacher
-        $_SESSION['admin'] = false;
         
         $response = array('success' => "Success!");
         echo json_encode($response);
