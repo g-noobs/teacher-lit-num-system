@@ -63,6 +63,6 @@ $_SESSION['teacher'] = false;
     ?>
     </div>
     <?php include_once("../bootstrap/jquery.php");?>
-    <?php include_once "../CommonScript/CommonAllScript.ph";?>
+    <?php include_once "../CommonScript/CommonAllScript.php";?>
 </body>
 </html>
