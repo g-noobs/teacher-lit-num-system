@@ -2,21 +2,21 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $username = $_POST["username_teacher"];
+    $password = $_POST["password_teacher"];
 
     // Perform your validation logic here
 
     // Validate username
     if (empty($username)) {
         $response = array('error' => "Username is required");
-        echo  json_encode($response);
+        echo json_encode($response);
     }
 
     // Validate password
     if (empty($password)) {
         $response = array('error' => "Password is required");
-        echo  json_encode($response);
+        echo json_encode($response);
 
     }
     
