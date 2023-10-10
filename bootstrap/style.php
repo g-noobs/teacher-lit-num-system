@@ -1,12 +1,12 @@
-<link rel="stylesheet" href="design/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../design/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="design/bower_components/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../design/bower_components/font-awesome/css/font-awesome.min.css">
 
-<link rel="stylesheet" href="design/bower_components/Ionicons/css/ionicons.min.css">
+<link rel="stylesheet" href="../design/bower_components/Ionicons/css/ionicons.min.css">
 
-<link rel="stylesheet" href="design/dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="../design/dist/css/AdminLTE.min.css">
 
-<link rel="stylesheet" href="design/dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="../design/dist/css/skins/_all-skins.min.css">
 
 
 <!--[if lt IE 9]>
