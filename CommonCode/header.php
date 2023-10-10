@@ -150,15 +150,16 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
                             <img src="../design/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
 
-                            <span class="hidden-xs">Teacher Name</span>
+                            <span class="hidden-xs">
+                                <?php echo $_SESSION['name'] ?>
+                            </span>
                         </a>
                         <ul class="dropdown-menu">
 
                             <li class="user-header">
                                 <img src="../design/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                 <p id=teacher-info>
-                                    Teacher Name Info
-                                    <!-- <small>Member since </small> -->
+                                    <?php echo $_SESSION['name'] ?>
                                 </p>
                             </li>
 
