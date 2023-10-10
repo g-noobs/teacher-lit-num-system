@@ -1,5 +1,8 @@
 <html style="height: auto; min-height: 100%;">
-
+<?php session_start(); 
+$_SESSION['admin'] = false;
+$_SESSION['teacher'] = false;
+?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
