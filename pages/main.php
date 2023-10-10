@@ -62,5 +62,6 @@
     <?php 
         include_once("../bootstrap/jquery.php");
     ?>
+    <?php include_once "../CommonScript/CommonAllScript.ph";?>
 </body>
 </html>
