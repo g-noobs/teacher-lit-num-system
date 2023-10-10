@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['teacher'] !== true && $_SESSION['admin'] !== false) {
+if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
     header('Location: ../../index.php');
     exit;
 }
