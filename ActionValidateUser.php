@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['teacher'] = true;
         // Do not allow admin to login as teacher
         
+        
         $response = array('success' => "Success!");
         echo json_encode($response);
     }
