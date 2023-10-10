@@ -8,7 +8,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <?php 
-        include_once("bootstrap/style.php");
+        include_once("../bootstrap/style.php");
     ?>
     
 </head>
@@ -17,7 +17,7 @@
     data-gr-ext-installed="">
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <?php 
-            include_once("CommonEssentials/header.php");
+            include_once("../CommonEssentials/header.php");
         ?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
@@ -56,13 +56,11 @@
         </div>
 
         <?php 
-        include_once("CommonEssentials/footer.php");
+        include_once("../CommonEssentials/footer.php");
     ?>
     </div>
     <?php 
-        include_once("bootstrap/jquery.php");
+        include_once("../bootstrap/jquery.php");
     ?>
 </body>
-
-
 </html>

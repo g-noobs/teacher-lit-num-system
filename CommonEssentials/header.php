@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin'])) {
+    header('Location: ../../index.php');
+    exit;
+}
+?>
+
 <header class="main-header">
     <nav class="main-header navbar navbar-expand-md navbar-light bg-warning">
         <div class="container-fluid">
@@ -148,9 +156,9 @@
 
                             <li class="user-header">
                                 <img src="design/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                <p>
+                                <p id=teacher-info>
                                     Teacher Name Info
-                                    <small>Member since </small>
+                                    <!-- <small>Member since </small> -->
                                 </p>
                             </li>
 
