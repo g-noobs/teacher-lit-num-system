@@ -1,7 +1,7 @@
 <!-- For Logout button for Search -->
 <script>
 $(function() {
-    $('#logoutBtn').on('click', function(e) {
+    $('#logoutTeachBtn').on('click', function(e) {
         $.ajax({
             url: '../ActLogoutBtn.php',
             type: 'get',

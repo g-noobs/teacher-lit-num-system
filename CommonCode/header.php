@@ -173,7 +173,7 @@ if ($_SESSION['loggedin'] !== true) {
                                 <div class="pull-left">
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
-                                <div class="pull-right" id="logoutBtn">
+                                <div class="pull-right" id="logoutTeachBtn">
                                     <a href="#" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
