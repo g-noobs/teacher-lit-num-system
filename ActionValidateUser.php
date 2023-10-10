@@ -34,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $response = array('error' => "Invalid Credentials!");
         echo  json_encode($response);
     }
-    
 }
 else{
     $response = array('error' => "POST ISSUE");
