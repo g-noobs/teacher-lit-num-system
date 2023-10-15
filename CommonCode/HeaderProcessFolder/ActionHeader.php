@@ -1,5 +1,4 @@
 <?php
-session_start();
 $teacher_id = $_SESSION['id'];
 $response = [];
 
