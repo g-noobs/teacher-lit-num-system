@@ -31,7 +31,7 @@ $(function() {
             teacher_name = response.name || 'Teacher Name is not set.';
             teacher_email = response.email || 'Teacher Email is not set.';
         },
-        error: function() {
+        error: function(response) {
             teacher_name = 'Error fetching data.';
             teacher_email = 'Error fetching data.';
         }

@@ -16,12 +16,12 @@ if (!empty($teacher_id)) {
         $response = array('name' => $row['first_name'], 'email' => $row['email']);
         echo json_encode($response);
     } else {
-        $response = array('error' => "Teacher ID is not found");
+        $response = array('name' => "Teacher ID is not found");
         echo json_encode($response);
     }
 }
 else{
-    $response = array('error' => "Teacher ID is required");
+    $response = array('name' => "Teacher ID is required");
     echo json_encode($response);
 }
 ?>

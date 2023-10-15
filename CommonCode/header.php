@@ -183,4 +183,3 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
     </nav>
 </header>
-<?php include 'HeaderProcessFolder/ScriptHeader.php';?>
