@@ -162,10 +162,10 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <li class="user-header">
                                 <img src="../design/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                 <p id=teacher_name>
-                                   
+                                   <?php $displayUserInfo->displayTeacherName($sql);?>
                                 </p>
                                 <p id=teacher_email>
-                                   
+                                    <?php $displayUserInfo->displayTeacherEmail($sql);?>
                                 </p>
                             </li>
 
