@@ -10,11 +10,11 @@
     <?php 
         include_once("../bootstrap/style.php");
     ?>
-    
+
 </head>
 
-<body class="skin-yellow layout-top-nav" style="height: auto; min-height: 100%;" data-new-gr-c-s-check-loaded="14.1117.0"
-    data-gr-ext-installed="">
+<body class="skin-yellow layout-top-nav" style="height: auto; min-height: 100%;"
+    data-new-gr-c-s-check-loaded="14.1117.0" data-gr-ext-installed="">
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <?php 
             include_once("../CommonCode/header.php");
@@ -28,7 +28,7 @@
                         Top Navigation
                         <small>Example </small>
                     </h1>
-                <!-- Breadcrumb   
+                    <!-- Breadcrumb   
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li><a href="#">Layout</a></li>
@@ -57,9 +57,11 @@
 
         <?php 
         include_once("../CommonCode/footer.php");
-    ?>
+        ?>
     </div>
     <?php include_once("../bootstrap/jquery.php");?>
     <?php include_once "../CommonScript/CommonAllScript.php";?>
+    <?php include_once "../CommonCode/HeaderProcessFolder/ScriptHeader.php";?>
 </body>
+
 </html>
