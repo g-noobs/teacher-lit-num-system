@@ -150,17 +150,13 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
                             <img src="../design/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
 
-                            <span class="hidden-xs">
-                                <?php echo $_SESSION['name'] ?>
-                            </span>
+                            <span class="hidden-xs" id="teacher_name_main"></span>
                         </a>
                         <ul class="dropdown-menu">
-
                             <li class="user-header">
                                 <img src="../design/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                <p id=teacher-info>
-                                    <?php echo $_SESSION['name'] ?>
-                                </p>
+                                <p id=teacher_name></p>
+                                <p id=teacher_email></p>
                             </li>
 
                             <li class="user-body">
@@ -187,3 +183,4 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
     </nav>
 </header>
+<?php include 'HeaderProcessFolder/ScriptHeader.php';?>
