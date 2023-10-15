@@ -13,7 +13,7 @@ if (!empty($teacher_id)) {
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $row = $result -> fetch_assoc();
-        $response = array('name' => $row['name'], 'email' => $row['email']);
+        $response = array('name' => $row['first_name'], 'email' => $row['email']);
         echo json_encode($response);
     } else {
         $response = array('error' => "Teacher ID is not found");
