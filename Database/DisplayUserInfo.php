@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once("Connection.php");
 class DisplayUserInfo extends Connection{
     private $lastError;
@@ -6,7 +7,8 @@ class DisplayUserInfo extends Connection{
         parent :: __construct();
     }
 
-    function displayTeacherName($sql){
+    function displayTeacherName(){
+        $sql = "SELECT * FROM user_info_view WHERE user_info_id = '{$_SESSION['id']}'";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
@@ -15,7 +17,8 @@ class DisplayUserInfo extends Connection{
         }
     }
 
-    function displayTeacherEmail($sql){
+    function displayTeacherEmail(){
+        $sql = "SELECT * FROM user_info_view WHERE user_info_id = '{$_SESSION['id']}'";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){

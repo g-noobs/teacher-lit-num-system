@@ -153,8 +153,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <span class="hidden-xs" id="teacher_name_main">
                                 <?php include "../Database/DisplayUserInfo.php";
                                 $displayUserInfo = new DisplayUserInfo();
-                                $sql = "SELECT * FROM user_info_view WHERE user_info_id = '{$_SESSION['id']}'";
-                                $displayUserInfo->displayTeacherName($sql);
+                                $displayUserInfo->displayTeacherName();
                                 ?>
                             </span>
                         </a>
@@ -162,10 +161,10 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <li class="user-header">
                                 <img src="../design/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                 <p id=teacher_name>
-                                   <?php $displayUserInfo->displayTeacherName($sql);?>
+                                   <?php $displayUserInfo->displayTeacherName();?>
                                 </p>
                                 <p id=teacher_email>
-                                    <?php $displayUserInfo->displayTeacherEmail($sql);?>
+                                    <?php $displayUserInfo->displayTeacherEmail();?>
                                 </p>
                             </li>
 
