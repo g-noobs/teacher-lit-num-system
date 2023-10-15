@@ -20,8 +20,8 @@ $(function() {
 
 <script>
 $(function() {
-    var teacher_name;
-    var teacher_email;
+    var teacher_name = '';
+    var teacher_email = '';
 
     $.ajax({
         url: "../CommonCode/HeaderProcessFolder/ActionHeader.php",
