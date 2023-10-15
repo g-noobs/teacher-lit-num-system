@@ -20,15 +20,13 @@ $(function() {
 
 <script>
 $(function() {
-    var teacher_name = '';
-    var teacher_email = '';
 
     $.ajax({
         url: "../CommonCode/HeaderProcessFolder/ActionHeader.php",
         type: 'GET',
         dataType: 'json',
         success: function(response) {
-            var responseData = JSON.parse(JSON.stringify(response));
+            var responseData = JSON.parse(response);
             if (responseData.hasOwnProperty('name') && responseData.hasOwnProperty('email')) {
                 teacher_name = responseData.name;
                 teacher_email = responseData.email;
@@ -39,15 +37,20 @@ $(function() {
                 teacher_name = 'Error fetching data.';
                 teacher_email = 'Error fetching data.';
             }
+            $('#teacher_name_main').text(teacher_name);
+            $('#teacher_name').text(teacher_name);
+            $('#teacher_email').text(teacher_email);
 
         },
         error: function(response) {
             teacher_name = 'Error fetching data.';
             teacher_email = 'Error fetching data.';
+
+            $('#teacher_name_main').text(teacher_name);
+            $('#teacher_name').text(teacher_name);
+            $('#teacher_email').text(teacher_email);
         }
     });
-    $('#teacher_name_main').text(teacher_name);
-    $('#teacher_name').text(teacher_name);
-    $('#teacher_email').text(teacher_email);
+
 });
 </script>
