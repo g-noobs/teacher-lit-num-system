@@ -61,7 +61,6 @@
     </div>
     <?php include_once("../bootstrap/jquery.php");?>
     <?php include_once "../CommonScript/CommonAllScript.php";?>
-    <?php include_once "../CommonCode/HeaderProcessFolder/ScriptHeader.php";?>
 </body>
 
 </html>
