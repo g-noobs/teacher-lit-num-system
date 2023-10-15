@@ -153,7 +153,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <span class="hidden-xs" id="teacher_name_main">
                                 <?php include_once "../Database/DisplayUserInfo.php";
                                 $displayUserInfo = new DisplayUserInfo();
-                                $sql = "SELECT * FROM user_info_view WHERE teacher_id = '{$_SESSION['id']}'";
+                                $sql = "SELECT * FROM user_info_view WHERE user_info_id = '{$_SESSION['id']}'";
                                 $displayUserInfo->displayTeacherName($sql);
                                 ?>
                             </span>
