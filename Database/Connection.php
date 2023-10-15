@@ -4,7 +4,7 @@ class Connection{
     protected $username;
     protected $password;
     protected $database;
-    public $conn;
+    protected $conn;
 
     public function __construct(){
         //! This bellow will be used for online deployment

@@ -150,13 +150,23 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
                             <img src="../design/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
 
-                            <span class="hidden-xs" id="teacher_name_main"></span>
+                            <span class="hidden-xs" id="teacher_name_main">
+                                <?php include_once "../Database/DisplayUserInfo.php";
+                                $displayUserInfo = new DisplayUserInfo();
+                                $sql = "SELECT * FROM user_info_view WHERE teacher_id = " . $_SESSION['teacher_id'];
+                                $displayUserInfo->displayTeacherName($sql);
+                                ?>
+                            </span>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="user-header">
                                 <img src="../design/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                <p id=teacher_name></p>
-                                <p id=teacher_email></p>
+                                <p id=teacher_name>
+                                    <?php $displayUserInfo->displayTeacherName($sql);?>
+                                </p>
+                                <p id=teacher_email>
+                                    <?php $displayUserInfo->displayTeacherEmail($sql);?>
+                                </p>
                             </li>
 
                             <li class="user-body">
