@@ -28,8 +28,18 @@ $(function() {
         type: 'GET',
         dataType: 'json',
         success: function(response) {
-            teacher_name = response.name || 'Teacher Name is not set.';
-            teacher_email = response.email || 'Teacher Email is not set.';
+            var responseData = JSON.parse(JSON.stringify(response));
+            if (responseData.hasOwnProperty('name') && responseData.hasOwnProperty('email')) {
+                teacher_name = responseData.name;
+                teacher_email = responseData.email;
+            } else if (responseData.hasOwnProperty('error')) {
+                teacher_name = responseData.error;
+                teacher_email = 'Error fetching data.';
+            } else {
+                teacher_name = 'Error fetching data.';
+                teacher_email = 'Error fetching data.';
+            }
+
         },
         error: function(response) {
             teacher_name = 'Error fetching data.';
