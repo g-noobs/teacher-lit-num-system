@@ -7,7 +7,8 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 ?>
 
 <header class="main-header">
-    <nav class="main-header navbar navbar-expand-md navbar-light bg-warning">
+    <nav class="navbar navbar-static-top navbar-light bg-warning">
+
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="dashboard.php" class="navbar-brand"><b>Teacher</b> Portal</a>
@@ -20,18 +21,13 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse" aria-expanded="false" style="height: 0.8px;">
                 <ul class="nav navbar-nav">
                     <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown <span
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Student List <span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Student - Active</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li class="text-danger"><a href="#">Student - Archive</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -161,7 +157,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <li class="user-header">
                                 <img src="../design/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                 <p id=teacher_name>
-                                   <?php $displayUserInfo->displayTeacherName();?>
+                                    <?php $displayUserInfo->displayTeacherName();?>
                                 </p>
                                 <p id=teacher_email>
                                     <?php $displayUserInfo->displayTeacherEmail();?>
@@ -187,8 +183,6 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                     </li>
                 </ul>
             </div>
-
         </div>
-
     </nav>
 </header>
