@@ -20,17 +20,29 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse" aria-expanded="false" style="height: 0.8px;">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="main.php">Dashboard <span class="sr-only">(current)</span></a></li>
+                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Student List <span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Student - Active</a></li>
                             <li class="divider"></li>
-                            <li class="text-danger"><a href="#">Student - Archive</a></li>
+                            <li><a href="#">Student - Archive</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Lesson<span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Lesson List</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Quiz List/a></li>
+                            <li class="divider"></li>
                         </ul>
                     </li>
                 </ul>
+                
                 <!-- Search Bar
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
