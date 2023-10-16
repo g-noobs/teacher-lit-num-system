@@ -10,6 +10,7 @@
     <?php 
         include_once("../bootstrap/style.php");
     ?>
+    <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 
 </head>
 
@@ -23,6 +24,9 @@
         ?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
+
+            <?php include_once "../CommonCode/ModifiedAlert.php";?>
+
             <div class="container">
 
                 <section class="content-header">
