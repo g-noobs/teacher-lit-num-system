@@ -1,5 +1,6 @@
 <div class="box box-default">
     <div class="box-header with-border">
+        <br>
         <div class="row">
             <div class="col-xs-6">
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#add-user">
