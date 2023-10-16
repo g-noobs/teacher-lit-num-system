@@ -17,9 +17,9 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                 </button>
             </div>
 
-            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+            <div class="collapse navbar-collapse pull-left" id="navbar-collapse" aria-expanded="false" style="height: 0.8px;">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">Link</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown <span

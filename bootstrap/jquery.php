@@ -31,4 +31,3 @@ $.widget.bridge('uibutton', $.ui.button);
 <script src="../design/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="../design/dist/js/adminlte.min.js"></script>
-
