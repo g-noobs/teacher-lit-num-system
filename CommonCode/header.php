@@ -11,7 +11,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="dashboard.php" class="navbar-brand"><b>Teacher</b> Portal</a>
+                <a href="main.php" class="navbar-brand"><b>Teacher</b> Portal</a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#navbar-collapse" aria-expanded="false">
                     <i class="fa fa-bars"></i>
@@ -26,18 +26,18 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Student List <span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Student - Active</a></li>
+                            <li><a href="student_active.php">Student - Active</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Student - Archive</a></li>
+                            <li><a href="student_inactive.php">Student - Archive</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Lesson<span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Lesson List</a></li>
+                            <li><a href="lesson.php">Lesson List</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Quiz List</a></li>
+                            <li><a href="quiz.php">Quiz List</a></li>
                         </ul>
                     </li>
                 </ul>
