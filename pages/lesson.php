@@ -29,8 +29,8 @@
 
                 <section class="content-header">
                     <h1>
-                        Welcome!
-                        <small>Teacher Portal</small>
+                        Lesson List
+                        <small>Detailed list of lessons</small>
                     </h1>
                     <!-- Breadcrumb   
                     <ol class="breadcrumb">
@@ -44,11 +44,12 @@
                 <section class="content" id="main-content">
                     <div class="box box-default">
                         <div class="box-header with-border">
+                            <br>
                             <div class="row">
                                 <div class="col-xs-6">
                                     <button type="button" class="btn btn-warning" data-toggle="modal"
                                         data-target="#add-user">
-                                        <i class="fa fa-plus"></i> <span>Add Admin</span>
+                                        <i class="fa fa-plus"></i> <span>Add Lesson</span>
                                     </button>
                                 </div>
                                 <div class="col-xs-6">
