@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Teacher Portal</title>
+    <title>Quiz | LIST</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <?php 
         include_once("../bootstrap/style.php");
     ?>
+    <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 
 </head>
 
@@ -23,11 +24,14 @@
         ?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
+
+            <?php include_once "../CommonCode/ModifiedAlert.php";?>
+
             <div class="container">
 
                 <section class="content-header">
                     <h1>
-                        Welcome!
+                        Quiz List
                         <small>Teacher Portal</small>
                     </h1>
                     <!-- Breadcrumb   
@@ -42,7 +46,10 @@
                 <section class="content" id="main-content">
                     <div class="box box-default">
                         <div class="box-header with-border">
-                            <h3 class="box-title" id="student-active-box">Quiz list</h3>
+                            <div class="search-box">
+                                <i class="fa fa-search"></i>
+                                <input type="text" id="userInput" class="form-control" placeholder="Search..">
+                            </div>
                         </div>
                         <div class="box-body" id="content_body">
                             test for boday
