@@ -38,7 +38,6 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <li><a href="#">Lesson List</a></li>
                             <li class="divider"></li>
                             <li><a href="#">Quiz List</a></li>
-                            <li class="divider"></li>
                         </ul>
                     </li>
                 </ul>
