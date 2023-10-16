@@ -26,8 +26,8 @@
 
                 <section class="content-header">
                     <h1>
-                        Top Navigation
-                        <small>Example </small>
+                        Welcome!
+                        <small>Teacher Portal</small>
                     </h1>
                     <!-- Breadcrumb   
                     <ol class="breadcrumb">
@@ -38,18 +38,8 @@
                 </section>
 
                 <!-- Main Content-->
-                <section class="content">
-
-                    <div class="box box-default">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Blank Box</h3>
-                        </div>
-                        <div class="box-body">
-                            The great content goes here
-                        </div>
-
-                    </div>
-
+                <section class="content" id="main-content">
+                    <?php include_once "../PagesContent/MainContentFolder/MainContent.php"?>
                 </section>
 
             </div>
@@ -61,7 +51,12 @@
         ?>
     </div>
     <?php include_once("../bootstrap/jquery.php");?>
+
+    <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
+
+    <!-- // Assign Data and Modified Data in Main or dashboard -->
+    <?php include_once "../PagesContent/MainContentFolder/AllSciptMain/AssignDataScript.php"; ?>
 </body>
 
 </html>
