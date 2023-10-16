@@ -21,6 +21,8 @@
         <?php 
             include_once("../CommonCode/header.php");
         ?>
+        <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
+
 
         <div class="content-wrapper" style="min-height: 606.2px;">
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
