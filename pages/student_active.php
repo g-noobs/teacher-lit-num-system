@@ -45,7 +45,7 @@
 
                 <!-- Main Content-->
                 <section class="content" id="main-content">
-                    <?php include_once "../PagesContent/StudentContentFolder/StudentActiveContentMain.php";?>
+                    <?php include_once "../PagesContent/StudentContentFolder/TableFolder/ActivateStudentTable.php";?>
                 </section>
 
             </div>

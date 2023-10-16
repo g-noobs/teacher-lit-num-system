@@ -29,8 +29,8 @@
             </thead>
             <tbody>
                 <?php include_once("../Database/DisplayStudentClass.php");
-                    $displayActiveStudent = new DisplayStudentClass();
-                    $displayActiveStudent->ActiveStudentList();
+                    $displayArchiveStudent = new DisplayStudentClass();
+                    $displayArchiveStudent->ArchiveStudentList();
                 ?>
             </tbody>
         </table>
