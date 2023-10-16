@@ -18,7 +18,7 @@ class DisplayStudentClass extends Connection{
                 echo "<td>".$row['first_name']."</td>";
                 echo "<td>".$row['last_name']. "</td>";
                 echo "<td>".$row['gender']."</td>";
-                echo "<td>".$row['status']."</td>";
+                echo "<td class = text-success>".$row['status']."</td>";
 
                 echo "<td>";
                 echo "<a href='#' class='edit' data-toggle='modal' data-target='#editStudentModal' data-id='".$row["user_info_id"]."' style='margin-right:10px; color: text-success;'><span class='glyphicon glyphicon-edit' ></span></a>";
