@@ -46,9 +46,19 @@
                 <section class="content" id="main-content">
                     <div class="box box-default">
                         <div class="box-header with-border">
-                            <div class="search-box">
-                                <i class="fa fa-search"></i>
-                                <input type="text" id="userInput" class="form-control" placeholder="Search..">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button type="button" class="btn btn-warning" data-toggle="modal"
+                                        data-target="#add-user">
+                                        <i class="fa fa-plus"></i> <span>Add Admin</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="search-box">
+                                        <i class="fa fa-search"></i>
+                                        <input type="text" id="userInput" class="form-control" placeholder="Search..">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="box-body" id="content_body">

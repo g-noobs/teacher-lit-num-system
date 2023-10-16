@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Teacher Portal</title>
+    <title>Student | Archive</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -23,6 +23,8 @@
         ?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
+            <?php include_once "../CommonCode/ModifiedAlert.php";?>
+
             <div class="container">
 
                 <section class="content-header">
@@ -42,7 +44,20 @@
                 <section class="content" id="main-content">
                     <div class="box box-default">
                         <div class="box-header with-border">
-                            <h3 class="box-title" id="student-active-box">Active Student list</h3>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button type="button" class="btn btn-warning" data-toggle="modal"
+                                        data-target="#add-user">
+                                        <i class="fa fa-plus"></i> <span>Add Admin</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="search-box">
+                                        <i class="fa fa-search"></i>
+                                        <input type="text" id="userInput" class="form-control" placeholder="Search..">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="box-body" id="content_body">
                             test for boday

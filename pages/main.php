@@ -7,23 +7,21 @@
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <?php 
-        include_once("../bootstrap/style.php");
-    ?>
+    <?php include_once("../bootstrap/style.php");?>
 
 </head>
 
-<body class="skin-yellow layout-top-nav" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed style="height: auto; min-height: 100%;">
+<body class="skin-yellow layout-top-nav" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
+    style="height: auto; min-height: 100%;">
 
 
     <div class="wrapper" style="height: auto; min-height: 100%;">
-        <?php 
-            include_once("../CommonCode/header.php");
-        ?>
+        <?php include_once("../CommonCode/header.php");?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
-            <div class="container">
+            <?php include_once "../CommonCode/ModifiedAlert.php";?>
 
+            <div class="container">
                 <section class="content-header">
                     <h1>
                         Welcome!
@@ -50,7 +48,7 @@
         include_once("../CommonCode/footer.php");
         ?>
     </div>
-    
+
     <?php include_once("../bootstrap/jquery.php");?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
