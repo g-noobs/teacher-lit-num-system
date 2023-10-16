@@ -32,8 +32,8 @@
 
                 <section class="content-header">
                     <h1>
-                        Welcome!
-                        <small>Teacher Portal</small>
+                        Active Student
+                        <small>Active Data User</small>
                     </h1>
                     <!-- Breadcrumb   
                     <ol class="breadcrumb">
