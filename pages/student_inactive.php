@@ -30,8 +30,8 @@
 
                 <section class="content-header">
                     <h1>
-                        Welcome!
-                        <small>Teacher Portal</small>
+                        Arhcive Data
+                        <small>Currently inactive user data</small>
                     </h1>
                     <!-- Breadcrumb   
                     <ol class="breadcrumb">

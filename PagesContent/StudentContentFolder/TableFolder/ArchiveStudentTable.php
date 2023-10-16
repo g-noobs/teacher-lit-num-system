@@ -1,10 +1,11 @@
 <div class="box box-default">
     <div class="box-header with-border">
+        <br>
         <div class="row">
             <div class="col-xs-6">
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#add-user">
+                <!-- <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#add-user">
                     <i class="fa fa-plus"></i> <span>Add Student</span>
-                </button>
+                </button> -->
             </div>
             <div class="col-xs-6">
                 <div class="search-box">
@@ -14,6 +15,7 @@
             </div>
         </div>
     </div>
+    <br>
     <div class="box-body container-fluid" style="overflow-y: scroll; max-height: 400px;">
         <table id="example2" class="table table-bordered table-hover">
             <thead>
