@@ -15,7 +15,6 @@
             </div>
         </div>
     </div>
-    <br>
     <div class="box-body container-fluid" style="overflow-y: scroll; max-height: 400px;">
         <table id="example2" class="table table-bordered table-hover">
             <thead>
