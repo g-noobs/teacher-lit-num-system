@@ -10,6 +10,8 @@
     <?php 
         include_once("../bootstrap/style.php");
     ?>
+    <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
+
 
 </head>
 
