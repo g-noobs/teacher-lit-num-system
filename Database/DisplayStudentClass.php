@@ -15,7 +15,6 @@ class DisplayStudentClass extends Connection{
                 echo "<td><a href='#'><span class='glyphicon glyphicon-info-sign' style = 'padding-left: 10px;'></span></a>";
 
                 echo "<td>".$row['personal_id']."</td>";
-                echo "<td>".$row['personal_id']."</td>";
                 echo "<td>".$row['first_name']."</td>";
                 echo "<td>".$row['last_name']. "</td>";
                 echo "<td>".$row['gender']."</td>";
