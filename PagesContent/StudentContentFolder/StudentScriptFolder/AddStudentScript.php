@@ -4,7 +4,7 @@ $(function(){
         e.preventDefault();
         var formData = new FormData(this);
         var $hideModal = $('#add_student_modal');
-        var actionUrl = '../PagesContent/ActionStudentFolder/ActionAddStudent.php';
+        var actionUrl = '../PagesContent/StudentContentFolder/ActionStudent/ActionAddStudent.php';
 
         <?php include_once "../CommonScript/AjaxFormScript.php"?>
     });
