@@ -37,8 +37,8 @@
                                 autocomplete="off" />
                         </div>
                         <div class="form-group">
-                            <label for="student_date">Select Birthday:</label>
-                            <input type="date" name="student_date" class="form-control" placeholder="Birthdate" required>
+                            <label for="student_birth_date">Select Birthday:</label>
+                            <input type="date" name="student_birth_date" class="form-control" placeholder="Birthdate" required>
                         </div>
                     </div>
                 </div>
