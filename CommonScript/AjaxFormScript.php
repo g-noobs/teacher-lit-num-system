@@ -1,4 +1,4 @@
-<style>
+
 $.ajax( {
         url: actionUrl,
         type: "POST",
@@ -56,4 +56,3 @@ $.ajax( {
     }
 
 );
-</style>
