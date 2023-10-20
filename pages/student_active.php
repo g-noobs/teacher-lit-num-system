@@ -19,11 +19,10 @@
 
 
     <div class="wrapper" style="height: auto; min-height: 100%;">
-        <?php 
-            include_once("../CommonCode/header.php");
-        ?>
+        <!-- This is a Header -->
+        <?php include_once("../CommonCode/header.php");?>
+        <!-- Modified Search  -->
         <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
-
 
         <div class="content-wrapper" style="min-height: 606.2px;">
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
@@ -49,12 +48,14 @@
                 </section>
 
             </div>
-
+            <!-- Add Student Modal -->
+            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
+            <!-- Edit Student Modal -->
+            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
+            <!-- Archive Modal -->
+            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/ArchiveStudentModal.php"?>
         </div>
-
-        <?php 
-        include_once("../CommonCode/footer.php");
-        ?>
+        <?php include_once("../CommonCode/footer.php");?>
     </div>
 
     <?php include_once("../bootstrap/jquery.php");?>
