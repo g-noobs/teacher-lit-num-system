@@ -25,7 +25,7 @@
                     <th>Last Name</th>
                     <th>Gender</th>
                     <th>Acount Status</th>
-                    <th colspan="2"></th>
+                    <th colspan="2">Action</th>
                 </tr>
             </thead>
             <tbody>
