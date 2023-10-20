@@ -6,7 +6,7 @@ $(function(){
         var $hideModal = $('#add_student_modal');
         var actionUrl = '../PagesContent/ActionStudentFolder/ActionAddStudent.php';
 
-        <?php include_once ""?>
+        <?php include_once "../../../CommonScript/AjaxFormScript.php"?>
     });
 });
 </script>

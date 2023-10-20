@@ -7,24 +7,17 @@ $.ajax( {
         contentType: false,
         success: function(response) {
             var responseData=JSON.parse(response);
-
             // Check if the form submission was successful
             if (responseData.hasOwnProperty('success')) {
                 $hideModal.modal('hide');
                 $('#successAlert').text(responseData.success);
                 $('#successBanner').show();
-
                 setTimeout(function() {
                         $("#successBanner").fadeOut("slow");
                         location.reload();
-                    }
-
-                    , 1500);
-
-
-                // You can redirect to a different page or perform other actions here
+                    },1500);
+                
             }
-
             else if (responseData.hasOwnProperty('error')) {
                 $hideModal.modal('hide');
                 $('#errorAlert').text(responseData.error);
@@ -33,13 +26,9 @@ $.ajax( {
                 setTimeout(function() {
                         $("#errorBanner").fadeOut("slow");
                         location.reload();
-                    }
-
-                    , 1500);
+                    }, 1500);
             }
-        }
-
-        ,
+        },
         error: function() {
             $hideModal.modal('hide');
             //show alert banner id = errorBanner
@@ -49,10 +38,7 @@ $.ajax( {
             setTimeout(function() {
                     $("#errorBanner").fadeOut("slow");
                     location.reload();
-                }
-
-                , 1500);
+                }, 1500);
         }
     }
-
 );
