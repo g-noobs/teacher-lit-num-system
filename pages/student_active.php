@@ -67,6 +67,9 @@
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
+
+    <!-- Add student script -->
+    <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
 </body>
 
 </html>

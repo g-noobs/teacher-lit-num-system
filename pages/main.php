@@ -8,7 +8,10 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <?php include_once("../bootstrap/style.php");?>
-
+    <!-- jQuery 3 -->
+    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
 </head>
 
 <body class="skin-yellow layout-top-nav" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
