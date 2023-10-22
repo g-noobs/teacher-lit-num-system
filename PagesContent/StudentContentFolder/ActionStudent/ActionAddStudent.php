@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             'last_name' => $_POST['student_last_name'],
             'gender' => $_POST['student_gender'],
             'email' => $_POST['student_email'],
-            'student_date' => $_POST['student_birth_date'],
+            'birthdate' => $_POST['student_birth_date'],
             'status_id' => '1',
             'user_level_id' => '2',
             'added_byID' => '',
