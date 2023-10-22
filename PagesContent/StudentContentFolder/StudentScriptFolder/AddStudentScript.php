@@ -46,8 +46,7 @@ $(function() {
                     $("#errorBanner").fadeOut("slow");
 
                 }, 1500);
-                console.log("XHR status: " + xhr.status);
-                console.log("Error: " + error);
+
             }
 
         });
