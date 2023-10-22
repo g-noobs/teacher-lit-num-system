@@ -26,8 +26,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $values['added_byID'] = $_SESSION['id'];
 
         // set date added Date
-        $currentDate = new DateTime();
-        $values['date_added'] = $currentDate->format('Y-m-d H:i:s');
+        // $currentDate = new DateTime();
+        // $values['date_added'] = $currentDate->format('Y-m-d H:i:s');
 
         //set Credentials ID
         $credential_id = "CRED".$columnCount->columnCountWhere("credentials_id","tbl_credentials");
@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $isValid = $validate->validateColumns($table, $column, $data);
 
         if($isValid){
-            $columns = implode (',', array_keys($values));
+            $columns = implode (', ', array_keys($values));
             $query = "INSERT INTO $table($columns)
                     VALUES(?,?,?,?,?,?,?,?,?,?,?);";
 
