@@ -1,6 +1,6 @@
 <?php 
-session_start();
 
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['student_personal_id']) && isset($_POST['student_first_name']) && isset($_POST['student_last_name'])){
         $values = array(
             'user_info_id' => '',
@@ -97,5 +97,8 @@ session_start();
         $response = array('error' => 'MISSING DATA');
         echo json_encode($response);
     }
-
+}else{
+    $response = array('error' => 'POST ISSUE');
+    echo json_encode($response);
+}
 ?>
