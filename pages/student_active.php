@@ -27,7 +27,7 @@
         <div class="content-wrapper" style="min-height: 606.2px;">
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
 
-            <div class="container">+
+            <div class="container">
 
                 <!-- Add Student Modal -->
                 <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
