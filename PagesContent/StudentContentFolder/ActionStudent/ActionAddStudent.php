@@ -26,8 +26,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $values['added_byID'] = $_SESSION['id'];
 
         // set date added Date
-        // $currentDate = new DateTime();
-        // $values['date_added'] = $currentDate->format('Y-m-d H:i:s');
+        $currentDate = new DateTime();
+        $values['date_added'] = $currentDate->format('Y-m-d H:i:s');
 
         //set Credentials ID
         $credential_id = "CRED".$columnCount->columnCountWhere("credentials_id","tbl_credentials");
@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $query = "INSERT INTO $table($columns)
                     VALUES(?,?,?,?,?,?,?,?,?,?,?);";
 
-            $params = array($values);
+            $params = array_values($values);
             include_once "../../../Database/SanitizeCrudClass.php";
             $addNewUser = new SanitizeCrudClass();
 
