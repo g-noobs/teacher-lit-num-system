@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         if($isValid){
             $columns = implode (',', array_keys($values));
-            $sql = "INSERT INTO $table($columns)
+            $query = "INSERT INTO $table($columns)
                     VALUES(?,?,?,?,?,?,?,?,?,?,?);";
 
             $params = array($values);
