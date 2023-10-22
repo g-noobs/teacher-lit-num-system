@@ -13,7 +13,7 @@ $.ajax({
                     $('#successBanner').show();
                     setTimeout(function() {
                         $("#successBanner").fadeOut("slow");
-                        
+                        //location.reload();
                     }, 1500);
 
 
@@ -24,9 +24,19 @@ $.ajax({
                     $('#errorBanner').show();
                     setTimeout(function() {
                         $("#errorBanner").fadeOut("slow");
-                        
+                        //location.reload();
                     }, 1500);
                 }
+            },
+            error: function() {
+                $hideModal.modal('hide');
+                //show alert banner id = errorBanner
+                $('#errorAlert').text('An error occurred during the AJAX request.');
+                $('#errorBanner').show();
+                setTimeout(function() {
+                    $("#errorBanner").fadeOut("slow");
+                    //location.reload();
+                }, 1500);
             }
 
         });
