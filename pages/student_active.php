@@ -11,6 +11,7 @@
         include_once("../bootstrap/style.php");
     ?>
     <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
+
 </head>
 
 <body class="skin-yellow layout-top-nav" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
@@ -52,7 +53,6 @@
     </div>
 
     <?php include_once("../bootstrap/jquery.php");?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
