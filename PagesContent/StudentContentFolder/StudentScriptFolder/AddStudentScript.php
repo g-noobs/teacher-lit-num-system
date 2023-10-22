@@ -37,7 +37,7 @@ $(function() {
                     }, 1500);
                 }
             },
-            error: function() {
+            error: function(xhr, status, error) {
                 $hideModal.modal('hide');
                 //show alert banner id = errorBanner
                 $('#errorAlert').text('An error occurred during the AJAX request.');
@@ -46,6 +46,8 @@ $(function() {
                     $("#errorBanner").fadeOut("slow");
 
                 }, 1500);
+                console.log("XHR status: " + xhr.status);
+                console.log("Error: " + error);
             }
 
         });
