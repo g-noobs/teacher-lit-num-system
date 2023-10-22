@@ -25,17 +25,17 @@
         <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
+            
+        <div class="container">
+            
+            <!-- Add Student Modal -->
+            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
+            <!-- Edit Student Modal -->
+            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
+            <!-- Archive Modal -->
+            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/ArchiveStudentModal.php"?>
+            <!-- Modified Alert -->
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
-
-            <div class="container">
-
-                <!-- Add Student Modal -->
-                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
-                <!-- Edit Student Modal -->
-                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
-                <!-- Archive Modal -->
-                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/ArchiveStudentModal.php"?>
-
                 <section class="content-header">
                     <h1>
                         Active Student
