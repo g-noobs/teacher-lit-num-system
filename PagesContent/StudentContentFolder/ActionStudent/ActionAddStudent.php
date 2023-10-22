@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
     if(isset($_POST['student_personal_id']) && isset($_POST['student_first_name']) && isset($_POST['student_last_name'])){
         $values = array(
             'user_info_id' => '',
@@ -18,6 +18,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         );
 
         //set user_info_id
+        include_once "../../../Database/ColumnCountClass.php";
         include_once "../../../Database/ColumnCountClass.php";
         $columnCount = new ColumnCountClass();
         $values['user_info_id'] = "USR". $columnCount->columnCountWhere('user_info_id','tbl_user_info');
@@ -96,8 +97,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $response = array('error' => 'MISSING DATA');
         echo json_encode($response);
     }
-}else{
-    $response = array('error' => 'POST ISSUE');
-    echo json_encode($response);
-}
+
 ?>
