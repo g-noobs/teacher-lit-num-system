@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $values['user_info_id'] = "USR". $columnCount->columnCountWhere('user_info_id','tbl_user_info');
 
         //set added by ID
-        $values['added_byID'] = $_SESSION['id'];
+        $values['added_byID'] = "";
 
         // set date added Date
         $currentDate = new DateTime();
