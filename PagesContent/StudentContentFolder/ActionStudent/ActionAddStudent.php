@@ -69,6 +69,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     $query = "INSERT INTO $table(credentials_id,uname,pass,user_info_id) 
                     VALUES(?,?,?,?);";
                     $params = array($credential_id, $username, $password, $user_info_id);
+                    $addUserCreds = new SanitizeCrudClass();
                     $addUserCreds->executePreState($query, $params);
 
                     // Response to ajax
@@ -80,7 +81,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     echo json_encode($response);
                 }
             }catch(mysqli_sql_exception  $e){
-                $response = array('error'=> 'Error adding to mysql Database');
+                $response = array('error'=> 'SQL Exception Error'.$e.'');
                 echo json_encode($response);
 
             }catch(Exception $e){
@@ -88,7 +89,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 echo json_encode($response);
             }
         }else{
-            $response = array('error'=> 'Data has Duplicate from ');
+            $response = array('error'=> 'Data has Duplicate from');
             echo json_encode($response);
         }
     }else{

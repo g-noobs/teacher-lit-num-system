@@ -11,3 +11,14 @@ $(function(){
     });
 });
 </script>
+
+<!-- Clear the modal once hidden or closed  -->
+<script>
+$(document).ready(function() {
+    // Add an event listener to the modal
+    $('#add_student_modal').on('hidden.bs.modal', function () {
+        // Get the form inside the modal and reset it
+        $('#myForm')[0].reset();
+    });
+});
+</script>
