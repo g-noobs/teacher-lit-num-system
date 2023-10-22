@@ -5,7 +5,7 @@
     opacity: 0.75;
     position: fixed;
     /* Make it a fixed position */
-    top: 1;
+    top: 50;
     /* Align to the top of the viewport */
     right: 0;
     /* Align to the left of the viewport */
