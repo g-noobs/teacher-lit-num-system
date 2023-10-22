@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $user_info_id = $values['user_info_id'];
 
         include_once "../../../Database/CommonValidationClass.php";
-        $validate = new CommonValidateClass();
+        $validate = new CommonValidationClass();
         $data = array($values['personal_id'],$values['first_name'], $values['last_name']);
         $column = array('personal_id','first_name','last_name');
         $table = "tbl_user_info";

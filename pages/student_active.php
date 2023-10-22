@@ -31,33 +31,27 @@
         <div class="content-wrapper" style="min-height: 606.2px;">
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
 
-            <div class="container">
+            <div class="container">+
+
+                <!-- Add Student Modal -->
+                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
+                <!-- Edit Student Modal -->
+                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
+                <!-- Archive Modal -->
+                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/ArchiveStudentModal.php"?>
 
                 <section class="content-header">
                     <h1>
                         Active Student
                         <small>Active Data User</small>
                     </h1>
-                    <!-- Breadcrumb   
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Layout</a></li>
-                        <li class="active">Top Navigation</li>
-                    </ol> -->
                 </section>
 
                 <!-- Main Content-->
                 <section class="content" id="main-content">
                     <?php include_once "../PagesContent/StudentContentFolder/TableFolder/ActivateStudentTable.php";?>
                 </section>
-
             </div>
-            <!-- Add Student Modal -->
-            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
-            <!-- Edit Student Modal -->
-            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
-            <!-- Archive Modal -->
-            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/ArchiveStudentModal.php"?>
         </div>
         <?php include_once("../CommonCode/footer.php");?>
     </div>
