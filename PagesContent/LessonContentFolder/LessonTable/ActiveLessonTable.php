@@ -6,9 +6,7 @@
             <br>
             <div class="row">
                 <div class="col-xs-6">
-                    <button type="button" class="btn btn-warning btn-sm" data-toggle='modal' data-target="#addLessonModal">
-                        <i class="fa fa-plus"></i> <span> Add Lesson</span>
-                    </button>
+                    <!-- sAS -->
                 </div>
                 <div class="col-xs-6">
                     <div class="search-box">
