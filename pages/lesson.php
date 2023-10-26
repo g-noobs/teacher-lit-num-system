@@ -43,7 +43,8 @@
                         <li class="active">Top Navigation</li>
                     </ol> -->
                 </section>
-
+                <br>
+                <br>
                 <section>
                     <div class="row">
                         <div class="col-xs-6">
@@ -62,6 +63,7 @@
 
                 <!-- Main Content-->
                 <section class="content" id="main-content">
+                    <?php include_once "../PagesContent/StudentContentFolder/TableFolder/ActivateStudentTable.php";?>
                 </section>
 
             </div>
