@@ -1,6 +1,6 @@
 <th></th>
-<th>Student ID</th>
-<th>First Name</th>
-<th>Lastn Name</th>
-<th>Lastn Name</th>
-<th colspan="2"></th>
+<th>Lesson ID</th>
+<th>Lesson Name</th>
+<th>Category Name</th>
+<th>Subject Name</th>
+<th colspan="3"></th>
