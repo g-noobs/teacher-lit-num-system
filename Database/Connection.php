@@ -7,17 +7,18 @@ class Connection{
     protected $conn;
 
     public function __construct(){
-        //! This bellow will be used for online deployment
-        $this->host = "156.67.222.1";  // Replace with your server name
-        $this->username = "u170333284_admin";  // Replace with your MySQL username
-        $this->password = "Capstone1!";  // Replace with your MySQL password
-        $this->database = "u170333284_db_tagakaulo";  // Replace with your database name
+        //! Online Deployment
+        $this->host = "156.67.222.1";  
+        $this->username = "u170333284_admin";  
+        $this->password = "Capstone1!";  
+        $this->database = "u170333284_db_tagakaulo";  
         $this->connect();
 
-        // $this->host = "localhost:3306";  // Replace with your server name
-        // $this->username = "admin";  // Replace with your MySQL username
-        // $this->password = "admin";  // Replace with your MySQL password
-        // $this->database = "u170333284_db_tagakaulo";  // Replace with your database name
+        //! Local Deployment 
+        // $this->host = "localhost:3306";  /
+        // $this->username = "admin"; 
+        // $this->password = "admin";  
+        // $this->database = "u170333284_db_tagakaulo"; 
         // $this->connect();
     }
     public function connect(){
@@ -32,7 +33,7 @@ class Connection{
             $this->conn->close();
         }
     }
-    //This will be used to get connection once $conn is set to protected
+    //Access the variable $conn outside this class
     public function getConnection(){
         return $this->conn;
     }
