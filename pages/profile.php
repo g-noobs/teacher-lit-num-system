@@ -51,6 +51,9 @@
 
     <!-- // Assign Data and Modified Data in Main or dashboard -->
     <?php include_once "../PagesContent/MainContentFolder/AllSciptMain/AssignDataScript.php"; ?>
+    
+    <!-- Profile modified Script -->
+    <?php include_once "../PagesContent/ProfileContentFolder/ScriptProfile/ProfileJqueryScript.php" ?>
 </body>
 
 </html>
