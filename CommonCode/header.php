@@ -7,7 +7,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 ?>
 
 <header class="main-header">
-    <nav class="navbar navbar-static-top" style="background-color:#2AB0FB">
+    <nav class="navbar navbar-static-top">
 
         <div class="container-fluid">
             <div class="navbar-header">
