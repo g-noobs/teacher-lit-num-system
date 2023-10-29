@@ -34,9 +34,8 @@
 
 
                 <section class="content" id="main-content">
-                    
+                    <?php include_once "../PagesContent/ProfileContentFolder/TeacherProfile.php";?>
                 </section>
-
             </div>
         </div>
         <?php 
