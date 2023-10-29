@@ -46,3 +46,4 @@ $(document).ready(function() {
         $(this).hide();
     });
 });
+</script>
