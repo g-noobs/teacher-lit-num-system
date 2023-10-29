@@ -88,7 +88,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="pr" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right" id="logoutTeachBtn">
                                     <a href="#" class="btn btn-default btn-flat">Sign out</a>
