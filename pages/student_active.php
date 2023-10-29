@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="sidebar-mini skin-blue" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
+<body class="skin-blue layout-top-nav" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
     style="height: auto; min-height: 100%;">
 
 
