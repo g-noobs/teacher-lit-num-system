@@ -16,7 +16,7 @@
     <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
 </head>
 
-<body class="layout-top-nav skin-black" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
+<body class="layout-top-nav" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
     style="height: auto; min-height: 100%;">
 
 
