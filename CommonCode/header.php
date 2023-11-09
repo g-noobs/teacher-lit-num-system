@@ -23,11 +23,10 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                     <li><a href="main.php">Dashboard <span class="sr-only">(current)</span></a></li>
                     
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Student List <span
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Class List <span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="student_active.php">Student - Active</a></li>
-                            <li class="divider"></li>
                             <li><a href="student_inactive.php">Student - Archive</a></li>
                         </ul>
                     </li>

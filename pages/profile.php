@@ -44,8 +44,6 @@
     </div>
 
     <?php include_once("../bootstrap/jquery.php");?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
 
