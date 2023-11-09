@@ -22,21 +22,23 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                 <ul class="nav navbar-nav">
                     <li><a href="main.php">Dashboard <span class="sr-only">(current)</span></a></li>
                     
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Class List <span
+                    <li><a href="class_list.php"></a>Class
+                        <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Class List <span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="student_active.php">Student - Active</a></li>
                             <li><a href="student_inactive.php">Student - Archive</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Lesson<span
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Activities<span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="lesson.php">Lesson List</a></li>
+                            <li><a href="lesson.php">Lesson</a></li>
                             <li class="divider"></li>
-                            <li><a href="quiz.php">Quiz List</a></li>
+                            <li><a href="quiz.php">Quiz</a></li>
+                            <li class="divider"></li>
+                            <li><a href="quiz.php">Quiz</a></li>
                         </ul>
                     </li>
                 </ul>
