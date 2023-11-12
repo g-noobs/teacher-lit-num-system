@@ -26,14 +26,56 @@ $(function() {
             // Populate dynamic tabs
             var tabsContainer = $('#dynamic-tabs');
             var contentContainer = $('#dynamic-content');
+
             $.each(response, function(index, tab) {
                 var tabId = 'tab' + tab.id;
                 var tabContent = '<div id="' + tabId + '" class="tab-pane fade"></div>';
 
-                tabsContainer.append('<li><a data-toggle="tab" href="#' + tabId + '">' + tab
-                    .name +
-                    '</a></li>');
+                var tabContentId = 'tabContent' + tab.id;
+                var tabContent = `
+                <div id="${tabId}" class="tab-pane fade">
+                    <!-- Include the content dynamically -->
+                    <div class="box box-default">
+                    <div class="box-header with-border">
+                        <br>
+                        <div class="row">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-warning add-student" data-id="${tab.id}">
+                            <i class="fa fa-plus"></i> <span>Add Student</span>
+                            </button>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="search-box">
+                            <i class="fa fa-search"></i>
+                            <input type="text" id="userInput" class="form-control" placeholder="Search..">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="box-body container-fluid" style="overflow-y: scroll; max-height: 400px;">
+                        <!-- Include the content dynamically -->
+                        <table id="${tabContentId}" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                            <th></th>
+                            <th>Student ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>Acount Status</th>
+                            <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>`;
+
+                tabsContainer.append(
+                    `<li><a data-toggle="tab" href="#${tabId}">${tab.name}</a></li>`);
                 contentContainer.append(tabContent);
+
             });
         },
     });
