@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // If there are no errors, compare the username and password with the database
-    include_once("../ValidateCredsClass.php");
+    include_once("ValidateCredsClass.php");
     $validate = new ValidateCredsClass();
     $isCorrect = $validate ->checkTeacherCreds($username, $password);
     
