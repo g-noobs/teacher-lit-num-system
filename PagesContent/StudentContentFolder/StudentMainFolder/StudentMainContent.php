@@ -76,13 +76,24 @@ $(function() {
                     `<li><a data-toggle="tab" href="#${tabId}">${tab.name}</a></li>`);
                 contentContainer.append(tabContent);
                 $.ajax({
-                    url: 'get_tab_content.php?id=' + tab
-                        .id, // Adjust the URL as per your backend logic
+                    url: '../PagesContent/StudentContentFolder/ActionStudent/ActionDisplayTable.php', // Adjust the URL as per your backend logic
                     type: 'GET',
-                    success: function(content) {
-                        $('#' + tabContentId + ' tbody').html(content);
+                    data: {
+                        id: tab.id
                     },
-                    error: function() {
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.hasOwnProperty('success')) {
+                            $('#' + tabContentId + ' tbody').html(response
+                                .success);
+                        } else if (response.hasOwnProperty('error')) {
+                            $('#' + tabContentId + ' tbody').html(response
+                                .error);
+                        }
+
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr);
                         $('#' + tabContentId + ' tbody').html(
                             '<tr><td colspan="7">Error loading content for ' +
                             tab.name + '</td></tr>');
@@ -90,7 +101,8 @@ $(function() {
                 });
             });
         },
-        error: function() {
+        error: function(xhr, status, error) {
+            console.log(xhr);
             alert('Error loading tabs.');
         }
     });
