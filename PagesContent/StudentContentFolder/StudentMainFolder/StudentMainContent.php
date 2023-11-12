@@ -17,31 +17,35 @@
 </div>
 
 <script>
-$.ajax({
-    url: '../PagesContent/StudentContentFolder/ActionStudentFolder/ActionGetClassData.php',
-    type: 'GET',
-    dataType: 'json',
-    success: function(response) {
-        // Populate dynamic tabs
-        var tabsContainer = $('#dynamic-tabs');
-        var contentContainer = $('#dynamic-content');
-        $.each(response, function(index, tab) {
-            var tabId = 'tab' + tab.id;
-            var tabContent = '<div id="' + tabId + '" class="tab-pane fade"></div>';
+$(function() {
+    $.ajax({
+        url: '../PagesContent/StudentContentFolder/ActionStudentFolder/ActionGetClassData.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            // Populate dynamic tabs
+            var tabsContainer = $('#dynamic-tabs');
+            var contentContainer = $('#dynamic-content');
+            $.each(response, function(index, tab) {
+                var tabId = 'tab' + tab.id;
+                var tabContent = '<div id="' + tabId + '" class="tab-pane fade"></div>';
 
-            tabsContainer.append('<li><a data-toggle="tab" href="#' + tabId + '">' + tab.name +
-                '</a></li>');
-            contentContainer.append(tabContent);
+                tabsContainer.append('<li><a data-toggle="tab" href="#' + tabId + '">' + tab
+                    .name +
+                    '</a></li>');
+                contentContainer.append(tabContent);
 
-            tabs += '<li class="' + active + '"><a href="#' + item.class_id +
-                '" data-toggle="tab">' + item.class_name + '</a></li>';
+                tabs += '<li class="' + active + '"><a href="#' + item.class_id +
+                    '" data-toggle="tab">' + item.class_name + '</a></li>';
 
-            content += '<div class="tab-pane ' + active + '" id="' + item.class_id + '">' + item
-                .class_name + '</div>';
-            active = "";
-        });
-        $('#dynamic-tabs').append(tabs);
-        $('#dynamic-content').append(content);
-    },
+                content += '<div class="tab-pane ' + active + '" id="' + item.class_id +
+                    '">' + item
+                    .class_name + '</div>';
+                active = "";
+            });
+            $('#dynamic-tabs').append(tabs);
+            $('#dynamic-content').append(content);
+        },
+    });
 });
 </script>
