@@ -1,6 +1,6 @@
 <div class="container">
     <!-- <h2>Dynamic Tabs</h2>
-    <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a
+    <p>To make the tabs toggleable, add the response-toggle="tab" attribute to each link. Then add a .tab-pane class with a
         unique ID for every tab and wrap them inside a div element with class .tab-content.</p> -->
 
     <ul class="nav nav-tabs" id="dynamic-tabs">
@@ -16,17 +16,23 @@
     </div>
 </div>
 
-<!-- <script>
+<script>
 $.ajax({
     url: '../PagesContent/StudentContentFolder/ActionStudentFolder/ActionGetClassData.php',
     type: 'GET',
     dataType: 'json',
-    success: function(data) {
+    success: function(response) {
         // Populate dynamic tabs
         var tabsContainer = $('#dynamic-tabs');
         var contentContainer = $('#dynamic-content');
-        var active = "active";
-        $.each(data, function(index, tab) {
+        $.each(response, function(index, tab) {
+            var tabId = 'tab' + tab.id;
+            var tabContent = '<div id="' + tabId + '" class="tab-pane fade"></div>';
+
+            tabsContainer.append('<li><a data-toggle="tab" href="#' + tabId + '">' + tab.name +
+                '</a></li>');
+            contentContainer.append(tabContent);
+
             tabs += '<li class="' + active + '"><a href="#' + item.class_id +
                 '" data-toggle="tab">' + item.class_name + '</a></li>';
 
@@ -38,4 +44,4 @@ $.ajax({
         $('#dynamic-content').append(content);
     },
 });
-</script> -->
+</script>
