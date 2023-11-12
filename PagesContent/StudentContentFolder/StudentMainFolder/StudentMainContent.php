@@ -34,17 +34,7 @@ $(function() {
                     .name +
                     '</a></li>');
                 contentContainer.append(tabContent);
-
-                tabs += '<li class="' + active + '"><a href="#' + item.class_id +
-                    '" data-toggle="tab">' + item.class_name + '</a></li>';
-
-                content += '<div class="tab-pane ' + active + '" id="' + item.class_id +
-                    '">' + item
-                    .class_name + '</div>';
-                active = "";
             });
-            $('#dynamic-tabs').append(tabs);
-            $('#dynamic-content').append(content);
         },
     });
 });

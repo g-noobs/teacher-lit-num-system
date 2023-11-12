@@ -3,7 +3,7 @@
         <br>
         <div class="row">
             <div class="col-xs-6">
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#add_student_modal">
+                <button type="button" class="btn btn-warning">
                     <i class="fa fa-plus"></i> <span>Add Student</span>
                 </button>
             </div>
