@@ -181,7 +181,7 @@ $_SESSION['teacher'] = false;
 
                     if (responseData.hasOwnProperty('success')) {
                         console.log(responseData.success);
-                        window.location.href = "Teacher/pages/main.php";
+                        window.location.href = "pages/main.php";
                     } else if (responseData.hasOwnProperty('error')) {
                         var msg = responseData.error;
                         //assign text to modal and show
