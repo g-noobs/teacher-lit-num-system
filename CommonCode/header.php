@@ -31,7 +31,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                         </ul> -->
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Activities<span
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Workspace<span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="lesson.php">Lesson</a></li>
