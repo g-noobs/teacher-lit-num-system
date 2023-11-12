@@ -38,14 +38,14 @@
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
                 <section class="content-header">
                     <h1>
-                        Active Student
-                        <small>Active Data User</small>
+                        Class List
+                        <small>Assigned class</small>
                     </h1>
                 </section>
 
                 <!-- Main Content-->
                 <section class="content" id="main-content">
-                    <?php include_once "../PagesContent/StudentContentFolder/TableFolder/ActivateStudentTable.php";?>
+                    <?php include_once "../PagesContent/StudentContentFolder/StudentMainFolder/StudentMainContent.php";?>
                 </section>
             </div>
         </div>
