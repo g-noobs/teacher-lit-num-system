@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 include_once("Connection.php");
 class DisplayUserInfo extends Connection{
     private $lastError;
