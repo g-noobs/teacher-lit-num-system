@@ -19,7 +19,7 @@
 <script>
 $(function() {
     $.ajax({
-        url: '../PagesContent/StudentContentFolder/ActionStudentFolder/ActionGetClassData.php',
+        url: '../PagesContent/StudentContentFolder/ActionStudent/ActionGetClassData.php',
         type: 'GET',
         dataType: 'json',
         success: function(response) {
