@@ -6,11 +6,18 @@
     <title>Student | Active</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    
+
+
     <?php 
         include_once("../bootstrap/style.php");
     ?>
     <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
+
+    <!-- jQuery 3 -->
+    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 
 </head>
 
@@ -25,17 +32,17 @@
         <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
-            
-        <div class="container">
-            
-            <!-- Add Student Modal -->
-            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
-            <!-- Edit Student Modal -->
-            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
-            <!-- Archive Modal -->
-            <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/ArchiveStudentModal.php"?>
-            <!-- Modified Alert -->
-            <?php include_once "../CommonCode/ModifiedAlert.php";?>
+
+            <div class="container">
+
+                <!-- Add Student Modal -->
+                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
+                <!-- Edit Student Modal -->
+                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
+                <!-- Archive Modal -->
+                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/ArchiveStudentModal.php"?>
+                <!-- Modified Alert -->
+                <?php include_once "../CommonCode/ModifiedAlert.php";?>
                 <section class="content-header">
                     <h1>
                         Class List
