@@ -40,7 +40,7 @@ $(function() {
                         <br>
                         <div class="row">
                         <div class="col-xs-6">
-                            <button type="button" class="btn btn-warning add-student" data-id="${tab.id}">
+                            <button type="button" class="btn btn-primary add-student" data-id="${tab.id}">
                             <i class="fa fa-plus"></i> <span>Add Student</span>
                             </button>
                         </div>
@@ -75,9 +75,24 @@ $(function() {
                 tabsContainer.append(
                     `<li><a data-toggle="tab" href="#${tabId}">${tab.name}</a></li>`);
                 contentContainer.append(tabContent);
-
+                $.ajax({
+                    url: 'get_tab_content.php?id=' + tab
+                        .id, // Adjust the URL as per your backend logic
+                    type: 'GET',
+                    success: function(content) {
+                        $('#' + tabContentId + ' tbody').html(content);
+                    },
+                    error: function() {
+                        $('#' + tabContentId + ' tbody').html(
+                            '<tr><td colspan="7">Error loading content for ' +
+                            tab.name + '</td></tr>');
+                    }
+                });
             });
         },
+        error: function() {
+            alert('Error loading tabs.');
+        }
     });
 });
 </script>
