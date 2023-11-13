@@ -52,7 +52,7 @@
 
                 <!-- Main Content-->
                 <section class="content" id="main-content">
-                    <!-- Scipt was also in StudentMainContent.php -->
+                    <!-- Script was also in StudentMainContent.php dynamic script which load all the class list-->
                     <?php include_once "../PagesContent/StudentContentFolder/StudentMainFolder/StudentMainContent.php";?>
                 </section>
             </div>
