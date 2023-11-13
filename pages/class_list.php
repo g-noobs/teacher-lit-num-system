@@ -13,11 +13,11 @@
     ?>
     <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 
-    <!-- jQuery 3 -->
-    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -35,7 +35,7 @@
 
             <div class="container">
 
-                
+
                 <!-- Edit Student Modal -->
                 <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
                 <!-- Archive Modal -->
