@@ -44,7 +44,7 @@
                     </ol> -->
                 </section>
                 <br>
-            
+
                 <section id=lesson_status_dropdown>
                     <div class="align-items-start">
                         <div class="col-sm-2">
@@ -67,8 +67,14 @@
                 </section>
                 <br><br>
                 <!-- Main Content-->
-                <section class="content" id="main-content">
-                    <?php include_once "../PagesContent/LessonContentFolder/LessonTable/ActiveLessonTable.php"?>
+                <!-- Main content -->
+                <section class="content container" id="lesson-table">
+                    <?php include_once "../PagesContent/LessonContent/TableFolder/LessonTable.php"?>
+                </section>
+
+                <!-- Section for topic -->
+                <section class="content container" id="add-topic-panel">
+                    <?php include_once("../PagesContent/LessonContent/TopicFolder/LessonTopic.php");?>
                 </section>
 
             </div>
@@ -81,7 +87,22 @@
     </div>
 
     <?php include_once("../bootstrap/jquery.php");?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <?php include_once("../PagesContent/LessonContent/CommonLesson/ModalLesson.php");?>
+    <!-- Script for adding lesson -->
+    <?php include_once("../PagesContent/LessonContent/CommonLesson/AddLessonScript.php");?>
+
+    <!-- Script when button is click to view topic in lesson -->
+    <?php include_once("../PagesContent/LessonContent/CommonLesson/ViewLessonScript.php");?>
+
+    <!-- modified jquery for lesson - will modify if view button is click from the lesson-->
+    <?php include_once("../PagesContent/LessonContent/CommonLesson/JqueryLesson.php");?>
+
+    <!-- All Jquery for topic -->
+    <?php include_once("../PagesContent/LessonContent/CommonLesson/JqueryTopic.php");?>
+
+    <?php include_once "../PagesContent/LessonContent/TopicFolder/TopicScript.php";?>
+
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
