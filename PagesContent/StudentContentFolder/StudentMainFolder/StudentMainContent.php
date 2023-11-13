@@ -1,3 +1,7 @@
+
+<!-- Add Student Modal -->
+<?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
+
 <div class="container">
     <!-- <h2>Dynamic Tabs</h2>
     <p>To make the tabs toggleable, add the response-toggle="tab" attribute to each link. Then add a .tab-pane class with a
@@ -40,7 +44,7 @@ $(function() {
                         <br>
                         <div class="row">
                         <div class="col-xs-6">
-                            <button type="button" class="btn btn-primary add-student" data-toggle='modal' data-target='#add_student_modal' data-class-id="${tab.id}">
+                            <button type="button" class="btn btn-primary add-student" data-toggle='modal' data-class-id="${tab.id}">
                             <i class="fa fa-plus"></i> <span>Add Student</span>
                             </button>
                         </div>

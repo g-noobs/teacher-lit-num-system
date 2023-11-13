@@ -35,8 +35,7 @@
 
             <div class="container">
 
-                <!-- Add Student Modal -->
-                <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
+                
                 <!-- Edit Student Modal -->
                 <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
                 <!-- Archive Modal -->
