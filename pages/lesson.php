@@ -66,7 +66,6 @@
                     </div>
                 </section>
                 <br><br>
-                <!-- Main Content-->
                 <!-- Main content -->
                 <section class="content container" id="lesson-table">
                     <?php include_once "../PagesContent/LessonContent/TableFolder/LessonTable.php"?>
