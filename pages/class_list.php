@@ -17,8 +17,10 @@
     <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 
+
+    <!-- Add student script -->
+    <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
 </head>
 
 <body class="skin-blue layout-top-nav" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
@@ -65,8 +67,7 @@
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
 
-    <!-- Add student script -->
-    <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
+
 </body>
 
 </html>
