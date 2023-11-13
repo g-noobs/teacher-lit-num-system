@@ -7,7 +7,7 @@ $table = "student_full_view";
 
 if($_GET['id']){
     $id = $_GET['id'];
-    $sql = "SELECT * FROM $table WHERE status = 'Active' AND user_level_description = 'Learner';";
+    $sql = "SELECT * FROM $table WHERE status = 'Active' AND user_level_description = 'Learner' AND class_id = '$id';";
     $result = $conn->query($sql);
 
     $htmlContent = '';
