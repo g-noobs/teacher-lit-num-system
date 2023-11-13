@@ -54,7 +54,7 @@ $(function() {
                     </div>
                     <div class="box-body container-fluid" style="overflow-y: scroll; max-height: 400px;">
                         <!-- Include the content dynamically -->
-                        <table id="${tabContentId}" class="table table-bordered table-hover">
+                        <table id="${tabContentId}" class="table table-hover text-center">
                         <thead>
                             <tr>
                             <th><input type='checkbox' id="select-all" class='checkbox'></th>
