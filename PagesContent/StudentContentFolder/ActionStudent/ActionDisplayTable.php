@@ -18,7 +18,7 @@ if($_GET['id']){
             $htmlContent .= "<tr>";
             $htmlContent .= "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['user_info_id'] . "'></td>";
             
-            $htmlContent .= "<td><a href='#'><span class='glyphicon glyphicon-info-sign'></span></a>";
+            $htmlContent .= "<td><a href='#'><span class='glyphicon glyphicon-info-sign' data-id='".$row["user_info_id"]."'></span></a>";
             $htmlContent .= "<td><a href='#' class='edit' data-toggle='modal' data-target='#editStudentModal' data-id='".$row["user_info_id"]."' style='macolor: text-success;'><span class='glyphicon glyphicon-edit'></span></a></td>";
 
             $htmlContent .= "<td>".$row['personal_id']."</td>";
