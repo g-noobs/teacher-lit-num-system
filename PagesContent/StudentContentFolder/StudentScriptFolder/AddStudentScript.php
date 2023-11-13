@@ -1,9 +1,9 @@
 <script>
 $(function() {
-    $('.add-student').on('click', function(e) {
-        e.preventDefault();
-        var class_id = $(this).data('id');
+    $('.add-student').on('click', function() {
         $('#add_student_modal').modal('show');
+        var class_id = $(this).data('id');
+        
         $('#add_student_modal').find('.modal-title').text('Add Student for Class ID: ' + class_id);
 
         $('#add_student_form').on('submit', function(e) {
