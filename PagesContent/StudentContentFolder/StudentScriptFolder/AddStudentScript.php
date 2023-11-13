@@ -1,6 +1,8 @@
 <script>
 $(document).ready(function() {
     $('.add_stdnt_btn').on('click', function() {
+
+        console.log('add student button clicked');
         $('#add_student_modal').modal('show');
         var class_id = $(this).data('class-id');
         
