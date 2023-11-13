@@ -52,6 +52,7 @@
 
                 <!-- Main Content-->
                 <section class="content" id="main-content">
+                    <!-- Scipt was also in StudentMainContent.php -->
                     <?php include_once "../PagesContent/StudentContentFolder/StudentMainFolder/StudentMainContent.php";?>
                 </section>
             </div>
