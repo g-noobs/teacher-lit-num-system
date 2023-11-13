@@ -1,9 +1,11 @@
 <script>
 $(document).ready(function() {
-    $('.add_stdnt_btn').on('click', function() {
+
+    $(document).on('click', '.add_stdnt_btn', function() {
 
         console.log('add student button clicked');
         $('#add_student_modal').modal('show');
+        
         var class_id = $(this).data('class-id');
         
         $('#add_student_modal').find('.modal-title').text('Add Student for Class ID: ' + class_id);

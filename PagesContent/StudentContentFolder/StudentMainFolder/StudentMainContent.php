@@ -35,7 +35,6 @@ $(document).ready(function() {
 
             $.each(response, function(index, tab) {
                 var tabId = 'tab' + tab.id;
-                var btnId = 'btn' + tab.id;
                 var tabContent = '<div id="' + tabId + '" class="tab-pane fade"></div>';
 
                 var tabContentId = 'tabContent' + tab.id;
@@ -47,7 +46,7 @@ $(document).ready(function() {
                         <br>
                         <div class="row">
                         <div class="col-xs-6">
-                            <button type="button" class="btn btn-primary add_stdnt_btn" id="#${btnId}" data-class-id="${tab.id}">
+                            <button type="button" class="btn btn-primary add_stdnt_btn" data-class-id="${tab.id}">
                             <i class="fa fa-plus"></i> <span>Add Student</span>
                             </button>
                         </div>
