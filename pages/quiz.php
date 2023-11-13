@@ -42,6 +42,10 @@
                     </ol> -->
                 </section>
                 <br>
+                <section class="content" id="addQquizSection">
+                    <?php include_once "../PagesContent/QuizFolder/TableQuiz/AddQuizSection.php";?>
+                </section>
+                
                 <section>
                     <div class="align-items-start">
                         <div class="col-sm-2">
