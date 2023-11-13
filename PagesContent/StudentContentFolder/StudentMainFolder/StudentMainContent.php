@@ -1,7 +1,8 @@
 
 <!-- Add Student Modal -->
 <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
-
+<!-- Add student script -->
+<?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
 
 <div class="container">
     <!-- <h2>Dynamic Tabs</h2>
