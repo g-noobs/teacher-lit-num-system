@@ -23,7 +23,7 @@
 </div>
 
 <script>
-$(function() {
+$(document).ready(function() {
     $.ajax({
         url: '../PagesContent/StudentContentFolder/ActionStudent/ActionGetClassData.php',
         type: 'GET',
