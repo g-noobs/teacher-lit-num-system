@@ -36,7 +36,6 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="lesson.php">Lesson</a></li>
                             <li class="divider"></li>
-                            <li class="divider"></li>
                             <li><a href="quiz.php">Quiz</a></li>
                             <li class="divider"></li>
                             <li><a href="">Gradebook</a></li>

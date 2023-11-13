@@ -65,8 +65,8 @@
                 <br>
                 <br>
                 <!-- Main Content-->
-                <section class="content" id="main-content">
-                    <?php include_once "../PagesContent/QuizContentFolder/QuizTable/ActiveQuizTable.php"?>
+                <section class="content" id="quizContent">
+                    <?php include_once("../PagesContent/QuizFolder/TableQuiz/QuizMainTable.php");?>
                 </section>
 
             </div>
@@ -79,7 +79,19 @@
     </div>
 
     <?php include_once("../bootstrap/jquery.php");?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- For Adding quiz including Jquery -->
+    <?php include_once "../PagesContent/QuizFolder/QuizEssentials/AddQuizScript.php"?>
+
+    <!-- For chooosing correct answer from the provided multiplce choice -->
+    <?php include_once "../PagesContent/QuizFolder/QuizEssentials/MultipleChoiceScript.php"?>
+
+    <!-- For modification of quiz type -->
+    <?php include_once "../PagesContent/QuizFolder/QuizEssentials/QuizOptionScript.php"?>
+
+    <!-- This script assist on viewing the quiz data -->
+    <?php include_once "../PagesContent/QuizFolder/QuizEssentials/ViewQuizScript.php"?>
+
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
