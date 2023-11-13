@@ -14,10 +14,10 @@
     <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 
     <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-    <!-- Include Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Include Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -35,7 +35,7 @@
 
             <div class="container">
 
-
+                
                 <!-- Edit Student Modal -->
                 <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
                 <!-- Archive Modal -->
@@ -65,7 +65,6 @@
     <?php include_once "../CommonScript/CommonAllScript.php";?>
 
     <!-- Add student script -->
-    <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
 </body>
 
 </html>
