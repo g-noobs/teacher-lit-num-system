@@ -40,7 +40,7 @@ $(function() {
                         <br>
                         <div class="row">
                         <div class="col-xs-6">
-                            <button type="button" class="btn btn-primary add-student" data-id="${tab.id}">
+                            <button type="button" class="btn btn-primary add-student" data-class-id="${tab.id}">
                             <i class="fa fa-plus"></i> <span>Add Student</span>
                             </button>
                         </div>
