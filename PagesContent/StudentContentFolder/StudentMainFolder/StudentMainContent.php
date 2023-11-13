@@ -111,4 +111,4 @@ $(function() {
 
 
 <!-- Add student script -->
-<?php include_once "../StudentScriptFolder/AddStudentScript.php"?>
+<?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
