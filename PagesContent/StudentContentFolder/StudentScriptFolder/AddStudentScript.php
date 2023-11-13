@@ -1,6 +1,6 @@
 <script>
 $(function() {
-    $('.add-student').on('click', function() {
+    $('.add_stdnt_btn').on('click', function() {
         $('#add_student_modal').modal('show');
         var class_id = $(this).data('class-id');
         
