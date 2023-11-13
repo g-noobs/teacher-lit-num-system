@@ -19,13 +19,13 @@
         <table id="example2" class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th></th>
+                    <th><input type='checkbox' id="select-all" class='checkbox'></th>
+                    <th colspan='2'></th>
                     <th>Student ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Gender</th>
                     <th>Acount Status</th>
-                    <th colspan="2">Action</th>
                 </tr>
             </thead>
             <tbody>

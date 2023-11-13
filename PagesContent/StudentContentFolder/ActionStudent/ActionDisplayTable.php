@@ -16,20 +16,16 @@ if($_GET['id']){
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
             $htmlContent .= "<tr>";
-            $htmlContent .= "<td><a href='#'><span class='glyphicon glyphicon-info-sign' style = 'padding-left: 10px;'></span></a>";
+            $htmlContent .= "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['user_info_id'] . "'></td>";
+            
+            $htmlContent .= "<td><a href='#'><span class='glyphicon glyphicon-info-sign'></span></a>";
+            $htmlContent .= "<td><a href='#' class='edit' data-toggle='modal' data-target='#editStudentModal' data-id='".$row["user_info_id"]."' style='macolor: text-success;'><span class='glyphicon glyphicon-edit'></span></a></td>";
 
             $htmlContent .= "<td>".$row['personal_id']."</td>";
             $htmlContent .= "<td>".$row['first_name']."</td>";
             $htmlContent .= "<td>".$row['last_name']. "</td>";
             $htmlContent .= "<td>".$row['gender']."</td>";
             $htmlContent .= "<td class=text-success><strong>".$row['status']."</strong></td>";
-
-            $htmlContent .= "<td>";
-            $htmlContent .= "<a href='#' class='edit' data-toggle='modal' data-target='#editStudentModal' data-id='".$row["user_info_id"]."' style='margin-right:10px; color: text-success;'><span class='glyphicon glyphicon-edit' ></span></a>";
-
-            $htmlContent .= " <a href='#' class='actvIconBtn text-danger' data-toggle='modal' data-target='#arcviveStudentModal' data-id='".$row["user_info_id"]."'> <span class='glyphicon glyphicon-trash'></span></a>";
-            $htmlContent .= "</td>";
-
             $htmlContent .= "</tr>";
         }
         $response = array('success' => $htmlContent);
