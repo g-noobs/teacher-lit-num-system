@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-xs-3">
                                 <label for="user_middle_initial">Middle Initial (*optional)</label>
-                                <input type="text" name="user_middle_initial" class="form-control input-xs">
+                                <input type="text" name="user_middle_initial" class="form-control input-xs"  maxlength="1">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -110,8 +110,8 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <label for="guardian_middle_name">Middle Initial</label>
-                                <input type="text" name="guardian_middle_name" class="form-control-xs">
+                                <label for="guardian_middle_name">M.I. (*optional)</label>
+                                <input type="text" name="guardian_middle_name" class="form-control input-xs"  maxlength="1" >
                             </div>
                         </div>
                         <div class="form-group row">
