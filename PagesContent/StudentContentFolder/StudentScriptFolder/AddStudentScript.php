@@ -2,17 +2,18 @@
 $(document).ready(function() {
 
     $(document).on('click', '.add_stdnt_btn', function() {
-
-        console.log('add student button clicked');
         $('#add_student_modal').modal('show');
-        
+
         var class_id = $(this).data('class-id');
-        
+
         $('#add_student_modal').find('.modal-title').text('Add Student for Class ID: ' + class_id);
 
         $('#addUserForm').on('submit', function(e) {
             e.preventDefault();
             var formData = new FormData(this);
+
+            // Append class_id to formData
+            formData.append('class_id', class_id);
 
             var $hideModal = $('#add_student_modal');
             var actionUrl =
