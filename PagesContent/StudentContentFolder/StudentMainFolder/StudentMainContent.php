@@ -108,3 +108,7 @@ $(function() {
     });
 });
 </script>
+
+
+<!-- Add student script -->
+<?php include_once "../StudentScriptFolder/AddStudentScript.php"?>
