@@ -3,7 +3,7 @@ include_once "../../../Database/Connection.php";
 $connection = new Connection();
 $conn = $connection->getConnection();
 
-$table = "user_info_view";
+$table = "student_full_view";
 
 if($_GET['id']){
     $id = $_GET['id'];
