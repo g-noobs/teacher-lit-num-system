@@ -14,7 +14,7 @@
             console.log(this);
 
             var $hideModal = $('#add_user_modal');
-            var actionUrl = '../PagesContent/UserContent/ActionsUsers/ActionAddStudent.php';
+            var actionUrl = '../PagesContent/StudentContentFolder/ActionStudent/ActionAddStudent.php';
 
             $.ajax({
                 url: actionUrl,
