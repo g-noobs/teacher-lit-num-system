@@ -43,7 +43,7 @@ class LessonDisplayClass extends Connection{
 
     function lessonTable(){
         $table = "lesson_view";
-        $sql = "SELECT * FROM ".$table;
+        $sql = "SELECT * FROM $table WHERE module_status =1 AND lesson_status = 1";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
@@ -65,7 +65,7 @@ class LessonDisplayClass extends Connection{
     }
     function archivelessonTable(){
         $table = "lesson_view"; //archive_lesson_view
-        $sql = "SELECT * FROM ".$table;
+        $sql = "SELECT * FROM $table WHERE module_status = 1 AND lesson_status = 0";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
