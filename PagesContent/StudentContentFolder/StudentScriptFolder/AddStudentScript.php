@@ -1,7 +1,10 @@
 <script>
 (document).ready(function() {
     $(document).on('click', '.add_stdnt_btn', function() {
-        $('#add_student_modal').modal('show');
+        var $controlModal = $('#add_user_modal');
+
+
+        $$controlModal.modal('show');
 
         var class_id = $(this).data('class-id');
 
@@ -13,7 +16,8 @@
             var formData = new FormData(this);
             console.log(this);
 
-            var $hideModal = $('#add_user_modal');
+            formData.append('class_id', class_id);
+            
             var actionUrl = '../PagesContent/StudentContentFolder/ActionStudent/ActionAddStudent.php';
 
             $.ajax({
@@ -46,7 +50,7 @@
                     } else {
                         // Check if the form submission was successful
                         if (response.hasOwnProperty('success')) {
-                            $hideModal.modal('hide');
+                            $controlModal.modal('hide');
                             $('#successAlert').text(response.success);
                             $('#successBanner').show();
                             setTimeout(function() {
@@ -57,7 +61,7 @@
 
 
                         } else if (response.hasOwnProperty('error')) {
-                            $hideModal.modal('hide');
+                            $controlModal.modal('hide');
                             $('#errorAlert').text(response.error);
                             $('#errorBanner').show();
                             setTimeout(function() {
@@ -69,7 +73,7 @@
                 },
                 error: function(xhr, status, error) {
                     console.error(xhr.responseText);
-                    $hideModal.modal('hide');
+                    $controlModal.modal('hide');
                     //show alert banner id = errorBanner
                     $('#errorAlert').text(
                         'An error occurred during the AJAX request.');
