@@ -13,7 +13,17 @@
     ?>
     <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 
-    <?php include_once("../bootstrap/jquery.php");?>
+    <!-- jQuery 3 -->
+    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+    $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../design/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Morris.js charts -->
 
 </head>
 
@@ -55,6 +65,7 @@
         <?php include_once("../CommonCode/footer.php");?>
     </div>
 
+    <?php include_once("../bootstrap/jquery.php");?>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
