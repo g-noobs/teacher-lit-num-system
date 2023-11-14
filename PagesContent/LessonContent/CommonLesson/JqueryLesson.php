@@ -30,12 +30,12 @@ $(function() {
 $(function() {
     $('.custom-dropdown-menu a').click(function(e) {
         e.preventDefault();
-        var categoryType = $(this).data('lesson-type');
+        var lessonType = $(this).data('lesson-type');
         var contentPath = '';
 
-        if (categoryType === 'active-lesson') {
+        if (lessonType === 'active-lesson') {
             location.reload();
-        } else if (categoryType === 'archive-lesson') {
+        } else if (lessonType === 'archive-lesson') {
             contentPath = '../PagesContent/LessonContent/TableFolder/ArchiveLessonTable.php';
         }
         $('.custom-dropdown-toggle').html($(this).text() + '<span class="caret"></span>');
