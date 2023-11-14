@@ -13,6 +13,7 @@
     ?>
     <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 
+    <?php include_once("../bootstrap/jquery.php");?>
 
 </head>
 
@@ -30,7 +31,7 @@
 
             <div class="container">
 
-                
+
                 <!-- Edit Student Modal -->
                 <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/EditStudentModal.php"?>
                 <!-- Archive Modal -->
@@ -54,7 +55,6 @@
         <?php include_once("../CommonCode/footer.php");?>
     </div>
 
-    <?php include_once("../bootstrap/jquery.php");?>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
