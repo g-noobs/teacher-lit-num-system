@@ -4,7 +4,7 @@ $(document).ready(function() {
         var $controlModal = $('#add_user_modal');
 
 
-        $$controlModal.modal('show');
+        $controlModal.modal('show');
 
         var class_id = $(this).data('class-id');
 
