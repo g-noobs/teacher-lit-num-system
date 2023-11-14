@@ -15,7 +15,7 @@
                             <input type="text" name="lesson_name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="category_level">Select a level of Category</label>
+                            <label for="category_level">Category Level</label>
                             <select class="form-control" name="category_level">
                                 <?php include_once("../Database/LessonDisplayClass.php");
                                     $categoryList = new LessonDisplayClass();
@@ -24,7 +24,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="subj_list">Select Subject</label>
+                            <label for="subj_list">Module Subject</label>
                             <select class="form-control" name="subj_list">
                                 <?php include_once("../Database/LessonDisplayClass.php");
                                     $subjList = new LessonDisplayClass();
