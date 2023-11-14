@@ -1,5 +1,5 @@
 <script>
-(document).ready(function() {
+$(document).ready(function() {
     $(document).on('click', '.add_stdnt_btn', function() {
         var $controlModal = $('#add_user_modal');
 
