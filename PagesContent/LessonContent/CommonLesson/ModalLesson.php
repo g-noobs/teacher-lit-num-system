@@ -24,7 +24,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="subj_list">Module Subject</label>
+                            <label for="subj_list">Module Source</label>
                             <select class="form-control" name="subj_list">
                                 <?php include_once("../Database/LessonDisplayClass.php");
                                     $subjList = new LessonDisplayClass();
