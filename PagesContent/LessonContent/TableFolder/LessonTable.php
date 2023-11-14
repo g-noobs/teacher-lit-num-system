@@ -37,7 +37,7 @@
                         <?php 
                         include_once("../Database/LessonDisplayClass.php");
                         $archlessonTable = new LessonDisplayClass();
-                        $archlessonTable->archivelessonTable();
+                        $archlessonTable->lessonTable();
                         ?>
                     </tbody>
                 </table>
