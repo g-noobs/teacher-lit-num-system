@@ -8,7 +8,7 @@ $(document).ready(function() {
 
         var class_id = $(this).data('class-id');
 
-        $('#add_student_modal').find('.modal-title').text('Add Student for Class ID: ' + class_id);
+        $('#assigned_class_id').text(class_id);
 
         $("#addUserForm").on("submit", function(e) {
             e.preventDefault();
