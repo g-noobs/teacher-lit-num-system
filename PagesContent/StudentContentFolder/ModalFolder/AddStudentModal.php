@@ -1,4 +1,4 @@
-<div class="modal fade" id="add_student_modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="add_user_modal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-xs-3">
                                 <label for="user_middle_initial">Middle Initial (*optional)</label>
-                                <input type="text" name="user_middle_initial" class="form-control input-xs"  maxlength="1">
+                                <input type="text" name="user_middle_initial" class="form-control input-xs" maxlength="1">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -110,8 +110,10 @@
                             </div>
 
                             <div class="col-xs-2">
-                                <label for="guardian_middle_name">M.I. (*optional)</label>
-                                <input type="text" name="guardian_middle_name" class="form-control input-xs"  maxlength="1" >
+                                <label for="guardian_middle_name">M.I. (**optional)</label>
+                                <input type="text" name="guardian_middle_name" class="form-control input-xs"
+                                    placeholder="Middle Initial" maxlength="1"/>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -119,6 +121,10 @@
                                 <label for="guardian_phone_num">Phone Number:</label>
                                 <input type="tel" name="guardian_phone_num" class="form-control input-xs"
                                     placeholder="Phone Number" required />
+                            </div>
+                            <div class="col-xs-6">
+                                <div><strong>Assigned Class:</strong></div>
+                                <div id="assigned_class_id"></div>
                             </div>
                         </div>
                         <!-- /.box-body -->

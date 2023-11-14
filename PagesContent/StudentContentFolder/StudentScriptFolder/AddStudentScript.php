@@ -1,68 +1,75 @@
 <script>
-$(document).ready(function() {
+$(function() {
+    $("#addUserForm").on("submit", function(e) {
+        e.preventDefault();
 
-    $(document).on('click', '.add_stdnt_btn', function() {
-        $('#add_student_modal').modal('show');
+        var formData = new FormData(this);
+        console.log(this);
 
-        var class_id = $(this).data('class-id');
+        var $hideModal = $('#add_user_modal');
+        var actionUrl = '../PagesContent/UserContent/ActionsUsers/ActionAddTeacher.php';
 
-        $('#add_student_modal').find('.modal-title').text('Add Student for Class ID: ' + class_id);
+        $.ajax({
+            url: actionUrl,
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function(response) {
+                // Check if the response contains an array of errors
+                if (Array.isArray(response)) {
+                    // Clear previous error messages
+                    $("#add_user_modal_alert_text").empty();
+                    $("#add_user_modal_alert").show();
 
-        $('#addUserForm').on('submit', function(e) {
-            e.preventDefault();
-            var formData = new FormData(this);
+                    // Update the element with the received errors
+                    $.each(response, function(index, error) {
+                        $("#add_user_modal_alert_text").append("<p class='error'>" +
+                            error +
+                            "</p><br>");
+                        console.log(error);
+                    });
 
-            // Append class_id to formData
-            formData.append('class_id', class_id);
+                    setTimeout(function() {
+                        $("#add_user_modal_alert").fadeOut("slow");
 
-            var $hideModal = $('#add_student_modal');
-            var actionUrl =
-                '../PagesContent/StudentContentFolder/ActionStudent/ActionAddStudent.php';
-
-            $.ajax({
-                url: actionUrl,
-                type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(response) {
-                    var responseData = JSON.parse(response);
+                    }, 3500);
+                } else {
                     // Check if the form submission was successful
-                    if (responseData.hasOwnProperty('success')) {
+                    if (response.hasOwnProperty('success')) {
                         $hideModal.modal('hide');
-                        $('#successAlert').text(responseData.success);
+                        $('#successAlert').text(response.success);
                         $('#successBanner').show();
                         setTimeout(function() {
                             $("#successBanner").fadeOut("slow");
-
+                            location.reload();
                         }, 1500);
 
 
-                        // You can redirect to a different page or perform other actions here
-                    } else if (responseData.hasOwnProperty('error')) {
+
+                    } else if (response.hasOwnProperty('error')) {
                         $hideModal.modal('hide');
-                        $('#errorAlert').text(responseData.error);
+                        $('#errorAlert').text(response.error);
                         $('#errorBanner').show();
                         setTimeout(function() {
                             $("#errorBanner").fadeOut("slow");
-
+                            location.reload();
                         }, 1500);
                     }
-                },
-                error: function(xhr, status, error) {
-                    $hideModal.modal('hide');
-                    //show alert banner id = errorBanner
-                    $('#errorAlert').text(
-                        'An error occurred during the AJAX request.');
-                    $('#errorBanner').show();
-                    setTimeout(function() {
-                        $("#errorBanner").fadeOut("slow");
-
-                    }, 1500);
-
                 }
-
-            });
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+                $hideModal.modal('hide');
+                //show alert banner id = errorBanner
+                $('#errorAlert').text('An error occurred during the AJAX request.');
+                $('#errorBanner').show();
+                setTimeout(function() {
+                    $("#errorBanner").fadeOut("slow");
+                    location.reload();
+                }, 1500);
+            }
         });
     });
 });
