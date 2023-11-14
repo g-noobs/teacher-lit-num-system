@@ -14,15 +14,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mediaData = array();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $topic_id = $row["topic_id"];
+                $topic_name = $row["topic_name"];
                 $media_path = $row["media_path"];
 
-                // Group media_path under topic_id
-                if (!isset($mediaData[$topic_id])) {
-                    $mediaData[$topic_id] = array();
+                // Group media_path under topic_name
+                if (!isset($mediaData[$topic_name])) {
+                    $mediaData[$topic_name] = array();
                 }
 
-                $mediaData[$topic_id][] = $media_path;
+                $mediaData[$topic_name][] = $media_path;
                 
             }
             $response = $mediaData;
