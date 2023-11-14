@@ -64,7 +64,7 @@ class LessonDisplayClass extends Connection{
         }   
     }
     function archivelessonTable(){
-        $table = "lesson_view";
+        $table = "lesson_view"; //archive_lesson_view
         $sql = "SELECT * FROM ".$table;
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
