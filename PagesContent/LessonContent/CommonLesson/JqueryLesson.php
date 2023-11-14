@@ -27,7 +27,7 @@ $(function() {
 
 <!-- dropdown config -->
 <script>
-$function({
+$(function() {
     $('.custom-dropdown-menu a').click(function(e) {
         e.preventDefault();
         var categoryType = $(this).data('lesson-type');
