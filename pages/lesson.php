@@ -57,7 +57,7 @@
                                 </button>
                                 <ul class="dropdown-menu custom-dropdown-menu">
                                     <li><a href="#" data-lesson-type="active-lesson"><b>Active Lesson</b></a></li>
-                                    <li><a href="#" data-lesson-type="arch-lesson"><b>Archived Lessonlesson</b></a></li>
+                                    <li><a href="#" data-lesson-type="arch-lesson"><b>Archived Lesson</b></a></li>
                                 </ul>
                             </div>
                         </div>
