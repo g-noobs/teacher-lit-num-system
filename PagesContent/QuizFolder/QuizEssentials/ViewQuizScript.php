@@ -10,6 +10,7 @@ $(function(){
             type: "POST",
             url: "../PagesContent/QuizFolder/ActionQuizFolder/ActionViewQuizData.php",
             data: {id: btn_id},
+            dataType: 'json',
             success: function(response){
                 
                 $('#quiz_question_data').text(response.quiz_question);
