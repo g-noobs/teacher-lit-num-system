@@ -10,8 +10,6 @@ $(function(){
             url: "../PagesContent/QuizFolder/ActionQuizFolder/ActionViewQuizData.php",
             data: {id: btn_id},
             success: function(response){
-                var responseData = JSON.parse(response);
-
                 $('#quiz_question_data').text(responseData.quiz_question);
                 $('#correct_answer_data').text(responseData.correct_answer);
                 $('#option1_data').text(responseData.option1);
