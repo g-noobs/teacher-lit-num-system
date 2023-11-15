@@ -8,7 +8,7 @@ a {
 </style>
 
 <form id="addTopic" enctype="multipart/form-data">
-    <div class="box box-warning container">
+    <div class="box box-default container">
         <!--! This is the box header -->
         <div class="box-header with-border">
             <a href="#" type="button" id="back-table"><i class="glyphicon glyphicon-chevron-left"></i></a>
@@ -70,7 +70,7 @@ a {
             </div>
         </div>
         <div class="box-footer">
-            <button id="submit" class="btn btn-warning">Submit</button>
+            <button id="submit" class="btn btn-primary">Submit</button>
             <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
         </div>
     </div>
