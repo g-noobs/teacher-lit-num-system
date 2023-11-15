@@ -21,7 +21,12 @@
                     <table id="example2" class="table table-bordered table-hover text-center">
                         <thead>
                             <tr>
-                                <?php include_once "QuizTableHeader.php";?>
+                                <th colspan=2></th>
+                                <th>Quiz ID</th>
+                                <th>Question</th>
+                                <th>Date Created</th>
+                                <th>Topic ID</th>
+                                <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>
