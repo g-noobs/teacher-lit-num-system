@@ -122,7 +122,7 @@ $(document).ready(function() {
 <!--Script below will be used for search -->
 <script>
 $(document).ready(function() {
-    $(".userInput").on("keyup", function() {
+    $(document).on("keyup",".userInput", function() {
         var value = $(this).val().toLowerCase();
         $("tbody tr").filter(function() {
             var rowText = $(this).text().toLowerCase();
