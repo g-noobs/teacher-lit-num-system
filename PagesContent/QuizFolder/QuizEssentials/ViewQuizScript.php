@@ -2,7 +2,8 @@
 $(function(){
     $(".quiz_info_btn").on('click', function(e){
         e.preventDefault();
-
+        
+        var $viewModal = $('#quiz_data_modal');
         var btn_id = $(this).data('id');
         $('#quiz_id_data').text(btn_id);
         $.ajax({
@@ -10,6 +11,7 @@ $(function(){
             url: "../PagesContent/QuizFolder/ActionQuizFolder/ActionViewQuizData.php",
             data: {id: btn_id},
             success: function(response){
+                $viewModal.modal('show');
                 $('#quiz_question_data').text(response.quiz_question);
                 $('#correct_answer_data').text(response.correct_answer);
                 $('#option1_data').text(response.option1);
