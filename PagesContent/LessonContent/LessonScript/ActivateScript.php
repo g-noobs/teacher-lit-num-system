@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
 
     // Handle the update button click event
-    $("#archive_btn").click(function() {
+    $("#activate_btn").click(function() {
 
         var selectedIds = [];
         // Iterate through all checked checkboxes and collect their values
@@ -31,7 +31,7 @@ $(document).ready(function() {
                     url: action_url,
                     data: {
                         selectedIds: selectedIds,
-                        status: 0
+                        status: 1
                     },
                     success: function(response) {
                         var responseData = JSON.parse(response);
