@@ -68,6 +68,7 @@
                 </section>
                 <br>
                 <br>
+                <?php include_once "../PagesContent/QuizFolder/QuizEssentials/ViewQuizScript.php"?>
                 <!-- Main Content-->
                 <section class="content" id="quizContent">
                     <?php include_once("../PagesContent/QuizFolder/TableQuiz/QuizMainTable.php");?>
@@ -94,7 +95,7 @@
     <?php include_once "../PagesContent/QuizFolder/QuizEssentials/QuizOptionScript.php"?>
 
     <!-- This script assist on viewing the quiz data -->
-    <?php include_once "../PagesContent/QuizFolder/QuizEssentials/ViewQuizScript.php"?>
+    
 
 
     <!-- This Script Contain Common Script used on other pages  -->
