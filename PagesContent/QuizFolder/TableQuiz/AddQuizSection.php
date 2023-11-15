@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <div class="box box-warning container">
+        <div class="box box-default container">
             <div class="box-header with-border">
                 <h3 class="box-title"><strong>Add new Quiz Question</strong></h3>
                 <div class="box-tools pull-right">
