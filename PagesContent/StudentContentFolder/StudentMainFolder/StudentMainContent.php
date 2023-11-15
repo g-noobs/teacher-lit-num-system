@@ -4,6 +4,9 @@
 <!-- Add student script -->
 <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
 
+<!-- Search Data script -->
+<?php include_once "";?>
+
 <div class="container">
     <!-- <h2>Dynamic Tabs</h2>
     <p>To make the tabs toggleable, add the response-toggle="tab" attribute to each link. Then add a .tab-pane class with a
@@ -116,4 +119,16 @@ $(document).ready(function() {
 </script>
 
 
-
+<!--Script below will be used for search -->
+<script>
+$(document).ready(function() {
+    $("#userInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("tbody tr").filter(function() {
+            var rowText = $(this).text().toLowerCase();
+            var pText = $(this).find("p").text().toLowerCase();
+            $(this).toggle(rowText.indexOf(value) > -1 || pText.indexOf(value) > -1);
+        });
+    });
+});
+</script>
