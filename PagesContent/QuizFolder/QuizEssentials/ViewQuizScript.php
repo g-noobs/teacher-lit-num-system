@@ -10,14 +10,14 @@ $(function(){
             url: "../PagesContent/QuizFolder/ActionQuizFolder/ActionViewQuizData.php",
             data: {id: btn_id},
             success: function(response){
-                $('#quiz_question_data').text(responseData.quiz_question);
-                $('#correct_answer_data').text(responseData.correct_answer);
-                $('#option1_data').text(responseData.option1);
-                $('#option2_data').text(responseData.option2);
-                $('#option3_data').text(responseData.option3);
-                $('#topic_source_data').text(responseData.topic_source);
-                $('#date_created_data').text(responseData.date_created);
-                $('#quiz_status_data').text(responseData.quiz_status);
+                $('#quiz_question_data').text(response.quiz_question);
+                $('#correct_answer_data').text(response.correct_answer);
+                $('#option1_data').text(response.option1);
+                $('#option2_data').text(response.option2);
+                $('#option3_data').text(response.option3);
+                $('#topic_source_data').text(response.topic_source);
+                $('#date_created_data').text(response.date_created);
+                $('#quiz_status_data').text(response.quiz_status);
                 
 
 
