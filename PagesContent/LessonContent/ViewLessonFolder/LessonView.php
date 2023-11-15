@@ -11,7 +11,7 @@
 
 </head>
 
-<body class="sidebar-mini wysihtml5-supported skin-yellow-light sidebar-collapse fixed"
+<body class="sidebar-mini wysihtml5-supported skin-blue-light sidebar-collapse fixed"
     style="height: auto; min-height: 100%;" data-new-gr-c-s-check-loaded="14.1125.0" data-gr-ext-installed="">
 
     <header class="main-header">
