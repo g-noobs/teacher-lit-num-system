@@ -60,7 +60,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                            <img src="../design/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="../Media/Images/User" class="user-image" alt="User Image">
 
                             <span class="hidden-xs" id="teacher_name_main">
                                 <?php include "../Database/DisplayUserInfo.php";
@@ -71,7 +71,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                         </a>
                         <ul class="dropdown-menu">
                             <li class="user-header">
-                                <img src="../design/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="../Media/Images/User" class="img-circle" alt="User Image">
                                 <p id=teacher_name>
                                     <?php $displayUserInfo->displayTeacherName();?>
                                 </p>
