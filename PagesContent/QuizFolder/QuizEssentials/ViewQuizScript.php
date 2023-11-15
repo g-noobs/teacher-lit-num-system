@@ -3,7 +3,7 @@ $(function(){
     $(".quiz_info_btn").on('click', function(e){
         e.preventDefault();
         
-        var $viewModal = $('#quiz_data_modal');
+
         var btn_id = $(this).data('id');
         $('#quiz_id_data').text(btn_id);
         $.ajax({
@@ -20,7 +20,7 @@ $(function(){
                 $('#topic_source_data').text(response.topic_source);
                 $('#date_created_data').text(response.date_created);
                 $('#quiz_status_data').text(response.quiz_status);
-                $viewModal.modal('show');
+    
             },
             error:function(){
                 console.log('Possible Ajx Issue');
