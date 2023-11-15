@@ -21,7 +21,7 @@
                     <table id="example2" class="table table-bordered table-hover text-center">
                         <thead>
                             <tr>
-                                <th colspan=2></th>
+                                <th colspan=2><input type='checkbox' id="select-all" class='checkbox'></th>
                                 <th>Quiz ID</th>
                                 <th>Question</th>
                                 <th>Date Created</th>
