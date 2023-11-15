@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $guardian_middle_name = $inputValidation->test_input($_POST["guardian_middle_name"], 'middle_initial');
         $guardian_phone_num = $inputValidation->test_input($_POST["guardian_phone_num"], 'phone');
 
-        $class_assign = $inputValidation->test_input($_POST["class_assign"], 'address'); //possible No validation for select
+        $class_id = $inputValidation->test_input($_POST["class_id"], 'address'); //possible No validation for select
         
         //check if there are errors
         $errors = array();
@@ -105,7 +105,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($guardian_phone_num === false){
             $errors[] = "Invalid Guardian phone number";
         }
-        if($class_assign === false){
+        if($class_id === false){
             $errors[] = "Invalid characters in Class Assign.";
         }
         //check for empty fields
@@ -124,7 +124,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 'user_level_id' => '2',
                 'added_byID'=>'',
                 'date_added' => '',
-                'class_id' => $_POST['class_assign']
+                'class_id' => $_POST['class_id']
             );
             $table = "tbl_user_info";
                     //adding data for user_info_id
@@ -234,7 +234,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                             $learner = array(
                                                 'student_id'=> '',
                                                 'user_info_id' => $values['user_info_id'],
-                                                'class_id'=> $_POST['class_assign']
+                                                'class_id'=> $_POST['class_id']
                                             );
                                             //set learner id
                                             $learner['student_id'] = "STDNT". $columnCountClass->columnCountWhere("student_id", $table);
