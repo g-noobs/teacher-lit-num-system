@@ -66,6 +66,9 @@
                     </div>
                 </section>
                 <br><br>
+                <!-- Confirmation Modal -->
+                <?php include_once "../PagesContent/LessonContent/CommonLesson/ConfirmationModal.php";?>
+
                 <!-- Main content -->
                 <section class="content container" id="lesson-table">
                     <?php include_once "../PagesContent/LessonContent/TableFolder/LessonTable.php"?>
@@ -105,6 +108,9 @@
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
+
+    <!-- Archive Lesson Script -->
+    <?php include_once "../PagesContent/LessonContent/LessonScript/ArchiveScript.php";?>
 </body>
 
 </html>

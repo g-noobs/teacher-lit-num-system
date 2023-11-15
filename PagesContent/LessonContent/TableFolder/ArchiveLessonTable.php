@@ -1,4 +1,8 @@
 <?php include_once "../../../CommonCode/ModifiedSearchStyle.php";?>
+
+<!-- Confirmation modal -->
+<?php include_once "../CommonLesson/ConfirmationModal.php";?>
+
 <div class="row">
     <div class="box container">
         <div class="box-header">
@@ -45,9 +49,10 @@
         <!-- /.box-body -->
     </div>
     <!-- /.box -->
-
-
 </div>
+
+<!-- activate script -->
+<?php include_once "../LessonScript/ActivateScript.php"?>
 
 </script>
 <!-- Jquery for Table Search -->
