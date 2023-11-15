@@ -27,6 +27,8 @@
 
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
 
+            <!-- View quiz Data Modal -->
+            <?php include_once "../PagesContent/QuizFolder/QuizEssentials/ModalViewQuiz.php";?>
             <div class="container">
 
                 <section class="content-header">
@@ -95,7 +97,7 @@
     <?php include_once "../PagesContent/QuizFolder/QuizEssentials/QuizOptionScript.php"?>
 
     <!-- This script assist on viewing the quiz data -->
-    
+
 
 
     <!-- This Script Contain Common Script used on other pages  -->
