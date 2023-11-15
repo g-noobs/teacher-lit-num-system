@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-warning pull-left">Add Lesson</button>
+                        <button type="submit" class="btn btn-primary pull-left">Add Lesson</button>
                         <button type="reset" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
