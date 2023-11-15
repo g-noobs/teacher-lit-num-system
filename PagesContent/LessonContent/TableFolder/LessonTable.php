@@ -9,6 +9,9 @@
                         data-target="#addLessonModal">
                         <i class="fa fa-plus"></i> <span> Add Lesson</span>
                     </button>
+                    <button id="archive_btn" type="button" class="btn btn-danger" data-toggle="tooltip" title="Archive Class">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
                 </div>
                 <div class="col-xs-6">
                     <div class="search-box">
