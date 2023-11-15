@@ -7,7 +7,7 @@
 <!--Script below will be used for search -->
 <script>
 $(document).ready(function() {
-    $("#userInput").on("keyup", function() {
+    $(".userInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
         $("tbody tr").filter(function() {
             var rowText = $(this).text().toLowerCase();
@@ -67,7 +67,7 @@ $(document).ready(function() {
                         <div class="col-xs-6">
                             <div class="search-box">
                             <i class="fa fa-search"></i>
-                            <input type="text" id="userInput" class="form-control" placeholder="Search..">
+                            <input type="text" class="form-control userInput" placeholder="Search..">
                             </div>
                         </div>
                         </div>
