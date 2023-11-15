@@ -124,7 +124,7 @@
                             </div>
                             <div class="col-xs-6">
                                 <div><strong>Assigned Class:</strong></div>
-                                <div id="assigned_class_id"></div>
+                                <h3 id="assigned_class_id"></h3>
                             </div>
                         </div>
                         <!-- /.box-body -->
