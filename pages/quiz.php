@@ -54,7 +54,7 @@
                             <div class="custom-dropdown">
 
                                 <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
-                                    style="width:150px; border: 2px solid #E58A00; border-radius:10px; color: #E58A00;">
+                                    style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
                                     <b>Active Quiz</b> <!-- Updated the button text -->
                                     <span class="caret"></span>
                                 </button>
