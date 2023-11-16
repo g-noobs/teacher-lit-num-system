@@ -1,4 +1,5 @@
 <?php 
+session_start();
 // This is will be used upload files to the server
 // at the same time save the file path to the database
 //will manage POST jquery ajax from file jquerTopic.php
@@ -10,21 +11,40 @@ include_once "../../../Database/CommonValidationClass.php";
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //check if the form fields is empty including file input
     if(isset($_POST['topic_name']) && isset($_POST['topic_desc']) && isset($_POST['btnId'])){
-        $topic_name = trim($_POST['topic_name']);
-        $topic_desc = $_POST['topic_desc'];
         $lesson_id = $_POST['btnId'];
-
-        //get the topic id with zeros
-        $topic_count = new ColumnCountClass();
-        $topic_id = "TPC". $topic_count->columnCountWhere("topic_id","tbl_topic");
-
-        $currentDate = new DateTime();
-        $date_added = $currentDate->format('Y-m-d H:i:s');
-
         $table = "tbl_topic";
+        $values = array(
+            'topic_id' => '',
+            'topic_name' => trim($_POST['topic_name']),
+            'topic_description' => $_POST['topic_desc'],
+            'date_added' => '',
+            'lesson_id' => $lesson_id,
+            'added_byID' => ''
+        );
+
+        //set ID for topic ID
+        $topic_count = new ColumnCountClass();
+        $values['topic_id'] = "TPC". $topic_count->columnCountWhere("topic_id", $table);
+
+        // set date added
+        $currentDate = new DateTime();
+        $values['date_added']= $currentDate->format('Y-m-d H:i:s');
+
+        // set added by ID
+        $values['added_byID'] = $_SESSION['id'];
+
+        
         $addTopic = new SanitizeCrudClass();
-        $query = "INSERT INTO $table(topic_id, topic_name, topic_description, topic_status, lesson_id,date_added) VALUES (?,?,?,?,?,?)";
-        $params = array($topic_id, $topic_name, $topic_desc, 1, $lesson_id, $date_added);
+        //set columns
+        $columns = implode(', ', array_keys($values));
+
+        //set number of question marks
+        $questionMarkString = implode(',', array_fill(0, count($values), '?'));
+        
+        //set sql
+        $query = "INSERT INTO $table($columns) VALUES ($questionMarkString)";
+        //set params
+        $params = array_values($values);
         
         //Check if there is duplicate in tbl_topic  
         $check = new CommonValidationClass();
