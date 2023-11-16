@@ -27,8 +27,9 @@
                             <label for="subj_list">Module Source</label>
                             <select class="form-control" name="subj_list">
                                 <?php include_once("../Database/LessonDisplayClass.php");
+                                    $teacher_user_id = $_SESSION['id'];
                                     $subjList = new LessonDisplayClass();
-                                    $subjList->displaySubjectlist();
+                                    $subjList->displaySubjectlist($teacher_user_id);
                                 ?>
                             </select>
                         </div>
