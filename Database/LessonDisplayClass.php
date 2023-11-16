@@ -26,7 +26,7 @@ class LessonDisplayClass extends Connection{
     // Function for showing subject name options
     function displaySubjectlist($teacher_user_id){
         $table = 'view_teacher_module_info';
-        $sql = "SELECT 	module_id , module_name  FROM tbl_module WHERE module_status = 1 AND user_info_id = '$teacher_user_id';";
+        $sql = "SELECT 	module_id , module_name  FROM $table  WHERE module_status = 1 AND user_info_id = '$teacher_user_id';";
         $result = $this->conn->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
