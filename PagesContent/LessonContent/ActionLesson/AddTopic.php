@@ -143,7 +143,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 // get current or today's date
                 // !This will be the saved directory path to the database where file can be access
                 $file_access_path = "https://tagakauloedu.com/Media/".$subDirectoryFolder ."/". $fileName;
-
+                $topic_id = $values['topic_id'];
                 $currentDate = new DateTime();
                 $updloadDate  = $currentDate->format('Y-m-d H:i:s');
 
