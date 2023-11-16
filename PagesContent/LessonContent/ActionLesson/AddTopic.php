@@ -52,33 +52,35 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $column = 'topic_name';
         $isDuplicate = $check -> validateOneColumn($table, $column, $data);
 
-        if($isDuplicate){
-            try{
-                $addTopic->executePreState($query,$params);
-                
-            } catch (mysqli_sql_exception $e) {
-                if ($e->getCode() == 1062) {
-                    // Duplicate entry
-                    $response = array("error" => $data." already exists. Please try again hit sql exceptio");
-                    echo json_encode($response);  
-                    exit();
-                } else {
-                    // Some other error
-                    $response = array("error"=> $e->getMessage());
-                    echo json_encode($response);
-                    throw $e;
-                }
-            }
-            //add a catch for foreign key constraits fails
-            catch(Exception $e){
-                $response = array("error"=> $e->getMessage());
-                echo json_encode($response);
-            }
+        $addTopic->executePreState($query,$params);
 
-        }
-        else{
-            echo $data." is already exists. Please try again";
-        }
+        // if($isDuplicate){
+        //     try{
+        //         $addTopic->executePreState($query,$params);
+                
+        //     } catch (mysqli_sql_exception $e) {
+        //         if ($e->getCode() == 1062) {
+        //             // Duplicate entry
+        //             $response = array("error" => $data." already exists. Please try again hit sql exceptio");
+        //             echo json_encode($response);  
+        //             exit();
+        //         } else {
+        //             // Some other error
+        //             $response = array("error"=> $e->getMessage());
+        //             echo json_encode($response);
+        //             throw $e;
+        //         }
+        //     }
+        //     //add a catch for foreign key constraits fails
+        //     catch(Exception $e){
+        //         $response = array("error"=> $e->getMessage());
+        //         echo json_encode($response);
+        //     }
+
+        // }
+        // else{
+        //     echo $data." is already exists. Please try again";
+        // }
         // if add Topic is successfull proceed with the file upload
         if($addTopic->getLastError() === null){
             //Handle multiple file uploads
