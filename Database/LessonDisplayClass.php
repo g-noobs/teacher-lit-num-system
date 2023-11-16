@@ -64,9 +64,9 @@ class LessonDisplayClass extends Connection{
             }
         }   
     }
-    function archivelessonTable(){
+    function archivelessonTable($teacher_user_id){
         $table = "lesson_view"; //archive_lesson_view
-        $sql = "SELECT * FROM $table WHERE module_status = 1 AND lesson_status = 0";
+        $sql = "SELECT * FROM $table WHERE module_status = 1 AND lesson_status = 0 AND added_byID = '$teacher_user_id'";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
@@ -82,8 +82,8 @@ class LessonDisplayClass extends Connection{
             }
         }   
     }
-    function topicTable($lessonId){
-        $sql = "SELECT * FROM tbl_topic WHERE lesson_id = '".$lessonId."';";
+    function topicTable($lessonId, $teacher_user_id){
+        $sql = "SELECT * FROM tbl_topic WHERE added_byID = '$teacher_user_id' AND lesson_id = '".$lessonId."';";
         $result = $this->getConnection()->query($sql);
         
         if($result-> num_rows >0){

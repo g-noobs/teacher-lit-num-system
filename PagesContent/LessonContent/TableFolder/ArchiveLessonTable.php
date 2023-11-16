@@ -40,7 +40,8 @@
                         <?php 
                         include_once("../../../Database/LessonDisplayClass.php");
                         $archivedLessonTable = new LessonDisplayClass();
-                        $archivedLessonTable->archivelessonTable();
+                        $teacher_user_id = $_SESSION['id'];
+                        $archivedLessonTable->archivelessonTable($teacher_user_id);
                         ?>
                     </tbody>
                 </table>
