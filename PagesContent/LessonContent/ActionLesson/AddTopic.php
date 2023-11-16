@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         //Check if there is duplicate in tbl_topic  
         $check = new CommonValidationClass();
-        $data = $topic_name;
+        $data = $values['topic_name'];
         $column = 'topic_name';
         $isDuplicate = $check -> validateOneColumn($table, $column, $data);
 
