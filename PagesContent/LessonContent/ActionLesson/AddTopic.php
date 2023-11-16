@@ -109,7 +109,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
                 //upload directory to Folder Media plus the subdirectoryFolder
-                $uploadDir = "../../../../Media/".$subDirectoryFolder;
+                $uploadDir = "../../../Media/".$subDirectoryFolder;
 
                 //Check if directory exists, if not create it
                 if(!file_exists($uploadDir)){
