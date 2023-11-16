@@ -11,6 +11,7 @@ $(function() {
         $("#add-topic-panel").show();
         var lessonName = $(this).closest('tr').find('td:eq(2)').text();
         btnId = $(this).data("id");
+        console.log(btnId);
 
         $("#lesson-table").hide();
         $('#lesson_status_dropdown').hide();
@@ -49,7 +50,7 @@ $(function() {
                     $('#successBanner').show();
                     setTimeout(function() {
                         $("#successBanner").fadeOut("slow");
-                        location.reload();
+                        // location.reload();
                     }, 1500);
 
 
@@ -59,7 +60,7 @@ $(function() {
                     $('#errorBanner').show();
                     setTimeout(function() {
                         $("#errorBanner").fadeOut("slow");
-                        location.reload();
+                        // location.reload();
                     }, 1500);
             }
             }
