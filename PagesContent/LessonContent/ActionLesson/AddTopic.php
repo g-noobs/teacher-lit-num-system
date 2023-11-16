@@ -147,7 +147,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $currentDate = new DateTime();
                 $updloadDate  = $currentDate->format('Y-m-d H:i:s');
 
-                $values = array(
+                $media = array(
                     $file_type."_id" => $file_id,
                     $file_type."_name" => $fileName,
                     $file_type."_path" => $file_access_path,
@@ -155,14 +155,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     "topic_id" => $topic_id
                 );
                 
-                //automatically store implode array keys from array $values
-                $columns = implode(', ', array_keys($values));
+                //automatically store implode array keys from array $media
+                $columns = implode(', ', array_keys($media));
 
-                //automatically store corresponding number of placeholders from array $values
-                $placeholders = implode(', ', array_fill(0, count($values), '?'));
+                //automatically store corresponding number of placeholders from array $media
+                $placeholders = implode(', ', array_fill(0, count($media), '?'));
 
-                // place all array values to the parameter
-                $params = array_values($values);
+                // place all array media to the parameter
+                $params = array_values($media);
 
                 $query = "INSERT INTO $table($columns) VALUES ($placeholders)";
 
