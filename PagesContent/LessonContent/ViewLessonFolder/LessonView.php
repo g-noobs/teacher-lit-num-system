@@ -42,7 +42,7 @@
     <div class="content-wrapper" style="min-height: 707px;">
         <div class="container">
 
-            <?php include_once "../../../CommonContent/ModifiedAlert.php"?>
+
             <section class="content-header">
                 <div id="test"></div>
                 <h3>Lesson: <strong id="lesson_name"></strong></h3>
