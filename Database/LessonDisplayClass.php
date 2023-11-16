@@ -41,9 +41,9 @@ class LessonDisplayClass extends Connection{
         }
     }
 
-    function lessonTable(){
+    function lessonTable($teacher_user_id){
         $table = "lesson_view";
-        $sql = "SELECT * FROM $table WHERE module_status =1 AND lesson_status = 1";
+        $sql = "SELECT * FROM $table WHERE added_byID = '$teacher_user_id' module_status =1 AND lesson_status = 1";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
