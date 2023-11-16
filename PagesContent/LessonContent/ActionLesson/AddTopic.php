@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $column = 'topic_name';
         $isDuplicate = $check -> validateOneColumn($table, $column, $data);
 
-        if($isDuplicate){
+        // if($isDuplicate){
             try{
                 $addTopic->executePreState($query,$params);
                 
@@ -55,10 +55,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 echo json_encode($response);
             }
 
-        }
-        else{
-            echo $data." is already exists. Please try again";
-        }
+        // }
+        // else{
+        //     echo $data." is already exists. Please try again";
+        // }
         // if add Topic is successfull proceed with the file upload
         if($addTopic->getLastError() === null){
             //Handle multiple file uploads
