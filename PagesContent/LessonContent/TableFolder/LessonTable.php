@@ -39,7 +39,7 @@
                     <tbody>
                         <?php 
                         include_once("../Database/LessonDisplayClass.php");
-                        $teacher_user_id = $_SESSION['user_id'];
+                        $teacher_user_id = $_SESSION['id'];
                         $archlessonTable = new LessonDisplayClass();
                         $archlessonTable->lessonTable($teacher_user_id);
                         ?>
