@@ -4,7 +4,7 @@
             <div class="box-header with-border">
                 <button id="archive_btn" type="button" class="btn btn-danger" data-toggle="tooltip"
                     title="Archive Class">
-                    <i class="glyphicon glyphicon-trash"></i>
+                    <i class="glyphicon glyphicon-trash"></i><span>Archive Quiz</span>
                 </button>
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
