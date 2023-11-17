@@ -2,7 +2,10 @@
     <div class="col-xs-12">
         <div class="box box-default container">
             <div class="box-header with-border">
-                <h3 class="box-title">All Quiz List</h3>
+                <button id="archive_btn" type="button" class="btn btn-danger" data-toggle="tooltip"
+                    title="Archive Class">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
                         <i class="fa fa-search"></i>
