@@ -60,7 +60,7 @@
                                 </button>
                                 <ul class="dropdown-menu custom-dropdown-menu">
                                     <li><a href="#" data-quiz-type="active-quiz"><b>All Active quiz</b></a></li>
-                                    <li><a href="#" data-quiz-type="arch-quiz"><b>All Archive quiz</b></a></li>
+                                    <li><a href="#" data-quiz-type="archive-quiz"><b>All Archive quiz</b></a></li>
                                 </ul>
                             </div>
                         </div>

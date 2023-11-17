@@ -66,7 +66,7 @@ class LessonDisplayClass extends Connection{
     }
     function archivelessonTable($teacher_user_id){
         $table = "lesson_view"; //archive_lesson_view
-        $sql = "SELECT * FROM $table WHERE module_status = 1 AND lesson_status = 0 AND added_byID = '$teacher_user_id'";
+        $sql = "SELECT * FROM $table WHERE added_byID = '$teacher_user_id' AND module_status = 1 AND lesson_status = 0";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
