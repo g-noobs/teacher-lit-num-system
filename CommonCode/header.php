@@ -38,8 +38,9 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <li class="divider"></li>
                             <li><a href="quiz.php">Quiz</a></li>
                             <li class="divider"></li>
-                            <li><a href="">Gradebook</a></li>
+                            
                         </ul>
+                        <li><a href="gradebook.php">Gradebook</a></li>
                     </li>
                 </ul>
                 
