@@ -6,7 +6,6 @@
 <div class="row">
     <div class="box container">
         <div class="box-header">
-            <h2>Lesson <b>List</b></h2>
             <br>
             <div class="row">
                 <div class="col-xs-6">
