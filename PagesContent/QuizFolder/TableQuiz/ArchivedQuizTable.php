@@ -25,15 +25,14 @@
                                 <th>Quiz ID</th>
                                 <th>Question</th>
                                 <th>Date Created</th>
-                                <th>Topic ID</th>
-                                <th>Edit</th>
+                                <th>Topic Source</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
                         include_once("../Database/QuizDisplayClass.php");
                         $quiztable = new QuizDisplayClass();
-                        $quiztable->displayQuestions();
+                        $quiztable->archivedQuiz();
                         ?>
                         </tbody>
                     </table>
