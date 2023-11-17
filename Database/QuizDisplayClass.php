@@ -55,7 +55,7 @@ class QuizDisplayClass extends Connection{
         }
     }
     function displayQuestions(){
-        $sql = "SELECT * FROM tbl_quiz;";
+        $sql = "SELECT * FROM tbl_quiz WHERE quiz_status =  1;";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while ($row = $result->fetch_assoc()) {
