@@ -30,7 +30,7 @@
                         </thead>
                         <tbody>
                             <?php 
-                        include_once("../Database/QuizDisplayClass.php");
+                        include_once("../../../Database/QuizDisplayClass.php");
                         $quiztable = new QuizDisplayClass();
                         $quiztable->archivedQuiz();
                         ?>
