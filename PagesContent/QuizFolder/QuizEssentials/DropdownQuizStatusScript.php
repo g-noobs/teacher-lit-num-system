@@ -9,7 +9,7 @@ $(function() {
         if (lessonType === 'active-quiz') {
             location.reload();
         } else if (lessonType === 'archive-quiz') {
-            contentPath = '../PagesContent/QuizFolder/TableQuiz/ArchiveQuizTable.php';
+            contentPath = '../PagesContent/QuizFolder/TableQuiz/ArchivedQuizTable.php';
         }
         $('.custom-dropdown-toggle').html($(this).text() + '<span class="caret"></span>');
         if (contentPath !== '') {
