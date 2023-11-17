@@ -77,5 +77,22 @@ class QuizDisplayClass extends Connection{
             }
         }
     }
+    function archivedQuiz(){
+        $sql = "SELECT * FROM tbl_quiz;";
+        $result = $this->getConnection()->query($sql);
+        if($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['user_info_id'] . "'></td>";
+                echo "<td><a href='#' class='edit_quiz_btn' data-toggle='modal' data-target='#edit_quiz_modal' data-id='".$row["quiz_id"]."' style='margin-right:10px; color:blue;'><span class='glyphicon glyphicon-edit' ></span></a></td>";
+                
+                echo "<td>".$row['quiz_id']."</td>";
+                echo "<td>".$row['quiz_question']."</td>";
+                echo "<td>".$row['date_created']."</td>";
+                echo "<td>".$row['topic_id']."</td>";
+                echo "</tr>";
+            }
+        }
+    }
 }
 ?>
