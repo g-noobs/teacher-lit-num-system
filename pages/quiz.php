@@ -96,26 +96,11 @@
     <!-- For modification of quiz type -->
     <?php include_once "../PagesContent/QuizFolder/QuizEssentials/QuizOptionScript.php"?>
 
-    <!-- This script assist on viewing the quiz data -->
-
-
+    <!-- Script for dropdown and quiz status -->
+    <?php include_once "../PagesContent/QuizFolder/QuizEssentials/DropdownQuizStatusScript.php"?>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
-
-    <!--Script below will be used for search -->
-    <script>
-    $(document).ready(function() {
-        $("#userInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("tbody tr").filter(function() {
-                var rowText = $(this).text().toLowerCase();
-                var pText = $(this).find("p").text().toLowerCase();
-                $(this).toggle(rowText.indexOf(value) > -1 || pText.indexOf(value) > -1);
-            });
-        });
-    });
-    </script>
 </body>
 
 </html>
