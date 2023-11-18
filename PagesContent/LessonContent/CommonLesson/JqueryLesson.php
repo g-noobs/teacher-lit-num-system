@@ -48,12 +48,12 @@ $(function() {
 
         //get the lesson name from the url
         var lessonid = buttonId;
-        var lessonName = window.location.href.split("=")[2];
+        var lessonNameL = window.location.href.split("=")[2];
         //replace the %20 with one space
-        var lessonName = lessonName.replace(/%20/g, " ");
+        var lessonNameL = lessonNameL.replace(/%20/g, " ");
 
         $("#test").text(lessonid);
-        $("#lesson_name").text(lessonName);
+        $("#lesson_name").text(lessonNameL);
 
         var responseData = {}; // To store the response from the backend
         var topics = []; // To store the topic keys
