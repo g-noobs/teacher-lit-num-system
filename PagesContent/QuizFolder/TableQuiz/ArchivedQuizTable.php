@@ -57,3 +57,6 @@
 
 <!-- view script -->
 <?php include_once "../QuizEssentials/ViewScript.php"?>
+
+<!-- This Script Contain Common Script used on other pages  -->
+<?php include_once "../../../CommonScript/CommonAllScript.php";?>
