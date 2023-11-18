@@ -39,8 +39,9 @@
                     <tbody>
                         <?php 
                         include_once("../../../Database/LessonDisplayClass.php");
-                        $archLessonTable = new LessonDisplayClass();
-                        $archLessonTable->archivedLessonTable();
+                        $teacher_user_id = $_SESSION['id'];
+                        $archlessonTable = new LessonDisplayClass();
+                        $archlessonTable->lessonTable($teacher_user_id);
                         ?>
                     </tbody>
                 </table>
