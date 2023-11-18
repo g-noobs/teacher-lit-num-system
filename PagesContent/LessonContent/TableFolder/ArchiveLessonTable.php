@@ -43,9 +43,8 @@ include_once "../../../CommonCode/ModifiedSearchStyle.php";?>
                     <tbody>
                         <?php 
                         include_once("../../../Database/LessonDisplayClass.php");
-                        $archivedLessonTable = new LessonDisplayClass();
-                        $teacher_user_id = $_SESSION['id'];
-                        $archivedLessonTable->archivelessonTable($teacher_user_id);
+                        $archessonTable = new LessonDisplayClass();
+                        $archessonTable->archivedLessonTable();
                         ?>
                     </tbody>
                 </table>
