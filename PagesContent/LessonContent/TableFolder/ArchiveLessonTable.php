@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <?php include_once "../../../CommonCode/ModifiedSearchStyle.php";?>
 
 <!-- Confirmation modal -->

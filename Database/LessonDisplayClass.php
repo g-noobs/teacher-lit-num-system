@@ -65,8 +65,9 @@ class LessonDisplayClass extends Connection{
             }
         }   
     }
-    function archivelessonTable($teacher_user_id){
+    function archivelessonTable(){
         $table = "lesson_view"; //archive_lesson_view
+        $teacher_user_id = $_SESSION['id'];
         $sql = "SELECT * FROM $table WHERE added_byID = '$teacher_user_id' AND module_status = 1 AND lesson_status = 0";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
