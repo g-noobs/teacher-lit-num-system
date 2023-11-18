@@ -27,7 +27,7 @@ $(function() {
     // Function to load data from the backend using AJAX
     function loadData() {
         $.ajax({
-            url: '../ActionLesson/ActionLessonView.php', // Replace with the actual backend PHP script
+            url: '../PagesContent/ActionLesson/ActionLessonView.php', // Replace with the actual backend PHP script
             method: 'POST', // Change to POST if needed
             data: {
                 id: lessonid
