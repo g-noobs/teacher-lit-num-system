@@ -4,11 +4,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(isset($_POST['lesson_name'])){
         $values = array(
             'lesson_id'=>'',
+            'lesson_description' => trim($_POST['lesson_description']), //trim removes the white spaces before and after the string
             'lesson_name' => trim($_POST['lesson_name']),
             'category_id' => $_POST['category_level'],
             'added_byID' => '',
-            'module_id' => $_POST['subj_list'],
-            'lesson_status' => '1'
+            'module_id' => $_POST['subj_list']
         );
         
         //get the lesson id with zeros

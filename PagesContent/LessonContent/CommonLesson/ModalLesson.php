@@ -15,6 +15,10 @@
                             <input type="text" name="lesson_name" class="form-control" required>
                         </div>
                         <div class="form-group">
+                            <label for="lesson_description">Lesson Description</label>
+                            <input type="text" name="lesson_description" class="form-control" required>
+                        </div>
+                        <div class="form-group">
                             <label for="category_level">Category Level</label>
                             <select class="form-control" name="category_level">
                                 <?php include_once("../Database/LessonDisplayClass.php");
