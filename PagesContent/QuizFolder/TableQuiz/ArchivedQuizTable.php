@@ -28,7 +28,7 @@
                     <table id="example2" class="table table-bordered table-hover text-center">
                         <thead>
                             <tr>
-                                <th><input type='checkbox' id="select-all" class='checkbox'></th>
+                                <th colspan=2><input type='checkbox' id="select-all" class='checkbox'></th>
                                 <th>Quiz ID</th>
                                 <th>Question</th>
                                 <th>Date Created</th>
@@ -54,3 +54,6 @@
 
 <!-- activate quiz script -->
 <?php include_once "../QuizMainScript/ActivateScript.php"?>
+
+<!-- view script -->
+<?php include_once "../QuizEssentials/ViewScript.php"?>
