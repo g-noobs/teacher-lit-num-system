@@ -24,7 +24,8 @@ $(document).ready(function() {
             $('#confirm_archive').on('click', function() {
                 //Ajax code
                 var action_url =
-                    "../PagesContent/QuizFolder/ActionQuizFolder/ActionQuiz/ActivateArchiveQuiz.php";
+                    "../PagesContent/QuizFolder/ActionQuizFolder/ActivateArchiveQuiz.php";
+
 
 
                 $.ajax({
