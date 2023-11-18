@@ -74,9 +74,9 @@ class LessonDisplayClass extends Connection{
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
-                
-                echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['lesson_id'] . "'></td>";
 
+                echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['lesson_id'] . "'></td>";
+                
                 echo "<td>" . $row["lesson_id"] . "</td>";
                 echo "<td>" . $row["lesson_name"] . "</td>";
                 echo "<td>" . $row["lesson_description"] . "</td>";
