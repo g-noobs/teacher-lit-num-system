@@ -1,7 +1,7 @@
 <?php include_once "../../../CommonCode/ModifiedSearchStyle.php";?>
 
 <!-- Confirmation modal -->
-<?php include_once "../CommonLesson/ConfirmationModal.php";?>
+<?php include_once "../QuizModal/ConfirmationModal.php";?>
 
 <div class="row">
     <div class="col-xs-12">

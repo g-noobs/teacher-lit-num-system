@@ -71,6 +71,9 @@
                 <br>
                 <br>
                 <?php include_once "../PagesContent/QuizFolder/QuizEssentials/ViewQuizScript.php"?>
+
+                <!-- activate and archive confirmation modal -->
+                <?php include_once "../PagesContent/QuizFolder/QuizModal/ConfirmationModal.php";?>
                 <!-- Main Content-->
                 <section class="content" id="quizContent">
                     <?php include_once("../PagesContent/QuizFolder/TableQuiz/QuizMainTable.php");?>
