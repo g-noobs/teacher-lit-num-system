@@ -42,7 +42,7 @@
                         include_once("../Database/LessonDisplayClass.php");
                         $teacher_user_id = $_SESSION['id'];
                         $dataTable = new LessonDisplayClass();
-                        $dataTable->lessonTable();
+                        $dataTable->lessonTable($teacher_user_id);
                         ?>
                     </tbody>
                 </table>
