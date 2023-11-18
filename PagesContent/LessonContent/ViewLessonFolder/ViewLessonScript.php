@@ -1,10 +1,21 @@
 <script>
 $(function() {
-    //get the lesson name from the url
-    var lessonid = window.location.href.split("=")[1].split("&")[0];
-    var lessonName = window.location.href.split("=")[2];
-    //replace the %20 with one space
-    var lessonName = lessonName.replace(/%20/g, " ");
+    // Get the lesson name and id from the url
+    var lessonid = "";
+    var lessonName = "";
+
+    // Check if the lessonid parameter exists
+    if (window.location.href.includes("=")) {
+        lessonid = window.location.href.split("=")[1].split("&")[0];
+    }
+
+    // Check if the lessonName parameter exists
+    if (window.location.href.includes("=") && window.location.href.includes("&")) {
+        lessonName = window.location.href.split("=")[2];
+
+        // Replace the %20 with one space
+        lessonName = lessonName.replace(/%20/g, " ");
+    }
 
     $("#test").text(lessonid);
     $("#lesson_name").text(lessonName);
@@ -66,10 +77,12 @@ $(function() {
                     } else if (fileType === 'doc' || fileType === 'docx') {
                         // Handle Word document
                         content += '<iframe src="https://docs.google.com/gview?url=' +
-                            encodeURIComponent(mediaPath) + '&embedded=true" width="100%" height="800px"></iframe>';
+                            encodeURIComponent(mediaPath) +
+                            '&embedded=true" width="100%" height="800px"></iframe>';
                     } else {
                         // Handle other file types or provide a default
-                        content += '<iframe src="' + mediaPath + '" width="100%" height="800px"></iframe>';
+                        content += '<iframe src="' + mediaPath +
+                            '" width="100%" height="800px"></iframe>';
                     }
                 }
             });
