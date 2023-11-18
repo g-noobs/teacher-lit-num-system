@@ -69,28 +69,3 @@ $(document).ready(function() {
 });
 </script>
 
-
-<!-- custom dropdown -->
-<script>
-$(function() {
-    $('.custom-dropdown-menu a').click(function(e) {
-        e.preventDefault();
-        var categoryType = $(this).data('lesson-type');
-        var contentPath = '';
-
-        if (categoryType === 'active-lesson') {
-            location.reload();
-        } else if (categoryType === 'archive-lesson') {
-            contentPath = '../PagesContent/LessonContent/TableFolder/ArchiveLessonTable.php';
-        }
-        $('.custom-dropdown-toggle').html($(this).text() + '<span class="caret"></span>');
-        if (contentPath !== '') {
-            $("#lesson-table").fadeOut(400, function() {
-                $(this).load(contentPath, function() {
-                    $(this).fadeIn(400);
-                });
-            });
-        }
-    });
-});
-</script>
