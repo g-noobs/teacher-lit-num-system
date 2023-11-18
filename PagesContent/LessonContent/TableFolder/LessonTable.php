@@ -41,8 +41,8 @@
                         <?php 
                         include_once("../Database/LessonDisplayClass.php");
                         $teacher_user_id = $_SESSION['id'];
-                        $archlessonTable = new LessonDisplayClass();
-                        $archlessonTable->archivedLessonTable();
+                        $dataTable = new LessonDisplayClass();
+                        $dataTable->lessonTable();
                         ?>
                     </tbody>
                 </table>
