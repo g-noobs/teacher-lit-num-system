@@ -88,7 +88,10 @@
     <?php include_once("../bootstrap/jquery.php");?>
 
     <!-- For Adding quiz including Jquery -->
-    <?php include_once "../PagesContent/QuizFolder/QuizEssentials/AddQuizScript.php"?>
+    <?php include_once "../PagesContent/QuizFolder/QuizMainScript/AddQuizScript.php"?>
+
+    <!-- For Arching quiz including Jquery -->
+    <?php include_once "../PagesContent/QuizFolder/QuizMainScript/ArchiveScript.php"?>
 
     <!-- For chooosing correct answer from the provided multiplce choice -->
     <?php include_once "../PagesContent/QuizFolder/QuizEssentials/MultipleChoiceScript.php"?>

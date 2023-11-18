@@ -51,3 +51,6 @@
     </div>
     <!-- /.col -->
 </div>
+
+<!-- activate quiz script -->
+<?php include_once "../QuizMainScript/ActivateScript.php"?>
