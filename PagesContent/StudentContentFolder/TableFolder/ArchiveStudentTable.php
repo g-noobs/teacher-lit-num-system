@@ -29,7 +29,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php include_once("../Database/DisplayStudentClass.php");
+                <?php include_once("../../../Database/DisplayStudentClass.php");
                     $displayArchiveStudent = new DisplayStudentClass();
                     $displayArchiveStudent->ArchiveStudentList();
                 ?>
