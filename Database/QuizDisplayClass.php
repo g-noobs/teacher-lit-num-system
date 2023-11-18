@@ -60,7 +60,7 @@ class QuizDisplayClass extends Connection{
         if($result->num_rows > 0){
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['user_info_id'] . "'></td>";
+                echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['quiz_id'] . "'></td>";
 
                 echo "<td><a href='#' class='quiz_info_btn' data-id='".$row["quiz_id"]."' data-toggle='modal' data-target='#quiz_data_modal'><span class='glyphicon glyphicon-info-sign' style = 'padding-left: 10px;'></span></a>";
 
