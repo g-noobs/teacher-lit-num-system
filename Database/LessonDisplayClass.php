@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 include_once "Connection.php";
 class LessonDisplayClass extends Connection{
