@@ -54,6 +54,7 @@ class LessonDisplayClass extends Connection{
 
                 echo "<td>" . $row["lesson_id"] . "</td>";
                 echo "<td>" . $row["lesson_name"] . "</td>";
+                echo "<td>" . $row["lesson_description"] . "</td>";
                 echo "<td>" . $row["category_name"] . "</td>";
                 echo "<td>" . $row["module_name"] . "</td>";
                 
@@ -76,6 +77,7 @@ class LessonDisplayClass extends Connection{
 
                 echo "<td>" . $row["lesson_id"] . "</td>";
                 echo "<td>" . $row["lesson_name"] . "</td>";
+                echo "<td>" . $row["lesson_description"] . "</td>";
                 echo "<td>" . $row["category_name"] . "</td>";
                 echo "<td>" . $row["module_name"] . "</td>";
                 echo "</tr>";
