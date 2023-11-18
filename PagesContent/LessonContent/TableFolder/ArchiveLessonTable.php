@@ -39,8 +39,8 @@
                     <tbody>
                         <?php 
                         include_once("../../../Database/LessonDisplayClass.php");
-                        $archivedLessonTable = new LessonDisplayClass();
-                        $archivedLessonTable->archivelessonTable();
+                        $archLessonTable = new LessonDisplayClass();
+                        $archLessonTable->archivedLessonTable();
                         ?>
                     </tbody>
                 </table>
