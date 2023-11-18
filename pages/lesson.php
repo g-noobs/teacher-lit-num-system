@@ -93,8 +93,7 @@
     <!-- Script for adding lesson -->
     <?php include_once("../PagesContent/LessonContent/CommonLesson/AddLessonScript.php");?>
 
-    <!-- Script when button is click to view topic in lesson -->
-    <?php include_once("../PagesContent/LessonContent/ViewLessonFolder/ViewLessonScript.php");?>
+
 
     <!-- modified jquery for lesson - will modify if view button is click from the lesson-->
     <?php include_once("../PagesContent/LessonContent/CommonLesson/JqueryLesson.php");?>
