@@ -19,9 +19,6 @@ if($result->num_rows > 0){
             "name" => $row['class_name']
         );
         
-        if($row['class_status'] == 0){
-            $response = array('error' => 'Possibly Archived!');
-        }
     }
     
 }
