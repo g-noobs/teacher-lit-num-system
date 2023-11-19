@@ -21,7 +21,10 @@
     <script src="../design/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Morris.js charts -->
 
-    <?php include_once("../bootstrap/style.php");?>
+    <?php 
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+        include_once("../bootstrap/style.php");?>
     <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 </head>
 
