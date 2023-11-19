@@ -8,25 +8,21 @@ $table = "view_teacher_class_info";
 
 
 $id = $_SESSION['id'];
-$sql = "SELECT class_id, class_name FROM $table WHERE user_info_id = '$id';";
+$sql = "SELECT class_id, class_name FROM $table WHERE class_status = 1 AND user_info_id = '$id';";
 
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
-        if($row['class_status'] == 0){
-            $response = array('error' => 'Possibly Archived!');
-        }else{
-            $response[] = array(
-                "id" => $row['class_id'],
-                "name" => $row['class_name']
-            );
-        }
+        $response[] = array(
+            "id" => $row['class_id'],
+            "name" => $row['class_name']
+        );
     }
     
 }
 else{
-    $response = array('error' => 'No data Found');
+    $response = array('error' => 'Class or student was probably archived - No data Found');
 }
 echo json_encode($response);
 ?>
