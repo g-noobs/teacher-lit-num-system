@@ -18,7 +18,7 @@ class LessonDisplayClass extends Connection{
         }
         else{
             echo"<option>";
-            echo "No category Level Available";
+            echo "No category Assigned or Available";
             echo "</option>";
         }
     }
@@ -36,7 +36,7 @@ class LessonDisplayClass extends Connection{
         }
         else{
             echo"<option>";
-            echo "No Subject Available";
+            echo "No Module Available or Assigned";
             echo "</option>";
         }
     }
