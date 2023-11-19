@@ -8,7 +8,7 @@ $table = "view_teacher_class_info";
 
 
 $id = $_SESSION['id'];
-$sql = "SELECT class_id, class_name FROM $table WHERE user_info_id = '$id';";
+$sql = "SELECT class_id, class_name FROM $table WHERE class_status = 1 AND user_info_id = '$id';";
 
 $result = $conn->query($sql);
 
@@ -18,6 +18,10 @@ if($result->num_rows > 0){
             "id" => $row['class_id'],
             "name" => $row['class_name']
         );
+        
+        if($row['class_status'] == 0){
+            $response = array('error' => 'Possibly Archived!');
+        }
     }
     
 }
