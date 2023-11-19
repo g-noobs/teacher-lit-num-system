@@ -125,9 +125,7 @@ $_SESSION['teacher'] = false;
     <div class="wrapper" style="height: auto; min-height: 100%;">
 
         <?php include_once "CommonCode/ErrorModal.php"?>
-        <section class="content container" style="margin-top: 40px">
-            <a href=" https://www.tagakauloedu.com/Mobile/Download.php"<span>Download the Mobile Application</span><i class="glyphicon glyphicon-download-alt"></i></a>
-        </section>
+        
         <section>
             <div class="login-form">
                 <!-- <form action="ActionValidateUser.php" method="post"> -->
