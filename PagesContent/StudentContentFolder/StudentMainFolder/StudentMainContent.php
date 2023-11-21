@@ -21,7 +21,7 @@
 
             <br>
             <br>
-            <section id="frmCsvGroup" class="container-fluid">
+            <div id="frmCsvGroup" class="container-fluid">
                 <form id="uploadCSVForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Download Template:<a
@@ -50,7 +50,7 @@
                         <button type="reset" class="btn btn-default">Clear</button>
                     </div>
                 </form>
-            </section>
+            </div>
         </div>
     </div>
 </div>
