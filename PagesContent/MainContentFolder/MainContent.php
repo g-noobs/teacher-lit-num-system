@@ -12,7 +12,7 @@
         <div class="row container">
             <div class="col-xs-6">
                 <h4>Assigned Class</h4>
-                <ul>
+                <ul id="assigned_class_list">
                     <li>Class 1</li>
                     <li>Class 2</li>
                     <li>Class 3</li
@@ -20,7 +20,7 @@
             </div>
             <div class="col-xs-6">
                 <h4>Assigned Module</h4>
-                <ul>
+                <ul id="assigned_module_list">
                     <li>Module 1</li>
                     <li>Module 2</li>
                     <li>Module 3</li>
