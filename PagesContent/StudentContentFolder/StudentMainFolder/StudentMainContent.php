@@ -38,7 +38,7 @@
                             <select name="class_id" id="class_id" class="form-control">
                                 <?php include_once "../Database/DisplayStudentClass.php";
                                 $classList = new DisplayStudentClass();
-                                $classList->assignClass();
+                                $classList->assignClass($_SESSION['id']);
                             ?>
                             </select>
                         </div>
