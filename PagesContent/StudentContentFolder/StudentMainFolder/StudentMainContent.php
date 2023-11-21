@@ -36,8 +36,8 @@
                         <div class="col-sm-3">
                             <label for="class_id">Select Class:</label>
                             <select name="class_id" id="class_id" class="form-control">
-                                <?php include_once "../Database/DisplayAllTableClass.php";
-                                $classList = new DisplayAllTableClass();
+                                <?php include_once "../Database/DisplayStudentClass.php";
+                                $classList = new DisplayStudentClass.php();
                                 $classList->assignClass();
                             ?>
                             </select>

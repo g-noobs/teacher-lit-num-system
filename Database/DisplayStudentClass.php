@@ -57,5 +57,21 @@ class DisplayStudentClass extends Connection{
         }
 
     }
+    function assignClass(){
+        $sql = "SELECT class_id, class_name FROM tbl_class WHERE class_status = 1";
+        $result = $this->getConnection()->query($sql);
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo "<option value='{$row['class_id']}'>";
+                echo $row['class_name'];
+                echo "</option>";
+            }
+        }
+        else{
+            echo"<option>";
+            echo "No Class Available";
+            echo "</option>";
+        }
+    }
 }
 ?>
