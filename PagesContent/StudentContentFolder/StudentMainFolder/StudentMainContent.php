@@ -1,4 +1,3 @@
-
 <!-- Add Student Modal -->
 <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
 <!-- Add student script -->
@@ -18,7 +17,36 @@
     <div class="tab-content" id="dynamic-content">
         <div id="home" class="tab-pane fade in active">
             <h3>Welcome!</h3>
-            <p>Manage or add the class assigned to you!</p>
+            <section id="frmCsvGroup" class="container-fluid">
+                <form id="uploadCSVForm" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Download Template:<a
+                                href="../PagesContent/UserContent/ExcelTemplates/student-upload-template.xlsx" download
+                                data-toggle="tooltip" title="Download Template" style="color:green">
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </label>
+                        <input type="file" name="file" id="file" />
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="class_id">Select Class:</label>
+                            <select name="class_id" id="class_id" class="form-control">
+                                <?php include_once "../Database/DisplayAllTableClass.php";
+                                $classList = new DisplayAllTableClass();
+                                $classList->assignClass();
+                            ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="response"></div>
+                    <div class="form-group">
+                        <button type="submit" name="upload" id="upload" class="btn btn-success pull-left"
+                            style="margin-right:15px;">Upload</button>
+                        <button type="reset" class="btn btn-default">Clear</button>
+                    </div>
+                </form>
+            </section>
         </div>
     </div>
 </div>
@@ -121,7 +149,7 @@ $(document).ready(function() {
 <!--Script below will be used for search -->
 <script>
 $(document).ready(function() {
-    $(document).on("keyup",".userInput", function() {
+    $(document).on("keyup", ".userInput", function() {
         var value = $(this).val().toLowerCase();
         $("tbody tr").filter(function() {
             var rowText = $(this).text().toLowerCase();
