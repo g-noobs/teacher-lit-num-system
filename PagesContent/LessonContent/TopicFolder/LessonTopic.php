@@ -21,7 +21,7 @@ a {
 
         <!-- !This is the box body  -->
         <div class="box-body">
-            
+
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
@@ -66,7 +66,7 @@ a {
                     </div>
                 </div>
                 <a href="#" id="addMedia" type="button" data-toggle="tooltip" title="Add More Media"
-                        class="text-success"><i class="fa fa-plus"></i></a>
+                    class="text-success"><i class="fa fa-plus"></i></a>
             </div>
         </div>
         <div class="box-footer">
@@ -75,7 +75,25 @@ a {
         </div>
     </div>
 </form>
-
+<section id=topic_dropdown>
+    <div class="align-items-start">
+        <div class="col-sm-2">
+            <div class="custom-dropdown">
+                <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
+                    style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
+                    <b>Active Lesson</b> <!-- Updated the button text -->
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu custom-dropdown-menu">
+                    <li><a href="#" data-lesson-type="active-topic"><b>Active Lesson</b></a></li>
+                    <li><a href="#" data-lesson-type="archive-archive"><b>Archived Lesson</b></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-10">
+        </div>
+    </div>
+</section>
 <div id="topic-table">
     <?php include_once "../PagesContent/LessonContent/TopicFolder/TopicTable.php"?>
 </div>
@@ -88,30 +106,34 @@ $(document).ready(function() {
     $('#file').change(function() {
         // Get the selected option value
         var selectedOption = $('#select_file_type').val();
-        
+
         // Clear any previous error messages
         $('.error-message').remove();
-        
+
         // If the selected option is "Video" and the file type is not video
         if (selectedOption === 'Video' && !isFileTypeValid('video', $('#file')[0].files)) {
-            $('#addFileContainer').after('<div class="error-message text-danger">Invalid file type for Video</div>');
+            $('#addFileContainer').after(
+                '<div class="error-message text-danger">Invalid file type for Video</div>');
             $('#file').val(''); // Clear the file input
         } else if (selectedOption === 'Audio' && !isFileTypeValid('audio', $('#file')[0].files)) {
-            $('#addFileContainer').after('<div class="error-message text-danger">Invalid file type for Audio</div>');
+            $('#addFileContainer').after(
+                '<div class="error-message text-danger">Invalid file type for Audio</div>');
             $('#file').val(''); // Clear the file input
         } else if (selectedOption === 'Image' && !isFileTypeValid('image', $('#file')[0].files)) {
-            $('#addFileContainer').after('<div class="error-message text-danger">Invalid file type for Image</div>');
+            $('#addFileContainer').after(
+                '<div class="error-message text-danger">Invalid file type for Image</div>');
             $('#file').val(''); // Clear the file input
         } else if (selectedOption === 'Document' && !isFileTypeValid('document', $('#file')[0].files)) {
-            $('#addFileContainer').after('<div class="error-message text-danger">Invalid file type for Pdf</div>');
+            $('#addFileContainer').after(
+                '<div class="error-message text-danger">Invalid file type for Pdf</div>');
             $('#file').val(''); // Clear the file input
         }
     });
-    
+
     // Function to check if the selected files have the correct extension for the given media type
     function isFileTypeValid(mediaType, files) {
         var allowedExtensions = [];
-        
+
         // Define the allowed file extensions for each media type
         if (mediaType === 'video') {
             allowedExtensions = ['mp4', 'mov', 'avi'];
@@ -122,14 +144,14 @@ $(document).ready(function() {
         } else if (mediaType === 'document') {
             allowedExtensions = ['pdf', 'doc', 'docx'];
         }
-        
+
         for (var i = 0; i < files.length; i++) {
             var fileExtension = files[i].name.split('.').pop().toLowerCase();
             if (allowedExtensions.indexOf(fileExtension) === -1) {
                 return false;
             }
         }
-        
+
         return true;
     }
 });
