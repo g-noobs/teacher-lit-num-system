@@ -163,3 +163,4 @@ $(document).ready(function() {
 });
 </script>
 
+<?php include_once "../StudentScriptFolder/UploadStudentExcelScript.php"?>
