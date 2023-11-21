@@ -20,12 +20,6 @@
             <p>Manage or add the class assigned to you!</p>
 
             <br>
-            <br>
-            <div class="container-fluid">
-                <button href="#" id="csvUploadIcon" data-toggle="tooltip" title="Upload Multiple User"
-                    style="color:green"> BATCH UPLOAD
-                </button>
-            </div>
             <div id="frmCsvGroup" class="container-fluid">
                 <form id="uploadCSVForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
@@ -169,11 +163,3 @@ $(document).ready(function() {
 });
 </script>
 
-<script>
-$(function() {
-    $('#frmCsvGroup').hide();
-    $('#csvUploadIcon').click(function() {
-        $('#frmCsvGroup').fadeToggle("slow");
-    });
-});
-</script>
