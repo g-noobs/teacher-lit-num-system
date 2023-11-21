@@ -4,6 +4,8 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
     header('Location: ../../index.php');
     exit;
 }
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 
 <header class="main-header">
