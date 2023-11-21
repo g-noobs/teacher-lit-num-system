@@ -73,5 +73,38 @@ class DisplayStudentClass extends Connection{
             echo "</option>";
         }
     }
+
+    function displayAssignedClassList($teacher_id){
+        $sql = "SELECT class_name FROM view_teacher_class_info WHERE class_status = 1 AND user_info_id = '$teacher_id';";
+        $result = $this->getConnection()->query($sql);
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo "<li>";
+                echo $row['class_name'];
+                echo "</li>";
+            }
+        }
+        else{
+            echo"<li>";
+            echo "No Class Available";
+            echo "</li>";
+        }
+    }
+    function displayAssignedModuleList($teacher_id){
+        $sql = "SELECT module_name FROM view_teacher_module_info WHERE module_status = 1 AND user_info_id = '$teacher_id';";
+        $result = $this->getConnection()->query($sql);
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo "<li>";
+                echo $row['module_name'];
+                echo "</li>";
+            }
+        }
+        else{
+            echo"<li>";
+            echo "No Module Available";
+            echo "</li>";
+        }
+    }
 }
 ?>
