@@ -15,7 +15,7 @@ ul {
                     <?php 
                         include_once "../Database/DisplayStudentClass.php";
                         $assigned_clas = new DisplayStudentClass();
-                        $assigned_clas->displayAssignedClassList($_SESSION['user_info_id']);
+                        $assigned_clas->displayAssignedClassList($_SESSION['id']);
                     ?>
                 </ul>
             </div>
@@ -25,7 +25,7 @@ ul {
                     <?php 
                         include_once "../Database/DisplayStudentClass.php";
                         $assigned_mod = new DisplayStudentClass();
-                        $assigned_mod->displayAssignedModuleList($_SESSION['user_info_id']);
+                        $assigned_mod->displayAssignedModuleList($_SESSION['id']);
                     ?>
                 </ul>
             </div>
