@@ -85,8 +85,8 @@ a {
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu custom-dropdown-menu">
-                    <li><a href="#" data-lesson-type="active-topic"><b>Active Lesson</b></a></li>
-                    <li><a href="#" data-lesson-type="archive-archive"><b>Archived Lesson</b></a></li>
+                    <li><a href="#" data-lesson-type="active-topic"><b>Active Topic</b></a></li>
+                    <li><a href="#" data-lesson-type="archive-topic"><b>Archived LessTopicon</b></a></li>
                 </ul>
             </div>
         </div>
