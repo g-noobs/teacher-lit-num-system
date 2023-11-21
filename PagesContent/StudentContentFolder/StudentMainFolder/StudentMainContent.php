@@ -22,10 +22,10 @@
             <br>
             <br>
             <div class="container-fluid">
-                    <button href="#" id="csvUploadIcon" data-toggle="tooltip" title="Upload Multiple User"
-                        style="color:green"> BATCH UPLOAD
-                    </button>
-                </div>
+                <button href="#" id="csvUploadIcon" data-toggle="tooltip" title="Upload Multiple User"
+                    style="color:green"> BATCH UPLOAD
+                </button>
+            </div>
             <div id="frmCsvGroup" class="container-fluid">
                 <form id="uploadCSVForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
@@ -35,7 +35,7 @@
                                 <i class="fa fa-download"></i>
                             </a>
                         </label>
-                        <input type="file" name="file" id="file"/>
+                        <input type="file" name="file" id="file" />
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-3">
