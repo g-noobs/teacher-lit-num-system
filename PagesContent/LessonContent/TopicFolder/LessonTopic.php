@@ -74,7 +74,7 @@ a {
             <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
         </div>
     </div>
-</form>
+</form><br>
 <section id=topic_dropdown>
     <div class="align-items-start">
         <div class="col-sm-2">
@@ -93,7 +93,7 @@ a {
         <div class="col-sm-10">
         </div>
     </div>
-</section>
+</section><br>
 <div id="topic-table">
     <?php include_once "../PagesContent/LessonContent/TopicFolder/TopicTable.php"?>
 </div>
