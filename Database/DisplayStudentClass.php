@@ -58,7 +58,7 @@ class DisplayStudentClass extends Connection{
 
     }
     function assignClass($teacher_id){
-        $sql = "SELECT class_id, class_name FROM tbl_class WHERE class_status = 1 AND user_info_id = $teacher_id";
+        $sql = "SELECT class_id, class_name FROM view_teacher_class_info WHERE class_status = 1 AND user_info_id = $teacher_id";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
