@@ -163,4 +163,4 @@ $(document).ready(function() {
 });
 </script>
 
-<?php include_once "../StudentScriptFolder/UploadStudentExcelScript.php"?>
+<?php include_once "..PagesContent/StudentContentFolder/StudentScriptFolder/UploadStudentExcelScript.php"?>
