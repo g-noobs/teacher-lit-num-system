@@ -1,4 +1,10 @@
 
+<style>
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+</style>
 <div class="box box-default">
     <div class="box-header with-border">
         <h3 class="box-title" id="teacher_name_dashboard"></h3>
