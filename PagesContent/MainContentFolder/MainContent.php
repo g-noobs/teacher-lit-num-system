@@ -2,7 +2,6 @@
 <style>
     ul {
         list-style-type: none;
-        padding: 0;
     }
 </style>
 <div class="box box-default">
