@@ -93,8 +93,8 @@ a {
         <div class="col-sm-10">
         </div>
     </div>
-</section><br><br>
-<div id="topic-table">
+</section>
+<div id="topic-table"><br><br>
     <?php include_once "../PagesContent/LessonContent/TopicFolder/TopicTable.php"?>
 </div>
 
