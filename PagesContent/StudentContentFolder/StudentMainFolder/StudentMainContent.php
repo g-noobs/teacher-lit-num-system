@@ -17,6 +17,10 @@
     <div class="tab-content" id="dynamic-content">
         <div id="home" class="tab-pane fade in active">
             <h3>Welcome!</h3>
+            <p>Manage or add the class assigned to you!</p>
+
+            <br>
+            <br>
             <section id="frmCsvGroup" class="container-fluid">
                 <form id="uploadCSVForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
