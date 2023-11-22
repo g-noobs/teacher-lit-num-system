@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 include_once "../../../CommonCode/ModifiedSearchStyle.php";?>
 
 <!-- Confirmation modal -->
@@ -39,6 +39,7 @@ include_once "../../../CommonCode/ModifiedSearchStyle.php";?>
                         </thead>
                         <tbody>
                             <?php 
+                        session_start();
                         include_once("../../../Database/QuizDisplayClass.php");
                         $teacher_id = $_SESSION['id'];
                         $quiztable = new QuizDisplayClass();
