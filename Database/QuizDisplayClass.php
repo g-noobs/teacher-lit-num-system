@@ -37,9 +37,9 @@ class QuizDisplayClass extends Connection{
         }
     }
 
-    function displayTopicOption(){
+    function displayTopicOption($teacher_id){
         $table = "tbl_topic";
-        $sql = "SELECT * FROM ".$table;
+        $sql = "SELECT * FROM ".$table ."WHERE added_byID = '$teacher_id' AND topic_status = 1;'";
         $result = $this->conn->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
