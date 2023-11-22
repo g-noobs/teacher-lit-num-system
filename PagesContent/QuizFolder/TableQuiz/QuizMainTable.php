@@ -35,8 +35,9 @@
                         <tbody>
                             <?php 
                         include_once("../Database/QuizDisplayClass.php");
+                        $teacher_id = $_SESSION['id'];
                         $quiztable = new QuizDisplayClass();
-                        $quiztable->displayQuestions();
+                        $quiztable->displayQuestions($teacher_id);
                         ?>
                         </tbody>
                     </table>
