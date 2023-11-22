@@ -107,7 +107,6 @@ class LessonDisplayClass extends Connection{
 
                 echo "<td><a href='#' type='button' id='editBtn-".$row['topic_id']."' data-toggle='modal' data-target='#editModal' style='margin-right:10px; color: blue;'><span class='glyphicon glyphicon-edit' ></span></a></td>";
                 
-                echo "<td><a href='#' type='button' id='archiveBtn-".$row['topic_id']."' data-toggle='modal' data-target='#archiveModal' style='color:red';> <span class='glyphicon glyphicon-trash'></span></a></td>";
                 echo '</tr>';
             }
         }
