@@ -17,8 +17,9 @@
                                 <label for="topic_id">Topic Source</label>
                                 <select name="topic_id" id="topic_id_option" class="form-control">
                                     <?php include_once "../Database/QuizDisplayClass.php";
+                                        $teacher_id = $_SESSION['id'];
                                         $optionTopic = new QuizDisplayClass();
-                                        $optionTopic->displayTopicOption();
+                                        $optionTopic->displayTopicOption($teacher_id);
                                     ?>
                                 </select>
                             </div>
