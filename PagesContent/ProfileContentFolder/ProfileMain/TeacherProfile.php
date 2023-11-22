@@ -10,7 +10,21 @@
         <div class="box-body" id="content_body">
             <div class="row">
                 <form action="post" id="teacher_profile">
-                    <div class="col-md-6">
+                    <div class="form-group row">
+                        <div class="col-sm-5">
+                            <label for="teacher_id" col-form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" placeholder="Last Name" required>
+                        </div>
+                        <div class="col-sm-5">
+                            <label for="teacher_id" col-form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" placeholder="Last Name" required>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="teacher_id" col-form-label">M.I. (**optional)</label>
+                            <input type="text" class="form-control" id="middle_initial" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6">
                         <div class="form-group">
                             <label for="teacher_last_name">Last Name</label>
                             <input type="text" name="teacher_first_name" class="form-control" placeholder="Fist Name"
@@ -31,9 +45,9 @@
                         <div class="form-group">
 
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="col-md-6"></div>
+                    <!-- <div class="col-md-6"></div> -->
                 </form>
             </div>
             <div class="row">
