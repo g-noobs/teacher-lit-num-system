@@ -111,7 +111,7 @@ $(document).ready(function() {
                 </div>`;
 
                 if(response.hasOwnProperty('error')){
-                    
+                    console.log(response.error);
                 }else{
                     tabsContainer.append(
                     `<li><a data-toggle="tab" href="#${tabId}">${tab.name}</a></li>`);
