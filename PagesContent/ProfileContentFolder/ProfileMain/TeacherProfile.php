@@ -90,16 +90,17 @@
                     </div>
 
                     <div class="col-sm-4 form-group">
-                                <label for="confirm_pass">Confirm Password</label>
-                                <div class="input-group">
-                                    <input type="password" name="confirmPassword" id="confirmPassword" required="" class="form-control" placeholder="Confirm Password" readonly="" disabled="">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button" id="toggleConfirmPassword">
-                                            <span class="glyphicon glyphicon-eye-open" id="confirm-password-icon"></span>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
+                        <label for="confirm_pass">Confirm Password</label>
+                        <div class="input-group">
+                            <input type="password" name="confirmPassword" id="confirmPassword" required=""
+                                class="form-control" placeholder="Confirm Password" readonly="" disabled="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="toggleConfirmPassword">
+                                    <span class="glyphicon glyphicon-eye-open" id="confirm-password-icon"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <button class="btn btn-primary" id="update-btn" type="submit">Update Profile</button>
