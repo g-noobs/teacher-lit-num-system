@@ -59,7 +59,7 @@
             <section class="content">
                 <div class="box box-default">
                     <div class="box-header with-border">
-                    <h3 id="topic_name">Topic Name: </h3>
+                    <h3 id="topic_title">Topic Name: <span id="topic_name">Topic Name:</span></h3>
                     <div id="topic_description"> Description: </div>
                     </div>
                     <div class="box-body">

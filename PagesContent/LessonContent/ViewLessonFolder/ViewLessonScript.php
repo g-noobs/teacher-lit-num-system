@@ -38,6 +38,7 @@ $(function() {
     function loadTopic(index) {
         var currentTopic = topics[index];
         var mediaPaths = responseData[currentTopic];
+        $('#topic_name').empty();
         $('#topic_name').append(currentTopic);
         if (mediaPaths) {
             var content = '';
