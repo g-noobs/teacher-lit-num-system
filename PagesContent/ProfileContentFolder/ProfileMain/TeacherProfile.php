@@ -69,15 +69,11 @@
                         <input type="number" name="zip_code" placeholder="Zip Code" class="form-control" required>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <button class="btn btn-primary" id="update-btn" type="submit">Update Profile</button>
                 </div>
-
             </form>
-
-
         </div>
     </div>
-
 </div>
