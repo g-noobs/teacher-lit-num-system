@@ -1,7 +1,7 @@
 <div class="container">
     <div class="box box-primary container">
         <div class="box-header with-border">
-            <h3 class="box-title" id="teacher_name_dashboard">
+            <h3 class="box-title" id="">
                 Edit Teacher Data Here!
             </h3>
             <div class="row" style="margin-left:20px;"><a href='#' id="edit-icon"><span
