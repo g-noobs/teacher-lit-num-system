@@ -111,13 +111,12 @@ $(document).ready(function() {
                 </div>`;
 
                 if(response.hasOwnProperty('error')){
-                    tabsContainer.empty();
-                    contentContainer.empty();
-                }
-                tabsContainer.append(
+                    
+                }else{
+                    tabsContainer.append(
                     `<li><a data-toggle="tab" href="#${tabId}">${tab.name}</a></li>`);
                 contentContainer.append(tabContent);
-                
+                }
                 $.ajax({
                     url: '../PagesContent/StudentContentFolder/ActionStudent/ActionDisplayTable.php', // Adjust the URL as per your backend logic
                     type: 'GET',
