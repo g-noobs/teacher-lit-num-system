@@ -110,9 +110,14 @@ $(document).ready(function() {
                     </div>
                 </div>`;
 
+                if(response.hasOwnProperty('error')){
+                    tabsContainer.empty();
+                    contentContainer.empty();
+                }
                 tabsContainer.append(
                     `<li><a data-toggle="tab" href="#${tabId}">${tab.name}</a></li>`);
                 contentContainer.append(tabContent);
+                
                 $.ajax({
                     url: '../PagesContent/StudentContentFolder/ActionStudent/ActionDisplayTable.php', // Adjust the URL as per your backend logic
                     type: 'GET',
@@ -125,7 +130,7 @@ $(document).ready(function() {
                             $('#' + tabContentId + ' tbody').html(response
                                 .success);
                         } else if (response.hasOwnProperty('error')) {
-                            $('tbody').html(response
+                            $('#' + tabContentId + ' tbody').html(response
                                 .error);
                         }
 
