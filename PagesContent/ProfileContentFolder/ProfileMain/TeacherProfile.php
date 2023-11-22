@@ -70,13 +70,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4 form-group">
+                    <div class="col-sm-3 form-group">
                         <label for="username:">Username: </label>
                         <input type="text" name="username" id="username" required="" class="form-control"
                             placeholder="Username" readonly="" disabled="">
                     </div>
 
-                    <div class="col-sm-4 form-group">
+                    <div class="col-sm-3 form-group">
                         <label for="password">Password</label>
                         <div class="input-group">
                             <input type="password" name="password" id="password" required="" class="form-control"
@@ -89,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 form-group">
+                    <div class="col-sm-3 form-group">
                         <label for="confirm_pass">Confirm Password</label>
                         <div class="input-group">
                             <input type="password" name="confirmPassword" id="confirmPassword" required=""
