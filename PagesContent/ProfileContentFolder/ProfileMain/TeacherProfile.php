@@ -28,18 +28,18 @@
                     <div class="form-group row">
                         <div class="col-sm-4">
                             <label for="gender">Gender</label>
-                            <select name="gemder" id="gender">
+                            <select name="gemder" id="gender" class="form-control" >
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
                         <div class="col-sm-4">
                             <label for="phone">Phone</label>
-                            <input type="tel" name="phone" placeholder="Contact Number" required>
+                            <input type="tel" name="phone" placeholder="Contact Number" class="form-control" required>
                         </div>
                         <div class="col-sm-4">
                             <label for="email">Email Address</label>
-                            <input type="email" name="email" placeholder="Email Address" required>
+                            <input type="email" name="email" placeholder="Email Address" class="form-control" required>
                         </div>
                     </div>
                     <div class="container row">
@@ -48,28 +48,28 @@
                     <div class="form-group row">
                         <div class="col-sm-6">
                             <label for="street">Street</label>
-                            <input type="text" name="street" placeholder="Street" required>
+                            <input type="text" name="street" placeholder="Street" class="form-control" required>
                         </div>
                         <div class="col-sm-6">
                             <label for="baranggay">Baranggay</label>
-                            <input type="text" name="baranggay" placeholder="Baranggay" required>
+                            <input type="text" name="baranggay" placeholder="Baranggay" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-4">
                             <label for="city_municipality">City /Municipal</label>
-                            <input type="text" name="city_municipality" placeholder="City /Municipal" required>
+                            <input type="text" name="city_municipality" placeholder="City /Municipal" class="form-control" required>
                         </div>
                         <div class="col-sm-4">
                             <label for="province">Province</label>
-                            <input type="text" name="province" placeholder="Province" required>
+                            <input type="text" name="province" placeholder="Province" class="form-control" required>
                         </div>
                         <div class="col-sm-4">
                             <label for="zip_code">Zip Code</label>
-                            <input type="number" name="zip_code" placeholder="Zip Code" required>
+                            <input type="number" name="zip_code" placeholder="Zip Code" class="form-control" required>
                         </div>
                     </div>
-                    
+
                     <!-- <div class="col-md-6">
                         <div class="form-group">
                             <label for="teacher_last_name">Last Name</label>
