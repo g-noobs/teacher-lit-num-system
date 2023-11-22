@@ -1,9 +1,10 @@
 <div class="container">
     <div class="box box-primary container">
         <div class="box-header with-border">
-            <h3 class="box-title" id="">
+            <h3 class="box-title">
                 Edit Teacher Data Here!
             </h3>
+            <br>
             <div class="row" style="margin-left:20px;"><a href='#' id="edit-icon"><span
                         class='glyphicon glyphicon-edit'></span></a></div>
         </div>
