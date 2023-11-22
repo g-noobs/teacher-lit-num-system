@@ -38,7 +38,7 @@ $(function() {
     function loadTopic(index) {
         var currentTopic = topics[index];
         var mediaPaths = responseData[currentTopic];
-
+        $('#topic_name').text(currentTopic);
         if (mediaPaths) {
             var content = '';
 

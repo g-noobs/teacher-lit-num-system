@@ -62,6 +62,8 @@
                         <div id="lesson_description"></div>
                     </div>
                     <div class="box-body">
+                        <h3 id="topic_name"></h3>
+                        <div id="topic_description"></div>
                         <div id="gallery"></div>
                     </div>
                 </div>
