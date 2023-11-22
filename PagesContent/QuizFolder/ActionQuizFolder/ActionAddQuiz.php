@@ -1,4 +1,5 @@
 <?php 
+session_start();
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['quiz_question'])){
         $values = array(
@@ -9,6 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             'quiz_selectionC' => '',
             'quiz_selectionD' => '',
             'date_created' => '',
+            'added_byID' => $_SESSION['id'], //Teacher ID
             'topic_id' => $_POST['topic_id']
         );
         // Cache Correct Answer Value
