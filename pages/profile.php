@@ -52,6 +52,10 @@
     
     <!-- Profile modified Script -->
     <?php include_once "../PagesContent/ProfileContentFolder/ScriptProfile/ProfileJqueryScript.php" ?>
+
+    <!-- hide/ unhide password script -->
+    <?php include_once "../PagesContent/ProfileContentFolder/ScriptProfile/PasswordScript.php" ?>
+
 </body>
 
 </html>
