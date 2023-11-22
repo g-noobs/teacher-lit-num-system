@@ -7,8 +7,8 @@
             <div class="row" style="margin-left:20px;"><a href='#' id="edit-icon"><span
                         class='glyphicon glyphicon-edit'></span></a></div>
         </div>
-        <div class="box-body" id="content_body">
-            <form action="post" id="teacher_profile">
+        <form action="post" id="teacher_profile">
+            <div class="box-body" id="content_body">
                 <div class="form-group row">
                     <div class="col-sm-5">
                         <label for="teacher_id" col-form-label">Last Name</label>
@@ -70,10 +70,42 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <button class="btn btn-primary" id="update-btn" type="submit">Update Profile</button>
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        <label for="username:">Username: </label>
+                        <input type="text" name="username" id="username" required="" class="form-control"
+                            placeholder="Username" readonly="" disabled="">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <input type="password" name="password" id="password" required="" class="form-control"
+                                placeholder="Password" readonly="" disabled="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="togglePassword">
+                                    <span class="glyphicon glyphicon-eye-open" id="password-icon"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="confirm_pass">Confirm Password</label>
+                        <div class="input-group">
+                            <input type="password" name="confirmPassword" id="confirmPassword" required=""
+                                class="form-control" placeholder="Confirm Password" readonly="" disabled="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="toggleConfirmPassword">
+                                    <span class="glyphicon glyphicon-eye-open" id="confirm-password-icon"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </form>
-        </div>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary" id="update-btn" type="submit">Update Profile</button>
+            </div>
+        </form>
     </div>
+</div>
 </div>
