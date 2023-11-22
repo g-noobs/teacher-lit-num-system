@@ -76,7 +76,7 @@ class QuizDisplayClass extends Connection{
             }
         }
     }
-    function archivedQuiz(){
+    function archivedQuiz($teacher_id){
         $sql = "SELECT quiz_id, quiz_question, date_created, topic_id FROM tbl_quiz WHERE quiz_status = 0 AND added_byID = '$teacher_id';";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
