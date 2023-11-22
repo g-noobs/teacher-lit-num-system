@@ -38,8 +38,9 @@
                         <tbody>
                             <?php 
                         include_once("../../../Database/QuizDisplayClass.php");
+                        $teacher_id = $_SESSION['id'];
                         $quiztable = new QuizDisplayClass();
-                        $quiztable->archivedQuiz();
+                        $quiztable->archivedQuiz($teacher_id);
                         ?>
                         </tbody>
                     </table>
