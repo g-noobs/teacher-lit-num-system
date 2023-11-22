@@ -46,7 +46,7 @@ $(document).ready(function() {
                         setTimeout(function() {
                             $("#add_user_modal_alert").fadeOut("slow");
 
-                        }, 3500);
+                        }, 10500);
                     } else {
                         // Check if the form submission was successful
                         if (response.hasOwnProperty('success')) {

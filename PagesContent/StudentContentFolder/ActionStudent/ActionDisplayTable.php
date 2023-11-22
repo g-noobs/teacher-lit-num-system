@@ -33,7 +33,7 @@ if($_GET['id']){
         $response = array('error' => "<tr><td colspan='7'>No data Found</td></tr>");
     }
 }else{
-    $response = array('error' => 'NO ID FOUND FROM GET');
+    $response = array('error' => "<tr><td colspan='7'>No data Found</td></tr>");
 }
 echo json_encode($response);
 ?>

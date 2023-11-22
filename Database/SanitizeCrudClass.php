@@ -37,7 +37,7 @@ class SanitizeCrudClass extends Connection{
         if ($stmt->error) {
             die("Error during execution of prepared statement: " . $stmt->error);
         }
-         $stmt->close();
+        $stmt->close();
 
         header("Location: ". $header);
         exit();
@@ -69,11 +69,11 @@ class SanitizeCrudClass extends Connection{
 
         // Check for errors during execution
         if ($stmt->error) {
+            console_log("Error during execution of prepared statement: " . $stmt->error);
             die("Error during execution of prepared statement: " . $stmt->error);
-            
         }
         
-         $stmt->close();
+        $stmt->close();
     }
     public function getLastError() {
         return $this->lastError;
