@@ -78,17 +78,17 @@ a {
 <section id=topic_dropdown>
     <div class="align-items-start">
         <div class="col-sm-2">
-            <div class="custom-dropdown">
+            <!-- <div class="custom-dropdown">
                 <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
                     style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
-                    <b>Active Lesson</b> <!-- Updated the button text -->
+                    <b>Active Lesson</b> 
                     <span class="caret"></span>
                 </button>
-                <!-- <ul class="dropdown-menu custom-dropdown-menu">
+                <ul class="dropdown-menu custom-dropdown-menu">
                     <li><a href="#" data-topic-type="active-topic"><b>Active Topic</b></a></li>
                     <li><a href="#" data-topic-type="archive-topic"><b>Archived Topic</b></a></li>
-                </ul> -->
-            </div>
+                </ul>
+            </div> -->
         </div>
         <div class="col-sm-10">
         </div>
