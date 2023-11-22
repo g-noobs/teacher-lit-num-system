@@ -34,7 +34,7 @@
                 <section class="content-header">
                     <h1>
                         Quiz List
-                        <small>Teacher Portal</small>
+                        <small>Add and Modify Quiz</small>
                     </h1>
                     <!-- Breadcrumb   
                     <ol class="breadcrumb">
