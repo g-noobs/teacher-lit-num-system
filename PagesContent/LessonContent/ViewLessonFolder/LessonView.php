@@ -59,11 +59,11 @@
             <section class="content">
                 <div class="box box-default">
                     <div class="box-header with-border">
-                        <div id="lesson_description"></div>
+                    <h3 id="topic_name">Topic Name: </h3>
+                    <div id="topic_description"> Description: </div>
                     </div>
                     <div class="box-body">
-                        <h3 id="topic_name">Topic Name: /n</h3>
-                        <div id="topic_description"></div>
+                        
                         <div id="gallery"></div>
                     </div>
                 </div>
