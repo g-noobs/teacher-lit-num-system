@@ -125,7 +125,8 @@ $(document).ready(function() {
                             $('#' + tabContentId + ' tbody').html(response
                                 .success);
                         } else if (response.hasOwnProperty('error')) {
-                            
+                            $('tbody').html(response
+                                .error);
                         }
 
                     },
