@@ -27,7 +27,6 @@
                             <th>Topic ID</th>
                             <th>Topic Name</th>
                             <th>Topic Name</th>
-                            <th colspan="2">Action</th>
                         </tr>
                     </thead>
 
