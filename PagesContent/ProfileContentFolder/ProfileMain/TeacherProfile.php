@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 form-group">
                         <label for="username:">Username: </label>
                         <input type="text" name="username" id="username" required="" class="form-control"
                             placeholder="Username" readonly="" disabled="">
