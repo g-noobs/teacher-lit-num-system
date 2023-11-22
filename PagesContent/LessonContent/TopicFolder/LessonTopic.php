@@ -84,10 +84,10 @@ a {
                     <b>Active Lesson</b> <!-- Updated the button text -->
                     <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu custom-dropdown-menu">
-                    <li><a href="#" data-lesson-type="active-topic"><b>Active Topic</b></a></li>
-                    <li><a href="#" data-lesson-type="archive-topic"><b>Archived LessTopicon</b></a></li>
-                </ul>
+                <!-- <ul class="dropdown-menu custom-dropdown-menu">
+                    <li><a href="#" data-topic-type="active-topic"><b>Active Topic</b></a></li>
+                    <li><a href="#" data-topic-type="archive-topic"><b>Archived Topic</b></a></li>
+                </ul> -->
             </div>
         </div>
         <div class="col-sm-10">
@@ -98,6 +98,7 @@ a {
     <?php include_once "../PagesContent/LessonContent/TopicFolder/TopicTable.php"?>
 </div>
 
+<!-- To switch to archived topic table, change the href to: -->
 
 
 
