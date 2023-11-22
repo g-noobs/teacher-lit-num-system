@@ -54,7 +54,7 @@ class QuizDisplayClass extends Connection{
         }
     }
     function displayQuestions($teacher_id){
-        $sql = "SELECT * FROM tbl_quiz WHERE quiz_status =  1 AND added_byID = '$teacher_id';";
+        $sql = "SELECT quiz_id, quiz_question, date_created, topic_id FROM tbl_quiz WHERE quiz_status =  1 AND added_byID = '$teacher_id';";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while ($row = $result->fetch_assoc()) {
@@ -77,7 +77,7 @@ class QuizDisplayClass extends Connection{
         }
     }
     function archivedQuiz(){
-        $sql = "SELECT * FROM tbl_quiz WHERE quiz_status = 0 AND added_byID = '$teacher_id';";
+        $sql = "SELECT quiz_id, quiz_question, date_created, topic_id FROM tbl_quiz WHERE quiz_status = 0 AND added_byID = '$teacher_id';";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while ($row = $result->fetch_assoc()) {
