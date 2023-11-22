@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $columns = implode(', ', array_keys($values));
         $sql = "INSERT INTO $table ($columns)
-                VALUES(?,?,?,?,?,?,?,?);";
+                VALUES(?,?,?,?,?,?,?,?,?);";
         $params = array_values($values);
 
         include_once("../../../Database/SanitizeCrudClass.php");
