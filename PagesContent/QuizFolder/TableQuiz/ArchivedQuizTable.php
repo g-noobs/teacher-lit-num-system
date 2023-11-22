@@ -1,4 +1,6 @@
-<?php include_once "../../../CommonCode/ModifiedSearchStyle.php";?>
+<?php 
+session_start();
+include_once "../../../CommonCode/ModifiedSearchStyle.php";?>
 
 <!-- Confirmation modal -->
 <?php include_once "../QuizModal/ConfirmationModal.php";?>
