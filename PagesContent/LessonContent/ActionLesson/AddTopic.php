@@ -81,6 +81,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         else{
             echo $data." is already exists. Please try again";
         }
+        //check if files upload is empty
+        if(empty($_FILES['file']['name'][0])){
+            $response = array("success" => "Successfully Added");
+            echo json_encode($response);
+            exit();
+        }
+
         // if add Topic is successfull proceed with the file upload
         if($addTopic->getLastError() === null){
             //Handle multiple file uploads
