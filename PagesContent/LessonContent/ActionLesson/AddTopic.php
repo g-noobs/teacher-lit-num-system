@@ -23,6 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             'lesson_id' => $lesson_id,
             'added_byID' => ''
         );
+        
 
         //set ID for topic ID
         $topic_count = new ColumnCountClass();
