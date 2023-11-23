@@ -45,24 +45,43 @@ $(function() {
             processData: false,
             dataType: "json",
             success: function(response) {
-                if (response.hasOwnProperty('success')) {
-                    $('#successAlert').text(response.success);
-                    $('#successBanner').show();
+                if (Array.isArray(response)) {
+                    // Clear previous error messages
+                    $("#add_user_modal_alert_text").empty();
+                    $("#add_user_modal_alert").show();
+
+                    // Update the element with the received errors
+                    $.each(response, function(index, error) {
+                        $("#add_user_modal_alert_text").append("<p class='error'>" +
+                            error +
+                            "</p><br>");
+                        console.log(error);
+                    });
+
                     setTimeout(function() {
-                        $("#successBanner").fadeOut("slow");
-                        // location.reload();
-                    }, 1500);
+                        $("#add_user_modal_alert").fadeOut("slow");
+
+                    }, 8500);
+                } else {
+                    if (response.hasOwnProperty('success')) {
+                        $('#successAlert').text(response.success);
+                        $('#successBanner').show();
+                        setTimeout(function() {
+                            $("#successBanner").fadeOut("slow");
+                            // location.reload();
+                        }, 1500);
 
 
-                    // You can redirect to a different page or perform other actions here
-                } else if (response.hasOwnProperty('error')) {
-                    $('#errorAlert').text(response.error);
-                    $('#errorBanner').show();
-                    setTimeout(function() {
-                        $("#errorBanner").fadeOut("slow");
-                        // location.reload();
-                    }, 1500);
-            }
+                        // You can redirect to a different page or perform other actions here
+                    } else if (response.hasOwnProperty('error')) {
+                        $('#errorAlert').text(response.error);
+                        $('#errorBanner').show();
+                        setTimeout(function() {
+                            $("#errorBanner").fadeOut("slow");
+                            // location.reload();
+                        }, 1500);
+                    }
+                }
             }
         });
     });
