@@ -3,6 +3,8 @@ session_start();
 // This is will be used upload files to the server
 // at the same time save the file path to the database
 //will manage POST jquery ajax from file jquerTopic.php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 include_once "../../../Database/SanitizeCrudClass.php";
 include_once "../../../Database/ColumnCountClass.php";
@@ -54,33 +56,33 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $addTopic->executePreState($query,$params);
 
-        // if($isDuplicate){
-        //     try{
-        //         $addTopic->executePreState($query,$params);
+        if($isDuplicate){
+            try{
+                $addTopic->executePreState($query,$params);
                 
-        //     } catch (mysqli_sql_exception $e) {
-        //         if ($e->getCode() == 1062) {
-        //             // Duplicate entry
-        //             $response = array("error" => $data." already exists. Please try again hit sql exceptio");
-        //             echo json_encode($response);  
-        //             exit();
-        //         } else {
-        //             // Some other error
-        //             $response = array("error"=> $e->getMessage());
-        //             echo json_encode($response);
-        //             throw $e;
-        //         }
-        //     }
-        //     //add a catch for foreign key constraits fails
-        //     catch(Exception $e){
-        //         $response = array("error"=> $e->getMessage());
-        //         echo json_encode($response);
-        //     }
+            } catch (mysqli_sql_exception $e) {
+                if ($e->getCode() == 1062) {
+                    // Duplicate entry
+                    $response = array("error" => $data." already exists. Please try again hit sql exceptio");
+                    echo json_encode($response);  
+                    exit();
+                } else {
+                    // Some other error
+                    $response = array("error"=> $e->getMessage());
+                    echo json_encode($response);
+                    throw $e;
+                }
+            }
+            //add a catch for foreign key constraits fails
+            catch(Exception $e){
+                $response = array("error"=> $e->getMessage());
+                echo json_encode($response);
+            }
 
-        // }
-        // else{
-        //     echo $data." is already exists. Please try again";
-        // }
+        }
+        else{
+            echo $data." is already exists. Please try again";
+        }
         // if add Topic is successfull proceed with the file upload
         if($addTopic->getLastError() === null){
             //Handle multiple file uploads
