@@ -54,8 +54,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $column = 'topic_name';
         $isDuplicate = $check -> validateOneColumn($table, $column, $data);
 
-        $addTopic->executePreState($query,$params);
-
         if($isDuplicate){
             try{
                 $addTopic->executePreState($query,$params);
@@ -63,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             } catch (mysqli_sql_exception $e) {
                 if ($e->getCode() == 1062) {
                     // Duplicate entry
-                    $response = array("error" => $data." already exists. Please try again hit sql exceptio");
+                    $response = array("error" => $data." already exists. Please try again hit sql exception");
                     echo json_encode($response);  
                     exit();
                 } else {
