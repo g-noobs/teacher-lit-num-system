@@ -12,26 +12,56 @@ $(function() {
             data: formData,
             processData: false,
             contentType: false,
+            dataType: 'json',
             success: function(response) {
-                var responseData = JSON.parse(response);
-                // Check if the form submission was successful
-                if (responseData.hasOwnProperty('success')) {
-                    var msg = responseData.success;
-                    $('#successAlert').text(msg);
-                    $('#successBanner').show();
+                if (Array.isArray(response)) {
+                    // Clear previous error messages
+                    $("#add_user_modal_alert_text").empty();
+                    $("#add_user_modal_alert").show();
+
+                    // Update the element with the received errors
+                    $.each(response, function(index, error) {
+                        $("#add_user_modal_alert_text").append("<p class='error'>" +
+                            error +
+                            "</p><br>");
+                        console.log(error);
+                    });
+
                     setTimeout(function() {
-                        $("#successBanner").fadeOut("slow");
-                        location.reload();
-                    }, 1500);
-                } else if (responseData.hasOwnProperty('error')) {
-                    var msg = responseData.error;
-                    $('#errorAlert').text(msg);
-                    $('#errorBanner').show();
-                    setTimeout(function() {
-                        $("#errorBanner").fadeOut("slow");
-                        location.reload();
-                    }, 1500);
+                        $("#add_user_modal_alert").fadeOut("slow");
+
+                    }, 8500);
+                } else {
+                    // Check if the form submission was successful
+                    if (response.hasOwnProperty('success')) {
+                        var msg = response.success;
+                        $('#successAlert').text(msg);
+                        $('#successBanner').show();
+                        setTimeout(function() {
+                            $("#successBanner").fadeOut("slow");
+                            location.reload();
+                        }, 4500);
+                    } else if (response.hasOwnProperty('error')) {
+                        var msg = response.error;
+                        $('#errorAlert').text(msg);
+                        $('#errorBanner').show();
+                        setTimeout(function() {
+                            $("#errorBanner").fadeOut("slow");
+                            location.reload();
+                        }, 4500);
+                    }
                 }
+            },
+            error: function() {
+                $("#add_class_form")[0].reset();
+                $hideModal.modal('hide');
+                //show alert banner id = errorBanner
+                $('#errorAlert').text('An error occurred during the AJAX request.');
+                $('#errorBanner').show();
+                setTimeout(function() {
+                    $("#errorBanner").fadeOut("slow");
+                    location.reload();
+                }, 1500);
             }
         });
 

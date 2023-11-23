@@ -44,6 +44,17 @@
                     </ol> -->
                 </section>
                 <br>
+                <!-- alert that would show when error occurs -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-danger alert-dismissible" id="add_user_modal_alert" role="alert"
+                            style="display: none;">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                            <span id="add_user_modal_alert_text"></span>
+                        </div>
+                    </div>
+                </div>
                 <section class="content" id="addQquizSection">
                     <?php include_once "../PagesContent/QuizFolder/TableQuiz/AddQuizSection.php";?>
                 </section>
