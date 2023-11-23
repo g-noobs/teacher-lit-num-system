@@ -31,6 +31,16 @@ class InputValidationClass{
             if (!preg_match("/^[0-9]*$/", $data)) {
                 return false;
             }
+        }elseif ($type == 'alphanum'){
+            // Allow alphanumeric without whitespace
+            if (!preg_match("/^[a-zA-Z0-9]*$/", $data)) {
+                return false;
+            }
+        }elseif($type == 'description'){
+            //allow alplhanumeric and some symbols for basic description input
+            if (!preg_match("/^[a-zA-Z0-9_\-\s?!]*$/", $data)) {
+                return false;
+            }
         }
         return true;
     }

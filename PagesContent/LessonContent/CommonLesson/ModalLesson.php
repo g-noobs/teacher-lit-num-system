@@ -7,6 +7,17 @@
                 </button>
                 <h4 class="modal-title">Enter Lesson Information</h4>
             </div>
+            <!-- alert that will show if error occurs -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="alert alert-danger alert-dismissible" id="add_user_modal_alert" role="alert"
+                        style="display: none;">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                        <span id="add_user_modal_alert_text"></span>
+                    </div>
+                </div>
+            </div>
             <form id="addLessonForm">
                 <div class="modal-body">
                     <div class="box-body">
