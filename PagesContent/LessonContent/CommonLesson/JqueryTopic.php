@@ -43,10 +43,10 @@ $(function() {
             data: formData,
             contentType: false,
             processData: false,
+            dataType: "json",
             success: function(response) {
-                var responseData = JSON.parse(response);
-                if (responseData.hasOwnProperty('success')) {
-                    $('#successAlert').text(responseData.success);
+                if (response.hasOwnProperty('success')) {
+                    $('#successAlert').text(response.success);
                     $('#successBanner').show();
                     setTimeout(function() {
                         $("#successBanner").fadeOut("slow");
@@ -55,8 +55,8 @@ $(function() {
 
 
                     // You can redirect to a different page or perform other actions here
-                } else if (responseData.hasOwnProperty('error')) {
-                    $('#errorAlert').text(responseData.error);
+                } else if (response.hasOwnProperty('error')) {
+                    $('#errorAlert').text(response.error);
                     $('#errorBanner').show();
                     setTimeout(function() {
                         $("#errorBanner").fadeOut("slow");
