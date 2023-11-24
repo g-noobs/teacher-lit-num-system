@@ -25,7 +25,12 @@ $(function() {
             $last_name.val(response.last_name);
             $first_name.val(response.first_name);
             $middle_initial.val(response.middle_initial);
-            $gender.val(response.gender);
+
+            $gender.find('option').each(function() {
+                if ($(this).val() === response.gender) {
+                    $(this).prop('selected', true);
+                }
+            });
             $phone.val(response.phone);
             $email.val(response.email);
             $street.val(response.street);
