@@ -5,7 +5,6 @@ $(document).ready(function() {
     // Hide the update button initially
     $('#update-btn').hide();
     $('input, select').prop('readonly', true).prop('disabled', true);
-    $('select[name="gender"]').prop('readonly', true).prop('disabled', false);
     // Function to toggle the edit mode
     function toggleEditMode() {
         if (editMode) {
@@ -21,7 +20,6 @@ $(document).ready(function() {
             //leave same status with user name
 
             $('#username').prop('readonly', true).prop('disabled', true);
-            $('select[name="gender"]').prop('readonly', true).prop('disabled', false);
         }
         editMode = !editMode; // Toggle the edit mode flag
     }
