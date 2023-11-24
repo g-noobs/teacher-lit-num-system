@@ -86,10 +86,10 @@ $(document).ready(function() {
                 //show alert banner id = errorBanner
                 $('#errorAlert').text('An error occurred during the AJAX request.');
                 $('#errorBanner').show();
-                // setTimeout(function() {
-                //     $("#errorBanner").fadeOut("slow");
-                //     location.reload();
-                // }, 5500);
+                setTimeout(function() {
+                    $("#errorBanner").fadeOut("slow");
+                    location.reload();
+                }, 5500);
             }
         });
     });
