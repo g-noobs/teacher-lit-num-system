@@ -8,21 +8,33 @@
             <div class="row" style="margin-left:20px;"><a href='#' id="edit-icon"><span
                         class='glyphicon glyphicon-edit'></span></a></div>
         </div>
-        <form action="post" id="teacher_profile">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-danger alert-dismissible" id="edit_user_validate_alert" role="alert"
+                    style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    <span id="edit_user_validate_alert_text">test alerttext</span>
+                </div>
+            </div>
+        </div>
+        <form id="teacher_profile">
             <div class="box-body" id="content_body">
                 <div class="form-group row">
                     <div class="col-sm-5">
                         <label for="last_name" col-form-label">Last Name</label>
-                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name" required>
+                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name"
+                            required>
                     </div>
                     <div class="col-sm-5">
                         <label for="first_name" col-form-label">First Name</label>
-                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" required>
+                        <input type="text" class="form-control" name="first_name" id="first_name"
+                            placeholder="First Name" required>
                     </div>
                     <div class="col-sm-2">
                         <label for="middle_initial" col-form-label">M.I. (**optional)</label>
-                        <input type="text" class="form-control" name="middle_initial" id="middle_initial" placeholder="Middle Initial"
-                            maxlength="1" required>
+                        <input type="text" class="form-control" name="middle_initial" id="middle_initial"
+                            placeholder="Middle Initial" maxlength="1" required>
                     </div>
                 </div>
                 <div class="form-group row">

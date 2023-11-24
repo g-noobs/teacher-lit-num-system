@@ -62,5 +62,48 @@ class CommonValidationClass extends Connection{
             }
         }
     }
+
+    function updatevalidateColumns($table, $column, $value) {
+        // Convert column and value to arrays if they are not already
+        if (!is_array($column)) {
+            $column = [$column];
+        }
+    
+        if (!is_array($value)) {
+            $value = [$value];
+        }
+    
+        // Check if the column and value arrays have the same count
+        if (count($column) !== count($value)) {
+            echo "<script>console.log('Columns and values must have the same count.')</script>";
+            throw new Exception("Columns and values must have the same count.");
+        }
+    
+        $conditions = [];
+    
+        // Loop through columns and values to build the WHERE clause
+        for ($i = 0; $i < count($column); $i++) {
+            $conditions[] = "$column[$i] = '" . addslashes($value[$i]) . "'";
+        }
+    
+        $conditionString = implode(" AND ", $conditions);
+        $sql = "SELECT COUNT(*) FROM $table WHERE $conditionString";
+    
+        // Execute the SQL query
+        $result = $this->getConnection()->query($sql);
+    
+        if ($result === false) {
+            echo "<script>console.log('Error executing query: " . $this->getConnection()->error . "')</script>";
+            throw new Exception("Error executing query: " . $this->getConnection()->error);
+        }
+    
+        $count = $result->fetch_row()[0];
+        if($count > 1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 }
 ?>
