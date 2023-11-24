@@ -12,10 +12,14 @@ $(document).ready(function() {
             // If edit mode is active, hide the update button and disable the inputs
             $('#update-btn').hide();
             $('input, select').prop('readonly', true).prop('disabled', true);
+            //leave same status with user name
+            $('#username').prop('readonly', true).prop('disabled', true);
         } else {
             // If edit mode is inactive, show the update button and enable the inputs
             $('#update-btn').show();
             $('input, select').prop('readonly', false).prop('disabled', false);
+            //leave same status with user name
+            $('#username').prop('readonly', true).prop('disabled', true);
         }
         editMode = !editMode; // Toggle the edit mode flag
     }
