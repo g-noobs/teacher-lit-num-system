@@ -40,10 +40,10 @@ $(function() {
             if (response.hasOwnProperty('error')) {
                 $('#errorAlert').text(response.error);
                 $('#errorBanner').show();
-                setTimeout(function() {
-                    $("#errorBanner").fadeOut("slow");
-                    // location.reload();
-                }, 10500);
+                // setTimeout(function() {
+                //     $("#errorBanner").fadeOut("slow");
+                //     // location.reload();
+                // }, 10500);
             }
         },
         error: function() {
@@ -51,10 +51,10 @@ $(function() {
             $('#errorAlert').text(
                 'An error occurred during the AJAX request.');
             $('#errorBanner').show();
-            setTimeout(function() {
-                $("#errorBanner").fadeOut("slow");
-                // location.reload();
-            }, 1500);
+            // setTimeout(function() {
+            //     $("#errorBanner").fadeOut("slow");
+            //     // location.reload();
+            // }, 1500);
         }
     });
 
