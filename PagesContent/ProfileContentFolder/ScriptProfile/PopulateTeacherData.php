@@ -29,6 +29,7 @@ $(function() {
             $gender.find('option').each(function() {
                 if ($(this).val() === response.gender) {
                     $(this).prop('selected', true);
+                    return false;
                 }
             });
             $phone.val(response.phone);
