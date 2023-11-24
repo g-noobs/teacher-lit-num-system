@@ -14,7 +14,6 @@ $(document).ready(function() {
             $('input, select').prop('readonly', true).prop('disabled', true);
             //leave same status with user name
             $('#username').prop('readonly', true).prop('disabled', true);
-            $('select[name="gender"]').prop('readonly', true).prop('disabled', false);
         } else {
             // If edit mode is inactive, show the update button and enable the inputs
             $('#update-btn').show();
