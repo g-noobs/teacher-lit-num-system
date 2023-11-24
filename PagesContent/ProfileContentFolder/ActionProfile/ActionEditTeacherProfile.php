@@ -26,7 +26,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $city_municipality = $inputValidation->test_input($_POST["city_municipality"], 'address');
     $province = $inputValidation->test_input($_POST["province"], 'address');
     $zip_code = $inputValidation->test_input($_POST["zip_code"], 'number');
-    $username = $inputValidation->test_input($_POST['username'], 'description');
     $password = trim($_POST['password']);
     $confirm_password = trim($_POST['confirm_pass']);
 
