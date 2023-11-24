@@ -24,7 +24,7 @@ $(function() {
 
             $last_name.val(response.last_name);
             $first_name.val(response.first_name);
-            $middle_initial.val(response.first_name);
+            $middle_initial.val(response.middle_initial);
             $gender.val(response.gender);
             $phone.val(response.phone);
             $email.val(response.email);
@@ -35,7 +35,7 @@ $(function() {
             $zip_code.val(response.zip_code);
             $username.val(response.username);
             $password.val(response.password);
-            $confirm_pass.val(response.confirm_pass);
+            $confirm_pass.val(response.password);
 
             if (response.hasOwnProperty('error')) {
                 $('#errorAlert').text(response.error);
