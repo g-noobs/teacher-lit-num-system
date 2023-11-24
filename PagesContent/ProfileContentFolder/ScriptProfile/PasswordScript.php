@@ -1,7 +1,7 @@
 <script>
 $(document).ready(function() {
     $('#toggleConfirmPassword').click(function() {
-        var passwordInput = $('#confirmPassword');
+        var passwordInput = $('#confirm_pass');
         var passwordIcon = $('#confirm-password-icon');
 
         if (passwordInput.attr('type') === 'password') {
