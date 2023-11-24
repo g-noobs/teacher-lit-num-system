@@ -12,23 +12,23 @@
             <div class="box-body" id="content_body">
                 <div class="form-group row">
                     <div class="col-sm-5">
-                        <label for="teacher_id" col-form-label">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" placeholder="Last Name" required>
+                        <label for="last_name" col-form-label">Last Name</label>
+                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name" required>
                     </div>
                     <div class="col-sm-5">
-                        <label for="teacher_id" col-form-label">First Name</label>
-                        <input type="text" class="form-control" id="first_name" placeholder="First Name" required>
+                        <label for="first_name" col-form-label">First Name</label>
+                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" required>
                     </div>
                     <div class="col-sm-2">
-                        <label for="teacher_id" col-form-label">M.I. (**optional)</label>
-                        <input type="text" class="form-control" id="middle_initial" placeholder="Middle Initial"
+                        <label for="middle_initial" col-form-label">M.I. (**optional)</label>
+                        <input type="text" class="form-control" name="middle_initial" id="middle_initial" placeholder="Middle Initial"
                             maxlength="1" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-4">
                         <label for="gender">Gender</label>
-                        <select name="gemder" id="gender" class="form-control">
+                        <select name="gender" id="gender" class="form-control">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
@@ -93,7 +93,7 @@
                     <div class="col-sm-4 form-group">
                         <label for="confirm_pass">Confirm Password</label>
                         <div class="input-group">
-                            <input type="password" name="confirmPassword" id="confirmPassword" required=""
+                            <input type="password" name="confirm_pass" id="confirm_pass" required=""
                                 class="form-control" placeholder="Confirm Password" readonly="" disabled="">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" id="toggleConfirmPassword">

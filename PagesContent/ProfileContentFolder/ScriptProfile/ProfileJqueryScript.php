@@ -1,20 +1,4 @@
 <script>
-$(function() {
-    // jQuery to populate the select element with uppercase letters of the alphabet
-    var selectElement = $("#teacher_middle_initial");
-
-    // Loop to add uppercase letters A to Z
-    for (var i = 65; i <= 90; i++) {
-        var letter = String.fromCharCode(i);
-        selectElement.append($("<option>", {
-            value: letter,
-            text: letter
-        }));
-    }
-});
-</script>
-
-<script>
 $(document).ready(function() {
     var editMode = false; // Flag to track the edit mode status
 
@@ -42,8 +26,10 @@ $(document).ready(function() {
     });
 
     // Hide the update button when the update button is clicked
-    $('#update-btn').click(function() {
+    $('#teacher_profile').submit(function(e) {
         $(this).hide();
+        e.preventDefault();
+
     });
 });
 </script>

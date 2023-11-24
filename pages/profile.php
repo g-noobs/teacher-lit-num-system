@@ -53,6 +53,8 @@
     <!-- Profile modified Script -->
     <?php include_once "../PagesContent/ProfileContentFolder/ScriptProfile/ProfileJqueryScript.php" ?>
 
+    <!-- Populate data ot edit -->
+    <?php include_once "../PagesContent/ProfileContentFolder/ScriptProfile/PopulateTeacherData.php"?>
     <!-- hide/ unhide password script -->
     <?php include_once "../PagesContent/ProfileContentFolder/ScriptProfile/PasswordScript.php" ?>
 
