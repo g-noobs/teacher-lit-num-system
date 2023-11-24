@@ -93,7 +93,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             'postalcode' => $_POST['zip_code'],
         );
         $credential = array(
-            'uname' => $_POST['username'],
             'pass' => $_POST['password']
         );
 
@@ -119,7 +118,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 if($updateContact->getLastError() === null){
                     $table_creds = "tbl_credentials";
-                    $sql = "UPDATE $table_creds SET uname = ?, pass = ? WHERE user_info_id = '$id'";
+                    $sql = "UPDATE $table_creds SET pass = ? WHERE user_info_id = '$id'";
                     $params = array_values($credential);
                     $updateCred = new SanitizeCrudClass();
                     $updateCred->executePreState($sql, $params);
