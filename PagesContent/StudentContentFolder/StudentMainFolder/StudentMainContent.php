@@ -95,7 +95,7 @@ $(document).ready(function() {
                         <table id="${tabContentId}" class="table table-hover text-center">
                         <thead>
                             <tr>
-                            <th colspan='2'></th>
+                            <th></th>
                             <th>Student ID</th>
                             <th>First Name</th>
                             <th>Last Name</th>
