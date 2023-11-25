@@ -222,11 +222,10 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
                                             if($addNewStudent->getLastError()=== null){
                                                 $guardian = array(
                                                     'guardian_id' => '',
-                                                    
-                                                    'guardian_lname' => trim($row[12]),
                                                     'guardian_fname' => trim($row[13]),
-                                                    'guardian_mname' => trim($row[14]),
-                                                    'guardian_number' => trim($row[15]),
+                                                    'guardian_lname' => trim($row[12]),                                          
+                                                    'guardian_mname' => $row[14],
+                                                    'guardian_number' => $row[15],
                                                     'user_info_id' => $values['user_info_id'],
                                                 );
                                                 //set guardian id
