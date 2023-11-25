@@ -95,7 +95,6 @@ $(document).ready(function() {
                         <table id="${tabContentId}" class="table table-hover text-center">
                         <thead>
                             <tr>
-                            <th><input type='checkbox' id="select-all" class='checkbox'></th>
                             <th colspan='2'></th>
                             <th>Student ID</th>
                             <th>First Name</th>
