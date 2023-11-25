@@ -16,7 +16,6 @@ if($_GET['id']){
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
             $htmlContent .= "<tr>";
-            $htmlContent .= "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['user_info_id'] . "'></td>";
             
             $htmlContent .= "<td><a href='#' data-id='".$row["user_info_id"]."'><span class='glyphicon glyphicon-info-sign'></span></a>";
             $htmlContent .= "<td><a href='#' class='edit' data-toggle='modal' data-target='#editStudentModal' data-id='".$row["user_info_id"]."'><span class='glyphicon glyphicon-edit'></span></a></td>";
