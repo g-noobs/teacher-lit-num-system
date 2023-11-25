@@ -43,7 +43,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
                     'personal_id' => trim($row[0]), 
                     'last_name' => trim($row[1]),
                     'first_name' => trim($row[2]),
-                    'middle_name' => trim($row[3]),
+                    'middle_name' => $row[3],
                     'gender' => trim($row[4]),
                     'user_level_id' => '2',
                     'added_byID' => '',
@@ -178,7 +178,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
                                         $table = 'tbl_contact_info';
                                         $contact = array(
                                             'contact_id' => '',
-                                            'contact_num'=> trim($row[5]),
+                                            'contact_num'=> $row[5],
                                             'email'=> trim($row[6]),
                                             'street'=> trim($row[7]),
                                             'barangay'=> trim($row[8]),
