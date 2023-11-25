@@ -81,9 +81,12 @@ $(document).ready(function() {
                         }, 11500);
                     }
                 }
+
+
                 $("#loadingSpinner").hide();
             },
             error: function(xhr, status, error) {
+                // console.log('AJAX error:', status, error);
 
                 // Hide the loading spinner
                 $("#loadingSpinner").hide();
