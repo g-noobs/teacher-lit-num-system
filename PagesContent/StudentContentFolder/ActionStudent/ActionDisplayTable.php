@@ -7,7 +7,16 @@ $table = "student_full_view";
 
 if($_GET['id']){
     $id = $_GET['id'];
-    $sql = "SELECT * FROM $table WHERE status = 'Active' AND user_level_description = 'Learner' AND class_id = '$id';";
+    // this query will only pull up if the class is assigned to teacher and assignment status is active
+    $sql = "SELECT * 
+    FROM student_full_view 
+    WHERE user_level_description = 'Learner'
+        AND class_id = '$id'
+        AND class_id IN (
+        SELECT class_id
+        FROM tbl_teacher_class_assignment
+        WHERE status = 1
+    );";
     $result = $conn->query($sql);
 
     $htmlContent = '';
