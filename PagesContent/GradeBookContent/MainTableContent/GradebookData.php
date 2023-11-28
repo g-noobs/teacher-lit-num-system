@@ -1,8 +1,9 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="box box-default container">
+            <br>
             <div class="box-header with-">
-                <br>
+
                 <h3 class="box-title"></h3>
 
                 <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
