@@ -20,8 +20,6 @@
             <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                 <!-- export button -->
                 
-                <br>
-                <br>
                 <!-- Table Data -->
                 <div class="table-responsive">
                     <table id="dataTable" class="table table-bordered table-hover text-center">
