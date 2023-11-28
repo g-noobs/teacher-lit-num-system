@@ -2,8 +2,9 @@
     <div class="col-xs-12">
         <div class="box box-default container">
             <div class="box-header with-">
-                <h3 class="box-title"></h3>
                 <br>
+                <h3 class="box-title"></h3>
+
                 <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
@@ -19,7 +20,7 @@
             <!-- /.box-header -->
             <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                 <!-- export button -->
-                
+
                 <!-- Table Data -->
                 <div class="table-responsive">
                     <table id="dataTable" class="table table-bordered table-hover text-center">
@@ -48,21 +49,22 @@
     <!-- /.col -->
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
 <script>
-    $(document).ready(function () {
-        $("#export_btn").click(function () {
-            let table = document.getElementsByTagName("table");
-            var fileName = $(this).data("name");
-            console.log(table);
-            debugger;
-            TableToExcel.convert(table[0], {
-                name: fileName + `.xlsx`,
-                sheet: {
-                    name: fileName
-                }
-            });
+$(document).ready(function() {
+    $("#export_btn").click(function() {
+        let table = document.getElementsByTagName("table");
+        var fileName = $(this).data("name");
+        console.log(table);
+        debugger;
+        TableToExcel.convert(table[0], {
+            name: fileName + `.xlsx`,
+            sheet: {
+                name: fileName
+            }
         });
     });
+});
 </script>
