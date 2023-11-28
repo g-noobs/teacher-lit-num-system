@@ -2,7 +2,7 @@
     <div class="col-xs-12">
         <div class="box box-default container">
             <div class="box-header with-">
-                <h3 class="box-title">Gradebook</h3>
+                <h3 class="box-title"></h3>
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
                         <i class="fa fa-search"></i>
@@ -29,7 +29,7 @@
                                 <th>Quiz ID</th>
                                 <th>Quiz Name</th>
                                 <th>Score</th>
-                                <th>Date Take</th>
+                                <th>Date Taken</th>
                             </tr>
                         </thead>
                         <tbody>
