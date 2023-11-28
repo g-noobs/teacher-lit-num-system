@@ -49,7 +49,7 @@
                 <section class="content-header">
                     <h1>
                         Class List
-                        <small>Assigned class</small>
+                        <small></small>
                     </h1>
                 </section>
 
