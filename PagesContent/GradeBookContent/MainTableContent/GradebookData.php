@@ -26,6 +26,7 @@
                         <thead>
                             <tr>
                                 <th>Student ID</th>
+                                <th>Student Name</th>
                                 <th>Quiz ID</th>
                                 <th>Quiz Name</th>
                                 <th>Score</th>
