@@ -57,7 +57,7 @@
 $(document).ready(function() {
     $("#export_btn").click(function() {
         let table = document.getElementsByTagName("table");
-        var fileName = $(this).data("name");
+        var fileName = $(this).data("gradebook");
         console.log(table);
         debugger;
         TableToExcel.convert(table[0], {
