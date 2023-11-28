@@ -70,7 +70,7 @@
                 <br>
                 <!-- Main Content-->
                 <section class="content" id="gradebook_content">
-                    <h3>Gradebook</h3>
+                    <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
                 </section>
             </div>
         </div>
