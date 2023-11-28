@@ -42,7 +42,7 @@
                         <li class="active">Top Navigation</li>
                     </ol> -->
                 </section>
-                <br>
+                
 
 
                 <section>
@@ -66,8 +66,7 @@
                     </div> -->
                 
                 </section>
-                <br>
-                <br>
+
                 <!-- Main Content-->
                 <section class="content" id="gradebook_content">
                     <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
