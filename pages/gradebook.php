@@ -46,13 +46,13 @@
 
 
                 <section>
-                    <div class="align-items-start">
+                    <!-- <div class="align-items-start">
                         <div class="col-sm-2">
                             <div class="custom-dropdown">
 
                                 <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
                                     style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
-                                    <b>Module</b> <!-- Updated the button text -->
+                                    <b>Module</b> 
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu custom-dropdown-menu">
@@ -63,12 +63,13 @@
                         </div>
                         <div class="col-sm-10">
                         </div>
-                    </div>
+                    </div> -->
+                    <button class="btn btn-success" id="export_gradebook"> Export</button>
                 </section>
                 <br>
                 <br>
                 <!-- Main Content-->
-                <section class="content" id="gradebookContent">
+                <section class="content" id="gradebook_content">
                     <h3>Gradebook</h3>
                 </section>
             </div>
