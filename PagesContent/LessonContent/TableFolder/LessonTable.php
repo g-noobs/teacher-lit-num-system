@@ -28,7 +28,7 @@
                 <table id="example2" class="table table-bordered table-hover text-center">
                     <thead>
                         <tr>
-                            <th><input type='checkbox' id="select-all" class='checkbox'></th>
+                            <th colspan="2"><input type='checkbox' id="select-all" class='checkbox'></th>
                             <th>Lesson ID</th>
                             <th>Lesson</th>
                             <th>Lesson Description</th>
@@ -51,6 +51,4 @@
         <!-- /.box-body -->
     </div>
     <!-- /.box -->
-
-
 </div>
