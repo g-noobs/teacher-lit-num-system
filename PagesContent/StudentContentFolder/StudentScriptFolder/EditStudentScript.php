@@ -7,6 +7,7 @@ $(function() {
         $('#submit_btn').text('Update');
         var btn_id = $(this).data('id');
         var class_id = $(this).data('class-id');
+        $('#assigned_class_id').text(class_id);
 
 
         $personal_id = $('input[name="personal_id"]');
@@ -58,6 +59,7 @@ $(function() {
                 $guardian_first_name.val(response.guardian_first_name);
                 $guardian_middle_name.val(response.guardian_middle_name);
                 $guardian_phone_num.val(response.guardian_phone_num);
+                
 
             },
             error: function() {
