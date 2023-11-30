@@ -26,43 +26,43 @@ $(function() {
         $guardian_phone_num = $('input[name="guardian_phone_num"]');
 
         //this will populate the date to the modal
-        $.ajax({
-            type: "POST",
-            url: "../PagesContent/UserContent/ActionsUsers/ActionPopulateStudentData.php",
-            data: {
-                id: btn_id
-            },
-            dataType: 'json',
-            success: function(response) {
-                $('#add_user_modal').modal('show');
+        // $.ajax({
+        //     type: "POST",
+        //     url: "../PagesContent/UserContent/ActionStudent/ActionPopulateStudentData.php",
+        //     data: {
+        //         id: btn_id
+        //     },
+        //     dataType: 'json',
+        //     success: function(response) {
+        //         $('#add_user_modal').modal('show');
 
-                $personal_id.val(response.personal_id);
-                $last_name.val(response.last_name);
-                $first_name.val(response.first_name);
-                $user_middle_initial.val(response.middle_initial);
-                $gender.find('option').each(function() {
-                    if ($(this).val() === response.gender) {
-                        $(this).prop('selected', true);
-                        return false;
-                    }
-                });
-                $phone_num.val(response.phone_num);
-                $email.val(response.email);
-                $street_address.val(response.street);
-                $barangay_address.val(response.barangay);
-                $city_address.val(response.municipal_city);
-                $province_address.val(response.province);
-                $zip_code.val(response.postal_code);
-                $guardian_last_name.val(response.guardian_last_name);
-                $guardian_first_name.val(response.guardian_first_name);
-                $guardian_middle_name.val(response.guardian_middle_name);
-                $guardian_phone_num.val(response.guardian_phone_num);
+        //         $personal_id.val(response.personal_id);
+        //         $last_name.val(response.last_name);
+        //         $first_name.val(response.first_name);
+        //         $user_middle_initial.val(response.middle_initial);
+        //         $gender.find('option').each(function() {
+        //             if ($(this).val() === response.gender) {
+        //                 $(this).prop('selected', true);
+        //                 return false;
+        //             }
+        //         });
+        //         $phone_num.val(response.phone_num);
+        //         $email.val(response.email);
+        //         $street_address.val(response.street);
+        //         $barangay_address.val(response.barangay);
+        //         $city_address.val(response.municipal_city);
+        //         $province_address.val(response.province);
+        //         $zip_code.val(response.postal_code);
+        //         $guardian_last_name.val(response.guardian_last_name);
+        //         $guardian_first_name.val(response.guardian_first_name);
+        //         $guardian_middle_name.val(response.guardian_middle_name);
+        //         $guardian_phone_num.val(response.guardian_phone_num);
 
-            },
-            error: function() {
-                console.log('error');
-            }
-        });
+        //     },
+        //     error: function() {
+        //         console.log('error');
+        //     }
+        // });
         // $('.addUserForm').on('submit', function(e) {
         //     e.preventDefault();
         //     var formData = new FormData(this);
