@@ -63,7 +63,7 @@ class CommonValidationClass extends Connection{
         }
     }
 
-    function updatevalidateColumns($table, $column, $value) {
+    function updatevalidateColumns($table, $column, $value, $user_info_id) {
         // Convert column and value to arrays if they are not already
         if (!is_array($column)) {
             $column = [$column];
@@ -86,6 +86,9 @@ class CommonValidationClass extends Connection{
             $conditions[] = "$column[$i] = '" . addslashes($value[$i]) . "'";
         }
     
+        // Add the condition for excluding the current row based on user_info_id
+        $conditions[] = "user_info_id != '$user_info_id'";
+    
         $conditionString = implode(" AND ", $conditions);
         $sql = "SELECT COUNT(*) FROM $table WHERE $conditionString";
     
@@ -98,12 +101,36 @@ class CommonValidationClass extends Connection{
         }
     
         $count = $result->fetch_row()[0];
-        if($count > 1){
-            return false;
-        }
-        else{
-            return true;
+        if ($count > 0) {
+            return false; // There is at least one duplicate (excluding the current row)
+        } else {
+            return true; // No duplicates found
         }
     }
+    
+
+    function updateValidateOneColumn($table, $column, $data, $user_info_id){
+        $sql = "SELECT COUNT($column) as count 
+                FROM $table 
+                WHERE $column = '$data' AND user_info_id != '$user_info_id';";
+        
+        $result = $this->getConnection()->query($sql);
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $count = $row["count"];
+            
+            if ($count > 0) {
+                // There is at least one duplicate (excluding the current row)
+                return false;
+            } else {
+                // No duplicates found
+                return true;
+            }
+        }
+        
+        // Error in the query or no results
+        return false;
+    }    
 }
 ?>
