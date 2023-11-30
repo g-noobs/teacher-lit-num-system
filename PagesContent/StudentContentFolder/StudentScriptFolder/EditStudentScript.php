@@ -5,6 +5,7 @@ $(function() {
         $('#submit_btn').text('Update');
         var btn_id = $(this).data('id');
 
+
         $personal_id = $('input[name="personal_id"]');
         $last_name = $('input[name="last_name"]');
         $first_name = $('input[name="first_name"]');
