@@ -21,7 +21,7 @@ class DisplayStudentClass extends Connection{
                 echo "<td class=text-success><strong>".$row['status']."</strong></td>";
 
                 echo "<td>";
-                echo "<a href='#' class='edit' data-toggle='modal' data-target='#editStudentModal' data-id='".$row["user_info_id"]."' style='margin-right:10px; color: text-success;'><span class='glyphicon glyphicon-edit' ></span></a>";
+                echo "<a href='#' class='edit' data-id='".$row["user_info_id"]."' style='margin-right:10px; color: text-success;'><span class='glyphicon glyphicon-edit' ></span></a>";
                 
                 echo " <a href='#' class='actvIconBtn text-danger' data-toggle='modal' data-target='#arcviveStudentModal' data-id='".$row["user_info_id"]."'> <span class='glyphicon glyphicon-trash'></span></a>";
                 echo "</td>";

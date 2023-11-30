@@ -27,7 +27,7 @@ if($_GET['id']){
             $htmlContent .= "<tr>";
             
             $htmlContent .= "<td><a href='#' data-id='".$row["user_info_id"]."'><span class='glyphicon glyphicon-info-sign'></span></a>";
-            $htmlContent .= "<td><a href='#' class='edit' data-toggle='modal' data-target='#editStudentModal' data-id='".$row["user_info_id"]."'><span class='glyphicon glyphicon-edit'></span></a></td>";
+            $htmlContent .= "<td><a href='#' class='edit' data-id='".$row["user_info_id"]."'><span class='glyphicon glyphicon-edit'></span></a></td>";
 
             $htmlContent .= "<td>".$row['personal_id']."</td>";
             $htmlContent .= "<td>".$row['first_name']."</td>";
