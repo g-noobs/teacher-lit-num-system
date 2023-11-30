@@ -119,7 +119,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 'personal_id' => trim($_POST['personal_id']),
                 'first_name' => trim($_POST['first_name']),
                 'last_name' =>trim($_POST['last_name']),
-                'middle_name' => trim($_POST['user_middle_initial']),
+                'middle_name' => strtoupper(trim($_POST['user_middle_initial'])),
                 'gender' => $_POST['gender'],
                 'user_level_id' => '2',
                 'added_byID'=>'',
