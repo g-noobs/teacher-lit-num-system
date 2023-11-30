@@ -2,6 +2,8 @@
 $(function() {
     $('.edit').on('click', function(e) {
         e.preventDefault();
+        var $controlModal = $('#add_user_modal');
+        $controlModal.modal('show');
         $('#submit_btn').text('Update');
         var btn_id = $(this).data('id');
 
