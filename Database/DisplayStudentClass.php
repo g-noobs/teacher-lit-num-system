@@ -91,7 +91,7 @@ class DisplayStudentClass extends Connection{
         }
     }
     function displayAssignedModuleList($teacher_id){
-        $sql = "SELECT module_name FROM view_teacher_module_info WHERE module_status = 1 AND module_assign_status = 1 AND user_info_id = '$teacher_id';";
+        $sql = "SELECT DISTINCT module_name FROM view_teacher_module_info WHERE module_status = 1 AND module_assign_status = 1 AND user_info_id = '$teacher_id';";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
