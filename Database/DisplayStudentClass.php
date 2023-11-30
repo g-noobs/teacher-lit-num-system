@@ -6,7 +6,7 @@ class DisplayStudentClass extends Connection{
     }
 
     function ActiveStudentList(){
-        $table = "student_full_view";
+        $table = "user_info_view";
         $sql = "SELECT * FROM $table WHERE status = 'Active' AND user_level_description = 'Learner';";  
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
