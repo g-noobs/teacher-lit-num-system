@@ -3,9 +3,7 @@
 <!-- Add student script -->
 <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
 
-
-
-
+<?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/EditStudentScript.php"?>
 
 <div class="container">
     <!-- <h2>Dynamic Tabs</h2>
@@ -170,4 +168,4 @@ $(document).ready(function() {
 
 <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/UploadStudentExcelScript.php"?>
 
-<?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/EditStudentScript.php"?>
+
