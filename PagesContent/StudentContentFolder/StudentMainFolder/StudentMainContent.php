@@ -1,7 +1,7 @@
 <!-- Add Student Modal -->
 <?php include_once "../PagesContent/StudentContentFolder/ModalFolder/AddStudentModal.php"?>
 <!-- Add student script -->
-<?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
+
 
 <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/EditStudentScript.php"?>
 
