@@ -149,32 +149,6 @@ $(document).ready(function() {
             alert('Error loading tabs.');
         }
     });
-
-    $('.edit').on('click', function(e) {
-        e.preventDefault();
-        var $controlModal = $('#add_user_modal');
-        $controlModal.modal('show');
-        $('#submit_btn').text('Update');
-        var btn_id = $(this).data('id');
-
-
-        $personal_id = $('input[name="personal_id"]');
-        $last_name = $('input[name="last_name"]');
-        $first_name = $('input[name="first_name"]');
-        $user_middle_initial = $('input[name="user_middle_initial"]');
-        $gender = $('select[name="gender"]');
-        $phone_num = $('input[name="phone_num"]');
-        $email = $('input[name="email"]');
-        $street_address = $('input[name="street_address"]');
-        $barangay_address = $('input[name="barangay_address"]');
-        $city_address = $('input[name="city_address"]');
-        $province_address = $('input[name="province_address"]');
-        $zip_code = $('input[name="zip_code"]');
-        $guardian_last_name = $('input[name="guardian_last_name"]');
-        $guardian_first_name = $('input[name="guardian_first_name"]');
-        $guardian_middle_name = $('input[name="guardian_middle_name"]');
-        $guardian_phone_num = $('input[name="guardian_phone_num"]');
-    });
 });
 </script>
 
@@ -195,5 +169,7 @@ $(document).ready(function() {
 </script>
 
 <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/UploadStudentExcelScript.php"?>
+
+<?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/EditStudentScript.php"?>
 
 

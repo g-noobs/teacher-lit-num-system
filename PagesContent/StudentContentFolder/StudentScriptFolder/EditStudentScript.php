@@ -1,6 +1,6 @@
 <script>
 $(function() {
-    $('.edit').on('click', function(e) {
+    $(document).on('click', '.edit', function(e) {
         e.preventDefault();
         var $controlModal = $('#add_user_modal');
         $controlModal.modal('show');
