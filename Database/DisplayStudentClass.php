@@ -75,7 +75,7 @@ class DisplayStudentClass extends Connection{
     }
 
     function displayAssignedClassList($teacher_id){
-        $sql = "SELECT class_name FROM view_teacher_class_info WHERE class_status = 1 AND user_info_id = '$teacher_id';";
+        $sql = "SELECT DISTINCT class_name FROM view_teacher_class_info WHERE class_status = 1 AND user_info_id = '$teacher_id';";
         $result = $this->getConnection()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
