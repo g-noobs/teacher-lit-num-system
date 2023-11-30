@@ -3,6 +3,9 @@
 <!-- Add student script -->
 <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/AddStudentScript.php"?>
 
+<?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/EditStudentScript.php"?>
+
+
 
 
 <div class="container">
