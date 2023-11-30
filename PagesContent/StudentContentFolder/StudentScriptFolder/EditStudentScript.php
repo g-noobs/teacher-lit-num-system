@@ -66,10 +66,12 @@ $(function() {
                 console.log('error');
             }
         });
+        
         $('.addUserForm').on('submit', function(e) {
             e.preventDefault();
             var formData = new FormData(this);
             // Merge additional data with formData
+
             formData.append('id', btn_id);
             formData.append('class_id', class_id);
             var $hideModal = $('#add_user_modal');
