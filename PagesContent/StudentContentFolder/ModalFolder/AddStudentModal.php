@@ -130,7 +130,7 @@
                         <!-- /.box-body -->
                         <div class="modal-footer">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success pull-left">Add Learner</button>
+                                <button type="submit" class="btn btn-success pull-left" id="submit_btn">Add Learner</button>
                                 <button type="reset" class="btn btn-default pull-right"
                                     data-dismiss="modal">Cancel</button>
                             </div>

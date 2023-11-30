@@ -2,9 +2,9 @@
 $(document).ready(function() {
     $(document).on('click', '.add_stdnt_btn', function() {
         var $controlModal = $('#add_user_modal');
-
-
         $controlModal.modal('show');
+        $('#submit_btn').text('Add Learner');
+
 
         var class_id = $(this).data('class-id');
 
