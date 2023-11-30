@@ -29,7 +29,7 @@ $(function() {
         // this will populate the date to the modal
         $.ajax({
             type: "POST",
-            url: "../PagesContent/UserContent/ActionStudent/ActionPopulateStudentData.php",
+            url: "../PagesContent/StudentContentFolder/ActionStudent/ActionPopulateStudentData.php",
             data: {
                 id: btn_id
             },
