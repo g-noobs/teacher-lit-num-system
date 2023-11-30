@@ -54,6 +54,8 @@
     </div>
 </div>
 
+<?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/EditStudentScript.php"?>
+
 <script>
 $(document).ready(function() {
     $.ajax({
@@ -168,4 +170,4 @@ $(document).ready(function() {
 
 <?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/UploadStudentExcelScript.php"?>
 
-<?php include_once "../PagesContent/StudentContentFolder/StudentScriptFolder/EditStudentScript.php"?>
+
