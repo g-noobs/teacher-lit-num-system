@@ -51,7 +51,6 @@ class LessonDisplayClass extends Connection{
                 
                 echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['lesson_id'] . "'></td>";
                 
-                echo "<td> <a href='#' class='edit' data-id='".$row["lesson_id"]."' style='margin-right:10px; color:'blue';'><span class='glyphicon glyphicon-edit' ></span></a> </td>";
                 echo "<td>" . $row["lesson_id"] . "</td>";
                 echo "<td>" . $row["lesson_name"] . "</td>";
                 echo "<td>" . $row["lesson_description"] . "</td>";
