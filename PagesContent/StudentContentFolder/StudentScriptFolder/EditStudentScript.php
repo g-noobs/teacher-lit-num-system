@@ -72,6 +72,8 @@ $(function() {
             var formData = new FormData(this);
             // Merge additional data with formData
 
+            
+
             formData.append('id', btn_id);
             formData.append('class_id', class_id);
             var $hideModal = $('#add_user_modal');
@@ -100,7 +102,6 @@ $(function() {
                                 "</p><br>");
                             console.log(error);
                         });
-
                         setTimeout(function() {
                             $("#add_user_modal_alert").fadeOut("slow");
 
@@ -111,10 +112,10 @@ $(function() {
                             $hideModal.modal('hide');
                             $('#successAlert').text(response.success);
                             $('#successBanner').show();
-                            // setTimeout(function() {
-                            //     $("#successBanner").fadeOut("slow");
-                            //     location.reload();
-                            // }, 8500);
+                            setTimeout(function() {
+                                $("#successBanner").fadeOut("slow");
+                                location.reload();
+                            }, 8500);
 
 
 
@@ -122,10 +123,10 @@ $(function() {
                             $hideModal.modal('hide');
                             $('#errorAlert').text(response.error);
                             $('#errorBanner').show();
-                        //     setTimeout(function() {
-                        //         $("#errorBanner").fadeOut("slow");
-                        //         location.reload();
-                        //     }, 8500);
+                            setTimeout(function() {
+                                $("#errorBanner").fadeOut("slow");
+                                location.reload();
+                            }, 8500);
                         }
                     }
                 },
@@ -136,10 +137,10 @@ $(function() {
                     $('#errorAlert').text(
                         'An error occurred during the AJAX request.');
                     $('#errorBanner').show();
-                    // setTimeout(function() {
-                    //     $("#errorBanner").fadeOut("slow");
-                    //     location.reload();
-                    // }, 8500);
+                    setTimeout(function() {
+                        $("#errorBanner").fadeOut("slow");
+                        location.reload();
+                    }, 8500);
                 }
             });
 
