@@ -99,8 +99,8 @@ $(document).ready(function() {
                             <tr>
                             <th colspan=2></th>
                             <th>Student ID</th>
-                            <th>First Name</th>
                             <th>Last Name</th>
+                            <th>First Name</th>
                             <th>Gender</th>
                             <th>Acount Status</th>
                             </tr>

@@ -13,10 +13,12 @@ if($_GET['id']){
     WHERE user_level_description = 'Learner'
         AND class_id = '$id'
         AND class_id IN (
-        SELECT class_id
-        FROM tbl_teacher_class_assignment
-        WHERE status = 1
-    );";
+            SELECT class_id
+            FROM tbl_teacher_class_assignment
+            WHERE status = 'Active'
+        )
+    ORDER BY last_name;";
+
     $result = $conn->query($sql);
 
     $htmlContent = '';
@@ -30,8 +32,9 @@ if($_GET['id']){
             $htmlContent .= "<td><a href='#' class='edit' data-id='".$row["user_info_id"]."' data-class-id='".$row["class_id"]."'><span class='glyphicon glyphicon-edit'></span></a></td>";
 
             $htmlContent .= "<td>".$row['personal_id']."</td>";
-            $htmlContent .= "<td>".$row['first_name']."</td>";
             $htmlContent .= "<td>".$row['last_name']. "</td>";
+            $htmlContent .= "<td>".$row['first_name']."</td>";
+            
             $htmlContent .= "<td>".$row['gender']."</td>";
             $htmlContent .= "<td class=text-success><strong>".$row['status']."</strong></td>";
             $htmlContent .= "</tr>";
