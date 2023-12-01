@@ -146,7 +146,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if($updateContact->getLastError()=== null){
                         $table = 'tbl_student';
                         $student = array(
-                            'class_id' => $_POST['class_assign'],
+                            'class_id' => $_POST['class_id'],
                             'user_info_id' => $_POST['id']
                         );
                         $sql = "UPDATE $table
