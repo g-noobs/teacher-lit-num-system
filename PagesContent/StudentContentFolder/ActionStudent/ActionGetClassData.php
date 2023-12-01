@@ -9,7 +9,7 @@ $table = "view_teacher_class_info";
 
 $id = $_SESSION['id'];
 //can only if class status equals to 1 and class is assigned to teacher's status equals to 1
-$sql = "SELECT class_id, class_name FROM $table WHERE class_status = 1 AND user_info_id = '$id'
+$sql = "SELECT class_id, class_name FROM $table WHERE class_assign_status = 1 AND class_status = 1 AND user_info_id = '$id'
 AND class_id IN (
     SELECT class_id
     FROM tbl_teacher_class_assignment
