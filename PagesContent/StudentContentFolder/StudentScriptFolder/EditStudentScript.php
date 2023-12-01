@@ -111,10 +111,10 @@ $(function() {
                             $hideModal.modal('hide');
                             $('#successAlert').text(response.success);
                             $('#successBanner').show();
-                            setTimeout(function() {
-                                $("#successBanner").fadeOut("slow");
-                                location.reload();
-                            }, 8500);
+                            // setTimeout(function() {
+                            //     $("#successBanner").fadeOut("slow");
+                            //     location.reload();
+                            // }, 8500);
 
 
 
@@ -122,10 +122,10 @@ $(function() {
                             $hideModal.modal('hide');
                             $('#errorAlert').text(response.error);
                             $('#errorBanner').show();
-                            setTimeout(function() {
-                                $("#errorBanner").fadeOut("slow");
-                                location.reload();
-                            }, 8500);
+                        //     setTimeout(function() {
+                        //         $("#errorBanner").fadeOut("slow");
+                        //         location.reload();
+                        //     }, 8500);
                         }
                     }
                 },
@@ -136,10 +136,10 @@ $(function() {
                     $('#errorAlert').text(
                         'An error occurred during the AJAX request.');
                     $('#errorBanner').show();
-                    setTimeout(function() {
-                        $("#errorBanner").fadeOut("slow");
-                        location.reload();
-                    }, 8500);
+                    // setTimeout(function() {
+                    //     $("#errorBanner").fadeOut("slow");
+                    //     location.reload();
+                    // }, 8500);
                 }
             });
 
