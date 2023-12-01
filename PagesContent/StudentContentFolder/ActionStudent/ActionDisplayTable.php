@@ -26,6 +26,12 @@ if($_GET['id']){
     
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
+            if($row['status'] == 'Active'){
+                $color = 'text-success';
+            }else{
+                $color = 'text-danger';
+            }
+
             $htmlContent .= "<tr>";
             
             $htmlContent .= "<td><a href='#' data-id='".$row["user_info_id"]."'<span class='glyphicon glyphicon-info-sign'></span></a>";
@@ -36,7 +42,7 @@ if($_GET['id']){
             $htmlContent .= "<td>".$row['first_name']."</td>";
             
             $htmlContent .= "<td>".$row['gender']."</td>";
-            $htmlContent .= "<td class=text-success><strong>".$row['status']."</strong></td>";
+            $htmlContent .= "<td class='".$color."'><strong>".$row['status']."</strong></td>";
             $htmlContent .= "</tr>";
         }
         $response = array('success' => $htmlContent);
