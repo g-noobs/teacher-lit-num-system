@@ -67,7 +67,7 @@ $(function() {
             }
         });
         
-        $('.addUserForm').on('submit', function(e) {
+        $('#addUserForm').on('submit', function(e) {
             e.preventDefault();
             var formData = new FormData(this);
             // Merge additional data with formData
