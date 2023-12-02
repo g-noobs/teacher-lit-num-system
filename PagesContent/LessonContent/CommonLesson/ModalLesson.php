@@ -27,7 +27,7 @@
                         </div>
                         <div class="form-group">
                             <label for="lesson_description">Lesson Description</label>
-                            <input type="text" name="lesson_description" class="form-control" required>
+                            <textarea type="text" name="lesson_description" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="category_level">Category Level</label>
