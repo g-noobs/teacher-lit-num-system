@@ -46,9 +46,8 @@
                             <div class="col-xs-4">
                                 <label for="gender">Select Gender:</label>
                                 <select class="form-control input-xs" name="gender" placeholder="Gender" required>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>None</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
                             <div class="col-xs-4">
