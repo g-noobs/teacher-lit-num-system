@@ -23,12 +23,12 @@ $(function() {
                 $lesson_name.val(response.lesson_name);
                 $lesson_description.val(response.lesson_description);
 
-                // $category_level.find('option').each(function() {
-                //     if ($(this).val() === response.category_id) {
-                //         $(this).prop('selected', true);
-                //         return false;
-                //     }
-                // });
+                $category_level.find('option').each(function() {
+                    if ($(this).val() === response.category_id) {
+                        $(this).prop('selected', true);
+                        return false;
+                    }
+                });
                 $subj_list.find('option').each(function() {
                     if ($(this).val() === response.module_id) {
                         $(this).prop('selected', true);

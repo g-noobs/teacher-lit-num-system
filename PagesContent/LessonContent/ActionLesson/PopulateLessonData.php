@@ -16,7 +16,7 @@ if(!empty($lesson_id)){
             $response = array(
                 'lesson_name' => $row['lesson_name'],
                 'lesson_description' =>$row['lesson_description'],
-                // 'category_id' => $row['category_id'],
+                'category_id' => $row['category_id'],
                 'module_id' => $row['module_id']
             );
         }
