@@ -4,7 +4,7 @@ $(function() {
         e.preventDefault();
         $('#submit_btn').text('Update Module');
         $modal = $('#addLessonModal');
-
+        $modal.modal('show');
         var btn_id = $(this).data('id');
         $lesson_name = $('input[name="lesson_name"]');
         $lesson_description = $('textarea[name="lesson_description"]');
