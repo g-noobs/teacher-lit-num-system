@@ -1,11 +1,11 @@
-<div class="modal fade" id="add_quiz_modal">
+<div class="modal fade" id="edit_topic_modal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">Edit Quiz</h4>
+                <h4 class="modal-title">Edit Topic</h4>
             </div>
             <!-- alert that will show if error occurs -->
             <div class="row">

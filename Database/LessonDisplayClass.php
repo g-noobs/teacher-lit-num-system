@@ -106,7 +106,7 @@ class LessonDisplayClass extends Connection{
                 echo '<td>'. $row['topic_name'] .'</td>';
                 echo '<td>'. $status .'</td>';
 
-                echo "<td><a href='#' type='button' id='editBtn-".$row['topic_id']."' data-toggle='modal' data-target='#editModal' style='margin-right:10px; color: blue;'><span class='glyphicon glyphicon-edit' ></span></a></td>";
+                echo "<td><a href='#' type='button' class='edit_topic_btn' data-id='".$row['topic_id']."' style='margin-right:10px; color: blue;'><span class='glyphicon glyphicon-edit' ></span></a></td>";
                 
                 echo '</tr>';
             }

@@ -100,6 +100,9 @@
     <!-- Edit Lesson Script -->
     <?php include_once("../PagesContent/LessonContent/LessonScript/EditLessonScript.php");?>
 
+    <!-- edit topic -->
+    <?php include_once("../PagesContent/LessonContent/LessonScript/EditTopicScript.php");?>
+    <?php ?>
 
     <!-- modified jquery for lesson - will modify if view button is click from the lesson-->
     <?php include_once("../PagesContent/LessonContent/CommonLesson/JqueryLesson.php");?>
