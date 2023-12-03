@@ -86,7 +86,7 @@
                 <?php include_once "../PagesContent/QuizFolder/QuizModal/ConfirmationModal.php";?>
                 
                 <!-- edit modal -->
-                <?php include_once "../PagesContent/QuizFolder/QuizModal/EditQuizModal.php";?>
+                <?php include_once "../PagesContent/QuizFolder/QuizModal/AddQuizModal.php";?>
                 <!-- Main Content-->
                 <section class="content" id="quizContent">
                     <?php include_once("../PagesContent/QuizFolder/TableQuiz/QuizMainTable.php");?>
