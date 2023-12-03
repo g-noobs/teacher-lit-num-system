@@ -4,7 +4,7 @@ $(function() {
         e.preventDefault();
         $modal = $('#add_quiz_modal');
         var btn_id = $(this).data('id');
-        $modal.modal('show');
+        
 
         $topic_id = $('select[name="topic_id"]');
         $quiz_type = $('select[name="quiz_type_option"]');
