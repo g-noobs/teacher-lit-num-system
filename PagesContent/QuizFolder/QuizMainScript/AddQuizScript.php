@@ -53,7 +53,7 @@ $(function() {
                 }
             },
             error: function() {
-                $("#add_class_form")[0].reset();
+                $("#addQuizForm")[0].reset();
                 $hideModal.modal('hide');
                 //show alert banner id = errorBanner
                 $('#errorAlert').text('An error occurred during the AJAX request.');
