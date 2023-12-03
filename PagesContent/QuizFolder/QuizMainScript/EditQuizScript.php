@@ -6,10 +6,10 @@ $(function() {
         var btn_id = $(this).data('id');
         
 
-        $topic_id = $('select[name="topic_id"]');
-        $quiz_type = $('select[name="quiz_type_option"]');
-        $question = $('textarea[name="quiz_question"]');
-        $quiz_answer = $('select[name="quiz_answer"]');
+        var $topic_id = $('select[name="topic_id"]');
+        var $quiz_type = $('select[name="quiz_type_option"]');
+        var $question = $('textarea[name="quiz_question"]');
+        var $quiz_answer = $('select[name="quiz_answer"]');
 
         $.ajax({
             type: "POST",
