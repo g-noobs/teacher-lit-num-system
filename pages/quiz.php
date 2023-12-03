@@ -84,6 +84,9 @@
 
                 <!-- activate and archive confirmation modal -->
                 <?php include_once "../PagesContent/QuizFolder/QuizModal/ConfirmationModal.php";?>
+                
+                <!-- edit modal -->
+                <?php include_once "../PagesContent/QuizFolder/QuizModal/EditQuizModal.php";?>
                 <!-- Main Content-->
                 <section class="content" id="quizContent">
                     <?php include_once("../PagesContent/QuizFolder/TableQuiz/QuizMainTable.php");?>
@@ -106,6 +109,9 @@
 
     <!-- For Adding quiz including Jquery -->
     <?php include_once "../PagesContent/QuizFolder/QuizMainScript/AddQuizScript.php"?>
+
+    <!-- Edit quiz -->
+    <?php include_once "../PagesContent/QuizFolder/QuizMainScript/EditQuizScript.php"?>
 
     <!-- For Arching quiz including Jquery -->
     <?php include_once "../PagesContent/QuizFolder/QuizMainScript/ArchiveScript.php"?>

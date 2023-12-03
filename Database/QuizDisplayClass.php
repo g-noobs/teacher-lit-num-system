@@ -61,7 +61,7 @@ class QuizDisplayClass extends Connection{
                 echo "<tr>";
                 echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['quiz_id'] . "'></td>";
 
-                echo "<td><a href='#' class='quiz_info_btn' data-id='".$row["quiz_id"]."' data-toggle='modal' data-target='#quiz_data_modal'><span class='glyphicon glyphicon-info-sign' style = 'padding-left: 10px;'></span></a>";
+                echo "<td><a href='#' class='quiz_info_btn' data-id='".$row["quiz_id"]."'><span class='glyphicon glyphicon-info-sign' style = 'padding-left: 10px;'></span></a>";
 
                 echo "<td>".$row['quiz_id']."</td>";
                 echo "<td>".$row['quiz_question']."</td>";
