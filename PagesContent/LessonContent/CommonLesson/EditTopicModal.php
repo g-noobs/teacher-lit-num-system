@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <form id="edit_topic_modal" action="post">
+            <form id="edit_topic_form" action="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="edit_topic_name" class="control-label">Topic Name:</label>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class='form-group'>
-                        <button id="submit" type="submit" class="btn btn-primary pull-left">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-primary pull-left">Update</button>
                         <button id="reset-cancel" type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
