@@ -59,9 +59,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             }
             if($quizType === '1'){
                 // Check if $correctAnswer matches any of the options and place it in quiz_selectionA
-                if ($correctAnswer === 'true') {
+                if ($correctAnswer == 'true') {
                     $values['quiz_selectionB'] = 'false';
-                } elseif ($correctAnswer === 'false') {
+                } elseif ($correctAnswer == 'false') {
                     $values['quiz_selectionB'] = 'true';
                 }
             }
