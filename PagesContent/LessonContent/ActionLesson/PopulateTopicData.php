@@ -8,7 +8,7 @@ $conn = $connection->getConnection();
 $table = "tbl_topic";
 $topic_id = $_POST['id'];
 
-if(!empty($topic)){
+if(!empty($topic_id)){
     $sql = "SELECT * FROM $table WHERE topic_id = '$topic_id';";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
