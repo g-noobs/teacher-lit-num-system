@@ -4,7 +4,7 @@ $(function() {
         e.preventDefault();
         $modal = $('#edit_quiz_modal');
         var btn_id = $(this).data('id');
-        $
+        $modal.modal('show');
     });
 });
 </script>
