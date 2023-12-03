@@ -2,10 +2,10 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Edit Quiz</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                <h4 class="modal-title">Edit Quiz</h4>
             </div>
             <!-- alert that will show if error occurs -->
             <div class="row">
@@ -83,9 +83,12 @@
                         </div>
                     </div>
                 </div>
-                <div class=row>
-                    <button id="submit" class="btn btn-primary">Submit</button>
-                    <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
+                <!-- modal-footer -->
+                <div class="modal-footer">
+                    <div class=form-group>
+                        <button id="submit" class="btn btn-primary">Submit</button>
+                        <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
+                    </div>
                 </div>
             </form>
         </div>
