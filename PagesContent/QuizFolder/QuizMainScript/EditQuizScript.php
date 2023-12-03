@@ -4,6 +4,7 @@ $(function() {
         e.preventDefault();
         $modal = $('#add_quiz_modal');
         var btn_id = $(this).data('id');
+        $modal.modal('show');
         
 
         var $topic_id = $('select[name="topic_id"]');
@@ -40,7 +41,7 @@ $(function() {
                         return false;
                     }
                 });
-                $modal.modal('show');
+                
             },
             error: function() {
                 console.log('error');
