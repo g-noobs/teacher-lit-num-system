@@ -70,8 +70,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $values['date_created'] = $currentDate->format('Y-m-d H:i:s');
 
             $columns = implode(', ', array_keys($values));
+            $questionMarkString = implode(',', array_fill(0, count($values), '?'));
+
             $sql = "INSERT INTO $table ($columns)
-                    VALUES(?,?,?,?,?,?,?,?,?);";
+                    VALUES($questionMarkString);";
             $params = array_values($values);
 
             
