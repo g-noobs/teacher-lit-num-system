@@ -10,12 +10,12 @@
             </div>
 
             <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
-                <form class="addQuizForm" action="post">
+                <form id="addQuizForm" action="post">
                     <div class="row">
                         <div class="col-xs-6">
                             <div class="form-group">
                                 <label for="topic_id">Topic Source</label>
-                                <select name="topic_id" class="topic_id_option" class="form-control">
+                                <select name="topic_id" id="topic_id_option" class="form-control">
                                     <?php include_once "../Database/QuizDisplayClass.php";
                                         $teacher_id = $_SESSION['id'];
                                         $optionTopic = new QuizDisplayClass();
@@ -25,7 +25,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="quiz_type_option">Type of Quiz</label>
-                                <select name="quiz_type_option" class="form-control quiz_type_option" requried>
+                                <select name="quiz_type_option" id="quiz_type_option" class="form-control" requried>
                                     <option value="0">Multiple Choice</option>
                                     <option value="1">True or False</option>
                                     <option value="2">Essay</option>
@@ -33,14 +33,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="quiz_question" class="control-label">Question:</label>
-                                <textarea name="quiz_question" class="form-control quiz_question" cols="60" rows="5"
+                                <textarea name="quiz_question" id="quiz_question" cols="60" rows="5"
                                     class="form-control" style="resize: vertical;" required></textarea>
                             </div>
                         </div>
-                        <div class="col-xs-6 answer_col_right">
+                        <div class="col-xs-6" id="answer_col_right">
                             <div class="form-group">
                                 <label for="quiz_answer">Set the Correct Answer</label>
-                                <select name="quiz_answer" class="quiz_answer">
+                                <select name="quiz_answer" id="quiz_answer">
                                     <option></option>
                                     <option></option>
                                     <option></option>
@@ -74,10 +74,8 @@
                         </div>
                     </div>
                     <div class=row>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="reset" type="reset" class="btn btn-default">Cancel</button>
-                        </div>
+                        <button id="submit" class="btn btn-primary">Submit</button>
+                        <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
                     </div>
                 </form>
                 <!-- /..End of Form -->
@@ -93,7 +91,7 @@
 
 
 
-<!-- <form class="addQuizForm">
+<!-- <form id="addQuizForm">
     <div class="modal-body">
         <div class="box-body">
             <div class="form-group">
@@ -112,7 +110,7 @@
             </div>
             <div class="form-group">
                 <label for="quiz_type_label">Quiz Type</label>
-                <select class="form-control" name="quiz_type" class="quiz_type_option">
+                <select class="form-control" name="quiz_type" id="quiz_type_option">
                     <option value="1">Multiple Choice</option>
                     <option value="2">True or False</option>
                 </select>

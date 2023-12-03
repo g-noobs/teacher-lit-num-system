@@ -4,7 +4,7 @@ $(function() {
         e.preventDefault();
         var $modal = $('#add_quiz_modal');
         $modal.modal('show');
-        $('.addQuizForm').on('submit', function(e) {
+        $('#addQuizForm').on('submit', function(e) {
             e.preventDefault();
 
             var formData = new FormData(this);
