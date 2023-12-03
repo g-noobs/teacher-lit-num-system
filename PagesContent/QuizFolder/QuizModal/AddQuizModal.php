@@ -97,7 +97,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class='form-group'>
-                        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-primary pull-left">Submit</button>
                         <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
                     </div>
                 </div>
