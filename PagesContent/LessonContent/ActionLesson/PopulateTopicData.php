@@ -24,5 +24,9 @@ if(!empty($topic_id)){
     //sent response to populate data for Edit
     echo json_encode($response);
     exit();
+}else{
+    $response = array('error' => 'No id received');
+    echo json_encode($response);
+    exit();
 }
 ?>
