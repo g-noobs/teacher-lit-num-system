@@ -1,6 +1,6 @@
 <script>
 $(function() {
-    $('.quiz_type_option').on('change', function() {
+    $(document).on('change', '.quiz_type_option',function() {
         var selectedoption = $(this).val();
 
         var multipleChoice = "<div class='form-group'>" +
