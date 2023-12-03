@@ -44,7 +44,7 @@ if(!empty($errors)){
             $updateTopic->executePreState($sql, $params);
 
             if($updateTopic->getLastError() === null){
-                $response = array('success' => 'Successfullt Update Topic: '. $values['topic_id']);
+                $response = array('success' => 'Successfully Update Topic: '. $values['topic_id']);
                 echo json_encode($response);
                 exit();
             }else{
