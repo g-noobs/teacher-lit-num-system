@@ -13,8 +13,8 @@ class InputValidationClass{
                 return false;
             }
         } elseif ($type == 'address') {
-            // Allow alphanumeric and whitespace
-            if (!preg_match("/^[a-zA-Z0-9 ]*$/", $data)) {
+            // Allow alphanumeric, whitespace, period, question mark, and exclamation point
+            if (!preg_match("/^[a-zA-Z0-9 .!?]*$/", $data)) {
                 return false;
             }
         } elseif ($type == 'phone') {

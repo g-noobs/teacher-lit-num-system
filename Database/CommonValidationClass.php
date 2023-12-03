@@ -131,6 +131,29 @@ class CommonValidationClass extends Connection{
         
         // Error in the query or no results
         return false;
-    }    
+    }
+    function updateValidateOne($table, $column, $data, $column_id_name ,$id_data){
+        $sql = "SELECT COUNT($column) as count 
+                FROM $table 
+                WHERE $column = '$data' AND $column_id_name != '$id_data';";
+        
+        $result = $this->getConnection()->query($sql);
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $count = $row["count"];
+            
+            if ($count > 0) {
+                // There is at least one duplicate (excluding the current row)
+                return false;
+            } else {
+                // No duplicates found
+                return true;
+            }
+        }
+        
+        // Error in the query or no results
+        return false;
+    } 
 }
 ?>
