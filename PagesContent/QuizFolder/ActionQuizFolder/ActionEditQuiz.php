@@ -75,7 +75,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     quiz_selectionD = ?, 
                     topic_id = ?
                 WHERE quiz_id = ?;";
+            $params = array_values($values);
+            $updateQuiz = new SanitizeCrudClass();
+            $updateQuiz->executePreState($sql, $params);
+
+            if($updateQuiz->getLastError() === null){
+                $response = array('success' => 'Successfullt Update Quiz: '. $values['quiz_id']);
+                echo json_encode($response);
+                exit();
+            }else{
+                $response = array('error' => $updateQuiz->getLastError());
+                echo json_encode($response);
+                exit();
+            }
         }
+    }else{
+        $response = array('error' => 'Error Adding Quiz!');
+        echo json_encode($response);
+        exit();
     }
+}else{
+    $response = array('error' => 'Error Adding Quiz! Possible POST ISSUE');
+    echo json_encode($response);
+    exit();
 }
 ?>
