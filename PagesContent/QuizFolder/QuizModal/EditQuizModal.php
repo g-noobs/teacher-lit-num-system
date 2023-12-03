@@ -82,13 +82,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class=row>
-                        <button id="submit" class="btn btn-primary">Submit</button>
-                        <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
-                    </div>
+                </div>
+                <div class=row>
+                    <button id="submit" class="btn btn-primary">Submit</button>
+                    <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
                 </div>
             </form>
-
         </div>
         <!-- /.modal-content -->
     </div>
