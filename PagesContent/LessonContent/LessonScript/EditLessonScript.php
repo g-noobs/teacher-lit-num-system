@@ -70,10 +70,10 @@ $(function() {
                             console.log(error);
                         });
 
-                        setTimeout(function() {
-                            $("#add_user_modal_alert").fadeOut("slow");
+                        // setTimeout(function() {
+                        //     $("#add_user_modal_alert").fadeOut("slow");
 
-                        }, 8500);
+                        // }, 8500);
                     } else {
                         // Check if the form submission was successful
                         if (response.hasOwnProperty('success')) {
