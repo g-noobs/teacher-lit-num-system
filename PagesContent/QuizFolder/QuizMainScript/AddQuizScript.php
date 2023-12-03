@@ -2,7 +2,7 @@
 $(function() {
     $('#add_quiz_modal').on('click', function(e) {
         e.preventDefault();
-        var $modal = $('#addQuizModal');
+        var $modal = $('#add_quiz_modal');
         $modal.modal('show');
         $('.addQuizForm').on('submit', function(e) {
             e.preventDefault();
