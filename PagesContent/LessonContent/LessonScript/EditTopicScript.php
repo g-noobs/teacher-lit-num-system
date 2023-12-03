@@ -11,7 +11,7 @@ $(function(){
 
         $.ajax({
             type: "get",
-            url: "",
+            url: "../PagesContent/LessonContent/ActionLesson/PopulateTopicData.php",
             data: {
                 id: topic_id
             },
@@ -20,8 +20,8 @@ $(function(){
                 $topic_name.val(response.topic_name);
                 $topic_description.val(response.topic_description);
             },
-            error: function (response) {
-                console.log(response);
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
             }
         });
 
