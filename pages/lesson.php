@@ -68,6 +68,9 @@
                 <!-- Confirmation Modal -->
                 <?php include_once "../PagesContent/LessonContent/CommonLesson/ConfirmationModal.php";?>
 
+                <!-- edit modal -->
+                <?php include_once "../PagesContent/LessonContent/CommonLesson/EditTopicModal.php"?>
+
                 <!-- Main content -->
                 <section class="content container" id="lesson-table">
                     <?php include_once "../PagesContent/LessonContent/TableFolder/LessonTable.php"?>
