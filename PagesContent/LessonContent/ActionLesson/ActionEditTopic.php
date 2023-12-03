@@ -12,7 +12,7 @@ $values = array(
     'topic_description' => $_POST['edit_topic_description'],
     'topic_id' => $id
 );
-$table = 'tbl_topic';
+$table = "tbl_topic";
 $inputValidation = new InputValidationClass();
 
 $topic_name = $inputValidation->test_input($_POST['edit_topic_name'], 'address');
