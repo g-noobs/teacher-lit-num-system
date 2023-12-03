@@ -3,7 +3,7 @@ $(function(){
     $(document).on('click', '.edit_topic_btn', function(e){
         e.preventDefault();
         var $modal = $('#edit_topic_modal');
-        var topic_id = $(this).data('id');
+        var btn_id = $(this).data('id');
         $modal.modal('show');
 
         $topic_name = $('input[name="edit_topic_name"]');
@@ -13,7 +13,7 @@ $(function(){
             type: "POST",
             url: "../PagesContent/LessonContent/ActionLesson/PopulateTopicData.php",
             data: {
-                id: topic_id
+                id: btn_id
             },
             dataType: "json",
             success: function(response) {
