@@ -87,7 +87,7 @@
                 <div class="modal-footer">
                     <div class=form-group>
                         <button id="submit" class="btn btn-primary pull-left">Update Quiz</button>
-                        <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
+                        <button id="reset-cancel" type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
             </form>
