@@ -6,10 +6,10 @@ include_once "../../../Database/Connection.php";
 $connection = new Connection();
 $conn = $connection->getConnection();
 $table = "tbl_topic";
-$topic = $_POST['id'];
+$topic_id = $_GET['id'];
 
 if(!empty($topic)){
-    $sql = "SELECT * FROM $table WHERE topic_id = '$topic';";
+    $sql = "SELECT * FROM $table WHERE topic_id = '$topic_id';";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
