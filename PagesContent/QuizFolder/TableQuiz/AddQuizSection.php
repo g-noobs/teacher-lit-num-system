@@ -25,7 +25,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="quiz_type_option">Type of Quiz</label>
-                                <select name="quiz_type_option" id="quiz_type_option" class="form-control" requried>
+                                <select name="quiz_type_option" class="form-control quiz_type_option" requried>
                                     <option value="0">Multiple Choice</option>
                                     <option value="1">True or False</option>
                                     <option value="2">Essay</option>
