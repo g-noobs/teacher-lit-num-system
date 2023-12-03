@@ -10,7 +10,7 @@ $(function(){
         $topic_description = $('textarea[name="edit_topic_description"]');
 
         $.ajax({
-            type: "get",
+            type: "GET",
             url: "../PagesContent/LessonContent/ActionLesson/PopulateTopicData.php",
             data: {
                 id: topic_id
