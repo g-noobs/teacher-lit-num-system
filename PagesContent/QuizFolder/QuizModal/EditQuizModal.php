@@ -86,7 +86,7 @@
                 <!-- modal-footer -->
                 <div class="modal-footer">
                     <div class=form-group>
-                        <button id="submit" class="btn btn-primary">Submit</button>
+                        <button id="submit" class="btn btn-primary">Update Quiz</button>
                         <button id="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
                     </div>
                 </div>
