@@ -1,6 +1,6 @@
 <script>
 $(function() {
-    $('#add_quiz_modal').on('click', function(e) {
+    $('#add_qzui_btn').on('click', function(e) {
         e.preventDefault();
         var $modal = $('#add_quiz_modal');
         $modal.modal('show');
