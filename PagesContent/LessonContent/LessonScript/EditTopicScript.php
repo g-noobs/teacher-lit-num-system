@@ -21,7 +21,7 @@ $(function(){
                 $topic_description.val(response.topic_description);
             },
             error: function(xhr, status, error) {
-                console.error(xhr.responseText);
+                console.log(xhr.responseText);
             }
         });
 
