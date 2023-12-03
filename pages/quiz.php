@@ -55,9 +55,9 @@
                         </div>
                     </div>
                 </div>
-                <section class="content" id="addQquizSection">
-                    <?php include_once "../PagesContent/QuizFolder/TableQuiz/AddQuizSection.php";?>
-                </section>
+                <!-- <section class="content" id="addQquizSection">
+                    <?php //include_once "../PagesContent/QuizFolder/TableQuiz/AddQuizSection.php";?>
+                </section> -->
 
                 <section>
                     <div class="align-items-start">
