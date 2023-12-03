@@ -4,8 +4,7 @@ $(function(){
         e.preventDefault();
         var $modal = $('#edit_topic_modal');
         var btn_id = $(this).data('id');
-        $modal.modal('show');
-
+        
         $topic_name = $('input[name="edit_topic_name"]');
         $topic_description = $('textarea[name="edit_topic_description"]');
 
@@ -19,6 +18,8 @@ $(function(){
             success: function(response) {
                 $topic_name.val(response.topic_name);
                 $topic_description.val(response.topic_description);
+                $modal.modal('show');
+
             },
             error: function(xhr, status, error) {
                 console.log(xhr.responseText);
