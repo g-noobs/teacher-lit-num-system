@@ -74,8 +74,10 @@
                         </div>
                     </div>
                     <div class=row>
-                        <button class="submit" class="btn btn-primary">Submit</button>
-                        <button class="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
+                        <div class="form-group">
+                            <button class="submit" class="btn btn-primary">Submit</button>
+                            <button class="reset-cancel" type="reset" class="btn btn-default">Cancel</button>
+                        </div>
                     </div>
                 </form>
                 <!-- /..End of Form -->
