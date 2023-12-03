@@ -16,7 +16,7 @@ $(function(){
                 id: topic_id
             },
             dataType: "json",
-            success: function (response) {
+            success: function(response) {
                 $topic_name.val(response.topic_name);
                 $topic_description.val(response.topic_description);
             },
