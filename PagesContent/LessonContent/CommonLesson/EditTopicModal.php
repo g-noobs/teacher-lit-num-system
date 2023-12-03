@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         <label for="edit_topic_description"class="control-label">Topic Description:</label>
-                        <textarea name="edit_topic_description" id="" cols="30" rows="10" required></textarea>
+                        <textarea name="edit_topic_description" class="form-control" required></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
