@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 
 include_once "../../../Database/SanitizeCrudClass.php";
 include_once "../../../CommonPHPClass/InputValidationClass.php";
+include_once "../../../Database/CommonValidationClass.php";
 
 $id = $_POST['id'];
 $values = array(
