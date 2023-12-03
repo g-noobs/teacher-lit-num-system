@@ -14,18 +14,16 @@ $(function(){
             success: function(response){
                 
                 //quiz type option's are 0, 1, 2 - modify the response to display the correct quiz type name
-                var quiz_type_text = "";
                 if(response.quiz_type === '0'){
-                    quiz_type_text = 'Multiple Choice';
+                    $('#quiz_type').text('Multiple Choice');
 
                 }else if(response.quiz_type === '1'){
-                    quiz_type_text = 'True or False';
+                    $('#quiz_type').text('True or False');
                 }else if(response.quiz_type === '2'){
-                    quiz_type_text = 'Essay';
+                    $('#quiz_type').text('Essay');
                 }else{
-                    quiz_type_text = 'Unknown';
+                    $('#quiz_type').text('Unknown');
                 }
-                $('#quiz_type').text(quiz_type_text);
                 $('#quiz_question_data').text(response.quiz_question);
                 $('#correct_answer_data').text(response.correct_answer);
                 $('#option1_data').text(response.option1);
