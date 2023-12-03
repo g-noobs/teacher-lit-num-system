@@ -6,7 +6,7 @@ include_once "../../../Database/Connection.php";
 $connection = new Connection();
 $conn = $connection->getConnection();
 $table = "tbl_topic";
-$topic_id = $_GET['id'];
+$topic_id = $_POST['id'];
 
 if(!empty($topic)){
     $sql = "SELECT * FROM $table WHERE topic_id = '$topic_id';";
