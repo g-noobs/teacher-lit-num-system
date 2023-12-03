@@ -37,7 +37,7 @@ if(!empty($errors)){
         SET lesson_name = ?,
             lesson_description = ?,
             category_id = ?,
-            module_id = ?,
+            module_id = ?
         WHERE lesson_id = ?";
 
         $params = array_values($values);
