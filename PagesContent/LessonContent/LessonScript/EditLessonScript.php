@@ -41,7 +41,7 @@ $(function() {
                 console.log('error');
             }
         });
-        $('#addLessonForm').on('submit', function(e){
+        $('.addLessonForm').on('submit', function(e){
             e.preventDefault();
             var formData = new FormData(this);
             formData.append('id', btn_id);
