@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['quiz_question'])){
         $values = array(
             'quiz_id' => '',
+            'quiz_type' => $_POST['quiz_type_option'],
             'quiz_question' => $_POST['quiz_question'],
             'quiz_selectionA' => '', //Correct Answer
             'quiz_selectionB' => '',

@@ -14,6 +14,7 @@
                 <div class="box box-widget widget-user-2">
                     <div class="box-footer no-padding">
                         <ul class="nav nav-stacked">
+                            <li><strong><span id="quiz_type"></span></strong></li>
                             <li><strong>Question:</strong><span id="quiz_question_data"></span></li>
                             <li><strong>Correct Answer:</strong><span id="correct_answer_data"></span></li>
                             <li><strong>Selection 1:</strong><span id="option1_data"></span></li>

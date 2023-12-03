@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             while ($row = $result->fetch_assoc()) {
                 // Check each value and replace empty ones with null or none
                 $quiz_id = !empty($row['quiz_id']) ? $row['quiz_id'] : 'none';
+                $quiz_type = !empty($row['quiz_type']) ? $row['quiz_type'] : 'none';
                 $quiz_question = !empty($row['quiz_question']) ? $row['quiz_question'] : 'none';
                 $correct_answer = !empty($row['quiz_selectionA']) ? $row['quiz_selectionA'] : 'none';
                 $option1 = !empty($row['quiz_selectionB']) ? $row['quiz_selectionB'] : 'none';
@@ -28,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Create the response array
                 $response = array(
                     'quiz_id' => $quiz_id,
+                    'quiz_type' => $quiz_type,
                     'quiz_question' => $quiz_question,
                     'correct_answer' => $correct_answer,
                     'option1' => $option1,
