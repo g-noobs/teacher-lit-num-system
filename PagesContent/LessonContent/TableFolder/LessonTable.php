@@ -4,8 +4,7 @@
             <br>
             <div class="row">
                 <div class="col-xs-6">
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle='modal'
-                        data-target="#addLessonModal">
+                    <button type="button" class="btn btn-primary btn-sm" id="add_lesson_btn">
                         <i class="fa fa-plus"></i> <span> Add Lesson</span>
                     </button>
                     <button id="archive_btn" type="button" class="btn btn-danger" data-toggle="tooltip"
