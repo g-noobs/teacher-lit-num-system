@@ -1,7 +1,7 @@
 <script>
 $(document).ready(function() {
     // Cache the select element and its options
-    var $quizAnswer = $("#quiz_answer");
+    var $quizAnswer = $(".quiz_answer");
     var $quizOptions = $quizAnswer.find("option");
 
     // Cache the input fields

@@ -1,6 +1,6 @@
 <script>
 $(function() {
-    $('#addQuizForm').on('submit', function(e) {
+    $('.addQuizForm').on('submit', function(e) {
         e.preventDefault();
 
         var formData = new FormData(this);

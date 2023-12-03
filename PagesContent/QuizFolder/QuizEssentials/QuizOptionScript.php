@@ -5,7 +5,7 @@ $(function() {
 
         var multipleChoice = "<div class='form-group'>" +
             "<label for='quiz_answer'>Set the Correct Answer</label>" +
-            "<select name='quiz_answer' id='quiz_answer'>" +
+            "<select name='quiz_answer' class ='quiz_answer'>" +
             "<option></option>" +
             "<option></option>" +
             "<option></option>" +
@@ -38,25 +38,25 @@ $(function() {
 
         var trueFalse = "<div class='form-group'>" +
             "<label for='quiz_answer'>Set the Correct Answer</label>" +
-            "<select name='quiz_answer' id='quiz_answer' class='form-control'>" +
+            "<select name='quiz_answer' class='form-control quiz_answer'>" +
             "<option value='true'>True</option>" +
             "<option value='false'>False</option>" +
             "</select>" +
             "</div>";
         var essayAnswer = "<div class='form-group'>" +
             "<label for='quiz_answer'>Provide the Essay Key Answers</label>" +
-            "<textarea name='quiz_answer' id='quiz_answer' class='form-control' cols='60' rows='5' style='resize: vertical;' required></textarea>" +
+            "<textarea name='quiz_answer' class='form-control quiz_answer' cols='60' rows='5' style='resize: vertical;' required></textarea>" +
             "</div>";
 
         if (selectedoption === '0') {
-            $("#answer_col_right").empty();
-            $('#answer_col_right').append(multipleChoice);
+            $(".answer_col_right").empty();
+            $('.answer_col_right').append(multipleChoice);
         } else if (selectedoption === '1') {
-            $("#answer_col_right").empty();
-            $('#answer_col_right').append(trueFalse);
+            $(".answer_col_right").empty();
+            $('.answer_col_right').append(trueFalse);
         } else if (selectedoption === '2') {
-            $("#answer_col_right").empty();
-            $('#answer_col_right').append(essayAnswer);
+            $(".answer_col_right").empty();
+            $('.answer_col_right').append(essayAnswer);
         }
 
 
