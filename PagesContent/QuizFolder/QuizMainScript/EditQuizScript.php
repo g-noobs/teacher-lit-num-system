@@ -4,7 +4,6 @@ $(function() {
         e.preventDefault();
         $modal = $('#add_quiz_modal');
         var btn_id = $(this).data('id');
-        $modal.modal('show');
         
 
         var $topic_id = $('select[name="topic_id"]');
@@ -20,6 +19,7 @@ $(function() {
             },
             dataType: 'json',
             success: function(response) {
+                $modal.modal('show');
                 $topic_id.find('option').each(function() {
                     if ($(this).val() === response.topic_id) {
                         $(this).prop('selected', true);
