@@ -81,7 +81,6 @@
                 </section>
                 <br>
                 <br>
-                <?php include_once "../PagesContent/QuizFolder/QuizEssentials/ViewQuizScript.php"?>
 
                 <!-- activate and archive confirmation modal -->
                 <?php include_once "../PagesContent/QuizFolder/QuizModal/ConfirmationModal.php";?>
@@ -100,6 +99,10 @@
     </div>
 
     <?php include_once("../bootstrap/jquery.php");?>
+
+    <!-- View Quiz Data -->
+    <?php include_once "../PagesContent/QuizFolder/QuizEssentials/ViewQuizScript.php"?>
+
 
     <!-- For Adding quiz including Jquery -->
     <?php include_once "../PagesContent/QuizFolder/QuizMainScript/AddQuizScript.php"?>
