@@ -29,7 +29,7 @@
                             <tr>
                                 <th>Student ID</th>
                                 <th>Student Name</th>
-                                <th>Number of Quiz Taken</th>                                <th>Score</th>
+                                <th>Number of Quiz Taken</th>
                                 <th>Total Score</th>
                             </tr>
                         </thead>
