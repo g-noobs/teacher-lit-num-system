@@ -60,14 +60,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 }
             }
 
-            if($quizType === '1'){
-                // Check if $correctAnswer matches any of the options and place it in quiz_selectionA
-                if ($correctAnswer === 'true') {
-                    $values['quiz_selectionB'] = 'false';
-                } elseif ($correctAnswer === 'false') {
-                    $values['quiz_selectionB'] = 'true';
-                }
-            }
+            
             $table = "tbl_quiz";
             $columnCountClass = new ColumnCountClass();
             $values['quiz_id'] = "QZ". $columnCountClass->columnCountWhere("quiz_id",$table);
