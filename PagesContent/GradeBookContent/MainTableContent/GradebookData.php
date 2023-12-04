@@ -34,8 +34,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-                            include_once "../Database/DisplayGradebook.php";
+                            <?php include_once "../Database/DisplayGradebook.php";
+                                $displayGrade = new DisplayGradebook();
+                                $displayGrade->gradebookData();
                             ?>
                         </tbody>
                     </table>
