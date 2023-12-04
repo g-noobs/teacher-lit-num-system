@@ -15,7 +15,7 @@ if($_GET['id']){
         AND class_id IN (
             SELECT class_id
             FROM tbl_teacher_class_assignment
-            WHERE status = 'Active'
+            WHERE status = 1
         )
     ORDER BY last_name;";
 
