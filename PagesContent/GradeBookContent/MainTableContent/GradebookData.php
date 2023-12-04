@@ -29,16 +29,14 @@
                             <tr>
                                 <th>Student ID</th>
                                 <th>Student Name</th>
-                                <th>Quiz ID</th>
-                                <th>Quiz Name</th>
-                                <th>Score</th>
-                                <th>Date Taken</th>
+                                <th>Number of Quiz Taken</th>                                <th>Score</th>
+                                <th>Total Score</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
-                        
-                        ?>
+                            include_once "../Database/DisplayGradebook.php";
+                            ?>
                         </tbody>
                     </table>
                 </div>
