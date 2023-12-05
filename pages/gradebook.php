@@ -45,7 +45,7 @@
 
 
 
-                <section id=gradebook_dropdown>
+                <section id="gradebook_dropdown">
                     <div class="align-items-start">
                         <div class="col-sm-2">
                             <div class="custom-dropdown">
