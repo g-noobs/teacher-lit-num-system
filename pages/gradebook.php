@@ -88,15 +88,16 @@
         success: function(response) {
             var $gradebook_dropdown_ul = ("#gradebook_class_dropdown");
 
-            $.each(response, function(index, dropdown){
+            $.each(response, function(index, dropdown) {
                 var $id = dropdown.id;
                 var $name = dropdown.name
-                $gradebook_dropdown_ul.append(`<li><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`);
+                $gradebook_dropdown_ul.append(
+                    `<li><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`);
             });
         },
 
     });
-</script>
+    </script>
 </body>
 
 </html>
