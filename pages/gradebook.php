@@ -43,15 +43,15 @@
                     </ol> -->
                 </section>
 
-
-
+                <br>
+                <br>
                 <section id="gradebook_dropdown">
                     <div class="align-items-start">
                         <div class="col-sm-2">
                             <div class="custom-dropdown">
                                 <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
                                     style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
-                                    <b></b> <!-- Updated the button text -->
+                                    <b id="dropdown_name"></b> <!-- Updated the button text -->
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu custom-dropdown-menu" id="gradebook_class_dropdown">
@@ -94,7 +94,7 @@
                 var $id = dropdown.id;
                 var $name = dropdown.name
 
-                var isActive = index === 0 ? 'active' : '';
+                index === 0 ? 'active' : '';
 
                 $gradebook_dropdown_ul.append(
                     `<li class="${isActive}"><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`);
