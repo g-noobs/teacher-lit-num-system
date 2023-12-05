@@ -86,7 +86,7 @@
         type: 'GET',
         dataType: 'json',
         success: function(response) {
-            var $gradebook_dropdown_ul = ("#gradebook_class_dropdown");
+            var $gradebook_dropdown_ul = $("#gradebook_class_dropdown");
 
             $.each(response, function(index, dropdown) {
                 var $id = dropdown.id;
