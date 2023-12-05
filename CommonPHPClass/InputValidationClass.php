@@ -44,7 +44,7 @@ class InputValidationClass{
             }
         }elseif($type == 'description'){
             //allow alplhanumeric and some symbols for basic description input
-            if (!preg_match("/^[a-zA-Z0-9_\-\s?!]*$/", $data)) {
+            if (!preg_match("/^[a-zA-Z0-9_\-\s?.!]*$/", $data)) {
                 return false;
             }
         }

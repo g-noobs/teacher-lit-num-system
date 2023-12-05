@@ -26,7 +26,7 @@
                             <input type="text" name="lesson_name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="lesson_description">Lesson Description</label>
+                            <label for="lesson_description">Lesson Objective</label>
                             <textarea type="text" name="lesson_description" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">

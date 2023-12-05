@@ -30,7 +30,7 @@
                             <th><input type='checkbox' id="select-all" class='checkbox'></th>
                             <th>Lesson ID</th>
                             <th>Lesson</th>
-                            <th>Lesson Description</th>
+                            <th>Lesson Objective</th>
                             <th>Category Name</th>
                             <th>Module Name</th>
                             <th colspan="3">Action</th>
