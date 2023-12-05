@@ -89,11 +89,13 @@
             var $gradebook_dropdown_ul = $("#gradebook_class_dropdown");
 
             // Check if it's the first iteration and add the 'active' class
-            var isActive = index === 0 ? 'active' : '';
 
             $.each(response, function(index, dropdown) {
                 var $id = dropdown.id;
                 var $name = dropdown.name
+
+            var isActive = index === 0 ? 'active' : '';
+
                 $gradebook_dropdown_ul.append(
                     `<li class="${isActive}"><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`);
             });
