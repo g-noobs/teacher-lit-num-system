@@ -54,7 +54,7 @@
 <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
 <script>
 $(document).ready(function() {
-    $("#export_btn").click(function() {
+    $(document).on('click','#export_btn', function() {
         let table = document.getElementsByTagName("table");
         var fileName = 'gradebook';
         console.log(table);
@@ -68,3 +68,4 @@ $(document).ready(function() {
     });
 });
 </script>
+

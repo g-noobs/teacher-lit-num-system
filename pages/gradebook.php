@@ -42,29 +42,26 @@
                         <li class="active">Top Navigation</li>
                     </ol> -->
                 </section>
-                
 
 
-                <section>
-                    <!-- <div class="align-items-start">
+
+                <section id=gradebook_dropdown>
+                    <div class="align-items-start">
                         <div class="col-sm-2">
                             <div class="custom-dropdown">
-
                                 <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
                                     style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
-                                    <b>Module</b> 
+                                    <b>Active Lesson</b> <!-- Updated the button text -->
                                     <span class="caret"></span>
                                 </button>
-                                <ul class="dropdown-menu custom-dropdown-menu">
-                                    <li><a href="#" data-quiz-type="-quiz"><b>All Active quiz</b></a></li>
-                                    <li><a href="#" data-quiz-type="archive-quiz"><b>All Archive quiz</b></a></li>
+                                <ul class="dropdown-menu custom-dropdown-menu" id="gradebook_class_dropdown">
+                                    <!-- <li><a href="#" data-lesson-type="active-lesson"><b>Active Lesson</b></a></li> -->
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-10">
                         </div>
-                    </div> -->
-                
+                    </div>
                 </section>
 
                 <!-- Main Content-->
@@ -82,6 +79,24 @@
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
+
+    <script>
+    $.ajax({
+        url: '../PagesContent/GradeBookContent/GradebookAction/PopulateClassName.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            var $gradebook_dropdown_ul = ("#gradebook_class_dropdown");
+
+            $.each(response, function(index, dropdown){
+                var $id = dropdown.id;
+                var $name = dropdown.name
+                $gradebook_dropdown_ul.append(`<li><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`);
+            });
+        },
+
+    });
+</script>
 </body>
 
 </html>
