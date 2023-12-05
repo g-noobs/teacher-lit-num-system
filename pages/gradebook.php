@@ -51,7 +51,7 @@
                             <div class="custom-dropdown">
                                 <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
                                     style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
-                                    <b>Active Lesson</b> <!-- Updated the button text -->
+                                    <b></b> <!-- Updated the button text -->
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu custom-dropdown-menu" id="gradebook_class_dropdown">
@@ -90,7 +90,7 @@
 
             // Check if it's the first iteration and add the 'active' class
             var isActive = index === 0 ? 'active' : '';
-            
+
             $.each(response, function(index, dropdown) {
                 var $id = dropdown.id;
                 var $name = dropdown.name
