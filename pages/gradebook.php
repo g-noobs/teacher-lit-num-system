@@ -95,7 +95,7 @@
                 var $id = dropdown.id;
                 var $name = dropdown.name
                 $gradebook_dropdown_ul.append(
-                    `<li><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`);
+                    `<li class="${isActive}"><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`);
             });
         },
 
