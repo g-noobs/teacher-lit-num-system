@@ -94,7 +94,7 @@
                 var $id = dropdown.id;
                 var $name = dropdown.name
 
-                index === 0 ? 'active' : '';
+                var isActive = index === 0 ? 'active' : '';
 
                 $gradebook_dropdown_ul.append(
                     `<li class="${isActive}"><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`);
