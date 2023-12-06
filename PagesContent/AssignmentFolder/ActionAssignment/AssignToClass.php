@@ -33,9 +33,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $assignClass->executePreState($sql, $params);
 
     if($assignClass->getLastError() === null){
-        $response = array('success' => 'Class Assigned Successfully!');
-        echo json_encode($response);
-        exit();
+
+        $table = "tbl_learner_assignment_progress";
+        $sql = "INSERT INTO tbl_learner_assignment_progress (assign_class_id, learner_id, assignment_id)
+        SELECT aa.assign_class_id, ui.personal_id AS learner_id, aa.assignment_id
+        FROM tbl_assign_assignment AS aa
+        JOIN tbl_user_info AS ui ON aa.class_id = ui.class_id
+        WHERE aa.assign_class_id = ?;";
+
+        $params = array($values['assign_class_id']);
+        $assignProgress = new SanitizeCrudClass();
+        $assignProgress->executePreState($sql, $params);
+        
+        if($assignProgress->getLastError() === null){
+            $response = array('success' => 'Class Assigned Successfully!');
+            echo json_encode($response);
+            exit();
+        {
+            $response = array('error' => 'Error Assigning Class! '. $assignProgress->getLastError());
+            echo json_encode($response);
+            exit();
+        }
     }else{
         $response = array('error' => 'Error Assigning Class! '. $assignClass->getLastError());
         echo json_encode($response);
