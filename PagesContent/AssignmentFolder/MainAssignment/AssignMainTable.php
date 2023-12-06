@@ -39,10 +39,10 @@
                         </thead>
                         <tbody>
                             <?php 
-                        // include_once("../Database/QuizDisplayClass.php");
-                        // $teacher_id = $_SESSION['id'];
-                        // $quiztable = new QuizDisplayClass();
-                        // $quiztable->displayQuestions($teacher_id);
+                        include_once("../Database/DisplayAssignment.php");
+                        $teacher_id = $_SESSION['id'];
+                        $quiztable = new DisplayAssignment();
+                        $quiztable->displayAssign($teacher_id);
                         ?>
                         </tbody>
                     </table>

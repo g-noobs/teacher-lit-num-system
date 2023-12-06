@@ -1,6 +1,6 @@
 <?php 
 include_once "Connection.php";
-class DisplayGradebook extends Connection{
+class DisplayAssignment extends Connection{
     function __construct(){
         parent :: __construct();
     }
