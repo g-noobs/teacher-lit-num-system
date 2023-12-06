@@ -37,7 +37,6 @@ if(!empty($errors)){
             $sql = "UPDATE $table
             SET topic_name = ?,
                 topic_description = ?,
-                topic_status = 1,
             WHERE topic_id = ?";
 
             $params = array_values($values);
