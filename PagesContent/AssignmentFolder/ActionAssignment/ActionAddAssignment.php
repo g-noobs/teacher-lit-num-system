@@ -6,7 +6,7 @@ include_once("../../../Database/SanitizeCrudClass.php");
 include_once "../../../CommonPHPClass/InputValidationClass.php";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    if(isset($_POST['assign_question']) && !empty($_POST['assign_question'])){
+    if(isset($_POST['assign_question']) && !empty($_POST['assign_question']) && !empty($_POST['max_score'])){
         $values = array(
             'assignment_id' => '',
             'topic_id' => $_POST['topic_id'],
