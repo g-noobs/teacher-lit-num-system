@@ -45,12 +45,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="assignment_name" class="control-label">Assignment Name or Data:</label>
-                                <input name="assignment_name" id="assignment_name"
+                                <input type="text" name="assignment_name" id="assignment_name"
                                     class="form-control" required></input>
                             </div>
                             <div class="form-group">
                                 <label for="assign_question" class="control-label">Question:</label>
-                                <textarea name="assign_question" id="assign_question" cols="60" rows="5"
+                                <textarea type="text" name="assign_question" id="assign_question" cols="60" rows="5"
                                     class="form-control" style="resize: vertical;" required></textarea>
                             </div>
                             <div class="form-group">
