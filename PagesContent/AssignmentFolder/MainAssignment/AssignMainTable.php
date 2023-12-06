@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-6">
         <div class="box box-default container">
             <br>
             <div class="box-header with-border">
@@ -35,6 +35,7 @@
                                 <th>Assignment Question</th>
                                 <th>Date Created</th>
                                 <th>Topic Source</th>
+                                <th colspan=2>Assign to Class</th>
                             </tr>
                         </thead>
                         <tbody>
