@@ -16,7 +16,7 @@
                             <select name="assign_class_id" class="form-control input-xs assign_class">
                                 <?php include_once "../Database/DisplayStudentClass.php";
                                         $classlist = new DisplayStudentClass();
-                                        $classlist->displayAssignedClassList($_SESSION['id']);
+                                        $classlist->assignClassDropddown($_SESSION['id']);
                                     ?>
                             </select>
                         </div>
