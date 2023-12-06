@@ -61,8 +61,7 @@
                     }
                 },
                 error: function() {
-                    $("#addAssignForm")[0].reset();
-                    $hideModal.modal('hide');
+                    $modal.modal('hide');
                     //show alert banner id = errorBanner
                     $('#errorAlert').text(
                         'An error occurred during the AJAX request.');
