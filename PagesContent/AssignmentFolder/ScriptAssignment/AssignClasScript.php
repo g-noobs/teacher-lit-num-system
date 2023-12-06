@@ -4,7 +4,7 @@ $(function() {
         var $modal = $('#assign_class_modal');
         $modal.modal('show');
         var assignment_id = $(this).data('id');
-        $('#user_teacher_id').text(id);
+        $('#user_teacher_id').text(assignment_id);
 
         $('#assign_class_form').on('submit', function(e){
             e.preventDefault();
