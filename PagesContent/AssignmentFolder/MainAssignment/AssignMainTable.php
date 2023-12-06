@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-xs-6">
+    <div class="col-xs-12">
         <div class="box box-default container">
             <br>
             <div class="box-header with-border">
