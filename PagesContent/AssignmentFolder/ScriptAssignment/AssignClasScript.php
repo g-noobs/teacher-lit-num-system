@@ -12,7 +12,7 @@ $(function() {
             var formData = new FormData(this);
             formData.append('assignment_id', assignment_id);
             $.ajax({
-                url: '../Database/AssignClass.php',
+                url: '../PagesContent/AssignmentFolder/ActionAssignment/AssignToClass.php',
                 type: 'POST',
                 data: formData,
                 processData: false,
