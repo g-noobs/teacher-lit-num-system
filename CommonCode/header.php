@@ -42,6 +42,10 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <li><a href="lesson.php">Lesson</a></li>
                             <li class="divider"></li>
                             <li><a href="quiz.php">Quiz</a></li>
+                            <li class="divider"></li>
+                            <li><a href="assignment.php">Assignment</a></li>
+
+
                         </ul>
                     <li><a href="gradebook.php">Gradebook</a></li>
                     </li>
