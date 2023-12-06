@@ -84,20 +84,8 @@
 
     <?php include_once("../bootstrap/jquery.php");?>
 
-    <!-- View Quiz Data -->
-
-
-    <!-- For Adding quiz including Jquery -->
-
-    <!-- Edit quiz -->
-
-    <!-- For Arching quiz including Jquery -->
-
-    <!-- For chooosing correct answer from the provided multiplce choice -->
-
-    <!-- For modification of quiz type -->
-
-    <!-- Script for dropdown and quiz status -->
+    <!-- add new assignment -->
+    <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AddNewAssignScript.php";?>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
