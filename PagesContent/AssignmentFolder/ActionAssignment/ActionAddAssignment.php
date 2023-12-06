@@ -48,17 +48,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             if($addNewAssign->getLastError() === null){
                 $response = array('success' => 'Assignment Added Successfully!');
                 echo json_encode($response);
+                exit();
             }else{
                 $response = array('error' => 'Error Adding Assignment! '. $addNewAssign->getLastError());
                 echo json_encode($response);
+                exit();
+
             }
         }
     }else{
         $response = array('error' => 'Empty Question or Quiz Description!');
         echo json_encode($response);
+        exit();
+
     }
 }else{
     $response = array('error' => 'Possible POST ISSUE!');
     echo json_encode($response);
+    exit();
+
 }
 ?>
