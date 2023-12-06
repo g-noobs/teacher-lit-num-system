@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $table = 'tbl_assignment';
             //set ID
             $columnCount = new ColumnCountClass();
-            $values['assignment_id'] = "ASG". $columnCountClass->columnCountWhere("assignment_id",$table);
+            $values['assignment_id'] = "ASG". $columnCount->columnCountWhere("assignment_id",$table);
             //set date
             date_default_timezone_set('Asia/Kuala_Lumpur');
             $currentDate = new DateTime();
