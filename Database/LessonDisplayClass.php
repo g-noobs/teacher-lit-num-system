@@ -93,12 +93,12 @@ class LessonDisplayClass extends Connection{
         if($result-> num_rows >0){
             while($row = $result->fetch_assoc()){
                 
-                if($row['topic_status'] == 1){
+                if($row['topic_status'] === 1){
                     $status = "<b class=text-success>Active</b>";
 
                 }
                 else{
-                    $status = "<b class=text-success>Inactive</b>";
+                    $status = "<b class=text-danger>Inactive</b>";
                 }
                 echo '<tr>';
                 echo "<td><a href='#' class='viewBtn' type='button' data-toggle='tooltip' title='View Topic' data-id='" . $row["topic_id"] . "'> <i class='fa fa-eye'></i> </a></td>";
@@ -106,7 +106,7 @@ class LessonDisplayClass extends Connection{
                 echo '<td>'. $row['topic_name'] .'</td>';
                 echo '<td>'. $status .'</td>';
 
-                echo "<td><a href='#' type='button' class='edit_topic_btn' data-id='".$row['topic_id']."' style='margin-right:10px; color: blue;'><span class='glyphicon glyphicon-edit' ></span></a></td>";
+                echo "<td><a href='#' type='button' class='edit_topic_btn ' data-id='".$row['topic_id']."' style='margin-right:10px; color: blue;'><span class='glyphicon glyphicon-edit' ></span></a></td>";
                 
                 echo '</tr>';
             }

@@ -26,7 +26,7 @@
                             <th></th>
                             <th>Topic ID</th>
                             <th>Topic Name</th>
-                            <th>Topic Name</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
 
