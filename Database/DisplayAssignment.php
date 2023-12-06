@@ -9,7 +9,7 @@ class DisplayAssignment extends Connection{
         $sql = "SELECT a.*, t.topic_name
         FROM $table a
         JOIN tbl_topic t ON a.topic_id = t.topic_id
-        WHERE a.created_by = 'teacher_id';";
+        WHERE a.created_by = '$teacher_id';";
 
         $result = $this->getConnection()->query($sql);
         
