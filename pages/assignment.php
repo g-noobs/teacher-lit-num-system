@@ -66,7 +66,7 @@
                 
                 <!-- edit modal -->
                 <?php include_once "../PagesContent/AssignmentFolder/ModalAssignment/AddNewAssignModal.php"?>
-                <?php include_once "../PagesContent/AssignmentFolder/ModalAssignment/AssingClass.php"?>
+                <?php include_once "../PagesContent/AssignmentFolder/ModalAssignment/AssingClassModal.php"?>
 
                 <!-- Main Content-->
                 <section class="content" id="quizContent">
@@ -86,6 +86,9 @@
 
     <!-- add new assignment -->
     <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AddNewAssignScript.php";?>
+
+    <!-- assign to class -->
+    <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AssignClassScript.php";?>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
