@@ -47,12 +47,12 @@
 
                                 <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
                                     style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
-                                    <b>Active Quiz</b> <!-- Updated the button text -->
+                                    <b>Active Assignment</b> <!-- Updated the button text -->
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu custom-dropdown-menu">
-                                    <li><a href="#" data-quiz-type="active-quiz"><b>All Active quiz</b></a></li>
-                                    <li><a href="#" data-quiz-type="archive-quiz"><b>All Archive quiz</b></a></li>
+                                    <li><a href="#" data-quiz-type="active-quiz"><b>Active Assignment</b></a></li>
+                                    <li><a href="#" data-quiz-type="archive-quiz"><b>Archived Assignment</b></a></li>
                                 </ul>
                             </div>
                         </div>
