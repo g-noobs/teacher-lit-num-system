@@ -17,7 +17,7 @@ class DisplayAssignment extends Connection{
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
 
-                echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['lesson_id'] . "'></td>";
+                echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['topic_id'] . "'></td>";
 
                 echo "<td>" .$row['assignment_id'] . "</td>";
                 echo "<td>" .$row['assignment_name'] . "</td>";
