@@ -16,12 +16,16 @@ class DisplayAssignment extends Connection{
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
+
+                echo "<td><input type='checkbox' class='checkbox' name='selected[]' value='" . $row['lesson_id'] . "'></td>";
+
                 echo "<td>" .$row['assignment_id'] . "</td>";
                 echo "<td>" .$row['assignment_name'] . "</td>";
                 echo "<td>" .$row['question'] . "</td>";
                 echo "<td>" .$row['max_score'] . "</td>";
                 echo "<td>" .$row['date_added'] . "</td>";
-                echo "<td>" .$row['status'] . "</td>";
+                echo "<td>" .$row['topic_name'] . "</td>";
+
                 echo "</tr>";
             }
         }
