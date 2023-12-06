@@ -42,18 +42,18 @@
                             var msg = response.success;
                             $('#successAlert').text(msg);
                             $('#successBanner').show();
-                            setTimeout(function() {
-                                $("#successBanner").fadeOut("slow");
-                                location.reload();
-                            }, 4500);
+                            // setTimeout(function() {
+                            //     $("#successBanner").fadeOut("slow");
+                            //     location.reload();
+                            // }, 4500);
                         } else if (response.hasOwnProperty('error')) {
                             var msg = response.error;
                             $('#errorAlert').text(msg);
                             $('#errorBanner').show();
-                            setTimeout(function() {
-                                $("#errorBanner").fadeOut("slow");
-                                location.reload();
-                            }, 4500);
+                            // setTimeout(function() {
+                            //     $("#errorBanner").fadeOut("slow");
+                            //     location.reload();
+                            // }, 4500);
                         }
                     }
                 },
@@ -64,10 +64,10 @@
                     $('#errorAlert').text(
                         'An error occurred during the AJAX request.');
                     $('#errorBanner').show();
-                    setTimeout(function() {
-                        $("#errorBanner").fadeOut("slow");
-                        location.reload();
-                    }, 1500);
+                    // setTimeout(function() {
+                    //     $("#errorBanner").fadeOut("slow");
+                    //     location.reload();
+                    // }, 1500);
                 }
             });
             });
