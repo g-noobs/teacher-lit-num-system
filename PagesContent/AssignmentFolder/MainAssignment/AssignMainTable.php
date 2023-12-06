@@ -33,6 +33,7 @@
                                 <th>Assignment ID</th>
                                 <th>Assignment Name</th>
                                 <th>Assignment Question</th>
+                                <th>Max Score</th>
                                 <th>Date Created</th>
                                 <th>Topic Source</th>
                                 <th colspan=2>Assign to Class</th>
