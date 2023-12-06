@@ -42,6 +42,7 @@
                             var msg = response.success;
                             $('#successAlert').text(msg);
                             $('#successBanner').show();
+                            $modal.modal('hide');
                             // setTimeout(function() {
                             //     $("#successBanner").fadeOut("slow");
                             //     location.reload();
@@ -50,6 +51,8 @@
                             var msg = response.error;
                             $('#errorAlert').text(msg);
                             $('#errorBanner').show();
+                            $modal.modal('hide');
+
                             // setTimeout(function() {
                             //     $("#errorBanner").fadeOut("slow");
                             //     location.reload();
