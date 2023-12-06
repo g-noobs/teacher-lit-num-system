@@ -12,8 +12,8 @@
                 <div class="modal-body">
                     <div class="box-body box-warning">
                         <div class="form-group row assign_c">
-                            <label for="assign_class_id">Choose a Class to Assign</label>
-                            <select name="assign_class_id" class="form-control input-xs assign_class">
+                            <label for="class_id">Choose a Class to Assign</label>
+                            <select name="class_id" class="form-control input-xs assign_class">
                                 <?php include_once "../Database/DisplayStudentClass.php";
                                         $classlist = new DisplayStudentClass();
                                         $classlist->assignClassDropddown($_SESSION['id']);

@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $values = array(
         'assign_class_id' => '',
         'assignment_id' => $_POST['assignment_id'],
-        'class_id' => $_POST['assign_class_id'],
+        'class_id' => $_POST['class_id'],
         'assign_by_id' => $_SESSION['id'],
         'assign_date' => '',
     );
