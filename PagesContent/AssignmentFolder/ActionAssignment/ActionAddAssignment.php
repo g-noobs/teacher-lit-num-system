@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $currentDate = new DateTime();
             $values['date_added'] = $currentDate->format('Y-m-d H:i:s');
 
-            $olumns = implode(", ",array_keys($values));
+            $columns = implode(", ",array_keys($values));
             $questionMarkString = implode(',', array_fill(0, count($values), '?'));
             $sql = "INSERT INTO $table ($columns)
                     VALUES($questionMarkString);";
