@@ -55,7 +55,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="max_score" class="control-label">Max Score:</label>
-                                <input num="max_score" id="max_score"
+                                <input type="number" name="max_score" id="max_score"
                                     class="form-control" required></input>
                             </div>
                         </div>
