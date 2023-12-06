@@ -88,7 +88,7 @@
     <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AddNewAssignScript.php";?>
 
     <!-- assign to class -->
-    <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AssignClassScript.php";?>
+    <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AssignClasScript.php";?>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
