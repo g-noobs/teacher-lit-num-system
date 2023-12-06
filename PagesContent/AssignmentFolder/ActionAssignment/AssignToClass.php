@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $response = array('success' => 'Class Assigned Successfully!');
             echo json_encode($response);
             exit();
-        {
+        }else{
             $response = array('error' => 'Error Assigning Class! '. $assignProgress->getLastError());
             echo json_encode($response);
             exit();
