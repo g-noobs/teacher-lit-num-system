@@ -14,7 +14,7 @@
                         <div class="form-group row assign_c">
                             <label for="assign_class_id">Choose a Class to Assign</label>
                             <select name="assign_class_id" class="form-control input-xs assign_class">
-                                <?php include_once "../Database/DisplayAssignClass.php";
+                                <?php include_once "../Database/DisplayStudentClass.php";
                                         $classlist = new DisplayStudentClass();
                                         $classlist->displayAssignedClassList($_SESSION['id']);
                                     ?>
