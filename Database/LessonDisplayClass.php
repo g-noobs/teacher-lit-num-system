@@ -93,7 +93,7 @@ class LessonDisplayClass extends Connection{
         if($result-> num_rows >0){
             while($row = $result->fetch_assoc()){
                 
-                if($row['topic_status'] === 1){
+                if($row['topic_status'] == 1){
                     $status = "<b class=text-success>Active</b>";
 
                 }
