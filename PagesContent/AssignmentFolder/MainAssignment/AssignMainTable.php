@@ -30,11 +30,11 @@
                         <thead>
                             <tr>
                                 <th colspan=2><input type='checkbox' id="select-all" class='checkbox'></th>
-                                <th>Quiz ID</th>
-                                <th>Question</th>
+                                <th>Assignment ID</th>
+                                <th>Assignment Name</th>
+                                <th>Assignment Question</th>
                                 <th>Date Created</th>
-                                <th>Topic ID</th>
-                                <th>Edit</th>
+                                <th>Topic Source</th>
                             </tr>
                         </thead>
                         <tbody>
