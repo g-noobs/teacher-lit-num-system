@@ -110,7 +110,7 @@ class DisplayStudentClass extends Connection{
     function assignClassDropddown($teacher_id){
         $table = 'view_teacher_class_info';
 
-        $sql = "SELECT class_name, class_id FROM $table
+        $sql = "SELECT class_id,class_name FROM $table
         WHERE user_info_id = '$teacher_id' 
         AND class_assign_status = 1 
         AND class_status = 1 
@@ -122,7 +122,7 @@ class DisplayStudentClass extends Connection{
         AND NOT EXISTS
         (SELECT 1 FROM tbl_assign_assignment
         WHERE
-            tbl_assign_assignment.class_id = tbl_class.class_id AND status = 1);";
+            tbl_assign_assignment.class_id = view_teacher_class_info.class_id AND status = 1);";
         //this will check if the class is already assigned to the teacher
         //and if the class is already assigned to the teacher, it will not display in the dropdown
     
