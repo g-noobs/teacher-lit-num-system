@@ -29,7 +29,7 @@
                     <table id="example2" class="table table-bordered table-hover text-center">
                         <thead>
                             <tr>
-                                <th colspan=2><input type='checkbox' id="select-all" class='checkbox'></th>
+                                <th><input type='checkbox' id="select-all" class='checkbox'></th>
                                 <th>Assignment ID</th>
                                 <th>Assignment Name</th>
                                 <th>Assignment Question</th>
