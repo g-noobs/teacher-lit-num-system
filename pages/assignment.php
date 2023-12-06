@@ -28,7 +28,6 @@
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
 
             <!-- View quiz Data Modal -->
-            <?php include_once "../PagesContent/QuizFolder/QuizEssentials/ModalViewQuiz.php";?>
             <div class="container">
 
                 <section class="content-header">
@@ -67,6 +66,7 @@
                 
                 <!-- edit modal -->
                 <?php include_once "../PagesContent/AssignmentFolder/ModalAssignment/AddNewAssignModal.php"?>
+                <?php include_once "../PagesContent/AssignmentFolder/ModalAssignment/AssingClass.php"?>
 
                 <!-- Main Content-->
                 <section class="content" id="quizContent">
