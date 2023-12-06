@@ -66,6 +66,7 @@
                 <!-- activate and archive confirmation modal -->
                 
                 <!-- edit modal -->
+                <?php include_once "../PagesContent/AssignmentFolder/ModalAssignment/AddNewAssignModal.php"?>
 
                 <!-- Main Content-->
                 <section class="content" id="quizContent">
