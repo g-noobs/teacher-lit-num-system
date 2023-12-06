@@ -1,5 +1,7 @@
 <?php 
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 // modify quizID
 include_once("../../../Database/ColumnCountClass.php");
 include_once("../../../Database/SanitizeCrudClass.php");
