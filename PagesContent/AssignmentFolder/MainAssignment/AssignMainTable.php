@@ -3,7 +3,7 @@
         <div class="box box-default container">
             <br>
             <div class="box-header with-border">
-                <button id="add_qzui_btn" type="button" class="btn btn-primary" data-toggle="tooltip" title="Add New Quiz">
+                <button id="add_assign_btn" type="button" class="btn btn-primary" data-toggle="tooltip" title="Add New Assignment">
                     <i class="glyphicon glyphicon-plus"></i></button>
                 </button>
 

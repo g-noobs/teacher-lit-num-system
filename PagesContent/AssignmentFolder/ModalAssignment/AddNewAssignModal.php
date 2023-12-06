@@ -1,4 +1,4 @@
-<div class="modal fade" id="add_quiz_modal">
+<div class="modal fade" id="add_assign_modal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <form id="addQuizForm" action="post">
+        <form id="addAssignForm" action="post">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xs-6">
@@ -44,17 +44,19 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="quiz_type_option">Type of Quiz</label>
-                                <select name="quiz_type_option" id="quiz_type_option" class="form-control" requried>
-                                    <option value="0">Multiple Choice</option>
-                                    <option value="1">True or False</option>
-                                    <option value="2">Essay</option>
-                                </select>
+                                <label for="assignment_name" class="control-label">Assignment Name or Data:</label>
+                                <input name="assignment_name" id="assignment_name"
+                                    class="form-control" required></input>
                             </div>
                             <div class="form-group">
-                                <label for="quiz_question" class="control-label">Question:</label>
-                                <textarea name="quiz_question" id="quiz_question" cols="60" rows="5"
+                                <label for="assign_question" class="control-label">Question:</label>
+                                <textarea name="assign_question" id="assign_question" cols="60" rows="5"
                                     class="form-control" style="resize: vertical;" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="max_score" class="control-label">Question:</label>
+                                <input name="max_score" id="max_score"
+                                    class="form-control" required></input>
                             </div>
                         </div>
                     </div>
