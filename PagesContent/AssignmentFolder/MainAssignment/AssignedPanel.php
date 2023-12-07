@@ -31,11 +31,10 @@
                             <tr>
                                 <th><input type='checkbox' id="select-all" class='checkbox'></th>
                                 <th>ID</th>
+                                <th>Class Name</th>
                                 <th>Assignment Name</th>
                                 <th>Assignment Question</th>
-                                <th>Assigned Class</th>
                                 <th>Data Assigned</th>
-                                <th colspan=2>Assign to Class</th>
                             </tr>
                         </thead>
                         <tbody>
