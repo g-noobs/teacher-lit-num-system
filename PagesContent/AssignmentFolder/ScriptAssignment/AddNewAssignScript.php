@@ -1,6 +1,6 @@
 <script>
     $(function(){
-        $('#add_assign_btn').on('click', function(e){
+        $(document).on('click','#add_assign_btn', function(e){
             e.preventDefault();
             var $modal = $('#add_assign_modal');
             $modal.modal('show');
