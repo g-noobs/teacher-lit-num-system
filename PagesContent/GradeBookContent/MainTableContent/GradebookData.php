@@ -1,5 +1,4 @@
 <style>
-
 #progressTableContainer,
 #quizTableContainer {
     position: fixed;
@@ -87,12 +86,12 @@ $query = "
 
 $result = mysqli_query($connection, $query);
 ?>
+<button class="btn btn-primary" onclick="openFilterModal()">Filter</button>
 
 <div class="row">
     <div class="col-xs-12">
         <div class="box box-default container">
             <br>
-            <button class="btn btn-primary" onclick="openFilterModal()">Filter</button>
             <div class="box-header with-">
 
                 <h3 class="box-title"></h3>
