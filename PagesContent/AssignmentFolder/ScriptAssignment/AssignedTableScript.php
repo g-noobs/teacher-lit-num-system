@@ -5,6 +5,7 @@ $(function() {
         //empty and id
         $('#assign_content').empty();
         //add new content that on php file
+        //add a fadeout effect
         $('#assign_content').load("../PagesContent/AssignmentFolder/MainAssignment/AssignedPanel.php");
     });
 });
