@@ -5,7 +5,7 @@ $(function() {
         //empty and id
         $('#assign_content').empty();
         //add new content that on php file
-        $('#assign_content').load('../PagesContent/AssignmentFolder/MainAssignment/AssignedPanel.php');
+        $('#assign_content').load('../MainAssignment/AssignedPanel.php');
     });
 });
 </script>
