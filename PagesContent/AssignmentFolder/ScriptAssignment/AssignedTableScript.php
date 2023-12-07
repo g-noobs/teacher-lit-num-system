@@ -3,10 +3,12 @@ $(function() {
     $(document).on('click', '#assigned_assgn_btn', function(e) {
         e.preventDefault();
         //empty and id
-        $('#assign_content').empty();
-        //add new content that on php file
-        //add a fadeout effect
-        $('#assign_content').load("../PagesContent/AssignmentFolder/MainAssignment/AssignedPanel.php");
+        $('#assign_content').fadeOut(400), function() {
+            $(this).empty();
+            $(this).load("../PagesContent/AssignmentFolder/MainAssignment/AssignedPanel.php", function() {
+                $(this).fadeIn(400);
+            });
+        }
     });
 });
 </script>
