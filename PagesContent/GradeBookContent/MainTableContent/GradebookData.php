@@ -97,7 +97,7 @@ $result = mysqli_query($connection, $query);
 
                 <h3 class="box-title"></h3>
 
-                <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
+                <button class="btn btn-success" id='ex$conn,userTableport_btn'>EXPORT DATA</button>
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
                         <i class="fa fa-search"></i>
@@ -114,7 +114,7 @@ $result = mysqli_query($connection, $query);
                 <!-- export button -->
                 <!-- Table Data -->
                 <div class="table-responsive">
-                    <table id="dataTable" class="table table-bordered table-hover text-center">
+                    <table id="userTable" class="table table-bordered table-hover text-center">
                         <thead>
                             <tr>
                                 <th class="userInfoID">User Info ID</th>
