@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="col-sm-10">
-                            <button class="btn btn-primary" id="assigned_assgn_btn">Assigned Quiz</button>
+                            <button class="btn btn-primary pull-right" id="assigned_assgn_btn">Assigned Quiz</button>
                         </div>
                     </div>
                 </section>
