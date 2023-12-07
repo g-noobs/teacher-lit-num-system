@@ -118,11 +118,7 @@ class DisplayStudentClass extends Connection{
             SELECT class_id
             FROM tbl_teacher_class_assignment
             WHERE status = 1
-            )
-        AND NOT EXISTS
-        (SELECT 1 FROM tbl_assign_assignment
-        WHERE
-            tbl_assign_assignment.class_id = view_teacher_class_info.class_id AND status = 1);";
+            );";
         //this will check if the class is already assigned to the teacher
         //and if the class is already assigned to the teacher, it will not display in the dropdown
     
