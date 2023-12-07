@@ -1,20 +1,19 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 class DisplayGradebook extends Connection{
     function __construct(){
         parent :: __construct();
     }
 
     function gradebookData(){
-        $connection = $this->getConnection();
+        $conn= $this->getConnection();
         // Update tbl_learner_story_progress with topic IDs for each student
         $topicsQuery = "UPDATE tbl_learner_story_progress lsp
         JOIN tbl_user_info ui ON lsp.learner_id = ui.user_info_id
         SET lsp.story_id = ui.class_id
         WHERE ui.user_level_id = 2";
 
-        mysqli_query($connection, $topicsQuery);
+        mysqli_query($conn, $topicsQuery);
 
         // Update tbl_learner_story_progress with 'Not Taken Yet' for Date Completed
         $notTakenYetQuery = "
@@ -23,7 +22,7 @@ class DisplayGradebook extends Connection{
         WHERE date_completed IS NULL OR date_completed = '0000-00-00'
         ";
 
-        mysqli_query($connection, $notTakenYetQuery);
+        mysqli_query($conn, $notTakenYetQuery);
 
         // Query to fetch user information including class_id and class_name
         $query = "
@@ -43,25 +42,25 @@ class DisplayGradebook extends Connection{
             ui.user_level_id = 2
         ";
 
-        $result = mysqli_query($connection, $query);
+        $result = mysqli_query($conn, $query);
         while ($row = mysqli_fetch_assoc($result)) {
             // Fetch learner_id and calculate total topics taken
             $learnerId = $row['personal_id'];
             $topicsTakenQuery = "SELECT COUNT(DISTINCT story_id) AS total_topics FROM tbl_learner_story_progress WHERE learner_id = '$learnerId'";
-            $topicsTakenResult = mysqli_query($connection, $topicsTakenQuery);
+            $topicsTakenResult = mysqli_query($conn, $topicsTakenQuery);
             $topicsTakenRow = mysqli_fetch_assoc($topicsTakenResult);
             $totalTopicsTaken = $topicsTakenRow['total_topics'];
             $totalTopicsQuery = "SELECT COUNT(DISTINCT topic_id) AS total_topics FROM tbl_topic";
-            $totalTopicsResult = mysqli_query($connection, $totalTopicsQuery);
+            $totalTopicsResult = mysqli_query($conn, $totalTopicsQuery);
             $totalTopicsRow = mysqli_fetch_assoc($totalTopicsResult);
             $totalTopics = $totalTopicsRow['total_topics'];
     
             $quizTakenQuery = "SELECT learner_id, COUNT(DISTINCT quiz_id) AS total_quizzes FROM tbl_learner_quiz_progress WHERE learner_id = '$learnerId' AND quiz_id IN (SELECT quiz_id FROM tbl_quiz WHERE quiz_status = 1)";
-            $quizTakenResult = mysqli_query($connection, $quizTakenQuery);
+            $quizTakenResult = mysqli_query($conn, $quizTakenQuery);
             $quizTakenRow = mysqli_fetch_assoc($quizTakenResult);
             $totalQuizTaken = $quizTakenRow['total_quizzes'];
             $totalQuizQuery = "SELECT COUNT(DISTINCT quiz_id) AS total_quizzes FROM tbl_quiz WHERE quiz_status = 1";
-            $totalQuizResult = mysqli_query($connection, $totalQuizQuery);
+            $totalQuizResult = mysqli_query($conn, $totalQuizQuery);
             $totalQuizRow = mysqli_fetch_assoc($totalQuizResult);
             $totalQuiz = $totalQuizRow['total_quizzes'];
     
@@ -81,7 +80,7 @@ class DisplayGradebook extends Connection{
     
             </tr>";
         }
-        mysqli_close($connection);
+        mysqli_close($conn);
     } 
 }
 ?>
