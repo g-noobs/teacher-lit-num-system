@@ -1,8 +1,8 @@
 <?php
 // XAMPP localhost database connection
 $host = "localhost";
-$user = "root"; // default XAMPP username
-$password = ""; // default XAMPP password is empty
+$user = "u170333284_admin"; // default XAMPP username
+$password = "Capstone1!"; // default XAMPP password is empty
 $database = "u170333284_db_tagakaulo"; // your database name
 
 // Create connection

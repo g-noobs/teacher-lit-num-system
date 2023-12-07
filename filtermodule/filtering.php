@@ -64,10 +64,12 @@
 <div id="progressTableContainer"></div>
 
 <?php
+// XAMPP localhost database connection
 $host = "localhost";
-$user = "root"; 
-$password = ""; 
-$database = "u170333284_db_tagakaulo"; 
+$user = "u170333284_admin"; // default XAMPP username
+$password = "Capstone1!"; // default XAMPP password is empty
+$database = "u170333284_db_tagakaulo"; // your database name
+
 
 $connection = mysqli_connect($host, $user, $password, $database);
 
