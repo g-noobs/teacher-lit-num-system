@@ -123,27 +123,6 @@ $result = mysqli_query($connection, $query);
     <button onclick="closeFilterModal()">Close</button>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
-<script>
-$(document).ready(function() {
-    $(document).on('click', '#export_btn', function() {
-        let table = document.getElementsByTagName("table");
-        var fileName = 'gradebook';
-        console.log(table);
-        debugger;
-        TableToExcel.convert(table[0], {
-            name: fileName + `.xlsx`,
-            sheet: {
-                name: fileName
-            }
-        });
-    });
-});
-</script>
-
-
 <script>
 var sortDirectionGender = 0;
 var sortDirectionClass = 0;
@@ -271,4 +250,24 @@ function closeFilterModal() {
     document.getElementById("filterModal").style.display = "none";
     document.getElementById("backdrop").style.display = "none";
 }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+<script>
+$(document).ready(function() {
+    $(document).on('click', '#export_btn', function() {
+        let table = document.getElementsByTagName("table");
+        var fileName = 'gradebook';
+        console.log(table);
+        debugger;
+        TableToExcel.convert(table[0], {
+            name: fileName + `.xlsx`,
+            sheet: {
+                name: fileName
+            }
+        });
+    });
+});
 </script>
