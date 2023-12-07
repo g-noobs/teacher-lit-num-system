@@ -1,80 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Progress</title>
     <style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-    }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
 
-    table,
-    th,
-    td {
-        border: 1px solid black;
-    }
+        table, th, td {
+            border: 1px solid black;
+        }
 
-    th,
-    td {
-        padding: 10px;
-        text-align: left;
-    }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
 
-    #progressTableContainer,
-    #quizTableContainer {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        background-color: white;
-        display: none;
-    }
+        #progressTableContainer,
+        #quizTableContainer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            background-color: white;
+            display: none;
+        }
 
-    #backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: none;
-    }
+        #backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            display: none;
+        }
 
-    #filterModal {
-        display: none;
-        position: fixed;
-        z-index: 2;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        background-color: white;
-        border: 1px solid #ddd;
-    }
+        #filterModal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+        }
 
-    #filterModal label {
-        display: block;
-        margin-bottom: 8px;
-    }
+        #filterModal label {
+            display: block;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
-
 <body>
 
-    <div id="progressTableContainer"></div>
+<div id="progressTableContainer"></div>
 
-    <?php
-// XAMPP localhost database connection
+<?php
 $host = "localhost";
-$user = "u170333284_admin"; // default XAMPP username
-$password = "Capstone1!"; // default XAMPP password is empty
-$database = "u170333284_db_tagakaulo"; // your database name
-
+$user = "root"; 
+$password = ""; 
+$database = "u170333284_db_tagakaulo"; 
 
 $connection = mysqli_connect($host, $user, $password, $database);
 
@@ -122,23 +115,23 @@ $query = "
 $result = mysqli_query($connection, $query);
 ?>
 
-    <button onclick="openFilterModal()">Filter</button>
+<button onclick="openFilterModal()">Filter</button>
 
-    <table border='1' id="userTable">
-        <tr>
-            <th class="userInfoID">User Info ID</th>
-            <th class="personalID">Personal ID</th>
-            <th class="firstName" onclick="sortTableByFirstName()">First Name</th>
-            <th class="lastName" onclick="sortTableByLastName()">Last Name</th>
-            <th class="gender" onclick="sortTableByGender()">Gender</th>
-            <th class="classSection" onclick="sortTableByClass()">Class Section</th>
-            <th class="topicsTaken">Topics Taken</th>
-            <th class="quizTaken">Quiz Taken</th>
-            <th class="learnerProgress">Learner Story Progress</th>
-            <th class="quizProgress">Quiz Progress</th>
-        </tr>
+<table border='1' id="userTable">
+    <tr>
+        <th class="userInfoID">User Info ID</th>
+        <th class="personalID">Personal ID</th>
+        <th class="firstName" onclick="sortTableByFirstName()">First Name</th>
+        <th class="lastName" onclick="sortTableByLastName()">Last Name</th>
+        <th class="gender" onclick="sortTableByGender()">Gender</th>
+        <th class="classSection" onclick="sortTableByClass()">Class Section</th>
+        <th class="topicsTaken">Topics Taken</th>
+        <th class="quizTaken">Quiz Taken</th>
+        <th class="learnerProgress">Learner Story Progress</th>
+        <th class="quizProgress">Quiz Progress</th>
+    </tr>
 
-        <?php
+    <?php
     while ($row = mysqli_fetch_assoc($result)) {
         // Fetch learner_id and calculate total topics taken
         $learnerId = $row['personal_id'];
@@ -178,29 +171,29 @@ $result = mysqli_query($connection, $query);
     }
     ?>
 
-    </table>
+</table>
 
-    <?php
+<?php
 mysqli_close($connection);
 ?>
 
-    <div id="filterModal">
-        <label><input type="checkbox" class="chkUserInfoID"> User Info ID</label>
-        <label><input type="checkbox" class="chkPersonalID"> Personal ID</label>
-        <label><input type="checkbox" class="chkFirstName"> First Name</label>
-        <label><input type="checkbox" class="chkLastName"> Last Name</label>
-        <label><input type="checkbox" class="chkGender"> Gender</label>
-        <label><input type="checkbox" class="chkClassSection"> Class Section</label>
-        <label><input type="checkbox" class="chkTopicsTaken"> Topics Taken</label>
-        <label><input type="checkbox" class="chkQuizTaken"> Quiz Taken</label>
-        <label><input type="checkbox" class="chkLearnerProgress"> Learner Story Progress</label>
-        <label><input type="checkbox" class="chkQuizProgress"> Quiz Progress</label>
-        <button onclick="applyFilter()">Apply</button>
-        <button onclick="resetTable()">Reset</button>
-        <button onclick="closeFilterModal()">Close</button>
-    </div>
+<div id="filterModal">
+    <label><input type="checkbox" class="chkUserInfoID"> User Info ID</label>
+    <label><input type="checkbox" class="chkPersonalID"> Personal ID</label>
+    <label><input type="checkbox" class="chkFirstName"> First Name</label>
+    <label><input type="checkbox" class="chkLastName"> Last Name</label>
+    <label><input type="checkbox" class="chkGender"> Gender</label>
+    <label><input type="checkbox" class="chkClassSection"> Class Section</label>
+    <label><input type="checkbox" class="chkTopicsTaken"> Topics Taken</label>
+    <label><input type="checkbox" class="chkQuizTaken"> Quiz Taken</label>
+    <label><input type="checkbox" class="chkLearnerProgress"> Learner Story Progress</label>
+    <label><input type="checkbox" class="chkQuizProgress"> Quiz Progress</label>
+    <button onclick="applyFilter()">Apply</button>
+    <button onclick="resetTable()">Reset</button>
+    <button onclick="closeFilterModal()">Close</button>
+</div>
 
-    <script>
+<script>
     var sortDirectionGender = 0;
     var sortDirectionClass = 0;
     var sortDirectionFirstName = 0;
@@ -221,7 +214,7 @@ mysqli_close($connection);
         var table = document.getElementById("userTable");
         var rows = Array.from(table.rows).slice(1);
 
-        rows.sort(function(a, b) {
+        rows.sort(function (a, b) {
             var cellA = a.cells[columnIndex].innerText.toLowerCase();
             var cellB = b.cells[columnIndex].innerText.toLowerCase();
 
@@ -246,7 +239,7 @@ mysqli_close($connection);
 
         table.innerHTML = table.rows[0].outerHTML;
 
-        rows.forEach(function(row) {
+        rows.forEach(function (row) {
             table.appendChild(row);
         });
 
@@ -268,7 +261,6 @@ mysqli_close($connection);
     function sortTableByClass() {
         sortTableByColumn(5, sortDirectionClass);
     }
-
     function showQuizProgress(userId) {
         window.location.href = "get_quiz_progress.php?userId=" + userId;
     }
@@ -287,18 +279,18 @@ mysqli_close($connection);
         var table = document.getElementById("userTable");
         var checkboxes = document.querySelectorAll("#filterModal input[type=checkbox]");
 
-        checkboxes.forEach(function(checkbox, index) {
+        checkboxes.forEach(function (checkbox, index) {
             var columnIndex = index;
             var headerCell = table.rows[0].cells[columnIndex];
             var className = headerCell.classList[0];
             var cells = document.querySelectorAll("#userTable ." + className);
 
             if (checkbox.checked) {
-                cells.forEach(function(cell) {
+                cells.forEach(function (cell) {
                     cell.style.display = "";
                 });
             } else {
-                cells.forEach(function(cell) {
+                cells.forEach(function (cell) {
                     cell.style.display = "none";
                 });
             }
@@ -315,7 +307,7 @@ mysqli_close($connection);
             var className = table.rows[0].cells[i].classList[0];
             var cells = document.querySelectorAll("#userTable ." + className);
 
-            cells.forEach(function(cell) {
+            cells.forEach(function (cell) {
                 cell.style.display = "";
             });
         }
@@ -327,8 +319,7 @@ mysqli_close($connection);
         document.getElementById("filterModal").style.display = "none";
         document.getElementById("backdrop").style.display = "none";
     }
-    </script>
+</script>
 
 </body>
-
 </html>
