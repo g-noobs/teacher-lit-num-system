@@ -45,24 +45,24 @@
 
                 <br>
                 <br>
-                <section id="gradebook_dropdown">
+                <!-- <section id="gradebook_dropdown">
                     <div class="align-items-start">
                         <div class="col-sm-2">
                             <div class="custom-dropdown">
                                 <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
                                     style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
-                                    <b id="dropdown_name">Class List</b> <!-- Updated the button text -->
+                                    <b id="dropdown_name">Class List</b> Updated the button text 
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu custom-dropdown-menu" id="gradebook_class_dropdown">
-                                    <!-- <li><a href="#" data-lesson-type="active-lesson"><b>Active Lesson</b></a></li> -->
+                                    <li><a href="#" data-lesson-type="active-lesson"><b>Active Lesson</b></a></li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-10">
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <br>
                 <br>
                 <!-- Main Content-->
