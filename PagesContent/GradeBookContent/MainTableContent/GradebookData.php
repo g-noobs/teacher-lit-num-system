@@ -8,7 +8,7 @@ table {
 table,
 th,
 td {
-    border: 1px solid gray;
+    border: 1px solid #D2D6DE;
 }
 
 th,
