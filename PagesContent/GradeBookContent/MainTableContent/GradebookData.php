@@ -87,7 +87,8 @@ $query = "
 $result = mysqli_query($connection, $query);
 ?>
 <button class="btn btn-primary" onclick="openFilterModal()">Filter</button>
-
+<br>
+<br>
 <div class="row">
     <div class="col-xs-12">
         <div class="box box-default container">
