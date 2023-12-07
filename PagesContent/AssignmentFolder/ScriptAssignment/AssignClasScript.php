@@ -1,6 +1,6 @@
 <script>
 $(function() {
-    $('.assign_class_btn').on('click', function() {
+    $(document).on('click', '.assign_class_btn', function() {
         var $modal = $('#assign_class_modal');
         $modal.modal('show');
         var assignment_id = $(this).data('id');
