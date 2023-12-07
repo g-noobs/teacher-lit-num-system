@@ -56,6 +56,7 @@
                             </div>
                         </div>
                         <div class="col-sm-10">
+                            <button class="btn btn-primary" id="assigned_assgn_btn">Assigned Quiz</button>
                         </div>
                     </div>
                 </section>
@@ -69,7 +70,7 @@
                 <?php include_once "../PagesContent/AssignmentFolder/ModalAssignment/AssingClassModal.php"?>
 
                 <!-- Main Content-->
-                <section class="content" id="quizContent">
+                <section class="content" id="assign_content">
                     <?php include_once "../PagesContent/AssignmentFolder/MainAssignment/AssignMainTable.php";?>
                 </section>
 
@@ -89,6 +90,9 @@
 
     <!-- assign to class -->
     <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AssignClasScript.php";?>
+
+    <!-- view assigned class -->
+    <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AssignedTableScript.php"?>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
