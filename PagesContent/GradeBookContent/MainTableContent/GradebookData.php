@@ -1,21 +1,4 @@
 <style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
-}
-
-table,
-th,
-td {
-    border: 1px solid black;
-}
-
-th,
-td {
-    padding: 10px;
-    text-align: left;
-}
 
 #progressTableContainer,
 #quizTableContainer {
@@ -130,7 +113,6 @@ $result = mysqli_query($connection, $query);
             <!-- /.box-header -->
             <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                 <!-- export button -->
-                <button onclick="openFilterModal()">Filter</button>
                 <!-- Table Data -->
                 <div class="table-responsive">
                     <table id="dataTable" class="table table-bordered table-hover text-center">
