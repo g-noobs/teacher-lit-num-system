@@ -49,7 +49,7 @@ $(function() {
 </script>
 
 
-<script>
+<!-- <script>
 $(document).ready(function() {
     // Attach change event handler to the select element
     $(document).on('change', '#filterSelect', function() {
@@ -74,4 +74,4 @@ $(document).ready(function() {
     }
 
 });
-</script>
+</script> -->
