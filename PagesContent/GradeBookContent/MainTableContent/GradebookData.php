@@ -317,10 +317,9 @@ $(document).ready(function() {
     var table = $('#userTable').DataTable();
 
     // Add a class to the export button (for example, 'export-btn')
-    $('#export_btn').addClass('export-btn');
 
     // Update the click event for the export button
-    $(document).on('click', '.export-btn', function() {
+    $(document).on('click', '#export_btn', function() {
         // Get the visible rows in the DataTable
         var visibleRows = table.rows({ 'search': 'applied' }).nodes();
 
