@@ -2,14 +2,14 @@
 $(function() {
     $(document).on('click', '.lesson_progress_btn', function(e) {
         e.preventDefault();
-        $('#gradebook_content').fedeOut('slow', function() {
+        $('#gradebook_content').fadeOut('slow', function() {
             $('#gradebook_content').load(
                 '../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php',
                 function() {
                     $('#gradebook_content').fadeIn('slow');
                 });
         });
-        
+
         var userId = $(this).data('id');
         $('#user_name').empty(userId);
         $('#progressTable tbody').empty();
