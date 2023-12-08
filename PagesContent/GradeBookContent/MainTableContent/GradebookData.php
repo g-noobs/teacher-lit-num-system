@@ -343,12 +343,3 @@ $(document).ready(function() {
 </script>
 
 
-<script>
-$(function() {
-    $(document).on('click', '#filter_table_btn', function(e){
-        e.preventDefault();
-        var $modal = $('#filterModal');
-        $modal.show();
-    });
-});
-</script>

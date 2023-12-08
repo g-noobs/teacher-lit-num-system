@@ -81,7 +81,7 @@
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
 
-    <script>
+    <!-- <script>
     $.ajax({
         url: '../PagesContent/GradeBookContent/GradebookAction/PopulateClassName.php',
         type: 'GET',
@@ -98,10 +98,21 @@
                 var isActive = index === 0 ? 'active' : '';
 
                 $gradebook_dropdown_ul.append(
-                    `<li class="${isActive}"><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`);
+                    `<li class="${isActive}"><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`
+                    );
             });
         },
 
+    });
+    </script> -->
+
+    <script>
+    $(function() {
+        $(document).on('click', '#filter_table_btn', function(e) {
+            e.preventDefault();
+            var $modal = $('#filterModal');
+            $modal.show();
+        });
     });
     </script>
 </body>
