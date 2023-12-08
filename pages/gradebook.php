@@ -86,15 +86,10 @@
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
 
-    <script>
-    $(function() {
-        $(document).on('click', '#filter_table_btn', function(e) {
-            e.preventDefault();
-            var $modal = $('#filterModal');
-            $modal.show();
-        });
-    });
-    </script>
+    <!-- get student lesson progress -->
+    <?php include_once "../PagesContent/GradeBookContent/GradebookScriptFolder/ViewLessonProgressScipt.php"?>
+    <!-- get student quiz progress -->
+    <?php include_once "../PagesContent/GradeBookContent/GradebookScriptFolder/ViewQuizProgressScript.php"?>
 </body>
 
 </html>
