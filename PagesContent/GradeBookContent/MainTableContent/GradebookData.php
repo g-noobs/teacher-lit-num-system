@@ -125,7 +125,7 @@ $query = "
 
 $result = mysqli_query($connection, $query);
 ?>
-<button class="btn btn-primary" onclick="openFilterModal()">Filter</button>
+<button class="btn btn-primary" id="filter_table_btn">Filter</button>
 <br>
 <br>
 <div class="row">
@@ -136,7 +136,8 @@ $result = mysqli_query($connection, $query);
 
                 <h3 class="box-title"></h3>
 
-                <button class="btn btn-success" id='ex$conn,userTableport_btn'>EXPORT DATA</button>
+                <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
+                
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
                         <i class="fa fa-search"></i>
@@ -186,6 +187,12 @@ $result = mysqli_query($connection, $query);
 
 <!-- //modal for filtering -->
 <?php include_once "../ModalGradeBook/FilterModal.php"; ?>
+
+<script>
+$(function() {
+
+});
+</script>
 
 <script>
 var sortDirectionGender = 0;
