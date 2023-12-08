@@ -306,4 +306,41 @@ $(document).ready(function() {
 });
 </script>
 
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+<script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    // Initialize DataTables
+    var table = document.getElementsByTagName("table");
+
+    // Add a class to the export button (for example, 'export-btn')
+    $('#export_btn').addClass('export-btn');
+
+    // Update the click event for the export button
+    $(document).on('click', '.export-btn', function() {
+        // Get the visible rows in the DataTable
+        var visibleRows = table.rows({ 'search': 'applied' }).nodes();
+
+        // Create a new table with only the visible rows
+        var visibleTable = table.clone(true);
+        visibleTable.clear();
+        visibleTable.rows.add(visibleRows);
+        visibleTable.draw();
+
+        // Export the visible data to Excel
+        var fileName = 'gradebook';
+        TableToExcel.convert(visibleTable.table().node(), {
+            name: fileName + '.xlsx',
+            sheet: {
+                name: fileName
+            }
+        });
+    });
+});
+</script>
+
+
 
