@@ -3,7 +3,7 @@ $(function() {
     $(document).on('click', '.lesson_progress_btn', function(e) {
         e.preventDefault();
         var userId = $(this).data('id');
-        var personalId = $('#user_name').text(userId);
+        $('#user_name').empty(userId);
         $('#progressTable tbody').empty();
 
         // window.location.href = "get_progress.php?userId=" + userId;
