@@ -17,10 +17,37 @@ $(function() {
                     $('#progressTable tbody').append(rowData);
                 });
                 //hide the main table
-            },error: function(data) {
+            },
+            error: function(data) {
                 console.log(data);
             }
         });
     });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    // Attach change event handler to the select element
+    $('#filterSelect').change(function() {
+        // Call the applyFilter function when the selection changes
+        applyFilter();
+    });
+
+    function applyFilter() {
+        var filter = document.getElementById('filterSelect').value;
+        var rows = document.getElementsByClassName('progressRow');
+
+        for (var i = 0; i < rows.length; i++) {
+            var status = rows[i].getAttribute('data-status');
+
+            if (filter === 'all' || (filter === 'completed' && status.includes('Completed')) || (filter ===
+                    'not_completed' && status.includes('Not Yet Taken'))) {
+                rows[i].style.display = 'table-row';
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
+    }
 });
 </script>

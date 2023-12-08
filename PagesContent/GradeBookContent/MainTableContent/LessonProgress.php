@@ -9,7 +9,7 @@
 
                 <div class="form-group-row">
                     <div class="col-xs-2">
-                        <select id='filterSelect' class="form-control" onchange='applyFilter()'>
+                        <select id='filterSelect' class="form-control">
                             <option value='all'>All</option>
                             <option value='completed'>Completed</option>
                             <option value='not_completed'>Not Completed</option>
@@ -75,4 +75,6 @@ function goBack() {
     location.reload();
 }
 </script>
+
+
 
