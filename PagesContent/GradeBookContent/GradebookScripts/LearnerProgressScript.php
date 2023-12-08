@@ -34,15 +34,15 @@ $(function() {
                 });
                 //empty the main_gb div and fade in the lesson_progress_content div
                 $('#main_gb').fadeOut('slow', function() {
-                $('#lesson_progress_content').fadeIn('slow');
-        }); 
+                    $('#lesson_progress_content').fadeIn('slow');
+                });
             },
             error: function(data) {
                 console.log(data);
             }
         });
 
-        
+
     });
 
 });
