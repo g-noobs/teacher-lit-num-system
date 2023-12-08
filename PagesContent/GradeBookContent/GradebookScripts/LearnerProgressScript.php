@@ -11,18 +11,21 @@ $(function() {
                 userId: userId
             },
             dataType: "json",
-            success: function(response) {
-                if(response.hasOwnProperty('succes')){
-                    $('#progressTable tbody').append(response.success);
-                }else{
-                    $('#progressTable tbody').append(response.error);
-                }
+            success: function(data) {
+                // Clear existing rows in the table body
+                $('#progressTable tbody').empty();
 
-                //append table row to table body
-                // $.each(data, function(index, rowData) {
-                //     $('#progressTable tbody').append(rowData);
-                // });
-                //hide the main table
+                // Append new rows based on the data
+                $.each(data, function(index, rowData) {
+                    $('#progressTable tbody').append(
+                        '<tr class="progressRow" data-status="' + rowData
+                        .progress_status + '">' +
+                        '<td>' + rowData.topic_id + '</td>' +
+                        '<td>' + rowData.topic_name + '</td>' +
+                        '<td>' + rowData.progress_status + '</td>' +
+                        '</tr>'
+                    );
+                });
             },
             error: function(data) {
                 console.log(data);
@@ -36,7 +39,7 @@ $(function() {
 <script>
 $(document).ready(function() {
     // Attach change event handler to the select element
-    $(document).on('change', '#filterSelect', function() {
+    $().on('change', '#filterSelect', function() {
         // Call the applyFilter function when the selection changes
         applyFilter();
     });

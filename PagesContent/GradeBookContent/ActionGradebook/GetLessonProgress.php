@@ -33,12 +33,11 @@ $sql = "SELECT
 $result = $connection->query($sql);
 if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
-        $response = 
-        "<tr class='progressRow' data-status='{$row['progress_status']}'>
-            <td>{$row['topic_id']}</td>
-            <td>{$row['topic_name']}</td>
-            <td>{$row['progress_status']}</td>
-        tr>";
+        $response[] = array(
+            'topic_id' => $row['topic_id'],
+            'topic_name' => $row['topic_name'],
+            'progress_status' => $row['progress_status']
+        );
     }
     echo json_encode($response);
 }
