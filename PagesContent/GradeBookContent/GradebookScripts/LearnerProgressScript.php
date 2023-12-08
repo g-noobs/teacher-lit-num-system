@@ -43,6 +43,14 @@ $(function() {
                 console.log(data);
             }
         });
+
+        $('#gradebook_content').fadeOut('slow', function() {
+            $('#gradebook_content').load(
+                '../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php',
+                function() {
+                    $('#gradebook_content').fadeIn('slow');
+                });
+        });
     });
 
 });
