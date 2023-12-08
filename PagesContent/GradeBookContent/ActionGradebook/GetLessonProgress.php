@@ -5,39 +5,39 @@ $connection = $conn->getConnection();
 
 $user_info_id = $_GET['id'];
 
-$filterCondition = isset($_GET['filter']) ? $_GET['filter'] : ''; // Assuming the filter is passed in the AJAX request
+// $filterCondition = isset($_GET['filter']) ? $_GET['filter'] : ''; // Assuming the filter is passed in the AJAX request
 
-//Apply filter condition
-if ($filterCondition === 'completed') {
-    $query .= " AND lsp.date_completed IS NOT NULL";
-} elseif ($filterCondition === 'not_completed') {
-    $query .= " AND lsp.date_completed IS NULL";
-}
+// //Apply filter condition
+// if ($filterCondition === 'completed') {
+//     $query .= " AND lsp.date_completed IS NOT NULL";
+// } elseif ($filterCondition === 'not_completed') {
+//     $query .= " AND lsp.date_completed IS NULL";
+// }
 
 // Query to fetch user information
 $sql = "SELECT 
-        tp.topic_id, 
-        tp.topic_name, 
-        IFNULL(
-            CONCAT('Completed on ', DATE_FORMAT(lsp.date_completed, '%Y-%m-%d')), 
-            'Not Yet Taken'
-        ) AS progress_status 
+    tp.topic_id, 
+    tp.topic_name, 
+    COALESCE(
+        CONCAT('Completed on ', DATE_FORMAT(lsp.date_completed, '%Y-%m-%d')), 
+        'Not Yet Taken'
+    ) AS progress_status 
     FROM 
-        tbl_topic tp 
+    tbl_topic tp 
     LEFT JOIN 
-        tbl_learner_story_progress lsp 
+    tbl_learner_story_progress lsp 
     ON 
-        tp.topic_id = lsp.story_id 
-        AND lsp.learner_id = (
-            SELECT 
-                personal_id 
-            FROM 
-                tbl_user_info 
-            WHERE 
-                user_info_id = '$user_info_id'
-        )
+    tp.topic_id = lsp.story_id 
+    AND lsp.learner_id = (
+        SELECT 
+            personal_id 
+        FROM 
+            tbl_user_info 
+        WHERE 
+            user_info_id = '$user_info_id'
+    )
     WHERE 
-        tp.topic_status = 1;";
+    tp.topic_status = 1;";
 
 $result = $connection->query($sql);
 if($result->num_rows > 0){
