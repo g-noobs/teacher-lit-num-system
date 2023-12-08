@@ -11,11 +11,17 @@ $(function() {
                 userId: userId
             },
             dataType: "json",
-            success: function(data) {
+            success: function(response) {
+                if(response.hasOwnProperty('succes')){
+                    $('#progressTable tbody').append(response.success);
+                }else{
+                    $('#progressTable tbody').append(response.error);
+                }
+
                 //append table row to table body
-                $.each(data, function(index, rowData) {
-                    $('#progressTable tbody').append(rowData);
-                });
+                // $.each(data, function(index, rowData) {
+                //     $('#progressTable tbody').append(rowData);
+                // });
                 //hide the main table
             },
             error: function(data) {
@@ -30,7 +36,7 @@ $(function() {
 <script>
 $(document).ready(function() {
     // Attach change event handler to the select element
-    $(document).on('change', '#filterSelect',function() {
+    $(document).on('change', '#filterSelect', function() {
         // Call the applyFilter function when the selection changes
         applyFilter();
     });
