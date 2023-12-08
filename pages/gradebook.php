@@ -42,9 +42,6 @@
                         <li class="active">Top Navigation</li>
                     </ol> -->
                 </section>
-
-                <br>
-                <br>
                 <!-- <section id="gradebook_dropdown">
                     <div class="align-items-start">
                         <div class="col-sm-2">
