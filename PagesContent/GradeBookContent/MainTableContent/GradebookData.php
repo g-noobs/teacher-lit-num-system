@@ -78,7 +78,7 @@ td {
 </style>
 
 
-<button class="btn btn-primary" id="filter_table_btn">Filter</button>
+<button type="button" class="btn btn-primary" id="filter_table_btn">Filter</button>
 <br>
 <br>
 <div class="row">
@@ -144,133 +144,133 @@ td {
 
 
 <script>
-var sortDirectionGender = 0;
-var sortDirectionClass = 0;
-var sortDirectionFirstName = 0;
-var sortDirectionLastName = 0;
-var topicsTakenIndex = checkboxes.length;
-var quizTakenIndex = checkboxes.length + 1;
+    var sortDirectionGender = 0;
+    var sortDirectionClass = 0;
+    var sortDirectionFirstName = 0;
+    var sortDirectionLastName = 0;
+    var topicsTakenIndex = checkboxes.length;
+    var quizTakenIndex = checkboxes.length + 1;
 
 
-function sortTableByFirstName() {
-    sortTableByColumn(2, sortDirectionFirstName);
-}
+    function sortTableByFirstName() {
+        sortTableByColumn(2, sortDirectionFirstName);
+    }
 
-function sortTableByLastName() {
-    sortTableByColumn(3, sortDirectionLastName);
-}
+    function sortTableByLastName() {
+        sortTableByColumn(3, sortDirectionLastName);
+    }
 
-function sortTableByColumn(columnIndex, currentDirection) {
-    var table = document.getElementById("userTable");
-    var rows = Array.from(table.rows).slice(1);
+    function sortTableByColumn(columnIndex, currentDirection) {
+        var table = document.getElementById("userTable");
+        var rows = Array.from(table.rows).slice(1);
 
-    rows.sort(function(a, b) {
-        var cellA = a.cells[columnIndex].innerText.toLowerCase();
-        var cellB = b.cells[columnIndex].innerText.toLowerCase();
+        rows.sort(function (a, b) {
+            var cellA = a.cells[columnIndex].innerText.toLowerCase();
+            var cellB = b.cells[columnIndex].innerText.toLowerCase();
 
-        if (cellA < cellB) {
-            return -1;
-        } else if (cellA > cellB) {
-            return 1;
+            if (cellA < cellB) {
+                return -1;
+            } else if (cellA > cellB) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+
+        if (currentDirection === 0) {
+            currentDirection = 1;
         } else {
-            return 0;
+            currentDirection = -currentDirection;
         }
-    });
 
-    if (currentDirection === 0) {
-        currentDirection = 1;
-    } else {
-        currentDirection = -currentDirection;
+        if (currentDirection === -1) {
+            rows.reverse();
+        }
+
+        table.innerHTML = table.rows[0].outerHTML;
+
+        rows.forEach(function (row) {
+            table.appendChild(row);
+        });
+
+        if (columnIndex === 2) {
+            sortDirectionFirstName = currentDirection;
+        } else if (columnIndex === 3) {
+            sortDirectionLastName = currentDirection;
+        } else if (columnIndex === 4) {
+            sortDirectionGender = currentDirection;
+        } else if (columnIndex === 5) {
+            sortDirectionClass = currentDirection;
+        }
     }
 
-    if (currentDirection === -1) {
-        rows.reverse();
+    function sortTableByGender() {
+        sortTableByColumn(4, sortDirectionGender);
     }
 
-    table.innerHTML = table.rows[0].outerHTML;
-
-    rows.forEach(function(row) {
-        table.appendChild(row);
-    });
-
-    if (columnIndex === 2) {
-        sortDirectionFirstName = currentDirection;
-    } else if (columnIndex === 3) {
-        sortDirectionLastName = currentDirection;
-    } else if (columnIndex === 4) {
-        sortDirectionGender = currentDirection;
-    } else if (columnIndex === 5) {
-        sortDirectionClass = currentDirection;
+    function sortTableByClass() {
+        sortTableByColumn(5, sortDirectionClass);
     }
-}
+    function showQuizProgress(userId) {
+        window.location.href = "get_quiz_progress.php?userId=" + userId;
+    }
 
-function sortTableByGender() {
-    sortTableByColumn(4, sortDirectionGender);
-}
-
-function sortTableByClass() {
-    sortTableByColumn(5, sortDirectionClass);
-}
-
-function showQuizProgress(userId) {
-    window.location.href = "get_quiz_progress.php?userId=" + userId;
-}
-
-function showProgress(userId) {
-    window.location.href = "get_progress.php?userId=" + userId;
-}
+    function showProgress(userId) {
+        window.location.href = "get_progress.php?userId=" + userId;
+    }
 
 
-function openFilterModal() {
-    document.getElementById("filterModal").style.display = "block";
-    document.getElementById("backdrop").style.display = "block";
-}
+    function openFilterModal() {
+        document.getElementById("filterModal").style.display = "block";
+        document.getElementById("backdrop").style.display = "block";
+    }
 
-function applyFilter() {
-    var table = document.getElementById("userTable");
-    var checkboxes = document.querySelectorAll("#filterModal input[type=checkbox]");
+    function applyFilter() {
+        var table = document.getElementById("userTable");
+        var checkboxes = document.querySelectorAll("#filterModal input[type=checkbox]");
 
-    checkboxes.forEach(function(checkbox, index) {
-        var columnIndex = index;
-        var headerCell = table.rows[0].cells[columnIndex];
-        var className = headerCell.classList[0];
-        var cells = document.querySelectorAll("#userTable ." + className);
+        checkboxes.forEach(function (checkbox, index) {
+            var columnIndex = index;
+            var headerCell = table.rows[0].cells[columnIndex];
+            var className = headerCell.classList[0];
+            var cells = document.querySelectorAll("#userTable ." + className);
 
-        if (checkbox.checked) {
-            cells.forEach(function(cell) {
+            if (checkbox.checked) {
+                cells.forEach(function (cell) {
+                    cell.style.display = "";
+                });
+            } else {
+                cells.forEach(function (cell) {
+                    cell.style.display = "none";
+                });
+            }
+        });
+
+        closeFilterModal();
+    }
+
+    function resetTable() {
+        var table = document.getElementById("userTable");
+
+        for (var i = 0; i < table.rows[0].cells.length; i++) {
+            table.rows[0].cells[i].style.display = "";
+            var className = table.rows[0].cells[i].classList[0];
+            var cells = document.querySelectorAll("#userTable ." + className);
+
+            cells.forEach(function (cell) {
                 cell.style.display = "";
             });
-        } else {
-            cells.forEach(function(cell) {
-                cell.style.display = "none";
-            });
         }
-    });
 
-    closeFilterModal();
-}
-
-function resetTable() {
-    var table = document.getElementById("userTable");
-
-    for (var i = 0; i < table.rows[0].cells.length; i++) {
-        table.rows[0].cells[i].style.display = "";
-        var className = table.rows[0].cells[i].classList[0];
-        var cells = document.querySelectorAll("#userTable ." + className);
-
-        cells.forEach(function(cell) {
-            cell.style.display = "";
-        });
+        closeFilterModal();
     }
 
-    closeFilterModal();
-}
-
-function closeFilterModal() {
-    document.getElementById("filterModal").style.display = "none";
-    document.getElementById("backdrop").style.display = "none";
-}
+    function closeFilterModal() {
+        document.getElementById("filterModal").style.display = "none";
+        document.getElementById("backdrop").style.display = "none";
+    }
 </script>
+
 
 <!-- Script to show the modal -->
 

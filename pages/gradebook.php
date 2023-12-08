@@ -65,6 +65,8 @@
                 </section> -->
                 <br>
                 <br>
+                <!-- Filter Modal -->
+                <?php include_once "../PagesContent/GradeBookContent/ModalGradeBook/FilterModal.php"?>
                 <!-- Main Content-->
                 <section class="content" id="gradebook_content">
                     <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
@@ -80,31 +82,6 @@
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
-
-    <!-- <script>
-    $.ajax({
-        url: '../PagesContent/GradeBookContent/GradebookAction/PopulateClassName.php',
-        type: 'GET',
-        dataType: 'json',
-        success: function(response) {
-            var $gradebook_dropdown_ul = $("#gradebook_class_dropdown");
-
-            // Check if it's the first iteration and add the 'active' class
-
-            $.each(response, function(index, dropdown) {
-                var $id = dropdown.id;
-                var $name = dropdown.name
-
-                var isActive = index === 0 ? 'active' : '';
-
-                $gradebook_dropdown_ul.append(
-                    `<li class="${isActive}"><a href="#" data-id="${$id}"><b>${$name}</b></a></li>`
-                    );
-            });
-        },
-
-    });
-    </script> -->
 
     <script>
     $(function() {
