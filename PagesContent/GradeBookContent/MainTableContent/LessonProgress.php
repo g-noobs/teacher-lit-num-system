@@ -39,7 +39,7 @@
 
                         </tbody>
                     </table>
-                    <p><button onclick=\"goBack()\">Go Back</button></p>
+                    <p><button type="button" class="btn btn-default" onclick="goBack()">Back</button></p>
                 </div>
             </div>
             <!-- /.box-body -->
