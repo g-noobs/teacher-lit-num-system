@@ -5,7 +5,7 @@
             <div class="box-header with-">
 
                 <h3 class="box-title"> Learner Story Progress for <span id="user_name"></span></h3>
-                <h4 id="personal_id"></h4>
+                <h4 id="personal_id_lesson"></h4>
 
                 <div class="form-group-row">
                     <div class="col-xs-2">
