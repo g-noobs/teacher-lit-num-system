@@ -322,7 +322,11 @@ function closeFilterModal() {
 <!-- Script to show the modal -->
 <script>
 $(function() {
-
+    $(document).on('click', '#filter_table_btn', function(e){
+        e.preventDefault();
+        var $modal = $('#filterModal');
+        $modal.show();
+    });
 });
 </script>
 
