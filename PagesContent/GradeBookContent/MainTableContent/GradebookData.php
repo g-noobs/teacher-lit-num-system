@@ -320,15 +320,7 @@ function closeFilterModal() {
 </script>
 
 <!-- Script to show the modal -->
-<script>
-$(function() {
-    $(document).on('click', '#filter_table_btn', function(e){
-        e.preventDefault();
-        var $modal = $('#filterModal');
-        $modal.show();
-    });
-});
-</script>
+
 
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
     crossorigin="anonymous"></script>
@@ -346,6 +338,17 @@ $(document).ready(function() {
                 name: fileName
             }
         });
+    });
+});
+</script>
+
+
+<script>
+$(function() {
+    $(document).on('click', '#filter_table_btn', function(e){
+        e.preventDefault();
+        var $modal = $('#filterModal');
+        $modal.show();
     });
 });
 </script>
