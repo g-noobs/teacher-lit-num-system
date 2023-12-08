@@ -75,8 +75,8 @@ class DisplayGradebook extends Connection{
                 <td class='classSection'>{$row['class_name']}</td>
                 <td class='topicsTaken'>$totalTopicsTaken out of $totalTopics</td>
                 <td class='quizTaken'>$totalQuizTaken out of $totalQuiz</td>
-                <td class='learnerProgress'><button type='button' class='btn btn-default' data-id='".$row['user_info_id']."'>Show Progress</button></td>
-                <td class='quizProgress'><button type='button' class='btn btn-primary' data-id='".$row['user_info_id']."'>Show Quiz Progress</button></td>
+                <td class='learnerProgress'><button type='button' class='btn btn-default lesson_progress_btn' data-id='".$row['user_info_id']."'>Show Progress</button></td>
+                <td class='quizProgress'><button type='button' class='btn btn-primary quiz_progress_btn' data-id='".$row['user_info_id']."'>Show Quiz Progress</button></td>
     
             </tr>";
         }
