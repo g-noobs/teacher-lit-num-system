@@ -186,13 +186,9 @@ $result = mysqli_query($connection, $query);
 </div>
 
 <!-- //modal for filtering -->
-<?php include_once "../ModalGradeBook/FilterModal.php"; ?>
+<?php include_once "../PagesContent/GradeBookContent/ModalGradeBook/FilterModal.php"; ?>
 
-<script>
-$(function() {
 
-});
-</script>
 
 <script>
 var sortDirectionGender = 0;
@@ -321,6 +317,13 @@ function closeFilterModal() {
     document.getElementById("filterModal").style.display = "none";
     document.getElementById("backdrop").style.display = "none";
 }
+</script>
+
+<!-- Script to show the modal -->
+<script>
+$(function() {
+
+});
 </script>
 
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
