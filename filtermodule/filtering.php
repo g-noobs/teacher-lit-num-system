@@ -65,8 +65,8 @@
 
 <?php
 $host = "localhost";
-$user = "root"; 
-$password = ""; 
+$user = "u170333284_admin"; 
+$password = "Capstone1!"; 
 $database = "u170333284_db_tagakaulo"; 
 
 $connection = mysqli_connect($host, $user, $password, $database);
