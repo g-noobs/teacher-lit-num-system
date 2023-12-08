@@ -314,7 +314,7 @@ $(document).ready(function() {
 <script>
 $(document).ready(function() {
     // Initialize DataTables
-    var table = document.getElementsByTagName("table");
+    var table = $('#userTable').DataTable();
 
     // Add a class to the export button (for example, 'export-btn')
     $('#export_btn').addClass('export-btn');
