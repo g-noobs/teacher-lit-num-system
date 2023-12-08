@@ -66,7 +66,6 @@
                 <br>
                 <br>
                 <!-- Filter Modal -->
-                <?php include_once "../PagesContent/GradeBookContent/ModalGradeBook/FilterModal.php"?>
                 <!-- Main Content-->
                 <section class="content" id="gradebook_content">
                     <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
