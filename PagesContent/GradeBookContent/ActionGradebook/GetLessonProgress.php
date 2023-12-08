@@ -18,7 +18,7 @@ if ($filterCondition === 'completed') {
 $sql = "SELECT 
         tp.topic_id, 
         tp.topic_name, 
-        COALESCE(
+        IFNULL(
             CONCAT('Completed on ', DATE_FORMAT(lsp.date_completed, '%Y-%m-%d')), 
             'Not Yet Taken'
         ) AS progress_status 
