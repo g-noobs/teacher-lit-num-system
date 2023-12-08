@@ -139,7 +139,6 @@ td {
 </div>
 
 <!-- //modal for filtering -->
-<?php include_once "../PagesContent/GradeBookContent/ModalGradeBook/FilterModal.php"; ?>
 
 
 
