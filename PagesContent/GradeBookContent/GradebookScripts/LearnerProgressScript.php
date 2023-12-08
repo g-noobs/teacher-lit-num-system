@@ -3,6 +3,8 @@ $(function() {
     $(document).on('click', '.lesson_progress_btn', function(e) {
         e.preventDefault();
         var userId = $(this).data('id');
+        $('#progressTable tbody').empty();
+
         // window.location.href = "get_progress.php?userId=" + userId;
         $.ajax({
             url: "../PagesContent/GradeBookContent/ActionGradebook/GetLessonProgress.php",
