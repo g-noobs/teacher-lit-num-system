@@ -8,7 +8,7 @@
 
                 <div class="form-group-row">
                     <div class="col-xs-2">
-                        <select id='quizFilterSelect' onchange='applyQuizFilter()'>
+                        <select id='quizFilterSelect' class="form-control" onchange='applyQuizFilter()'>
                             <option value='all'>All</option>
                             <option value='taken'>Taken</option>
                             <option value='not_taken'>Not Taken</option>
