@@ -5,6 +5,15 @@ $connection = $conn->getConnection();
 
 $user_info_id = $_GET['id'];
 
+$filterCondition = isset($_GET['filter']) ? $_GET['filter'] : ''; // Assuming the filter is passed in the AJAX request
+
+//Apply filter condition
+if ($filterCondition === 'completed') {
+    $query .= " AND lsp.date_completed IS NOT NULL";
+} elseif ($filterCondition === 'not_completed') {
+    $query .= " AND lsp.date_completed IS NULL";
+}
+
 // Query to fetch user information
 $sql = "SELECT 
         tp.topic_id, 

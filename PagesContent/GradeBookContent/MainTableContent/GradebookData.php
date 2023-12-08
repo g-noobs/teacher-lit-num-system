@@ -78,7 +78,7 @@ td {
 </style>
 
 
-<button type="button" class="btn btn-primary" id="filter_table_btn">Filter</button>
+<button type="button" class="btn btn-primary" onclick="openFilterModal()">Filter</button>
 <br>
 <br>
 <div class="row">

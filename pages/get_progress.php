@@ -54,11 +54,11 @@ $query = "
 $filterCondition = isset($_GET['filter']) ? $_GET['filter'] : ''; // Assuming the filter is passed in the AJAX request
 
 // Apply filter condition
-// if ($filterCondition === 'completed') {
-//     $query .= " AND lsp.date_completed IS NOT NULL";
-// } elseif ($filterCondition === 'not_completed') {
-//     $query .= " AND lsp.date_completed IS NULL";
-// }
+if ($filterCondition === 'completed') {
+    $query .= " AND lsp.date_completed IS NOT NULL";
+} elseif ($filterCondition === 'not_completed') {
+    $query .= " AND lsp.date_completed IS NULL";
+}
 
 $result = mysqli_query($connection, $query);
 
