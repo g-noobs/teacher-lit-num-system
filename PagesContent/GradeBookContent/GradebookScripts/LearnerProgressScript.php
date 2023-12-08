@@ -1,30 +1,4 @@
 <script>
-$(document).ready(function() {
-    // Attach change event handler to the select element
-    $('#filterSelect').change(function() {
-        // Call the applyFilter function when the selection changes
-        applyFilter();
-    });
-
-    function applyFilter() {
-        var filter = document.getElementById('filterSelect').value;
-        var rows = Array.from(document.getElementsByClassName('progressRow'));
-
-        for (var i = 0; i < rows.length; i++) {
-            var status = rows[i].getAttribute('data-status');
-
-            if (filter === 'all' || (filter === 'completed' && status.includes('Completed')) || (filter ===
-                    'not_completed' && status.includes('Not Yet Taken'))) {
-                rows[i].style.display = 'table-row';
-            } else {
-                rows[i].style.display = 'none';
-            }
-        }
-    }
-
-});
-</script>
-<script>
 $(function() {
     $(document).on('click', '.lesson_progress_btn', function(e) {
         e.preventDefault();
@@ -49,5 +23,33 @@ $(function() {
             }
         });
     });
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+    // Attach change event handler to the select element
+    $(document).on('change', '#filterSelect',function() {
+        // Call the applyFilter function when the selection changes
+        applyFilter();
+    });
+
+    function applyFilter() {
+        var filter = document.getElementById('filterSelect').value;
+        var rows = Array.from(document.getElementsByClassName('progressRow'));
+
+        for (var i = 0; i < rows.length; i++) {
+            var status = rows[i].getAttribute('data-status');
+
+            if (filter === 'all' || (filter === 'completed' && status.includes('Completed')) || (filter ===
+                    'not_completed' && status.includes('Not Yet Taken'))) {
+                rows[i].style.display = 'table-row';
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
+    }
+
 });
 </script>
