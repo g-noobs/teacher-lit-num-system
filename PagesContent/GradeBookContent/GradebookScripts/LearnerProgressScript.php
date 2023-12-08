@@ -39,7 +39,7 @@ $(function() {
 <script>
 $(document).ready(function() {
     // Attach change event handler to the select element
-    $().on('change', '#filterSelect', function() {
+    $(document).on('change', '#filterSelect', function() {
         // Call the applyFilter function when the selection changes
         applyFilter();
     });
