@@ -6,7 +6,13 @@ $(function() {
         $('#user_name').empty(userId);
         $('#progressTable tbody').empty();
 
-        // window.location.href = "get_progress.php?userId=" + userId;
+        //fadeout the content of the id gradebook_content, then fade in php file
+        $('#gradebook_content').fedeOut('slow', function() {
+            $('#gradebook_content').load('../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php',
+                function() {
+                    $('#gradebook_content').fadeIn('slow');
+                });
+        });
         $.ajax({
             url: "../PagesContent/GradeBookContent/ActionGradebook/GetLessonProgress.php",
             method: "GET",
