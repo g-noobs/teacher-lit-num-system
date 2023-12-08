@@ -7,12 +7,7 @@ $(function() {
         $('#progressTable tbody').empty();
 
         //fadeout the content of the id gradebook_content, then fade in php file
-        $('#gradebook_content').fedeOut('slow', function() {
-            $('#gradebook_content').load('../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php',
-                function() {
-                    $('#gradebook_content').fadeIn('slow');
-                });
-        });
+
         $.ajax({
             url: "../PagesContent/GradeBookContent/ActionGradebook/GetLessonProgress.php",
             method: "GET",
@@ -40,6 +35,13 @@ $(function() {
                 console.log(data);
             }
         });
+    });
+    $('#gradebook_content').fedeOut('slow', function() {
+        $('#gradebook_content').load(
+            '../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php',
+            function() {
+                $('#gradebook_content').fadeIn('slow');
+            });
     });
 });
 </script>
