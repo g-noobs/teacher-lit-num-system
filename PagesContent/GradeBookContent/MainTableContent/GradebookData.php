@@ -59,7 +59,7 @@ td {
     display: none;
 }
 
-/* #filterModal {
+#filterModal {
     display: none;
     position: fixed;
     z-index: 2;
@@ -74,7 +74,7 @@ td {
 #filterModal label {
     display: block;
     margin-bottom: 8px;
-} */
+}
 </style>
 
 
