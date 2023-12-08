@@ -59,7 +59,7 @@ td {
     display: none;
 }
 
-#filterModal {
+/* #filterModal {
     display: none;
     position: fixed;
     z-index: 2;
@@ -74,57 +74,10 @@ td {
 #filterModal label {
     display: block;
     margin-bottom: 8px;
-}
+} */
 </style>
 
-<?php
-include_once("../Database/Connection.php");
-$conn_obj  = new Connection();
-$connection = $conn_obj->getConnection();
 
-if (!$connection) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// Update tbl_learner_story_progress with topic IDs for each student
-$topicsQuery = "
-    UPDATE tbl_learner_story_progress lsp
-    JOIN tbl_user_info ui ON lsp.learner_id = ui.user_info_id
-    SET lsp.story_id = ui.class_id
-    WHERE ui.user_level_id = 2
-";
-
-mysqli_query($connection, $topicsQuery);
-
-// Update tbl_learner_story_progress with 'Not Taken Yet' for Date Completed
-$notTakenYetQuery = "
-    UPDATE tbl_learner_story_progress
-    SET date_completed = 'Not Taken Yet'
-    WHERE date_completed IS NULL OR date_completed = '0000-00-00'
-";
-
-mysqli_query($connection, $notTakenYetQuery);
-
-// Query to fetch user information including class_id and class_name
-$query = "
-    SELECT 
-        ui.user_info_id,
-        ui.personal_id,
-        ui.first_name,
-        ui.last_name,
-        ui.gender,
-        ui.class_id,
-        cls.class_name
-    FROM 
-        tbl_user_info ui
-    LEFT JOIN
-        tbl_class cls ON ui.class_id = cls.class_id
-    WHERE 
-        ui.user_level_id = 2
-";
-
-$result = mysqli_query($connection, $query);
-?>
 <button class="btn btn-primary" id="filter_table_btn">Filter</button>
 <br>
 <br>
