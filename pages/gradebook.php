@@ -87,7 +87,7 @@
     <?php include_once "../CommonScript/CommonAllScript.php";?>
 
     <!-- get student lesson progress -->
-    <?php include_once "../PagesContent/GradeBookContent/GradebookScriptFolder/ViewLessonProgressScipt.php"?>
+    <?php include_once "../PagesContent/GradeBookContent/GradebookScriptFolder/ViewLessonProgressScript.php"?>
     <!-- get student quiz progress -->
     <?php include_once "../PagesContent/GradeBookContent/GradebookScriptFolder/ViewQuizProgressScript.php"?>
 </body>
