@@ -2,9 +2,7 @@
 $(function() {
     $(document).on('click', '.lesson_progress_btn', function(e) {
         e.preventDefault();
-        $('#main_gb').fadeOut('slow', function() {
-            $('#lesson_progress_content').fadeIn('slow');
-        });
+
 
         var userId = $(this).data('id');
         $('#user_name').empty(userId);
@@ -34,6 +32,10 @@ $(function() {
                         '</tr>'
                     );
                 });
+                //empty the main_gb div and fade in the lesson_progress_content div
+                $('#main_gb').fadeOut('slow', function() {
+                $('#lesson_progress_content').fadeIn('slow');
+        }); 
             },
             error: function(data) {
                 console.log(data);
