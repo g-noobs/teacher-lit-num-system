@@ -29,12 +29,17 @@
                 <div class="table-responsive">
                     <table id="progressTable" class="table table-bordered table-hover text-center">
                         <thead>
-
+                            <tr>
+                                <th>Topic ID</th>
+                                <th>Topic Name</th>
+                                <th>Status</th>
+                            </tr>
                         </thead>
                         <tbody>
 
                         </tbody>
                     </table>
+                    <p><button onclick=\"goBack()\">Go Back</button></p>
                 </div>
             </div>
             <!-- /.box-body -->
@@ -62,6 +67,6 @@ function applyFilter() {
 }
 
 function goBack() {
-    window.history.back();
+    location.reload();
 }
 </script>
