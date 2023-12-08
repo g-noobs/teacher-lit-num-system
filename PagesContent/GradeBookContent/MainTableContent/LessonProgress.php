@@ -6,11 +6,14 @@
 
                 <h3 class="box-title"> Learner Story Progress for <span id="user_name"></span></h3>
                 <h4 id="personal_id"></h4>
-                <select id='filterSelect' onchange='applyFilter()'>
-                    <option value='all'>All</option>
-                    <option value='completed'>Completed</option>
-                    <option value='not_completed'>Not Completed</option>
-                </select>
+
+                <div class="form-group">
+                    <select id='filterSelect'class="form-control" onchange='applyFilter()'>
+                        <option value='all'>All</option>
+                        <option value='completed'>Completed</option>
+                        <option value='not_completed'>Not Completed</option>
+                    </select>
+                </div>
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
                         <i class="fa fa-search"></i>
