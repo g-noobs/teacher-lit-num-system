@@ -185,21 +185,7 @@ $result = mysqli_query($connection, $query);
 </div>
 
 <!-- //modal for filtering -->
-<div id="filterModal">
-    <label><input type="checkbox" class="chkUserInfoID"> User Info ID</label>
-    <label><input type="checkbox" class="chkPersonalID"> Personal ID</label>
-    <label><input type="checkbox" class="chkFirstName"> First Name</label>
-    <label><input type="checkbox" class="chkLastName"> Last Name</label>
-    <label><input type="checkbox" class="chkGender"> Gender</label>
-    <label><input type="checkbox" class="chkClassSection"> Class Section</label>
-    <label><input type="checkbox" class="chkTopicsTaken"> Topics Taken</label>
-    <label><input type="checkbox" class="chkQuizTaken"> Quiz Taken</label>
-    <label><input type="checkbox" class="chkLearnerProgress"> Learner Story Progress</label>
-    <label><input type="checkbox" class="chkQuizProgress"> Quiz Progress</label>
-    <button onclick="applyFilter()">Apply</button>
-    <button onclick="resetTable()">Reset</button>
-    <button onclick="closeFilterModal()">Close</button>
-</div>
+<?php include_once "../ModalGradeBook/FilterModal.php"; ?>
 
 <script>
 var sortDirectionGender = 0;
