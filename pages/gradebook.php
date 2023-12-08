@@ -69,6 +69,8 @@
                 <!-- Main Content-->
                 <section class="content" id="gradebook_content">
                     <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
+                    <?php include_once "../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php"?>
+
                 </section>
             </div>
         </div>
