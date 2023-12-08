@@ -5,71 +5,72 @@
             <div class="box-header with-">
 
                 <h3 class="box-title">Quiz Progress for: </h3>
+
                 <div class="form-group-row">
                     <div class="col-xs-2">
                         <select id='quizFilterSelect' onchange='applyQuizFilter()'>
                             <option value='all'>All</option>
                             <option value='taken'>Taken</option>
-                            <option v </div>
-                    </div>
-                    <div class="box-tools pull-right">
-                        <div class="search-box" style="margin-right: 35px;">
-                            <i class="fa fa-search"></i>
-                            <input type="text" id="userInput" class="form-control" placeholder="Search..">
-                        </div>
-                    </div>
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                class="fa fa-minus"></i>
-                        </button>
+                            <option value='not_taken'>Not Taken</option>
+                        </select>
                     </div>
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
-                    <!-- export button -->
-                    <!-- Table Data -->
-                    <div class="table-responsive">
-                        <table id="lesson_progress.php" class="table table-bordered table-hover text-center">
-                            <thead>
-                                <tr>
-                                    <th>Quiz ID</th>
-                                    <th>Quiz Question</th>
-                                    <th>Quiz Score</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
+                <div class="box-tools pull-right">
+                    <div class="search-box" style="margin-right: 35px;">
+                        <i class="fa fa-search"></i>
+                        <input type="text" id="userInput" class="form-control" placeholder="Search..">
                     </div>
-                    <p><button onclick="goBack()">Back</button></p>
                 </div>
-                <!-- /.box-body -->
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                </div>
             </div>
-            <!-- /.box -->
+            <!-- /.box-header -->
+            <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
+                <!-- export button -->
+                <!-- Table Data -->
+                <div class="table-responsive">
+                    <table id="lesson_progress.php" class="table table-bordered table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th>Quiz ID</th>
+                                <th>Quiz Question</th>
+                                <th>Quiz Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <p><button onclick="goBack()">Go Back</button></p>
+            </div>
+            <!-- /.box-body -->
         </div>
-        <!-- /.col -->
+        <!-- /.box -->
     </div>
+    <!-- /.col -->
+</div>
 
-    <script>
-    function applyQuizFilter() {
-        var filter = document.getElementById('quizFilterSelect').value;
-        var rows = document.getElementsByClassName('quizProgressRow');
+<script>
+function applyQuizFilter() {
+    var filter = document.getElementById('quizFilterSelect').value;
+    var rows = document.getElementsByClassName('quizProgressRow');
 
-        for (var i = 0; i < rows.length; i++) {
-            var score = rows[i].getAttribute('data-score');
+    for (var i = 0; i < rows.length; i++) {
+        var score = rows[i].getAttribute('data-score');
 
-            if (filter === 'all' || (filter === 'taken' && score !== 'Not Taken') || (filter === 'not_taken' &&
-                    score ===
-                    'Not Taken')) {
-                rows[i].style.display = 'table-row';
-            } else {
-                rows[i].style.display = 'none';
-            }
+        if (filter === 'all' || (filter === 'taken' && score !== 'Not Taken') || (filter === 'not_taken' && score ===
+                'Not Taken')) {
+            rows[i].style.display = 'table-row';
+        } else {
+            rows[i].style.display = 'none';
         }
     }
+}
 
-    function goBack() {
-        location.reload();
-    }
-    </script>
+function goBack() {
+    location.reload();
+}
+</script>
