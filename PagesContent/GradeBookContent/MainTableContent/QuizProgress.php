@@ -5,7 +5,7 @@
             <div class="box-header with-">
 
                 <h3 class="box-title">Quiz Progress for: </h3>
-
+                <h4 id="personal_id_quiz"></h4>
                 <div class="form-group-row">
                     <div class="col-xs-2">
                         <select id='quizFilterSelect' class="form-control" onchange='applyQuizFilter()'>
