@@ -2,12 +2,8 @@
 $(function() {
     $(document).on('click', '.lesson_progress_btn', function(e) {
         e.preventDefault();
-        $('#gradebook_content').fadeOut('slow', function() {
-            $('#gradebook_content').load(
-                '../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php',
-                function() {
-                    $('#gradebook_content').fadeIn('slow');
-                });
+        $('#main_gb').fadeOut('slow', function() {
+            $('#lesson_progress_content').fadeIn('slow');
         });
 
         var userId = $(this).data('id');
