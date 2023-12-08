@@ -316,7 +316,6 @@ $(document).ready(function() {
     // Initialize DataTables
     var table = $('#userTable').DataTable();
 
-    // Add a class to the export button (for example, 'export-btn')
 
     // Update the click event for the export button
     $(document).on('click', '#export_btn', function() {
