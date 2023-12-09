@@ -56,20 +56,17 @@ td {
 }
 </style>
 
-
-<br>
 <br>
 <div class="row" id="gradebook_content">
-    <button type="button" class="btn btn-primary" onclick="openFilterModal()">Filter</button>
-
     <div class="col-xs-12">
         <div class="box box-default container">
             <br>
             <div class="box-header with-">
 
                 <h3 class="box-title"></h3>
-
+                
                 <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
+                <button type="button" class="btn btn-primary" onclick="openFilterModal()">Filter</button>
 
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
