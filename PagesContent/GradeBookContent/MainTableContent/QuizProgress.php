@@ -44,9 +44,9 @@
                         </tbody>
                     </table>
                 </div>
-                <p><button onclick="goBack()">Go Back</button></p>
             </div>
             <!-- /.box-body -->
+            <p><button onclick="goBack()">Go Back</button></p>
         </div>
         <!-- /.box -->
     </div>
