@@ -9,7 +9,7 @@
 
                 <div class="form-group-row">
                     <div class="col-xs-2">
-                        <select id='filterSelect' class="form-control">
+                        <select id='filterSelect' class="form-control" onchange='applyFilter()'>
                             <option value='all'>All</option>
                             <option value='completed'>Completed</option>
                             <option value='not_completed'>Not Completed</option>
@@ -55,21 +55,21 @@
 </div>
 
 <script>
-// function applyFilter() {
-//     var filter = document.getElementById('filterSelect').value;
-//     var rows = document.getElementsByClassName('progressRow');
+function applyFilter() {
+    var filter = document.getElementById('filterSelect').value;
+    var rows = document.getElementsByClassName('progressRow');
 
-//     for (var i = 0; i < rows.length; i++) {
-//         var status = rows[i].getAttribute('data-status');
+    for (var i = 0; i < rows.length; i++) {
+        var status = rows[i].getAttribute('data-status');
 
-//         if (filter === 'all' || (filter === 'completed' && status.includes('Completed')) || (filter ===
-//                 'not_completed' && status.includes('Not Yet Taken'))) {
-//             rows[i].style.display = 'table-row';
-//         } else {
-//             rows[i].style.display = 'none';
-//         }
-//     }
-// }
+        if (filter === 'all' || (filter === 'completed' && status.includes('Completed')) || (filter ===
+                'not_completed' && status.includes('Not Yet Taken'))) {
+            rows[i].style.display = 'table-row';
+        } else {
+            rows[i].style.display = 'none';
+        }
+    }
+}
 
 function goBack() {
     location.reload();
