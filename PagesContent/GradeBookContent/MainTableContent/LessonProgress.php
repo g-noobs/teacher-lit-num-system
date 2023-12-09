@@ -44,10 +44,10 @@
 
                         </tbody>
                     </table>
-                    <p><button type="button" class="btn btn-default" onclick="goBack()">Back</button></p>
                 </div>
             </div>
             <!-- /.box-body -->
+            <p><button type="button" class="btn btn-default" onclick="goBack()">Back</button></p>
         </div>
         <!-- /.box -->
     </div>
