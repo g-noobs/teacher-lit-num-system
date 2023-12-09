@@ -35,7 +35,7 @@ $(function() {
                 
                 //empty the main_gb div and fade in the lesson_progress_content div
                 $('#gradebook_content').fadeOut('slow', function() {
-                    $('#lesson_progress_content').fadeIn('slow');
+                    $('#lesson_progress_content').show('slow');
                 });
             },
             error: function(data) {
