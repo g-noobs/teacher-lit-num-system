@@ -213,7 +213,7 @@ td {
 
     function openFilterModal() {
         document.getElementById("filterModal").style.display = "block";
-        // document.getElementById("backdrop").style.display = "block";
+        document.getElementById("backdrop").style.display = "block";
     }
 
     function applyFilter() {
