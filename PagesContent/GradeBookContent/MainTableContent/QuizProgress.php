@@ -31,7 +31,7 @@
                 <!-- export button -->
                 <!-- Table Data -->
                 <div class="table-responsive">
-                    <table id="lesson_progress.php" class="table table-bordered table-hover text-center">
+                    <table id="quizProgressTable" class="table table-bordered table-hover text-center">
                         <thead>
                             <tr>
                                 <th>Quiz ID</th>

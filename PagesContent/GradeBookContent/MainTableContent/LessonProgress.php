@@ -47,7 +47,7 @@
                 </div>
             </div>
             <!-- /.box-body -->
-            <p><button type="button" class="btn btn-default" onclick="goBack()">Back</button></p>
+            <p><button type="button" class="btn btn-default" onclick="goBackHome()">Back</button></p>
         </div>
         <!-- /.box -->
     </div>
@@ -71,7 +71,7 @@ function applyFilters() {
     }
 }
 
-function goBack() {
+function goBackHome() {
     location.reload();
 }
 </script>
