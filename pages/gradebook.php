@@ -66,8 +66,8 @@
                 <!-- Main Content-->
                 <section class="content" id="gradebook_content">
                     <div id="main_gb"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?></div>
-                    <div id="lesson_progress_content" display="none"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php"?></div>
-                    <div id="quiz_progress_content" display="none"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/QuizProgress.php"?></div>
+                    <div id="lesson_progress_content" display="none"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php"?> </div>
+                    <div id="quiz_progress_content" display="none"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/QuizProgress.php"?> </div>
 
                 </section>
             </div>
