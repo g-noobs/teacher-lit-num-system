@@ -67,7 +67,7 @@
                 <section class="content" id="gradebook_content">
                     <div id="main_gb"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?></div>
                     <div id="lesson_progress_content" display="none"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php"?></div>
-                    <?php //include_once "../PagesContent/GradeBookContent/MainTableContent/QuizProgress.php"?>
+                    <div id="quiz_progress_content" display="none"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/QuizProgress.php"?></div>
 
                 </section>
             </div>
@@ -78,9 +78,6 @@
     </div>
 
     <?php include_once("../bootstrap/jquery.php");?>
-    <script>
-        $('#lesson_progress_content').hide();
-    </script>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
