@@ -1,8 +1,9 @@
 <script>
 $(function() {
+    
     $(document).on('click', '.lesson_progress_btn', function(e) {
         e.preventDefault();
-
+        
 
         var userId = $(this).data('id');
         $('#user_name').empty(userId);
