@@ -9,7 +9,7 @@
 
                 <div class="form-group-row">
                     <div class="col-xs-2">
-                        <select id='filterSelect' class="form-control" onchange='applyFilter()'>
+                        <select id='filterSelect' class="form-control" onchange='applyFilters()'>
                             <option value='all'>All</option>
                             <option value='completed'>Completed</option>
                             <option value='not_completed'>Not Completed</option>
@@ -55,7 +55,7 @@
 </div>
 
 <script>
-function applyFilter() {
+function applyFilters() {
     var filter = document.getElementById('filterSelect').value;
     var rows = document.getElementsByClassName('progressRow');
 
