@@ -220,13 +220,13 @@ function sortTableByGender() {
 function sortTableByClass() {
     sortTableByColumn(5, sortDirectionClass);
 }
-// function showQuizProgress(userId) {
-//     window.location.href = "get_quiz_progress.php?userId=" + userId;
-// }
+function showQuizProgress(userId) {
+    window.location.href = "get_quiz_progress.php?userId=" + userId;
+}
 
-// function showProgress(userId) {
-//     window.location.href = "get_progress.php?userId=" + userId;
-// }
+function showProgress(userId) {
+    window.location.href = "get_progress.php?userId=" + userId;
+}
 
 
 function openFilterModal() {
