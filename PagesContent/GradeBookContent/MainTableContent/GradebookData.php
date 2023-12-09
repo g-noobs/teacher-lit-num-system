@@ -56,7 +56,6 @@ td {
 }
 </style>
 
-<br>
 <div class="row" id="gradebook_content">
     <div class="col-xs-12">
         <div class="box box-default container">
@@ -64,7 +63,7 @@ td {
             <div class="box-header with-">
 
                 <h3 class="box-title"></h3>
-                
+
                 <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
                 <button type="button" class="btn btn-primary" onclick="openFilterModal()">Filter</button>
 
@@ -220,6 +219,7 @@ function sortTableByGender() {
 function sortTableByClass() {
     sortTableByColumn(5, sortDirectionClass);
 }
+
 function showQuizProgress(userId) {
     window.location.href = "get_quiz_progress.php?userId=" + userId;
 }
