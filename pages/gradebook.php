@@ -65,9 +65,9 @@
                 <!-- Filter Modal -->
                 <!-- Main Content-->
                 <section class="content" id="gradebook_content">
-                    <div id="main_gb"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?></div>
-                    <div id="lesson_progress_content" display="none"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php"?> </div>
-                    <div id="quiz_progress_content" display="none"><?php include_once "../PagesContent/GradeBookContent/MainTableContent/QuizProgress.php"?> </div>
+                    <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
+                    <?php include_once "../PagesContent/GradeBookContent/MainTableContent/LessonProgress.php"?>
+                    <?php include_once "../PagesContent/GradeBookContent/MainTableContent/QuizProgress.php"?>
 
                 </section>
             </div>

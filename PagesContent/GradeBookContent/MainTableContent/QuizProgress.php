@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="quiz_progress_content">
     <div class="col-xs-12">
         <div class="box box-default container">
             <br>
