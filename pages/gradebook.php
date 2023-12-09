@@ -87,6 +87,14 @@
     <!-- get student quiz progress -->
     <?php include_once "../PagesContent/GradeBookContent/GradebookScripts/QuizProgressScript.php"?>
 
+    <script>
+    $(document).ready(function() {
+        $("#gradebook_content").show();
+        $("#lesson_progress_content").hide();
+        $("#quiz_progress_content").hide();
+    });
+    </script>
+
 </body>
 
 </html>

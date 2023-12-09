@@ -57,10 +57,11 @@ td {
 </style>
 
 
-<button type="button" class="btn btn-primary" onclick="openFilterModal()">Filter</button>
 <br>
 <br>
-<div class="row">
+<div class="row" id="gradebook_content">
+    <button type="button" class="btn btn-primary" onclick="openFilterModal()">Filter</button>
+
     <div class="col-xs-12">
         <div class="box box-default container">
             <br>
