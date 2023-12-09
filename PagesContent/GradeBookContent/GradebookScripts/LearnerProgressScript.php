@@ -4,10 +4,31 @@ $(function() {
         e.preventDefault();
 
         var userId = $(this).data('id');
-        $('#user_name').empty(userId);
+        $('#user_name_pd').empty(userId);
         $('#progressTable tbody').empty();
 
-        //fadeout the content of the id gradebook_content, then fade in php file
+        $.ajax({
+            url: "../PagesContent/GradeBookContent/ActionGradebook/GetStudentName.php",
+            method: "GET",
+            data: {
+                id: userId
+            },
+            dataType: "json",
+            success: function(data) {
+                $.each(data, function(index, rowData) {
+                    $('#user_name_pd').append(
+                        '<span>' + rowData.first_name + ' ' + rowData.last_name + '</span>'
+                    );
+                    $('#personal_id_lp').append(
+                        '<span>' + rowData.personal_id + '</span>'
+                    );
+
+                });
+            },
+            error: function(data) {
+                console.log(data);
+            }
+        });
 
         $.ajax({
             url: "../PagesContent/GradeBookContent/ActionGradebook/GetLessonProgress.php",
