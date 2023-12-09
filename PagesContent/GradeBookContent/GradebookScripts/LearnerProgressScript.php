@@ -14,7 +14,7 @@ $(function() {
             url: "../PagesContent/GradeBookContent/ActionGradebook/GetLessonProgress.php",
             method: "GET",
             data: {
-                userId: userId
+                id: userId
             },
             dataType: "json",
             success: function(data) {

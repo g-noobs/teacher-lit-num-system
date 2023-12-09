@@ -75,6 +75,3 @@ function goBack() {
     location.reload();
 }
 </script>
-
-
-
