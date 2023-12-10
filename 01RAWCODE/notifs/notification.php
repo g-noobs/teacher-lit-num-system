@@ -80,6 +80,9 @@
 <body>
 
     <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    
     $host = "localhost";
     $user = "u170333284_admin";
     $password = "Capstone1!";
@@ -197,7 +200,7 @@
                         }
                     });
 
-                    window.location.href = "get_assignment_progress.php?userId=" + userId;
+                    window.location.href = "../get_assignment_progress.php?userId=" + userId;
                 }
             });
         </script>
