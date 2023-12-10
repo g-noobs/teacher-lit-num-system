@@ -204,14 +204,6 @@ $conn = $connection->getConnection();
 
 <script>
 $(document).ready(function() {
-    $("#notificationButton").click(function() {
-        if (!$("#notificationModal ul li").length) {
-            alert("No notifications found");
-        } else {
-            $("#notificationModal").toggle();
-        }
-    });
-
     $("#markAllReadButton").click(function() {
         $.ajax({
             url: '../PagesContent/NotificationFolder/mark_all_read.php',
@@ -244,10 +236,6 @@ $(document).ready(function() {
 
 <script>
 $(document).ready(function() {
-    $("#notificationButton").click(function() {
-        $("#notificationModal").show();
-    });
-
     $(".view-details").click(function() {
         var userId = $(this).data("userid");
         var learnerId = $(this).data("learnerid");
