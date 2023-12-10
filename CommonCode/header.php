@@ -44,6 +44,9 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <li><a href="quiz.php">Quiz</a></li>
                             <li class="divider"></li>
                             <li><a href="assignment.php">Assignment</a></li>
+                            <li class="divider"></li>
+
+                            <li><a href="todolist.php">Assignment</a></li>
 
 
                         </ul>
