@@ -63,9 +63,36 @@ td {
             <div class="box-header with-">
 
                 <h3 class="box-title"></h3>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <!-- Mao ni siya ang dropdown selection for class section-->
+                        <label for="classFilter">Filter by Class:</label>
+                        <select id="classFilter" onchange="filterTable()" class="form-control">
+                            <option value="all">All</option>
+                            <?php
+                                    include_once "../Database/Connection.php";
+                                    $conn = new Connection();
+                                    $connection = $conn->getConnection();
+                                    $classQuery = "SELECT class_name FROM tbl_class WHERE class_status = 1";
+                                    $classResult = mysqli_query($connection, $classQuery);
+                                    while ($classRow = mysqli_fetch_assoc($classResult)) { 
+                                        $className = $classRow['class_name'];
+                                        echo "<option value='$className'>$className</option>";
+                                    }
+                                ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="genderFilter">Filter by Gender:</label>
+                        <select id="genderFiltr" class="form-control" onchange="filterTable()">
+                            <option value="all">All</option>
+                            <option value="MALE">Male</option>
+                            <option value="FEMALE">Female</option>
+                        </select>
+                    </div>
+                </form>
 
                 <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
-                <button type="button" class="btn btn-primary" onclick="openFilterModal()">Filter</button>
 
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
@@ -220,7 +247,8 @@ function showProgress(userId) {
 }
 
 function showAssignmentProgress(userId) {
-    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
+    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" +
+        userId;
 }
 
 // filter sa gender ni siya na function    
