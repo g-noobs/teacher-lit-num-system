@@ -36,7 +36,9 @@
                         <small>Teacher Portal</small>
                     </h1>
                 </section>
-                <section id="gradebook_dropdown">
+                <br>
+                <br>
+                <section id="gradebook_dropdown" class="content">
                     <form class="form-inline">
                         <div class="form-group">
                             <label for="genderFilter">Filter by Gender:</label>
