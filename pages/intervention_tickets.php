@@ -61,8 +61,8 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                 <section class="content-header">
                     <!-- Header name -->
                     <h1>
-                        Assignment List
-                        <small>Add and Modify Assignment</small>
+                        Intervention
+                        <small>List of Student for Intervention</small>
                     </h1>
                 </section>
                 <br>
