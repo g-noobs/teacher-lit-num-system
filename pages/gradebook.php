@@ -57,14 +57,14 @@
                                     }
                                 ?>
                             </select>
-                            <div class="form-group">
-                                <label for="genderFilter">Filter by Gender:</label>
-                                <select id="genderFiltr" class="form-control" onchange="filterTable()">
-                                    <option value="all">All</option>
-                                    <option value="MALE">Male</option>
-                                    <option value="FEMALE">Female</option>
-                                </select>
-                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="genderFilter">Filter by Gender:</label>
+                            <select id="genderFiltr" class="form-control" onchange="filterTable()">
+                                <option value="all">All</option>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
+                            </select>
                         </div>
                     </form>
                 </section>
