@@ -37,6 +37,12 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
     font-weight: bold;
     margin-left: 10px;
 }
+
+#noNotificationPrompt {
+    text-align: center;
+    color: #555;
+    margin-top: 10px;
+}
 </style>
 <?php
 include "../Database/Connection.php";
