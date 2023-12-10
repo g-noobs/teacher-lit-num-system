@@ -82,9 +82,9 @@ class DisplayGradebook extends Connection{
             <td class='topicsTaken'>$totalTopicsTaken out of $totalTopics</td>
             <td class='quizTaken'>$totalQuizTaken out of $totalQuiz</td>
             <td class='assignmentTaken'>$totalAssignmentTaken out of $totalAssignment</td>
-            <td class='learnerProgress'><button onclick=\"showProgress('{$row['user_info_id']}')\">Show Progress</button></td>
-            <td class='quizProgress'><button onclick=\"showQuizProgress('{$row['user_info_id']}')\">Show Quiz Progress</button></td>
-            <td class='assignmentProgress'><button onclick=\"showAssignmentProgress('{$row['user_info_id']}')\">Show Assignment Progress</button></td>
+            <td class='learnerProgress'><button type='button' class='btn btn-default' onclick=\"showProgress('{$row['user_info_id']}')\">Show Progress</button></td>
+            <td class='quizProgress'><button type='button' class='btn btn-default' onclick=\"showQuizProgress('{$row['user_info_id']}')\">Show Quiz Progress</button></td>
+            <td class='assignmentProgress'><button type='button' class='btn btn-default' onclick=\"showAssignmentProgress('{$row['user_info_id']}')\">Show Assignment Progress</button></td>
 
         </tr>";
         }
@@ -92,3 +92,4 @@ class DisplayGradebook extends Connection{
     } 
 }
 ?>
+
