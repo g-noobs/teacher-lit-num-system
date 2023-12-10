@@ -12,12 +12,12 @@ $(function() {
         var $modal = $('#intervention_modal');
         $modal.modal('show');
 
-        $(document).on('click', '#confirm_intervention', function() {
-            //Ajax code
-            // var action_url =
-            //     "../PagesContent/GradeBookContent/ActionGradebook/ActionAddIntervention.php";
+        $(document).on('click', '#confirm_intervention', function() {});
+        //Ajax code
+        // var action_url =
+        //     "../PagesContent/GradeBookContent/ActionGradebook/ActionAddIntervention.php";
 
-            
+
         // $.ajax({
         //     type: 'POST',
         //     url: '../PagesContent/GradeBookContent/ActionGradebook/ActionAddIntervention.php',
@@ -60,7 +60,6 @@ $(function() {
         //         }, 5500);
         //     }
         // });
-
 
     });
 });
