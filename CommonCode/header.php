@@ -141,6 +141,11 @@ $hasNotifications = !empty($data);
                                                         Details</a></li>
                                                 <?php endforeach; ?>
                                             </ul>
+                                            <button id="markAllReadButton">Mark All Read</button>
+                                            <button id="exitButton">Exit</button>
+                                            <?php else : ?>
+                                            <p id="noNotificationPrompt"></p>
+                                            <?php endif; ?>
                                         </div>
                                     </li>
                                 </ul>
