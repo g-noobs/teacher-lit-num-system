@@ -83,7 +83,7 @@ td {
                 </div>
                 <div class="form-group">
                     <label for="genderFilter">Filter by Gender:</label>
-                    <select id="genderFiltr" class="form-control" onchange="filterTableClass()">
+                    <select id="genderFilter" class="form-control" onchange="filterTableClass()">
                         <option value="all">All</option>
                         <option value="MALE">Male</option>
                         <option value="FEMALE">Female</option>
