@@ -180,7 +180,12 @@ $connection = $conn->getConnection();
         xhr.open('POST', '<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>', true);
         xhr.onload = function() {
             if (xhr.status === 200) {
-                alert("Successfully udpated data"); // Display the response from the server
+                $('#successAlert').text("Successfully udpated data");
+                $('#successBanner').show();
+                setTimeout(function() {
+                    $("#successBanner").fadeOut("slow");
+                    location.reload();
+                }, 1500);
                 location.reload();
             } else {
                 alert('Error: ' + xhr.status);
