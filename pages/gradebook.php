@@ -40,7 +40,7 @@
                 <br>
 
                 <!-- Intervention Confirmation Modal -->
-                <?php "../PagesContent/GradeBookContent/AllModal/ModalIntervention.php"?>
+                <?php include_once "../PagesContent/GradeBookContent/AllModal/ModalIntervention.php"?>
                 
                 <!-- Main Content-->
                 <section class="content" id="main_content">
