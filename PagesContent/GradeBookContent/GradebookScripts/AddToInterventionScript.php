@@ -4,6 +4,7 @@ $(function() {
         e.preventDefault();
         var $id = $(this).data('id');
         // get the data from the second column of the table
+        var $student_id = $(this).closest('tr').find('td:eq(0)').text();
         var $first_name = $(this).closest('tr').find('td:eq(1)').text();
         var $last_name = $(this).closest('tr').find('td:eq(2)').text();
         var $student_name = $first_name + " " + $last_name;
@@ -17,7 +18,7 @@ $(function() {
                 type: 'POST',
                 url: '../PagesContent/GradeBookContent/ActionGradebook/ActionAddIntervention.php',
                 data: {
-                    id: $id
+                    id: $student_id
                 },
                 success: function(response) {
                     var responseData = JSON.parse(response);
