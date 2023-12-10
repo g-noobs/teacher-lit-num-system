@@ -255,7 +255,7 @@ function filterTableClass() {
 
     rows.forEach(function(row) {
         var genderCell = row.cells[3].innerText;
-        var classCell = row.cells[2].innerText;
+        var classCell = row.cells[4].innerText;
 
         var genderMatch = (genderFilter === 'all' || genderCell === genderFilter);
         var classMatch = (classFilter === 'all' || classCell === classFilter);
