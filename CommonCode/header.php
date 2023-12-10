@@ -125,30 +125,23 @@ $hasNotifications = !empty($data);
                         <ul class="dropdown-menu">
                             <li class="header">You have <?php echo $data2[0]['notif_count']; ?> notifications</li>
                             <li>
-
-                                <ul class="menu">
-                                    <!-- list of notifcation here -->
-                                    <li>
-                                        <div id="notificationModal">
-                                            <?php if ($hasNotifications) : ?>
-                                            <ul class="menu">
-                                                <?php foreach ($data as $row) : ?>
-                                                <li><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>'
-                                                    from section <?= $row['class_sy'] ?> <a href="#"
-                                                        class="view-details" data-userid="<?= $row['user_info_id'] ?>"
-                                                        data-learnerid="<?= $row['learner_id'] ?>"
-                                                        data-assignmentid="<?= $row['assignment_id'] ?>">View
-                                                        Details</a></li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                            <button id="markAllReadButton">Mark All Read</button>
-                                            <button id="exitButton">Exit</button>
-                                            <?php else : ?>
-                                            <p id="noNotificationPrompt"></p>
-                                            <?php endif; ?>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <!-- //start of notification -->
+                                <div id="notificationModal">
+                                    <?php if ($hasNotifications) : ?>
+                                    <ul class="menu">
+                                        <?php foreach ($data as $row) : ?>
+                                        <li><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from
+                                            section
+                                            <?= $row['class_sy'] ?> <a href="#" class="view-details"
+                                                data-userid="<?= $row['user_info_id'] ?>"
+                                                data-learnerid="<?= $row['learner_id'] ?>"
+                                                data-assignmentid="<?= $row['assignment_id'] ?>">View Details</a></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                    <?php else : ?>
+                                    <p id="noNotificationPrompt"></p>
+                                    <?php endif; ?>
+                                </div>
                             </li>
                             <li class="footer"><a href="#" id="markAllReadButton">View all</a></li>
                         </ul>
