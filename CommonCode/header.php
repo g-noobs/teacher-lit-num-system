@@ -56,21 +56,6 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
     margin-left: 10px;
 }
 
-#markAllReadButton,
-#exitButton {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
 #noNotificationPrompt {
     text-align: center;
     color: #555;
@@ -237,7 +222,7 @@ $(document).ready(function() {
 
     $("#markAllReadButton").click(function() {
         $.ajax({
-            url: 'mark_all_read.php',
+            url: '../PagesContent/NotificationFolder/mark_all_read.php',
             type: 'GET',
             success: function(response) {
                 alert(response);
