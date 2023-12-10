@@ -162,32 +162,7 @@ $hasNotifications = !empty($data);
                                 </ul>
                             </li>
                             <li class="footer"><a href="#">View all</a></li> -->
-                            <button id="notificationButton">
-                                <?php if ($hasNotifications) : ?>
-                                <i class="fas fa-exclamation-circle"></i> Notifications
-                                <?php else : ?>
-                                <i class="fas fa-bell"></i> Notifications
-                                <?php endif; ?>
-                            </button>
-
-                            <div id="notificationModal">
-                                <?php if ($hasNotifications) : ?>
-                                <ul>
-                                    <?php foreach ($data as $row) : ?>
-                                    <li><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section
-                                        <?= $row['class_sy'] ?> <a href="#" class="view-details"
-                                            data-userid="<?= $row['user_info_id'] ?>"
-                                            data-learnerid="<?= $row['learner_id'] ?>"
-                                            data-assignmentid="<?= $row['assignment_id'] ?>">View Details</a></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                                <button id="markAllReadButton">Mark All Read</button>
-                                <button id="exitButton">Exit</button>
-                                <?php else : ?>
-                                <p id="noNotificationPrompt"></p>
-                                <?php endif; ?>
-                            </div>
-
+                            
                         </ul>
                     </li>
                     <!-- end of notification  -->
@@ -204,7 +179,7 @@ $hasNotifications = !empty($data);
                                 ?>
                             </span>
                         </a>
-                        <!-- <ul class="dropdown-menu">
+                        <ul class="dropdown-menu">
                             <li class="user-header">
                                 <img src="../Media/Images/UserAvatar/temp_profpic.png" class="img-circle"
                                     alt="User Image">
@@ -230,34 +205,6 @@ $hasNotifications = !empty($data);
                                     <a href="#" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
-                        </ul> -->
-                        <ul>
-                            <button id="notificationButton">
-                                <?php if ($hasNotifications) : ?>
-                                <i class="fas fa-exclamation-circle"></i> Notifications
-                                <?php else : ?>
-                                <i class="fas fa-bell"></i> Notifications
-                                <?php endif; ?>
-                            </button>
-
-                            <div id="notificationModal">
-                                <?php if ($hasNotifications) : ?>
-                                <ul>
-                                    <?php foreach ($data as $row) : ?>
-                                    <li><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section
-                                        <?= $row['class_sy'] ?> <a href="#" class="view-details"
-                                            data-userid="<?= $row['user_info_id'] ?>"
-                                            data-learnerid="<?= $row['learner_id'] ?>"
-                                            data-assignmentid="<?= $row['assignment_id'] ?>">View Details</a></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                                <button id="markAllReadButton">Mark All Read</button>
-                                <button id="exitButton">Exit</button>
-                                <?php else : ?>
-                                <p id="noNotificationPrompt"></p>
-                                <?php endif; ?>
-                            </div>
-                            <!-- end of notif button -->
                         </ul>
                     </li>
                 </ul>
