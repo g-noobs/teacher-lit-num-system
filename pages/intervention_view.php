@@ -37,6 +37,8 @@ $connection = $conn->getConnection();
                 </section>
                 <!-- /.content-header -->
                 <br>
+                <!-- add modal confirmation -->
+                <?php include_once "../PagesContent/InterventionContents/ModalIntervention.php"?>
                 <section class="content">
                     <div class="row">
                         <div class="box container">
@@ -129,10 +131,8 @@ $connection = $conn->getConnection();
                                                         <td>$assignmentCount</td>
                                                         <td>$totalCount</td>
                                                         <td>
-                                                            <form id='add_intervention_form' method='POST'>
-                                                                <input type='hidden' name='student_id' value='$personalId'>
-                                                                <button class='btn btn-primary' type='submit'>Need for intervention</button>
-                                                            </form>
+                                                        <button class='btn btn-primary intervention_btn' data-id -'$personalId'>Need for intervention</button>
+
                                                         </td>";
                                                 }
                                                 
@@ -157,6 +157,7 @@ $connection = $conn->getConnection();
         <!-- /.content-wrapper -->
     </div>
     <!-- ./wrapper -->
+
 
 
 
