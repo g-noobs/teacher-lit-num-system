@@ -38,7 +38,7 @@
                 </section>
                 <section id="gradebook_dropdown">
                     <form class="form-inline">
-                        <div class="row form-group">
+                        <div class="form-group">
                             <div class="col-xs-3">
                                 <label for="genderFilter">Filter by Gender:</label>
                                 <select id="genderFiltr" class="form-control" onchange="filterTable()">
@@ -47,7 +47,6 @@
                                     <option value="FEMALE">Female</option>
                                 </select>
                             </div>
-
                         </div>
                     </form>
                 </section>
