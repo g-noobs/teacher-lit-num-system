@@ -64,7 +64,8 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                             <!-- /.box-header -->
                             <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                                 <div class="table-responsive">
-                                    <table class="sub-leadership-board-container table table-bordered table-hover text-center">
+                                    <table
+                                        class="sub-leadership-board-container table table-bordered table-hover text-center">
                                         <tr>
                                             <th onclick="sortTable(0)">Student Name</th>
                                             <th onclick="sortTable(1)">Comments</th>
