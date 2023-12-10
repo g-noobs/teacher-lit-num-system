@@ -49,20 +49,6 @@ include "../Database/Connection.php";
 $connection = new Connection();
 $conn = $connection->getConnection();
 
-// Query 1: Fetch data from the database
-$query1 = "SELECT lap.assign_class_id, CONCAT(tc.class_name, ' ', tc.sy_id) AS class_sy, CONCAT(ui.first_name, ' ', ui.last_name) AS fullname, ta.assignment_name, ui.user_info_id, lap.learner_id, lap.assignment_id FROM tbl_learner_assignment_progress lap
-JOIN tbl_assign_assignment taa ON lap.assign_class_id = taa.assign_class_id
-JOIN tbl_class tc ON taa.class_id = tc.class_id
-JOIN tbl_user_info ui ON lap.learner_id = ui.personal_id
-JOIN tbl_assignment ta ON lap.assignment_id = ta.assignment_id
-WHERE lap.notif_status = 0";
-
-
-$result1 = $conn->query($query1);
-
-if ($result1) {
-$data = $result1->fetch_all(MYSQLI_ASSOC);
-$hasNotifications = !empty($data);
 ?>
 
 <header class="main-header">
@@ -131,6 +117,20 @@ $hasNotifications = !empty($data);
                         <ul class="dropdown-menu">
                             <li class="header">You have <?php echo $data2[0]['notif_count']; ?> notifications</li>
                             <li>
+                                <?php // Query 1: Fetch data from the database
+                                    $query1 = "SELECT lap.assign_class_id, CONCAT(tc.class_name, ' ', tc.sy_id) AS class_sy, CONCAT(ui.first_name, ' ', ui.last_name) AS fullname, ta.assignment_name, ui.user_info_id, lap.learner_id, lap.assignment_id FROM tbl_learner_assignment_progress lap
+                                    JOIN tbl_assign_assignment taa ON lap.assign_class_id = taa.assign_class_id
+                                    JOIN tbl_class tc ON taa.class_id = tc.class_id
+                                    JOIN tbl_user_info ui ON lap.learner_id = ui.personal_id
+                                    JOIN tbl_assignment ta ON lap.assignment_id = ta.assignment_id
+                                    WHERE lap.notif_status = 0";
+
+
+                                    $result1 = $conn->query($query1);
+
+                                    if ($result1) {
+                                    $data = $result1->fetch_all(MYSQLI_ASSOC);
+                                    $hasNotifications = !empty($data);?>
                                 <!-- //start of notification -->
                                 <div id="notificationModal">
                                     <?php if ($hasNotifications) : ?>
@@ -147,6 +147,11 @@ $hasNotifications = !empty($data);
                                     <?php else : ?>
                                     <p id="noNotificationPrompt"></p>
                                     <?php endif; ?>
+                                    <?php
+                                        } else {
+                                            echo "Error: " . $conn->error;
+                                        }
+                                    ?>
                                 </div>
                             </li>
                             <li class="footer"><a href="#" id="markAllReadButton">View all</a></li>
@@ -273,9 +278,3 @@ $(document).ready(function() {
     }
 });
 </script>
-
-<?php
-    } else {
-        echo "Error: " . $conn->error;
-    }
-?>
