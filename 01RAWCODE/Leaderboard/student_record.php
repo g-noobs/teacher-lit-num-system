@@ -299,7 +299,7 @@ $fullName = $fullNameRow['full_name'];
     <hr>
     <script>
         function backBtn() {
-            window.location.href = "leaderboard.php";
+            window.history.back();
         }
     </script>
 </body>
