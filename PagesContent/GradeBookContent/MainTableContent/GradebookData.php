@@ -64,12 +64,12 @@ td {
 
                 <h3 class="box-title"></h3>
                 <form class="form-inline">
-                    <div class="form-group">
-                        <!-- Mao ni siya ang dropdown selection for class section-->
-                        <label for="classFilter">Filter by Class:</label>
-                        <select id="classFilter" onchange="filterTable()" class="form-control">
-                            <option value="all">All</option>
-                            <?php
+
+                    <!-- Mao ni siya ang dropdown selection for class section-->
+                    <label for="classFilter">Filter by Class:</label>
+                    <select id="classFilter" onchange="filterTable()" class="form-control">
+                        <option value="all">All</option>
+                        <?php
                                     include_once "../Database/Connection.php";
                                     $conn = new Connection();
                                     $connection = $conn->getConnection();
@@ -80,67 +80,67 @@ td {
                                         echo "<option value='$className'>$className</option>";
                                     }
                                 ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="genderFilter">Filter by Gender:</label>
-                        <select id="genderFiltr" class="form-control" onchange="filterTable()">
-                            <option value="all">All</option>
-                            <option value="MALE">Male</option>
-                            <option value="FEMALE">Female</option>
-                        </select>
-                    </div>
-                </form>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="genderFilter">Filter by Gender:</label>
+                <select id="genderFiltr" class="form-control" onchange="filterTable()">
+                    <option value="all">All</option>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                </select>
+            </div>
 
-                <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
 
-                <div class="box-tools pull-right">
-                    <div class="search-box" style="margin-right: 35px;">
-                        <i class="fa fa-search"></i>
-                        <input type="text" id="userInput" class="form-control" placeholder="Search..">
-                    </div>
-                </div>
-                <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
+            <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
+
+            <div class="box-tools pull-right">
+                <div class="search-box" style="margin-right: 35px;">
+                    <i class="fa fa-search"></i>
+                    <input type="text" id="userInput" class="form-control" placeholder="Search..">
                 </div>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
-                <!-- export button -->
-                <!-- Table Data -->
-                <div class="table-responsive">
-                    <table id="userTable" class="table table-bordered table-hover text-center">
-                        <thead>
-                            <tr>
-                                <th class="personalID">Personal ID</th>
-                                <th class="firstName" onclick="sortTableByFirstName()">First Name</th>
-                                <th class="lastName" onclick="sortTableByLastName()">Last Name</th>
-                                <th class="gender" onclick="sortTableByGender()">Gender</th>
-                                <th class="classSection" onclick="sortTableByClass()">Class Section</th>
-                                <th class="topicsTaken" onclick="sortTableByClass()"> Topics Taken</th>
-                                <th class="quizTaken" onclick="sortTableByClass()">Quiz Taken</th>
-                                <th class="assignmentTaken" onclick="sortTableByClass()">Assignment Taken</th>
-                                <th class="learnerProgress">Learner Story Progress</th>
-                                <th class="quizProgress">Quiz Progress</th>
-                                <th class="assignmentProgress">Assignment Progress</th>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
+            <!-- export button -->
+            <!-- Table Data -->
+            <div class="table-responsive">
+                <table id="userTable" class="table table-bordered table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th class="personalID">Personal ID</th>
+                            <th class="firstName" onclick="sortTableByFirstName()">First Name</th>
+                            <th class="lastName" onclick="sortTableByLastName()">Last Name</th>
+                            <th class="gender" onclick="sortTableByGender()">Gender</th>
+                            <th class="classSection" onclick="sortTableByClass()">Class Section</th>
+                            <th class="topicsTaken" onclick="sortTableByClass()"> Topics Taken</th>
+                            <th class="quizTaken" onclick="sortTableByClass()">Quiz Taken</th>
+                            <th class="assignmentTaken" onclick="sortTableByClass()">Assignment Taken</th>
+                            <th class="learnerProgress">Learner Story Progress</th>
+                            <th class="quizProgress">Quiz Progress</th>
+                            <th class="assignmentProgress">Assignment Progress</th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php include_once "../Database/DisplayGradebook.php";
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php include_once "../Database/DisplayGradebook.php";
                                 $displayGrade = new DisplayGradebook();
                                 $displayGrade->gradebookData();
                             ?>
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
-            <!-- /.box-body -->
         </div>
-        <!-- /.box -->
+        <!-- /.box-body -->
     </div>
-    <!-- /.col -->
+    <!-- /.box -->
+</div>
+<!-- /.col -->
 </div>
 
 <!-- //modal for filtering
