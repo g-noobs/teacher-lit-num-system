@@ -9,8 +9,8 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 }
 
 include "../Database/Connection.php";
-$connection = new Connection();
-$conn = $connection->getConnection();
+$connections = new Connection();
+$conn = $connections->getConnection();
 
 ?>
 
