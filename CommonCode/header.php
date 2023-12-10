@@ -152,38 +152,24 @@ $hasNotifications = !empty($data);
                     <li class="dropdown notifications-menu open">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
+                            <span class="label label-warning">
+                                <?php
+                                $countQuery = "SELECT COUNT(*) AS notif_count FROM tbl_learner_assignment_progress WHERE notif_status = 0";
+                                $result2 = $conn->query($countQuery);
+                                $data2 = $result2->fetch_all(MYSQLI_ASSOC);
+                                echo $data2[0]['notif_count'];
+                                ?>
+                            </span>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="header">You have 10 notifications</li>
                             <li>
 
                                 <ul class="menu">
+                                    <!-- list of notifcation here -->
                                     <li>
                                         <a href="#">
                                             <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-warning text-yellow"></i> Very long description here that
-                                            may not fit into the
-                                            page and may cause design problems
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-red"></i> 5 new members joined
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user text-red"></i> You changed your username
                                         </a>
                                     </li>
                                 </ul>
