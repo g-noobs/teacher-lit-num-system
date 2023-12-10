@@ -85,7 +85,7 @@ class DisplayGradebook extends Connection{
             <td class='learnerProgress'><button type='button' class='btn btn-default' onclick=\"showProgress('{$row['user_info_id']}')\">Show Progress</button></td>
             <td class='quizProgress'><button type='button' class='btn btn-default' onclick=\"showQuizProgress('{$row['user_info_id']}')\">Show Quiz Progress</button></td>
             <td class='assignmentProgress'><button type='button' class='btn btn-default' onclick=\"showAssignmentProgress('{$row['user_info_id']}')\">Show Assignment Progress</button></td>
-            <td><button type='button' class='btn btn-default intervention_btn'>Add to Intervention</button></td>
+            <td><button type='button' class='btn btn-default intervention_btn' data-id='{$row['user_info_id']}'>Add to Intervention</button></td>
         </tr>";
         }
         mysqli_close($connection);
