@@ -63,19 +63,12 @@ td {
             <div class="box-header with-">
 
                 <h3 class="box-title"></h3>
-
-                <label for="genderFilter">Filter by Gender:</label>
-                <select id="genderFiltr" class="form-control" onchange="filterTable()">
-                    <option value="all">All</option>
-                    <option value="MALE">Male</option>
-                    <option value="FEMALE">Female</option>
-                </select>
-
-                <!-- Mao ni siya ang dropdown selection for class section-->
-                <label for="classFilter">Filter by Class:</label>
-                <select id="classFilter" onchange="filterTable()" class="form-control">
-                    <option value="all">All</option>
-                    <?php
+                <div class="form-group">
+                    <!-- Mao ni siya ang dropdown selection for class section-->
+                    <label for="classFilter">Filter by Class:</label>
+                    <select id="classFilter" onchange="filterTable()" class="form-control">
+                        <option value="all">All</option>
+                        <?php
                                     include_once "../Database/Connection.php";
                                     $conn = new Connection();
                                     $connection = $conn->getConnection();
@@ -86,8 +79,16 @@ td {
                                         echo "<option value='$className'>$className</option>";
                                     }
                                 ?>
-                </select>
-
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="genderFilter">Filter by Gender:</label>
+                    <select id="genderFiltr" class="form-control" onchange="filterTable()">
+                        <option value="all">All</option>
+                        <option value="MALE">Male</option>
+                        <option value="FEMALE">Female</option>
+                    </select>
+                </div>
 
                 <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
 
@@ -157,26 +158,6 @@ td {
     <button onclick="closeFilterModal()">Close</button>
 </div> -->
 
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
-<script>
-$(document).ready(function() {
-    $(document).on('click', '#export_btn', function() {
-        let table = document.getElementsByTagName("table");
-        var fileName = 'gradebook';
-        console.log(table);
-        debugger;
-        TableToExcel.convert(table[0], {
-            name: fileName + `.xlsx`,
-            sheet: {
-                name: fileName
-            }
-        });
-    });
-});
-</script>
-
 <script>
 var sortDirections = {};
 
@@ -236,16 +217,15 @@ function sortTableByClass() {
 }
 
 function showQuizProgress(userId) {
-    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_quiz_progress.php?userId=" + userId;
+    window.location.href = "get_quiz_progress.php?userId=" + userId;
 }
 
 function showProgress(userId) {
-    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_story_progress.php?userId=" + userId;
+    window.location.href = "get_story_progress.php?userId=" + userId;
 }
 
 function showAssignmentProgress(userId) {
-    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" +
-        userId;
+    window.location.href = "get_assignment_progress.php?userId=" + userId;
 }
 
 // filter sa gender ni siya na function    
@@ -264,6 +244,7 @@ function filterTable() {
         }
     });
 }
+
 
 // filter sa Class Section ni siya na function    
 function filterTable() {
@@ -286,4 +267,24 @@ function filterTable() {
         }
     });
 }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+<script>
+$(document).ready(function() {
+    $(document).on('click', '#export_btn', function() {
+        let table = document.getElementsByTagName("table");
+        var fileName = 'gradebook';
+        console.log(table);
+        debugger;
+        TableToExcel.convert(table[0], {
+            name: fileName + `.xlsx`,
+            sheet: {
+                name: fileName
+            }
+        });
+    });
+});
 </script>
