@@ -18,7 +18,7 @@ $(function() {
                 type: 'POST',
                 url: '../PagesContent/GradeBookContent/ActionGradebook/ActionAddIntervention.php',
                 data: {
-                    id: $student_id
+                    student_id: $student_id
                 },
                 success: function(response) {
                     var responseData = JSON.parse(response);
