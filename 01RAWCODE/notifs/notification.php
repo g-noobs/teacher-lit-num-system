@@ -96,11 +96,12 @@
 
     // Query 1: Fetch data from the database
     $query1 = "SELECT lap.assign_class_id, CONCAT(tc.class_name, ' ', tc.sy_id) AS class_sy, CONCAT(ui.first_name, ' ', ui.last_name) AS fullname, ta.assignment_name, ui.user_info_id, lap.learner_id, lap.assignment_id FROM tbl_learner_assignment_progress lap
-           JOIN tbl_assign_assignment taa ON lap.assign_class_id COLLATE utf8mb4_general_ci = taa.assign_class_id COLLATE utf8mb4_general_ci
-           JOIN tbl_class tc ON taa.class_id COLLATE utf8mb4_general_ci = tc.class_id COLLATE utf8mb4_general_ci
-           JOIN tbl_user_info ui ON lap.learner_id COLLATE utf8mb4_general_ci = ui.personal_id COLLATE utf8mb4_general_ci
-           JOIN tbl_assignment ta ON lap.assignment_id COLLATE utf8mb4_general_ci = ta.assignment_id COLLATE utf8mb4_general_ci
-           WHERE lap.notif_status = 0";
+            JOIN tbl_assign_assignment taa ON lap.assign_class_id = taa.assign_class_id
+            JOIN tbl_class tc ON taa.class_id = tc.class_id
+            JOIN tbl_user_info ui ON lap.learner_id = ui.personal_id
+            JOIN tbl_assignment ta ON lap.assignment_id = ta.assignment_id
+            WHERE lap.notif_status = 0";
+
 
     $result1 = $conn->query($query1);
 
