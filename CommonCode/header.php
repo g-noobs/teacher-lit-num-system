@@ -231,7 +231,7 @@ $(document).ready(function() {
     });
 
     function redirectToDetails(userId) {
-        window.location.href = "../filtermodule/get_assignment_progress.php?userId=" + userId;
+        window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
     }
 
     $("#notificationModal ul li a").on("click", function(e) {
@@ -258,7 +258,7 @@ $(document).ready(function() {
     function redirectToDetails(userId, learnerId, assignmentId) {
         $.ajax({
             type: "POST",
-            url: "update_notif_status.php",
+            url: "./PagesContent/NotificationFolder/update_notif_status.php",
             data: {
                 learnerId: learnerId,
                 assignmentId: assignmentId
@@ -271,7 +271,7 @@ $(document).ready(function() {
             }
         });
 
-        window.location.href = "../filtermodule/get_assignment_progress.php?userId=" + userId;
+        window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
     }
 });
 </script>
