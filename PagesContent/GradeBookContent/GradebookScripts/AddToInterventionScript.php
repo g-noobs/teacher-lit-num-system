@@ -21,7 +21,7 @@ $(function() {
                 var responseData = JSON.parse(response);
                 // Check if the form submission was successful
                 if (responseData.hasOwnProperty('success')) {
-                    $modalControl.modal('hide');
+                    $modal.modal('hide');
                     $('#successAlert').text(responseData.success);
                     $('#successBanner').show();
                     setTimeout(function() {
@@ -32,7 +32,7 @@ $(function() {
 
                     // You can redirect to a different page or perform other actions here
                 } else if (responseData.hasOwnProperty('error')) {
-                    $modalControl.modal('hide');
+                    $modal.modal('hide');
                     $('#errorAlert').text(responseData.error);
                     $('#errorBanner').show();
                     setTimeout(function() {
@@ -42,7 +42,7 @@ $(function() {
                 }
             },
             error: function() {
-                $modalControl.modal('hide');
+                $modal.modal('hide');
                 //show alert banner id = errorBanner
                 $('#errorAlert').text(
                     'An error occurred during the AJAX request.');
