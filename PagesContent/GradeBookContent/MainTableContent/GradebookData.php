@@ -66,7 +66,7 @@ td {
                 <div class="form-group">
                     <!-- Mao ni siya ang dropdown selection for class section-->
                     <label for="classFilter">Filter by Class:</label>
-                    <select id="classFilter" onchange="filterTableGender()" class="form-control">
+                    <select id="classFilter" onchange="filterTableClass()" class="form-control">
                         <option value="all">All</option>
                         <?php
                                     include_once "../Database/Connection.php";
@@ -83,7 +83,7 @@ td {
                 </div>
                 <div class="form-group">
                     <label for="genderFilter">Filter by Gender:</label>
-                    <select id="genderFilter" class="form-control" onchange="filterTableClass()">
+                    <select id="genderFilter" class="form-control" onchange="filterTableGender()">
                         <option value="all">All</option>
                         <option value="MALE">Male</option>
                         <option value="FEMALE">Female</option>
