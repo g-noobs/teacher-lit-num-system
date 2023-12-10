@@ -1,18 +1,22 @@
-<?php
+<?php 
 include "../Database/Connection.php";
 $conn = new Connection();
 $connection = $conn->getConnection();
-// Initialize $filterClass
-$filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<html style="height: auto; min-height: 100%;">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intervention</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Intervention | Tickets</title>
+
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <?php 
+        include_once("../bootstrap/style.php");
+    ?>
     <style>
     .sub-leadership-board-container {
         border-collapse: collapse;
@@ -39,81 +43,129 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
     </style>
 </head>
 
-<body>
+<body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
+    style="height: auto; min-height: 100%;">
+    <div class="wrapper" style="height: auto; min-height: 100%;">
+        <!-- Header  -->
+        <?php 
+            include_once("../CommonCode/header.php");
+        ?>
 
-    <!-- Filter Form -->
-    <form action="" method="GET" class="filter-form">
-        <label for="classFilter">Filter by Class:</label>
-        <select name="status" id="status" onchange="this.form.submit()">
-            <option value="0" <?php echo ($filterClass == '0') ? 'selected' : ''; ?>>On Going</option>
-            <option value="1" <?php echo ($filterClass == '1') ? 'selected' : '1'; ?>>Completed</option>
-        </select>
-    </form>
-
-    <table class="sub-leadership-board-container">
-        <tr>
-            <th onclick="sortTable(0)">Student Name</th>
-            <th onclick="sortTable(1)">Comments</th>
-            <th onclick="sortTable(2)">Start Date</th>
-            <th onclick="sortTable(3)">End Date</th>
-            <th onclick="sortTable(4)">Attachments</th>
-            <th>Actions</th>
-        </tr>
-
-        <?php
-    $userInfoQuery = "SELECT * FROM view_intervention";
-
-    if ($filterClass !== '') {
-        $userInfoQuery .= " WHERE status = '$filterClass'";
-    }
-
-    $userInfoQuery .= " ORDER BY view_intervention.date_created AND view_intervention.start_date";
-
-    $userInfoResult = mysqli_query($connection, $userInfoQuery);
-
-    while ($row = mysqli_fetch_assoc($userInfoResult)) {
-        $fullName = $row['student_name'];
-        $comment = $row['comment'];
-        $start_date = $row['start_date'];
-        $end_date = $row['end_date'];
-        $attachment = $row['attachment'];
-    
-        // ... (your other code)
-    
-        if ($filterClass == 0 || $filterClass !== '') {
-            echo "<tr>
-                <td>$fullName</td>
-                <td>$comment</td>
-                <td>$start_date</td>
-                <td>$end_date</td>
-                <td>$attachment</td>
-                <td>";
-    
-            // Check if $filterClass is not '1' (Completed) to display the "Finished" button
-            if ($filterClass != '1') {
-                echo "<form action='intervention_tickets.php' method='POST'>
-                        <input type='hidden' name='status' value='1'>
-                        <button type='button' onclick='insertDate()'>Finished</button>
-                      </form>";
-            }
-    
-            echo "</td>
-            </tr>";
-        } else {
-            echo "<tr>
-                <td>$fullName</td>
-                <td>$comment</td>
-                <td>$start_date</td>
-                <td>$end_date</td>
-                <td>$attachment</td>
-            </tr>";
-        }
-    }
-    ?>
+        <div class="content-wrapper" style="min-height: 606.2px;">
 
 
-    </table>
+            <!-- View quiz Data Modal -->
+            <div class="container">
+                <section class="content-header">
+                    <!-- Header name -->
+                    <h1>
+                        Assignment List
+                        <small>Add and Modify Assignment</small>
+                    </h1>
+                </section>
+                <br>
 
+                <!-- Main Content-->
+                <section class="content">
+                    <!-- Filter Form -->
+                    <form action="" method="GET" class="filter-form">
+                        <label for="classFilter">Filter by Class:</label>
+                        <select name="status" id="status" onchange="this.form.submit()">
+                            <option value="0" <?php echo ($filterClass == '0') ? 'selected' : ''; ?>>On Going</option>
+                            <option value="1" <?php echo ($filterClass == '1') ? 'selected' : '1'; ?>>Completed</option>
+                        </select>
+                    </form>
+
+                    <div class="row">
+                        <div class="box container">
+                            <div class="box-header">
+                                <form action="" method="GET" class="filter-form">
+                                    <label for="classFilter">Filter by Class:</label>
+                                    <select name="status" id="status" onchange="this.form.submit()">
+                                        <option value="0" <?php echo ($filterClass == '0') ? 'selected' : ''; ?>>On
+                                            Going</option>
+                                        <option value="1" <?php echo ($filterClass == '1') ? 'selected' : '1'; ?>>
+                                            Completed</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
+                                <div class="table-responsive">
+                                    <table class="sub-leadership-board-container">
+                                        <tr>
+                                            <th onclick="sortTable(0)">Student Name</th>
+                                            <th onclick="sortTable(1)">Comments</th>
+                                            <th onclick="sortTable(2)">Start Date</th>
+                                            <th onclick="sortTable(3)">End Date</th>
+                                            <th onclick="sortTable(4)">Attachments</th>
+                                            <th>Actions</th>
+                                        </tr>
+
+                                        <?php
+                                            $userInfoQuery = "SELECT * FROM view_intervention";
+
+                                            if ($filterClass !== '') {
+                                                $userInfoQuery .= " WHERE status = '$filterClass'";
+                                            }
+
+                                            $userInfoQuery .= " ORDER BY view_intervention.date_created AND view_intervention.start_date";
+
+                                            $userInfoResult = mysqli_query($connection, $userInfoQuery);
+
+                                            while ($row = mysqli_fetch_assoc($userInfoResult)) {
+                                                $fullName = $row['student_name'];
+                                                $comment = $row['comment'];
+                                                $start_date = $row['start_date'];
+                                                $end_date = $row['end_date'];
+                                                $attachment = $row['attachment'];
+                                            
+                                                // ... (your other code)
+                                            
+                                                if ($filterClass == 0 || $filterClass !== '') {
+                                                    echo "<tr>
+                                                        <td>$fullName</td>
+                                                        <td>$comment</td>
+                                                        <td>$start_date</td>
+                                                        <td>$end_date</td>
+                                                        <td>$attachment</td>
+                                                        <td>";
+                                            
+                                                    // Check if $filterClass is not '1' (Completed) to display the "Finished" button
+                                                    if ($filterClass != '1') {
+                                                        echo "<form action='intervention_tickets.php' method='POST'>
+                                                                <input type='hidden' name='status' value='1'>
+                                                                <button type='button' onclick='insertDate()'>Finished</button>
+                                                            </form>";
+                                                    }
+                                            
+                                                    echo "</td>
+                                                    </tr>";
+                                                } else {
+                                                    echo "<tr>
+                                                        <td>$fullName</td>
+                                                        <td>$comment</td>
+                                                        <td>$start_date</td>
+                                                        <td>$end_date</td>
+                                                        <td>$attachment</td>
+                                                    </tr>";
+                                                }
+                                            }
+                                        ?>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </section>
+            </div>
+        </div>
+        <?php 
+        include_once("../CommonCode/footer.php");
+        ?>
+    </div>
     <script>
     function insertDate() {
         // Get form data
@@ -178,24 +230,26 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
         }
     }
     </script>
-
     <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $currentDate = date('Y-m-d');
-    $status = mysqli_real_escape_string($connection, $_POST['status']);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $currentDate = date('Y-m-d');
+        $status = mysqli_real_escape_string($connection, $_POST['status']);
 
-    $updateQuery = "UPDATE tbl_intervention SET status = '1', end_date = '$currentDate' WHERE status = '0'";
+        $updateQuery = "UPDATE tbl_intervention SET status = '1', end_date = '$currentDate' WHERE status = '0'";
 
-    if (mysqli_query($connection, $updateQuery)) {
-        echo "Data updated successfully!";
-    } else {
-        echo "Error: " . $updateQuery . "<br>" . mysqli_error($connection);
+        if (mysqli_query($connection, $updateQuery)) {
+            echo "Data updated successfully!";
+        } else {
+            echo "Error: " . $updateQuery . "<br>" . mysqli_error($connection);
+        }
     }
-}
 
-mysqli_close($connection);
-?>
+    mysqli_close($connection);
+    ?>
 
+    <?php include_once("../bootstrap/jquery.php");?>
+    <!-- This Script Contain Common Script used on other pages  -->
+    <?php include_once "../CommonScript/CommonAllScript.php";?>
 </body>
 
 </html>
