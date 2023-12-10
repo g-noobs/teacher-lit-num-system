@@ -79,10 +79,6 @@ $result = mysqli_query($connection, $query);
     }
     </script>
 
-    <form class="back-button-form" action="lbab.php" method="get">
-        <button class="back-button" type="submit">Back</button>
-    </form>
-
 </body>
 
 </html>
