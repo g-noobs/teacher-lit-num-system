@@ -41,15 +41,6 @@
                 <section id="gradebook_dropdown" class="container">
                     <form class="form-inline">
                         <div class="form-group">
-                            <label for="genderFilter">Filter by Gender:</label>
-                            <select id="genderFiltr" class="form-control" onchange="filterTable()">
-                                <option value="all">All</option>
-                                <option value="MALE">Male</option>
-                                <option value="FEMALE">Female</option>
-                            </select>
-                        </div>
-                        <br>
-                        <div class="form-group">
                             <!-- Mao ni siya ang dropdown selection for class section-->
                             <label for="classFilter">Filter by Class:</label>
                             <select id="classFilter" onchange="filterTable()" class="form-control">
@@ -66,6 +57,14 @@
                                     }
                                 ?>
                             </select>
+                            <div class="form-group">
+                                <label for="genderFilter">Filter by Gender:</label>
+                                <select id="genderFiltr" class="form-control" onchange="filterTable()">
+                                    <option value="all">All</option>
+                                    <option value="MALE">Male</option>
+                                    <option value="FEMALE">Female</option>
+                                </select>
+                            </div>
                         </div>
                     </form>
                 </section>
