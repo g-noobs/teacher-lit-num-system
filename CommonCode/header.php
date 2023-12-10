@@ -9,6 +9,94 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 }
 
 ?>
+<style>
+#notificationButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#notificationButton i {
+    margin-right: 5px;
+}
+
+#notificationModal {
+    display: none;
+    position: fixed;
+    top: 16%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#notificationModal ul {
+    list-style: none;
+    padding: 0;
+}
+
+#notificationModal ul li {
+    margin-bottom: 10px;
+}
+
+#notificationModal ul li a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#markAllReadButton,
+#exitButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#noNotificationPrompt {
+    text-align: center;
+    color: #555;
+    margin-top: 10px;
+}
+</style>
+<?php
+include "../Database/Connection.php";
+$connection = new Connection();
+$conn = $connection->getConnection();
+
+// Query 1: Fetch data from the database
+$query1 = "SELECT lap.assign_class_id, CONCAT(tc.class_name, ' ', tc.sy_id) AS class_sy, CONCAT(ui.first_name, ' ', ui.last_name) AS fullname, ta.assignment_name, ui.user_info_id, lap.learner_id, lap.assignment_id FROM tbl_learner_assignment_progress lap
+JOIN tbl_assign_assignment taa ON lap.assign_class_id = taa.assign_class_id
+JOIN tbl_class tc ON taa.class_id = tc.class_id
+JOIN tbl_user_info ui ON lap.learner_id = ui.personal_id
+JOIN tbl_assignment ta ON lap.assignment_id = ta.assignment_id
+WHERE lap.notif_status = 0";
+
+
+$result1 = $conn->query($query1);
+
+if ($result1) {
+$data = $result1->fetch_all(MYSQLI_ASSOC);
+$hasNotifications = !empty($data);
+?>
 
 <header class="main-header">
     <nav class="navbar navbar-static-top">
@@ -27,14 +115,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                 <ul class="nav navbar-nav">
                     <li><a href="main.php">Dashboard <span class="sr-only">(current)</span></a></li>
 
-                    <li><a href="class_list.php">Clas Management</a>
-                        <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Class List <span
-                                class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="student_active.php">Student - Active</a></li>
-                            <li><a href="student_inactive.php">Student - Archive</a></li>
-                        </ul> -->
-                    </li>
+                    <li><a href="class_list.php">Class Management</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Workspace<span
                                 class="caret"></span></a>
@@ -74,39 +155,39 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                             <span class="label label-warning">10</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
+                            <!-- <li class="header" id="num_of_notif">You have 10 notifications</li>
                             <li>
                                 <ul class="menu">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-warning text-yellow"></i> Very long description here that
-                                            may not fit into the
-                                            page and may cause design problems
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-red"></i> 5 new members joined
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user text-red"></i> You changed your username
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </li>
-                            <li class="footer"><a href="#">View all</a></li>
+                            <li class="footer"><a href="#">View all</a></li> -->
+                            <button id="notificationButton">
+                                <?php if ($hasNotifications) : ?>
+                                <i class="fas fa-exclamation-circle"></i> Notifications
+                                <?php else : ?>
+                                <i class="fas fa-bell"></i> Notifications
+                                <?php endif; ?>
+                            </button>
+
+                            <div id="notificationModal">
+                                <?php if ($hasNotifications) : ?>
+                                <ul>
+                                    <?php foreach ($data as $row) : ?>
+                                    <li><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section
+                                        <?= $row['class_sy'] ?> <a href="#" class="view-details"
+                                            data-userid="<?= $row['user_info_id'] ?>"
+                                            data-learnerid="<?= $row['learner_id'] ?>"
+                                            data-assignmentid="<?= $row['assignment_id'] ?>">View Details</a></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <button id="markAllReadButton">Mark All Read</button>
+                                <button id="exitButton">Exit</button>
+                                <?php else : ?>
+                                <p id="noNotificationPrompt"></p>
+                                <?php endif; ?>
+                            </div>
+
                         </ul>
                     </li>
                     <!-- end of notification  -->
@@ -139,7 +220,6 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                                 <div class="row">
 
                                 </div>
-
                             </li>
 
                             <li class="user-footer">
@@ -157,3 +237,83 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
         </div>
     </nav>
 </header>
+
+<script>
+$(document).ready(function() {
+    $("#notificationButton").click(function() {
+        if (!$("#notificationModal ul li").length) {
+            alert("No notifications found");
+        } else {
+            $("#notificationModal").toggle();
+        }
+    });
+
+    $("#markAllReadButton").click(function() {
+        $.ajax({
+            url: 'mark_all_read.php',
+            type: 'GET',
+            success: function(response) {
+                alert(response);
+                location.reload();
+            },
+            error: function(error) {
+                alert('Error marking all as read');
+            }
+        });
+    });
+
+    $("#exitButton").click(function() {
+        $("#notificationModal").hide();
+    });
+
+    function redirectToDetails(userId) {
+        window.location.href = "../filtermodule/get_assignment_progress.php?userId=" + userId;
+    }
+
+    $("#notificationModal ul li a").on("click", function(e) {
+        e.preventDefault();
+        var userId = $(this).data("userid");
+        redirectToDetails(userId);
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $("#notificationButton").click(function() {
+        $("#notificationModal").show();
+    });
+
+    $(".view-details").click(function() {
+        var userId = $(this).data("userid");
+        var learnerId = $(this).data("learnerid");
+        var assignmentId = $(this).data("assignmentid");
+        redirectToDetails(userId, learnerId, assignmentId);
+    });
+
+    function redirectToDetails(userId, learnerId, assignmentId) {
+        $.ajax({
+            type: "POST",
+            url: "update_notif_status.php",
+            data: {
+                learnerId: learnerId,
+                assignmentId: assignmentId
+            },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+
+        window.location.href = "../filtermodule/get_assignment_progress.php?userId=" + userId;
+    }
+});
+</script>
+
+<?php
+    } else {
+        echo "Error: " . $conn->error;
+    }
+?>
