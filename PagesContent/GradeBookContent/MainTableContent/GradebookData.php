@@ -86,14 +86,14 @@ td {
                     <table id="userTable" class="table table-bordered table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="userInfoID">User Info ID</th>
                                 <th class="personalID">Personal ID</th>
                                 <th class="firstName" onclick="sortTableByFirstName()">First Name</th>
                                 <th class="lastName" onclick="sortTableByLastName()">Last Name</th>
                                 <th class="gender" onclick="sortTableByGender()">Gender</th>
                                 <th class="classSection" onclick="sortTableByClass()">Class Section</th>
-                                <th class="topicsTaken">Topics Taken</th>
-                                <th class="quizTaken">Quiz Taken</th>
+                                <th class="topicsTaken" onclick="sortTableByClass()"> Topics Taken</th>
+                                <th class="quizTaken" onclick="sortTableByClass()">Quiz Taken</th>
+                                <th class="assignmentTaken" onclick="sortTableByClass()">Assignment Taken</th>
                                 <th class="learnerProgress">Learner Story Progress</th>
                                 <th class="quizProgress">Quiz Progress</th>
                                 <th class="assignmentProgress">Assignment Progress</th>

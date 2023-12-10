@@ -9,24 +9,19 @@ class DisplayGradebook extends Connection{
         $connection= $this->getConnection();
         // Update tbl_learner_story_progress with topic IDs for each student
         $topicsQuery = "UPDATE tbl_learner_story_progress lsp
-        JOIN tbl_user_info ui ON lsp.learner_id = ui.user_info_id
-        SET lsp.story_id = ui.class_id
-        WHERE ui.user_level_id = 2";
-
+            JOIN tbl_user_info ui ON lsp.learner_id = ui.user_info_id
+            SET lsp.story_id = ui.class_id
+            WHERE ui.user_level_id = 2";
         mysqli_query($connection, $topicsQuery);
 
         // Update tbl_learner_story_progress with 'Not Taken Yet' for Date Completed
-        $notTakenYetQuery = "
-        UPDATE tbl_learner_story_progress
-        SET date_completed = 'Not Taken Yet'
-        WHERE date_completed IS NULL OR date_completed = '0000-00-00'
-        ";
-
+        $notTakenYetQuery = "UPDATE tbl_learner_story_progress
+            SET date_completed = 'Not Taken Yet'
+            WHERE date_completed IS NULL OR date_completed = '0000-00-00'";
         mysqli_query($connection, $notTakenYetQuery);
 
         // Query to fetch user information including class_id and class_name
-        $query = "
-        SELECT 
+        $query = "SELECT 
             ui.user_info_id,
             ui.personal_id,
             ui.first_name,
@@ -79,6 +74,7 @@ class DisplayGradebook extends Connection{
     
         
             echo "<tr>
+            <td class='personalId'>{$row['personal_id']}</td>
             <td class='firstName'>{$row['first_name']}</td>
             <td class='lastName'>{$row['last_name']}</td>
             <td class='gender'>{$row['gender']}</td>
@@ -90,7 +86,7 @@ class DisplayGradebook extends Connection{
             <td class='quizProgress'><button onclick=\"showQuizProgress('{$row['user_info_id']}')\">Show Quiz Progress</button></td>
             <td class='assignmentProgress'><button onclick=\"showAssignmentProgress('{$row['user_info_id']}')\">Show Assignment Progress</button></td>
 
-            </tr>";
+        </tr>";
         }
         mysqli_close($connection);
     } 
