@@ -48,14 +48,13 @@ $connection = $conn->getConnection();
                                         <label for="classFilter">Filter by Class:</label>
                                         <select name="classFilter" id="classFilter" onchange="this.form.submit()"
                                             class="form-control">
-                                            <option>All</option>
-                                            <option value="all"
-                                                <?php echo ($_GET['classFilter'] == 'all') ? 'selected' : ''; ?>>Overall
-                                            </option>
                                             <?php
+                                                echo "<option value='all' " . ($_GET['classFilter'] == 'all' ? 'selected' : '') . ">Overall</option>";
+
                                                 // Fetch class names with class_status = 1
                                                 $classQuery = "SELECT class_name FROM tbl_class WHERE class_status = 1";
                                                 $classResult = mysqli_query($connection, $classQuery);
+
                                                 while ($classRow = mysqli_fetch_assoc($classResult)) {
                                                     $className = $classRow['class_name'];
                                                     $selected = ($_GET['classFilter'] == $className) ? 'selected' : '';
