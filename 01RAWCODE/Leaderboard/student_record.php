@@ -54,7 +54,8 @@ $fullName = $fullNameRow['full_name'];
 
 ?>
 
-    <button class="back-button" type="submit" onclick="goBack()">Back to Leadership Board & Badges</button>
+    <button class="back-button" type="submit" onclick="window.history.back()">Back to Leadership Board & Badges</button>
+
 
 
     <h2><?php echo $fullName; ?>'s Details</h2>
