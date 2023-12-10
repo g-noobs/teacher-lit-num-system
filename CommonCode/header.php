@@ -8,7 +8,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
     exit;
 }
 
-include "../Database/Connection.php";
+include_once "../Database/Connection.php";
 $connections = new Connection();
 $conn = $connections->getConnection();
 
