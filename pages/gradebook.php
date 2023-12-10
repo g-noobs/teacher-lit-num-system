@@ -39,14 +39,12 @@
                 <section id="gradebook_dropdown">
                     <form class="form-inline">
                         <div class="form-group">
-                            <div class="col-xs-3">
-                                <label for="genderFilter">Filter by Gender:</label>
-                                <select id="genderFiltr" class="form-control" onchange="filterTable()">
-                                    <option value="all">All</option>
-                                    <option value="MALE">Male</option>
-                                    <option value="FEMALE">Female</option>
-                                </select>
-                            </div>
+                            <label for="genderFilter">Filter by Gender:</label>
+                            <select id="genderFiltr" class="form-control" onchange="filterTable()">
+                                <option value="all">All</option>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
+                            </select>
                         </div>
                     </form>
                 </section>
