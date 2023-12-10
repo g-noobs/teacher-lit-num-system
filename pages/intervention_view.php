@@ -131,7 +131,7 @@ $connection = $conn->getConnection();
                                                         <td>$assignmentCount</td>
                                                         <td>$totalCount</td>
                                                         <td>
-                                                        <button class='btn btn-primary intervention_btn' data-id -'$personalId'>Need for intervention</button>
+                                                        <button class='btn btn-primary intervention_btn' data-id ='$personalId'>Need for intervention</button>
 
                                                         </td>";
                                                 }
