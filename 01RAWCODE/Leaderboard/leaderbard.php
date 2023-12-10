@@ -1,5 +1,5 @@
 <?php
-include "../Database/Connection.php";
+include "../../Database/Connection.php";
 $conn = new Connection();
 $connection = $conn->getConnection();
 $connection = mysqli_connect($host, $username, $password, $database);
