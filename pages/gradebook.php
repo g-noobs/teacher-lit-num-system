@@ -38,7 +38,7 @@
                 </section>
                 <br>
                 <br>
-                <section id="gradebook_dropdown" class="content">
+                <section id="gradebook_dropdown" class="contiainer">
                     <form class="form-inline">
                         <div class="form-group">
                             <label for="genderFilter">Filter by Gender:</label>
