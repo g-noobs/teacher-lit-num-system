@@ -54,9 +54,8 @@ $fullName = $fullNameRow['full_name'];
 
 ?>
 
-    <form class="back-button-form" action="lbab.php" method="get">
-        <button class="back-button" type="submit">Back to Leadership Board & Badges</button>
-    </form>
+    <button class="back-button" type="submit" onclick="backBtn()">Back to Leadership Board & Badges</button>
+
 
     <h2><?php echo $fullName; ?>'s Details</h2>
     <h2>Summary</h2>
@@ -298,6 +297,11 @@ $fullName = $fullNameRow['full_name'];
     </table>
     <br>
     <hr>
+    <script>
+        function backBtn() {
+            window.location.href = "leaderboard.php";
+        }
+    </script>
 </body>
 
 </html>
