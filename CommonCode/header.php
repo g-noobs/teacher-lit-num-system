@@ -134,16 +134,11 @@ $conn = $connection->getConnection();
                                 <!-- //start of notification -->
                                 <div id="notificationModal">
                                     <?php if ($hasNotifications) : ?>
-                                    <ul class="menu">
-                                        <?php foreach ($data as $row) : ?>
-                                        <li><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from
-                                            section
-                                            <?= $row['class_sy'] ?> <a href="#" class="view-details"
-                                                data-userid="<?= $row['user_info_id'] ?>"
-                                                data-learnerid="<?= $row['learner_id'] ?>"
-                                                data-assignmentid="<?= $row['assignment_id'] ?>">View Details</a></li>
-                                        <?php endforeach; ?>
-                                    </ul>
+                                        <ul class="menu">
+                                            <?php foreach ($data as $row) : ?>
+                                                <li><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section <?= $row['class_sy'] ?> <a href="#" class="view-details" data-userid="<?= $row['user_info_id'] ?>" data-learnerid="<?= $row['learner_id'] ?>" data-assignmentid="<?= $row['assignment_id'] ?>">View Details</a></li>
+                                            <?php endforeach; ?>
+                                        </ul>
                                     <?php else : ?>
                                     <!-- <p id="noNotificationPrompt"></p> -->
                                     <?php endif; ?>
