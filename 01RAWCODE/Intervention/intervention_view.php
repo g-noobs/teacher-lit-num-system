@@ -62,7 +62,7 @@ $connection = $conn->getConnection();
             <th onclick="sortTable(0)">Name</th>
             <th onclick="sortTable(1)">Class Section</th>
             <th onclick="sortTable(2)">Quizzes</th>
-            <th onclick="sortTable(3)">Subjects</th>
+            <th onclick="sortTable(3)">Lesson</th>
             <th onclick="sortTable(4)">Assignments</th>
             <th onclick="sortTable(5)">Overall</th>
             <th>Actions</th>
