@@ -18,7 +18,7 @@
                 <div class="box-tools pull-right">
                     <div class="search-box" style="margin-right: 35px;">
                         <i class="fa fa-search"></i>
-                        <input type="text" id="userInput" class="form-control" placeholder="Search..">
+                        <input type="text" id="userInpute" class="form-control" placeholder="Search..">
                     </div>
                 </div>
                 <div class="box-tools pull-right">
