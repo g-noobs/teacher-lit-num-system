@@ -296,11 +296,10 @@ $fullName = $fullNameRow['full_name'];
 
     </table>
     <br>
-    <hr>
     <script>
-        function backBtn() {
-            window.history.back();
-        }
+    function backBtn() {
+        window.history.back();
+    }
     </script>
 </body>
 
