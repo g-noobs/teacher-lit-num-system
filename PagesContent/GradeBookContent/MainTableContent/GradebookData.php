@@ -66,7 +66,7 @@ td {
                 <div class="form-group">
                     <!-- Mao ni siya ang dropdown selection for class section-->
                     <label for="classFilter">Filter by Class:</label>
-                    <select id="classFilter" onchange="filterTable()" class="form-control">
+                    <select id="classFilter" onchange="filterTableGender()" class="form-control">
                         <option value="all">All</option>
                         <?php
                                     include_once "../Database/Connection.php";
@@ -83,7 +83,7 @@ td {
                 </div>
                 <div class="form-group">
                     <label for="genderFilter">Filter by Gender:</label>
-                    <select id="genderFiltr" class="form-control" onchange="filterTable()">
+                    <select id="genderFiltr" class="form-control" onchange="filterTableClass()">
                         <option value="all">All</option>
                         <option value="MALE">Male</option>
                         <option value="FEMALE">Female</option>
@@ -229,7 +229,7 @@ function showAssignmentProgress(userId) {
 }
 
 // filter sa gender ni siya na function    
-function filterTable() {
+function filterTableGender() {
     var table = document.getElementById("userTable");
     var filter = document.getElementById("genderFilter").value;
     var rows = Array.from(table.rows).slice(1);
@@ -247,7 +247,7 @@ function filterTable() {
 
 
 // filter sa Class Section ni siya na function    
-function filterTable() {
+function filterTableClass() {
     var table = document.getElementById("userTable");
     var genderFilter = document.getElementById("genderFilter").value;
     var classFilter = document.getElementById("classFilter").value;
