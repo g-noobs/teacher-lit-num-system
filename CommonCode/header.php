@@ -151,18 +151,18 @@ $hasNotifications = !empty($data);
                 <ul class="nav navbar-nav">
                     <li class="dropdown notifications-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
+                            
                             <span class="label label-warning">10</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <!-- <li class="header" id="num_of_notif">You have 10 notifications</li>
+                            <li class="header" id="num_of_notif">You have 10 notifications</li>
                             <li>
                                 <ul class="menu">
 
                                 </ul>
                             </li>
-                            <li class="footer"><a href="#">View all</a></li> -->
-                            
+                            <li class="footer"><a href="#">View all</a></li>
+
                         </ul>
                     </li>
                     <!-- end of notification  -->
