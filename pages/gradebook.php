@@ -39,7 +39,9 @@
                 <br>
                 <br>
 
-                <!-- Filter Modal -->
+                <!-- Intervention Confirmation Modal -->
+                <?php "../PagesContent/GradeBookContent/AllModal/ModalIntervention.php"?>
+                
                 <!-- Main Content-->
                 <section class="content" id="main_content">
                     <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
@@ -59,10 +61,9 @@
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
 
-    <!-- get student lesson progress -->
-    <?php include_once "../PagesContent/GradeBookContent/GradebookScripts/LearnerProgressScript.php"?>
-    <!-- get student quiz progress -->
-    <?php include_once "../PagesContent/GradeBookContent/GradebookScripts/QuizProgressScript.php"?>
+   <!-- add to intervention script -->
+    <?php include_once "../PagesContent/GradeBookContent/GradebookScripts/AddToInterventionScript.php"?>
+
 
     <script>
     $(document).ready(function() {
