@@ -118,7 +118,6 @@ td {
 
 <!-- //modal for filtering -->
 <div id="filterModal">
-    <label><input type="checkbox" class="chkUserInfoID"> User Info ID</label>
     <label><input type="checkbox" class="chkPersonalID"> Personal ID</label>
     <label><input type="checkbox" class="chkFirstName"> First Name</label>
     <label><input type="checkbox" class="chkLastName"> Last Name</label>
