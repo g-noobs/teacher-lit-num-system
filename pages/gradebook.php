@@ -50,8 +50,6 @@
                         </div>
                     </form>
                 </section>
-                <br>
-                <br>
                 <!-- Filter Modal -->
                 <!-- Main Content-->
                 <section class="content" id="main_content">
