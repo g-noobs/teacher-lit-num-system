@@ -8,25 +8,11 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
     exit;
 }
 
-?>
-<style>
-
-
-#noNotificationPrompt {
-    text-align: center;
-    color: #555;
-    margin-top: 10px;
-}
-</style>
-<?php
 include "../Database/Connection.php";
 $connection = new Connection();
 $conn = $connection->getConnection();
 
 ?>
-<script>
-    
-</script>
 
 <header class="main-header">
     <nav class="navbar navbar-static-top">
@@ -194,11 +180,16 @@ $(document).ready(function() {
             }
         });
     });
+
+    $("#exitButton").click(function() {
+        $("#notificationModal").hide();
+    });
+
     function redirectToDetails(userId) {
         window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
     }
 
-    $("ul li a").on("click", function(e) {
+    $("#notificationModal ul li a").on("click", function(e) {
         e.preventDefault();
         var userId = $(this).data("userid");
         redirectToDetails(userId);
