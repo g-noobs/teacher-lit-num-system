@@ -1,5 +1,5 @@
 <?php
-$host = "156.67.222.1";
+$host = "localhost";
 $username = "u170333284_admin";
 $password = "Capstone1!";
 $database = "u170333284_db_tagakaulo";
