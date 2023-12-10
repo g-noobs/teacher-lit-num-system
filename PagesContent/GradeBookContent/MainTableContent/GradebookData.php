@@ -63,20 +63,19 @@ td {
             <div class="box-header with-">
 
                 <h3 class="box-title"></h3>
-                <div class="form-group">
-                    <label for="genderFilter">Filter by Gender:</label>
-                    <select id="genderFiltr" class="form-control" onchange="filterTable()">
-                        <option value="all">All</option>
-                        <option value="MALE">Male</option>
-                        <option value="FEMALE">Female</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <!-- Mao ni siya ang dropdown selection for class section-->
-                    <label for="classFilter">Filter by Class:</label>
-                    <select id="classFilter" onchange="filterTable()" class="form-control">
-                        <option value="all">All</option>
-                        <?php
+
+                <label for="genderFilter">Filter by Gender:</label>
+                <select id="genderFiltr" class="form-control" onchange="filterTable()">
+                    <option value="all">All</option>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                </select>
+
+                <!-- Mao ni siya ang dropdown selection for class section-->
+                <label for="classFilter">Filter by Class:</label>
+                <select id="classFilter" onchange="filterTable()" class="form-control">
+                    <option value="all">All</option>
+                    <?php
                                     include_once "../Database/Connection.php";
                                     $conn = new Connection();
                                     $connection = $conn->getConnection();
@@ -87,8 +86,7 @@ td {
                                         echo "<option value='$className'>$className</option>";
                                     }
                                 ?>
-                    </select>
-                </div>
+                </select>
 
 
                 <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
