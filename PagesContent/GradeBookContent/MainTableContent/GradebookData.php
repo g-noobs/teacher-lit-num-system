@@ -37,23 +37,6 @@ td {
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
 }
-
-#filterModal {
-    display: none;
-    position: fixed;
-    z-index: 2;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ddd;
-}
-
-#filterModal label {
-    display: block;
-    margin-bottom: 8px;
-}
 </style>
 
 <div class="row" id="gradebook_content">
@@ -154,22 +137,6 @@ td {
     <!-- /.col -->
 </div>
 
-<!-- //modal for filtering
-<div id="filterModal">
-    <label><input type="checkbox" class="chkPersonalID"> Personal ID</label>
-    <label><input type="checkbox" class="chkFirstName"> First Name</label>
-    <label><input type="checkbox" class="chkLastName"> Last Name</label>
-    <label><input type="checkbox" class="chkGender"> Gender</label>
-    <label><input type="checkbox" class="chkClassSection"> Class Section</label>
-    <label><input type="checkbox" class="chkTopicsTaken"> Topics Taken</label>
-    <label><input type="checkbox" class="chkQuizTaken"> Quiz Taken</label>
-    <label><input type="checkbox" class="chkLearnerProgress"> Learner Story Progress</label>
-    <label><input type="checkbox" class="chkQuizProgress"> Quiz Progress</label>
-
-    <button onclick="applyFilter()">Apply</button>
-    <button onclick="resetTable()">Reset</button>
-    <button onclick="closeFilterModal()">Close</button>
-</div> -->
 
 <script>
 var sortDirections = {};
@@ -238,7 +205,8 @@ function showProgress(userId) {
 }
 
 function showAssignmentProgress(userId) {
-    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
+    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" +
+        userId;
 }
 
 // filter sa gender ni siya na function    
