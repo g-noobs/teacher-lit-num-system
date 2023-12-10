@@ -63,7 +63,7 @@ td {
             <div class="box-header with-">
 
                 <h3 class="box-title"></h3>
-                <div class="col-xs-4">
+                <form class="form-inline">
                     <div class="form-group">
                         <!-- Mao ni siya ang dropdown selection for class section-->
                         <label for="classFilter">Filter by Class:</label>
@@ -90,7 +90,7 @@ td {
                             <option value="FEMALE">Female</option>
                         </select>
                     </div>
-                </div>
+                </form>
 
                 <button class="btn btn-success" id='export_btn'>EXPORT DATA</button>
 
