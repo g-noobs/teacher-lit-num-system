@@ -145,13 +145,14 @@ $conn = $connection->getConnection();
                                         <?php endforeach; ?>
                                     </ul>
                                     <?php else : ?>
-                                    <p id="noNotificationPrompt"></p>
+                                    <!-- <p id="noNotificationPrompt"></p> -->
                                     <?php endif; ?>
                                     <?php
                                         } else {
                                             echo "Error: " . $conn->error;
                                         }
                                     ?>
+
                                 </div>
                             </li>
                             <li class="footer"><a href="#" id="markAllReadButton">View all</a></li>
