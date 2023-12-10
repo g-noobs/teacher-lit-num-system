@@ -1,8 +1,11 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    include_once "../Database/ColumnCountClass.php";
-    include_once "../Database/SanitizeCrudClass.php";
+    include_once "../../../Database/ColumnCountClass.php";
+    include_once "../../../Database/SanitizeCrudClass.php";
 
     $table = "tbl_intervention";
     $values = array(
