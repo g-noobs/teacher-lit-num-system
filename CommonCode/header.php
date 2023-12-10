@@ -151,7 +151,7 @@ $conn = $connection->getConnection();
                                         }
                                     ?>
                             </li>
-                            <li class="footer"><a href="#" id="markAllReadButton">View all</a></li>
+                            <li class="footer"><a href="#" id="markAllReadButton">Mark All as Read</a></li>
                         </ul>
                     </li>
                     <!-- end of notification  -->
