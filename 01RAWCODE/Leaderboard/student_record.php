@@ -54,7 +54,7 @@ $fullName = $fullNameRow['full_name'];
 
 ?>
 
-    <button class="back-button" type="submit" onclick="backBtn()">Back to Leadership Board & Badges</button>
+    <button class="back-button" type="submit" onclick="goBack()">Back to Leadership Board & Badges</button>
 
 
     <h2><?php echo $fullName; ?>'s Details</h2>
@@ -295,9 +295,8 @@ $fullName = $fullNameRow['full_name'];
     ?>
 
     </table>
-    <br>
     <script>
-    function backBtn() {
+    function goBack() {
         window.history.back();
     }
     </script>
