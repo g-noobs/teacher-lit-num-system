@@ -219,15 +219,15 @@ function sortTableByClass() {
 }
 
 function showQuizProgress(userId) {
-    window.location.href = "get_quiz_progress.php?userId=" + userId;
+    window.location.href = "../PagesContent/GradebookContent/ActionGradebook/get_quiz_progress.php?userId=" + userId;
 }
 
 function showProgress(userId) {
-    window.location.href = "get_story_progress.php?userId=" + userId;
+    window.location.href = "../PagesContent/GradebookContent/ActionGradebook/get_story_progress.php?userId=" + userId;
 }
 
 function showAssignmentProgress(userId) {
-    window.location.href = "get_assignment_progress.php?userId=" + userId;
+    window.location.href = "../PagesContent/GradebookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
 }
 
 // filter sa gender ni siya na function    
