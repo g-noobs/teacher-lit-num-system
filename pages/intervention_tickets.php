@@ -69,26 +69,20 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
 
                 <!-- Main Content-->
                 <section class="content">
-                    <!-- Filter Form -->
-                    <form action="" method="GET" class="filter-form">
-                        <label for="classFilter">Filter by Class:</label>
-                        <select name="status" id="status" onchange="this.form.submit()">
-                            <option value="0" <?php echo ($filterClass == '0') ? 'selected' : ''; ?>>On Going</option>
-                            <option value="1" <?php echo ($filterClass == '1') ? 'selected' : '1'; ?>>Completed</option>
-                        </select>
-                    </form>
-
                     <div class="row">
                         <div class="box container">
                             <div class="box-header">
                                 <form action="" method="GET" class="filter-form">
-                                    <label for="classFilter">Filter by Class:</label>
-                                    <select name="status" id="status" onchange="this.form.submit()">
-                                        <option value="0" <?php echo ($filterClass == '0') ? 'selected' : ''; ?>>On
-                                            Going</option>
-                                        <option value="1" <?php echo ($filterClass == '1') ? 'selected' : '1'; ?>>
-                                            Completed</option>
-                                    </select>
+                                    <div class="form-group">
+                                        <label for="classFilter">Filter by Class:</label>
+                                        <select name="status" id="status" onchange="this.form.submit()"
+                                            class="form-control">
+                                            <option value="0" <?php echo ($filterClass == '0') ? 'selected' : ''; ?>>On
+                                                Going</option>
+                                            <option value="1" <?php echo ($filterClass == '1') ? 'selected' : '1'; ?>>
+                                                Completed</option>
+                                        </select>
+                                    </div>
                                 </form>
                             </div>
                             <!-- /.box-header -->
