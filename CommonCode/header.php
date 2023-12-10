@@ -10,33 +10,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
 ?>
 <style>
-#notificationModal {
-    display: none;
-    position: fixed;
-    top: 16%;
-    left: 15%;
-    transform: translate(-50%, -50%);
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-#notificationModal ul {
-    list-style: none;
-    padding: 0;
-}
-
-#notificationModal ul li {
-    margin-bottom: 10px;
-}
-
-#notificationModal ul li a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 10px;
-}
 
 #noNotificationPrompt {
     text-align: center;
@@ -217,16 +191,11 @@ $(document).ready(function() {
             }
         });
     });
-
-    $("#exitButton").click(function() {
-        $("#notificationModal").hide();
-    });
-
     function redirectToDetails(userId) {
         window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
     }
 
-    $("#notificationModal ul li a").on("click", function(e) {
+    $("ul li a").on("click", function(e) {
         e.preventDefault();
         var userId = $(this).data("userid");
         redirectToDetails(userId);
