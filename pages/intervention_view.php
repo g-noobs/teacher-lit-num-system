@@ -25,6 +25,8 @@ $connection = $conn->getConnection();
             include_once("../CommonCode/header.php");
         ?>
         <div class="content-wrapper" style="min-height: 606.2px;">
+            <?php include_once "../CommonCode/ModifiedAlert.php";?>
+
             <div class="container">
                 <section class="content-header">
                     <!-- Header name -->
@@ -129,7 +131,7 @@ $connection = $conn->getConnection();
                                                         <td>
                                                             <form action='intervention_view.php' method='POST'>
                                                                 <input type='hidden' name='student_id' value='$personalId'>
-                                                                <button type='submit'>Need for intervention</button>
+                                                                <button class='btn btn-default' type='submit'>Need for intervention</button>
                                                             </form>
                                                         </td>";
                                                 }
@@ -229,7 +231,6 @@ $connection = $conn->getConnection();
     }
     </script>
     <?php
-    session_start();
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             include_once "../Database/ColumnCountClass.php";

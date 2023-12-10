@@ -1,7 +1,14 @@
 <?php
-include '../../Database/Connection.php';
-$conn = new Connection();
-$connection = $conn->getConnection();
+$host = "localhost";
+$username = "u170333284_admin";
+$password = "Capstone1!";
+$database = "u170333284_db_tagakaulo";
+
+$connection = mysqli_connect($host, $username, $password, $database);
+
+if (!$connection) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,20 +69,20 @@ $connection = $conn->getConnection();
             <th onclick="sortTable(0)">Name</th>
             <th onclick="sortTable(1)">Class Section</th>
             <th onclick="sortTable(2)">Quizzes</th>
-            <th onclick="sortTable(3)">Lesson</th>
+            <th onclick="sortTable(3)">Subjects</th>
             <th onclick="sortTable(4)">Assignments</th>
             <th onclick="sortTable(5)">Overall</th>
             <th>Actions</th>
         </tr>
 
-    <?php
+        <?php
     //$values['lesson_id'] = "LSN". $lesson_count->columnCountWhere("lesson_id","tbl_lesson"); inserting to tbl_intervention
     // Fetch user information along with the total story count
     $filterClass = isset($_GET['classFilter']) ? $_GET['classFilter'] : 'all';
     $userInfoQuery = "SELECT CONCAT(UPPER(last_name), ', ' , first_name, ' ', middle_name) AS full_name, CONCAT(UPPER(SUBSTRING(class_name, 1, 1)), LOWER(SUBSTRING(class_name, 2))) AS class_name, personal_id
-                        FROM tbl_user_info 
-                        JOIN tbl_class ON tbl_user_info.class_id = tbl_class.class_id
-                        WHERE tbl_user_info.status_id = 1 AND tbl_user_info.user_level_id = 2";
+                      FROM tbl_user_info 
+                      JOIN tbl_class ON tbl_user_info.class_id = tbl_class.class_id
+                      WHERE tbl_user_info.status_id = 1 AND tbl_user_info.user_level_id = 2";
     
     if ($filterClass !== 'all') {
         $userInfoQuery .= " AND tbl_class.class_name = '$filterClass'";
@@ -127,7 +134,7 @@ $connection = $conn->getConnection();
         
         echo "</tr>";
     }
-    ?>
+  ?>
 
     </table>
 
@@ -220,3 +227,7 @@ mysqli_close($connection);
 </body>
 
 </html>
+
+<?php
+mysqli_close($connection);
+?>
