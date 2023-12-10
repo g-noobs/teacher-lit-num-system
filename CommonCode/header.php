@@ -135,8 +135,8 @@ $conn = $connection->getConnection();
                                 <?php if ($hasNotifications) : ?>
                                 <ul class="menu">
                                     <?php foreach ($data as $row) : ?>
-                                    <li><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section
-                                        <?= $row['class_sy'] ?> <a href="#" class="view-details text-center text-warning'
+                                    <li class="text-center"><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section
+                                        <?= $row['class_sy'] ?> <a href="#" class="view-details text-center text-yellow'
                                             data-userid="<?= $row['user_info_id'] ?>"
                                             data-learnerid="<?= $row['learner_id'] ?>"
                                             data-assignmentid="<?= $row['assignment_id'] ?>">View Details</a></li>
