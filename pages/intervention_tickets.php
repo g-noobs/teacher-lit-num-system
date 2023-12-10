@@ -2,6 +2,8 @@
 include "../Database/Connection.php";
 $conn = new Connection();
 $connection = $conn->getConnection();
+
+$filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
 ?>
 
 <html style="height: auto; min-height: 100%;">
