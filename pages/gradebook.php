@@ -48,6 +48,24 @@
                                 <option value="FEMALE">Female</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <!-- Mao ni siya ang dropdown selection for class section-->
+                            <label for="classFilter">Filter by Class:</label>
+                            <select id="classFilter" onchange="filterTable()" class="form-control">
+                                <option value="all">All</option>
+                                <?php
+                                    include_once "../Database/Connection.php";
+                                    $conn = new Connection();
+                                    $connection = $conn->getConnection();
+                                    $classQuery = "SELECT class_name FROM tbl_class WHERE class_status = 1";
+                                    $classResult = mysqli_query($connection, $classQuery);
+                                    while ($classRow = mysqli_fetch_assoc($classResult)) { 
+                                        $className = $classRow['class_name'];
+                                        echo "<option value='$className'>$className</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
                     </form>
                 </section>
                 <!-- Filter Modal -->
