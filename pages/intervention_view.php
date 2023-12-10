@@ -43,7 +43,8 @@ $connection = $conn->getConnection();
                                 <form action="" method="GET" class="filter-form">
                                     <div class="form-group col-xs-2">
                                         <label for="classFilter">Filter by Class:</label>
-                                        <select name="classFilter" id="classFilter" onchange="this.form.submit()">
+                                        <select name="classFilter" id="classFilter" onchange="this.form.submit()"
+                                            class="form-control">
                                             <option value="all"
                                                 <?php echo ($_GET['classFilter'] == 'all') ? 'selected' : ''; ?>>Overall
                                             </option>
@@ -63,7 +64,8 @@ $connection = $conn->getConnection();
                             </div>
                             <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                                 <div class="table-responsive">
-                                    <table class="sub-leadership-board-container table table-bordered table-hover text-center">
+                                    <table
+                                        class="sub-leadership-board-container table table-bordered table-hover text-center">
                                         <tr>
                                             <th onclick="sortTable(0)">Name</th>
                                             <th onclick="sortTable(1)">Class Section</th>
