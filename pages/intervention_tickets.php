@@ -19,30 +19,6 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
     <?php 
         include_once("../bootstrap/style.php");
     ?>
-    <style>
-    .sub-leadership-board-container {
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .sub-leadership-board-container,
-    .sub-leadership-board-container th,
-    .sub-leadership-board-container td {
-        border: 1px solid black;
-    }
-
-    .sub-leadership-board-container th,
-    .sub-leadership-board-container td {
-        padding: 10px;
-        text-align: left;
-        cursor: pointer;
-    }
-
-    .filter-form {
-        margin-bottom: 20px;
-    }
-    </style>
 </head>
 
 <body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
