@@ -10,24 +10,6 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
 
 ?>
 <style>
-#notificationButton {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-#notificationButton i {
-    margin-right: 5px;
-}
-
 #notificationModal {
     display: none;
     position: fixed;
@@ -56,11 +38,6 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
     margin-left: 10px;
 }
 
-#noNotificationPrompt {
-    text-align: center;
-    color: #555;
-    margin-top: 10px;
-}
 </style>
 <?php
 include "../Database/Connection.php";
