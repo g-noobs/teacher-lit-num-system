@@ -116,7 +116,7 @@ td {
     <!-- /.col -->
 </div>
 
-<!-- //modal for filtering -->
+<!-- //modal for filtering
 <div id="filterModal">
     <label><input type="checkbox" class="chkPersonalID"> Personal ID</label>
     <label><input type="checkbox" class="chkFirstName"> First Name</label>
@@ -131,9 +131,9 @@ td {
     <button onclick="applyFilter()">Apply</button>
     <button onclick="resetTable()">Reset</button>
     <button onclick="closeFilterModal()">Close</button>
-</div>
+</div> -->
 
-<!-- <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
     crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
 <script>
@@ -151,7 +151,7 @@ $(document).ready(function() {
         });
     });
 });
-</script> -->
+</script>
 
 <script>
 var sortDirections = {};
@@ -212,15 +212,15 @@ function sortTableByClass() {
 }
 
 function showQuizProgress(userId) {
-    window.location.href = "get_quiz_progress.php?userId=" + userId;
+    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_quiz_progress.php?userId=" + userId;
 }
 
 function showProgress(userId) {
-    window.location.href = "get_story_progress.php?userId=" + userId;
+    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_story_progress.php?userId=" + userId;
 }
 
 function showAssignmentProgress(userId) {
-    window.location.href = "get_assignment_progress.php?userId=" + userId;
+    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
 }
 
 // filter sa gender ni siya na function    
