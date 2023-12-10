@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../Database/Connection.php';
 $conn = new Connection();
 $connection = $conn->getConnection();
@@ -228,19 +229,39 @@ $connection = $conn->getConnection();
     }
     </script>
     <?php
+    session_start();
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $student_id = mysqli_real_escape_string($connection, $_POST['student_id']);
-            $date_created = mysqli_real_escape_string($connection, $_POST['date_created']);
-            $date_started = mysqli_real_escape_string($connection, $_POST['date_started']);
-            $comments = mysqli_real_escape_string($connection, $_POST['comments']);
-            $attachment_link = mysqli_real_escape_string($connection, $_POST['attachment_link']);
-            $updateQuery = "INSERT INTO tbl_intervention (intervention_id, added_byID, student_id, date_created, date_started, comments, attachment_link, status) VALUES ('...', '...', '$student_id', '$date_created', '$date_started', '$comments', '$attachment_link', '0')";
 
-            if (mysqli_query($connection, $updateQuery)) {
-                echo "Data updated successfully!";
-            } else {
-                echo "Error: " . $updateQuery . "<br>" . mysqli_error($connection);
-            }
+            include_once "../Database/ColumnCountClass.php";
+            include_once "../Database/SanitizeCrudClass.php";
+
+            $table = "tbl_intervention";
+            $values = array(
+                'intervention_id' => '',
+                'added_byID' => $_SESSION['id'],
+                'student_id' => $_POST['student_id'],
+                'date_created' => '',
+            );
+            // modified id
+            $columnCount = new ColumnCountClass();
+            $values['intervention_id'] = "IVT". $columnCount->columnCountWhere("intervention_id", "tbl_intervention");
+
+            // adding data for date_added
+            $currentDate = new DateTime('now', new DateTimeZone('Asia/Kuala_Lumpur'));
+            $values['date_created'] = $currentDate->format('Y-m-d H:i:s');
+            
+            //get alll array keys to be used as column name
+            $columns = implode(', ', array_keys($values));
+            //set number of question marks
+            $questionMarkString = implode(',', array_fill(0, count($values), '?'));
+            //sql
+            $sql = "INSERT INTO $table($columns)VALUES($questionMarkString);";
+            //set params - from array's value
+            $params = array_values($values);
+            //set sanitize class
+            $addIntervention = new SanitizeCrudClass();
+            //execute
+            $addIntervention->executePreState($sql, $params);
         }
 
     mysqli_close($connection);
