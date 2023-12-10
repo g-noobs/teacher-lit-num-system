@@ -50,6 +50,7 @@ if ($_SESSION['teacher'] !== true || $_SESSION['admin'] !== false) {
                     </li>
                     <li><a href="gradebook.php">Gradebook</a></li>
                     <li><a href="intervention_tickets.php">Intervention</a></li>
+                    <li><a href="leaderboard.php">LeaderBoard</a></li>
                 </ul>
 
                 <!-- Search Bar
