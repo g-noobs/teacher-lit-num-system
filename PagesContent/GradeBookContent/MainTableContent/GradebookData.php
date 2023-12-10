@@ -193,18 +193,14 @@ function sortTableByColumn(columnIndex) {
 }
 
 function sortTableByFirstName() {
-    sortTableByColumn(0);
-}
-
-function sortTableByLastName() {
     sortTableByColumn(1);
 }
 
-function sortTableByGender() {
+function sortTableByLastName() {
     sortTableByColumn(2);
 }
 
-function sortTableByClass() {
+function sortTableByGender() {
     sortTableByColumn(3);
 }
 
@@ -214,6 +210,10 @@ function sortTableByClass() {
 
 function sortTableByClass() {
     sortTableByColumn(5);
+}
+
+function sortTableByClass() {
+    sortTableByColumn(6);
 }
 
 function showQuizProgress(userId) {
@@ -235,7 +235,7 @@ function filterTableGender() {
     var rows = Array.from(table.rows).slice(1);
 
     rows.forEach(function(row) {
-        var genderCell = row.cells[2].innerText;
+        var genderCell = row.cells[3].innerText;
 
         if (filter === 'all' || genderCell === filter) {
             row.style.display = '';
@@ -254,8 +254,8 @@ function filterTableClass() {
     var rows = Array.from(table.rows).slice(1);
 
     rows.forEach(function(row) {
-        var genderCell = row.cells[2].innerText;
-        var classCell = row.cells[3].innerText;
+        var genderCell = row.cells[3].innerText;
+        var classCell = row.cells[2].innerText;
 
         var genderMatch = (genderFilter === 'all' || genderCell === genderFilter);
         var classMatch = (classFilter === 'all' || classCell === classFilter);
