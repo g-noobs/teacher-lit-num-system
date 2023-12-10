@@ -11,7 +11,7 @@ $(function() {
         $('#studername_intervention').text($student_name);
         var $modal = $('#intervention_modal');
 
-        $ajax({
+        $.ajax({
             type: 'POST',
             url: '../PagesContent/GradeBookContent/ActionGradebook/ActionAddIntervention.php',
             data: {
