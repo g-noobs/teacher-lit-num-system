@@ -49,7 +49,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                         <div class="box container">
                             <div class="box-header">
                                 <form action="" method="GET" class="filter-form">
-                                    <div class="form-group">
+                                    <div class="form-group col-xs-2">
                                         <label for="classFilter">Filter by Class:</label>
                                         <select name="status" id="status" onchange="this.form.submit()"
                                             class="form-control">
