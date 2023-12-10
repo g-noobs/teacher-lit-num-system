@@ -160,7 +160,7 @@
                 });
 
                 function redirectToDetails(userId) {
-                    window.location.href = "../get_assignment_progress.php?userId=" + userId;
+                    window.location.href = "../filtermodule/get_assignment_progress.php?userId=" + userId;
                 }
 
                 $("#notificationModal ul li a").on("click", function(e) {
@@ -200,7 +200,7 @@
                         }
                     });
 
-                    window.location.href = "../get_assignment_progress.php?userId=" + userId;
+                    window.location.href = "../filtermodule/get_assignment_progress.php?userId=" + userId;
                 }
             });
         </script>
