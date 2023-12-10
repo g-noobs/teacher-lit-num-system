@@ -24,6 +24,9 @@ $connection = new Connection();
 $conn = $connection->getConnection();
 
 ?>
+<script>
+    
+</script>
 
 <header class="main-header">
     <nav class="navbar navbar-static-top">
