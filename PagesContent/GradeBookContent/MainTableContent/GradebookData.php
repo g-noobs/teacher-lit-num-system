@@ -96,6 +96,8 @@ td {
                                 <th class="quizTaken">Quiz Taken</th>
                                 <th class="learnerProgress">Learner Story Progress</th>
                                 <th class="quizProgress">Quiz Progress</th>
+                                <th class="assignmentProgress">Assignment Progress</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -126,6 +128,7 @@ td {
     <label><input type="checkbox" class="chkQuizTaken"> Quiz Taken</label>
     <label><input type="checkbox" class="chkLearnerProgress"> Learner Story Progress</label>
     <label><input type="checkbox" class="chkQuizProgress"> Quiz Progress</label>
+
     <button onclick="applyFilter()">Apply</button>
     <button onclick="resetTable()">Reset</button>
     <button onclick="closeFilterModal()">Close</button>
@@ -152,23 +155,9 @@ $(document).ready(function() {
 </script> -->
 
 <script>
-var sortDirectionGender = 0;
-var sortDirectionClass = 0;
-var sortDirectionFirstName = 0;
-var sortDirectionLastName = 0;
-var topicsTakenIndex = checkboxes.length;
-var quizTakenIndex = checkboxes.length + 1;
+var sortDirections = {};
 
-
-function sortTableByFirstName() {
-    sortTableByColumn(2, sortDirectionFirstName);
-}
-
-function sortTableByLastName() {
-    sortTableByColumn(3, sortDirectionLastName);
-}
-
-function sortTableByColumn(columnIndex, currentDirection) {
+function sortTableByColumn(columnIndex) {
     var table = document.getElementById("userTable");
     var rows = Array.from(table.rows).slice(1);
 
@@ -185,14 +174,11 @@ function sortTableByColumn(columnIndex, currentDirection) {
         }
     });
 
-    if (currentDirection === 0) {
-        currentDirection = 1;
-    } else {
-        currentDirection = -currentDirection;
-    }
-
-    if (currentDirection === -1) {
+    if (!sortDirections[columnIndex] || sortDirections[columnIndex] === 1) {
         rows.reverse();
+        sortDirections[columnIndex] = -1;
+    } else {
+        sortDirections[columnIndex] = 1;
     }
 
     table.innerHTML = table.rows[0].outerHTML;
@@ -200,24 +186,30 @@ function sortTableByColumn(columnIndex, currentDirection) {
     rows.forEach(function(row) {
         table.appendChild(row);
     });
+}
 
-    if (columnIndex === 2) {
-        sortDirectionFirstName = currentDirection;
-    } else if (columnIndex === 3) {
-        sortDirectionLastName = currentDirection;
-    } else if (columnIndex === 4) {
-        sortDirectionGender = currentDirection;
-    } else if (columnIndex === 5) {
-        sortDirectionClass = currentDirection;
-    }
+function sortTableByFirstName() {
+    sortTableByColumn(0);
+}
+
+function sortTableByLastName() {
+    sortTableByColumn(1);
 }
 
 function sortTableByGender() {
-    sortTableByColumn(4, sortDirectionGender);
+    sortTableByColumn(2);
 }
 
 function sortTableByClass() {
-    sortTableByColumn(5, sortDirectionClass);
+    sortTableByColumn(3);
+}
+
+function sortTableByClass() {
+    sortTableByColumn(4);
+}
+
+function sortTableByClass() {
+    sortTableByColumn(5);
 }
 
 function showQuizProgress(userId) {
@@ -225,57 +217,50 @@ function showQuizProgress(userId) {
 }
 
 function showProgress(userId) {
-    window.location.href = "get_progress.php?userId=" + userId;
+    window.location.href = "get_story_progress.php?userId=" + userId;
 }
 
-
-function openFilterModal() {
-    document.getElementById("filterModal").style.display = "block";
-    // document.getElementById("backdrop").style.display = "block";
+function showAssignmentProgress(userId) {
+    window.location.href = "get_assignment_progress.php?userId=" + userId;
 }
 
-function applyFilter() {
+// filter sa gender ni siya na function    
+function filterTable() {
     var table = document.getElementById("userTable");
-    var checkboxes = document.querySelectorAll("#filterModal input[type=checkbox]");
+    var filter = document.getElementById("genderFilter").value;
+    var rows = Array.from(table.rows).slice(1);
 
-    checkboxes.forEach(function(checkbox, index) {
-        var columnIndex = index;
-        var headerCell = table.rows[0].cells[columnIndex];
-        var className = headerCell.classList[0];
-        var cells = document.querySelectorAll("#userTable ." + className);
+    rows.forEach(function(row) {
+        var genderCell = row.cells[2].innerText;
 
-        if (checkbox.checked) {
-            cells.forEach(function(cell) {
-                cell.style.display = "";
-            });
+        if (filter === 'all' || genderCell === filter) {
+            row.style.display = '';
         } else {
-            cells.forEach(function(cell) {
-                cell.style.display = "none";
-            });
+            row.style.display = 'none';
         }
     });
-
-    closeFilterModal();
 }
 
-function resetTable() {
+
+// filter sa Class Section ni siya na function    
+function filterTable() {
     var table = document.getElementById("userTable");
+    var genderFilter = document.getElementById("genderFilter").value;
+    var classFilter = document.getElementById("classFilter").value;
+    var rows = Array.from(table.rows).slice(1);
 
-    for (var i = 0; i < table.rows[0].cells.length; i++) {
-        table.rows[0].cells[i].style.display = "";
-        var className = table.rows[0].cells[i].classList[0];
-        var cells = document.querySelectorAll("#userTable ." + className);
+    rows.forEach(function(row) {
+        var genderCell = row.cells[2].innerText;
+        var classCell = row.cells[3].innerText;
 
-        cells.forEach(function(cell) {
-            cell.style.display = "";
-        });
-    }
+        var genderMatch = (genderFilter === 'all' || genderCell === genderFilter);
+        var classMatch = (classFilter === 'all' || classCell === classFilter);
 
-    closeFilterModal();
-}
-
-function closeFilterModal() {
-    document.getElementById("filterModal").style.display = "none";
-    // document.getElementById("backdrop").style.display = "none";
+        if (genderMatch && classMatch) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
 }
 </script>

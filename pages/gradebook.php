@@ -42,24 +42,19 @@
                         <li class="active">Top Navigation</li>
                     </ol> -->
                 </section>
-                <!-- <section id="gradebook_dropdown">
-                    <div class="align-items-start">
-                        <div class="col-sm-2">
-                            <div class="custom-dropdown">
-                                <button class="custom-dropdown-toggle btn" type="button" data-toggle="dropdown"
-                                    style="width:150px; border: 2px solid #3C8DBC; border-radius:10px; color: #3C8DBC;">
-                                    <b id="dropdown_name">Class List</b> Updated the button text 
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu custom-dropdown-menu" id="gradebook_class_dropdown">
-                                    <li><a href="#" data-lesson-type="active-lesson"><b>Active Lesson</b></a></li> 
-                                </ul>
-                            </div>
+                <section id="gradebook_dropdown">
+                    <div class="row form-group">
+                        <div class="col-xs-3">
+                            <label for="genderFilter">Filter by Gender:</label>
+                            <select id="genderFiltr form-control" class="" onchange="filterTable()">
+                                <option value="all">All</option>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
+                            </select>
                         </div>
-                        <div class="col-sm-10">
-                        </div>
+
                     </div>
-                </section> -->
+                </section>
                 <br>
                 <br>
                 <!-- Filter Modal -->

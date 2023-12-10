@@ -6,54 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Progress</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
 
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
 
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-        }
+    th,
+    td {
+        padding: 10px;
+        text-align: left;
+    }
 
-        #progressTableContainer,
-        #quizTableContainer {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            background-color: white;
-            display: none;
-        }
+    #progressTableContainer,
+    #quizTableContainer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background-color: white;
+        display: none;
+    }
 
-        #backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-        }
-
-
+    #backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+    }
     </style>
 </head>
 
 <body>
 
-<div id="progressTableContainer"></div>
+    <div id="progressTableContainer"></div>
 
-<?php
+    <?php
 $host = "localhost";
 $user = "u170333284_admin";
 $password = "Capstone1!";
@@ -91,20 +89,20 @@ $query = "SELECT ui.user_info_id, ui.personal_id, ui.first_name, ui.last_name, u
 $result = mysqli_query($connection, $query);
 ?>
 
-<!-- Mao ni siya ang dropdown selection for gender-->
-<label for="genderFilter">Filter by Gender:</label>
-<select id="genderFilter" onchange="filterTable()">
-    <option value="all">All</option>
-    <option value="MALE">Male</option>
-    <option value="FEMALE">Female</option>
-</select>
+    <!-- Mao ni siya ang dropdown selection for gender-->
+    <label for="genderFilter">Filter by Gender:</label>
+    <select id="genderFilter" onchange="filterTable()">
+        <option value="all">All</option>
+        <option value="MALE">Male</option>
+        <option value="FEMALE">Female</option>
+    </select>
 
 
-<!-- Mao ni siya ang dropdown selection for class section-->
-<label for="classFilter">Filter by Class:</label>
-<select id="classFilter" onchange="filterTable()">
-    <option value="all">All</option>
-    <?php
+    <!-- Mao ni siya ang dropdown selection for class section-->
+    <label for="classFilter">Filter by Class:</label>
+    <select id="classFilter" onchange="filterTable()">
+        <option value="all">All</option>
+        <?php
     $classQuery = "SELECT class_name FROM tbl_class WHERE class_status = 1";
     $classResult = mysqli_query($connection, $classQuery);
     while ($classRow = mysqli_fetch_assoc($classResult)) { 
@@ -112,25 +110,25 @@ $result = mysqli_query($connection, $query);
         echo "<option value='$className'>$className</option>";
     }
     ?>
-</select>
+    </select>
 
-<h2>To Do List</h2>
+    <h2>To Do List</h2>
 
-<table border='1' id="userTable">
-    <tr>
-        <th class="firstName" onclick="sortTableByFirstName()">First Name</th>
-        <th class="lastName" onclick="sortTableByLastName()">Last Name</th>
-        <th class="gender" onclick="sortTableByGender()">Gender</th>
-        <th class="classSection" onclick="sortTableByClass()">Class Section</th>
-        <th class="topicsTaken" onclick="sortTableByClass()"> Topics Taken</th>
-        <th class="quizTaken" onclick="sortTableByClass()">Quiz Taken</th>
-        <th class="assignmentTaken" onclick="sortTableByClass()">Assignment Taken</th>
-        <th class="learnerProgress">Learner Story Progress</th>
-        <th class="quizProgress">Quiz Progress</th>
-        <th class="assignmentProgress">Assignment Progress</th>
-    </tr>
+    <table border='1' id="userTable">
+        <tr>
+            <th class="firstName" onclick="sortTableByFirstName()">First Name</th>
+            <th class="lastName" onclick="sortTableByLastName()">Last Name</th>
+            <th class="gender" onclick="sortTableByGender()">Gender</th>
+            <th class="classSection" onclick="sortTableByClass()">Class Section</th>
+            <th class="topicsTaken" onclick="sortTableByClass()"> Topics Taken</th>
+            <th class="quizTaken" onclick="sortTableByClass()">Quiz Taken</th>
+            <th class="assignmentTaken" onclick="sortTableByClass()">Assignment Taken</th>
+            <th class="learnerProgress">Learner Story Progress</th>
+            <th class="quizProgress">Quiz Progress</th>
+            <th class="assignmentProgress">Assignment Progress</th>
+        </tr>
 
-    <?php
+        <?php
     while ($row = mysqli_fetch_assoc($result)) {
         // mao ni ang query for the result of total story taken by student
         $learnerId = $row['personal_id'];
@@ -180,73 +178,82 @@ $result = mysqli_query($connection, $query);
     }
     ?>
 
-</table>
+    </table>
 
-<?php
+    <?php
 mysqli_close($connection);
 ?>
 
 
-<script>
+    <script>
     var sortDirections = {};
 
-function sortTableByColumn(columnIndex) {
-    var table = document.getElementById("userTable");
-    var rows = Array.from(table.rows).slice(1);
+    function sortTableByColumn(columnIndex) {
+        var table = document.getElementById("userTable");
+        var rows = Array.from(table.rows).slice(1);
 
-    rows.sort(function (a, b) {
-        var cellA = a.cells[columnIndex].innerText.toLowerCase();
-        var cellB = b.cells[columnIndex].innerText.toLowerCase();
+        rows.sort(function(a, b) {
+            var cellA = a.cells[columnIndex].innerText.toLowerCase();
+            var cellB = b.cells[columnIndex].innerText.toLowerCase();
 
-        if (cellA < cellB) {
-            return -1;
-        } else if (cellA > cellB) {
-            return 1;
+            if (cellA < cellB) {
+                return -1;
+            } else if (cellA > cellB) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+
+        if (!sortDirections[columnIndex] || sortDirections[columnIndex] === 1) {
+            rows.reverse();
+            sortDirections[columnIndex] = -1;
         } else {
-            return 0;
+            sortDirections[columnIndex] = 1;
         }
-    });
 
-    if (!sortDirections[columnIndex] || sortDirections[columnIndex] === 1) {
-        rows.reverse();
-        sortDirections[columnIndex] = -1;
-    } else {
-        sortDirections[columnIndex] = 1;
+        table.innerHTML = table.rows[0].outerHTML;
+
+        rows.forEach(function(row) {
+            table.appendChild(row);
+        });
     }
 
-    table.innerHTML = table.rows[0].outerHTML;
-
-    rows.forEach(function (row) {
-        table.appendChild(row);
-    });
-}
-
     function sortTableByFirstName() {
-    sortTableByColumn(0);}
+        sortTableByColumn(0);
+    }
 
     function sortTableByLastName() {
-    sortTableByColumn(1);}
+        sortTableByColumn(1);
+    }
 
     function sortTableByGender() {
-    sortTableByColumn(2);}
+        sortTableByColumn(2);
+    }
 
     function sortTableByClass() {
-    sortTableByColumn(3);}
+        sortTableByColumn(3);
+    }
 
     function sortTableByClass() {
-    sortTableByColumn(4);}
+        sortTableByColumn(4);
+    }
 
     function sortTableByClass() {
-    sortTableByColumn(5);}
+        sortTableByColumn(5);
+    }
 
     function showQuizProgress(userId) {
-        window.location.href = "get_quiz_progress.php?userId=" + userId;}
+        window.location.href = "get_quiz_progress.php?userId=" + userId;
+    }
 
     function showProgress(userId) {
-        window.location.href = "get_story_progress.php?userId=" + userId;}
+        window.location.href = "get_story_progress.php?userId=" + userId;
+    }
 
     function showAssignmentProgress(userId) {
-        window.location.href = "get_assignment_progress.php?userId=" + userId;}
+        window.location.href = "get_assignment_progress.php?userId=" + userId;
+    }
 
     // filter sa gender ni siya na function    
     function filterTable() {
@@ -254,8 +261,8 @@ function sortTableByColumn(columnIndex) {
         var filter = document.getElementById("genderFilter").value;
         var rows = Array.from(table.rows).slice(1);
 
-        rows.forEach(function (row) {
-            var genderCell = row.cells[2].innerText; 
+        rows.forEach(function(row) {
+            var genderCell = row.cells[2].innerText;
 
             if (filter === 'all' || genderCell === filter) {
                 row.style.display = '';
@@ -268,26 +275,26 @@ function sortTableByColumn(columnIndex) {
 
     // filter sa Class Section ni siya na function    
     function filterTable() {
-    var table = document.getElementById("userTable");
-    var genderFilter = document.getElementById("genderFilter").value;
-    var classFilter = document.getElementById("classFilter").value;
-    var rows = Array.from(table.rows).slice(1);
+        var table = document.getElementById("userTable");
+        var genderFilter = document.getElementById("genderFilter").value;
+        var classFilter = document.getElementById("classFilter").value;
+        var rows = Array.from(table.rows).slice(1);
 
-    rows.forEach(function (row) {
-        var genderCell = row.cells[2].innerText; 
-        var classCell = row.cells[3].innerText; 
+        rows.forEach(function(row) {
+            var genderCell = row.cells[2].innerText;
+            var classCell = row.cells[3].innerText;
 
-        var genderMatch = (genderFilter === 'all' || genderCell === genderFilter);
-        var classMatch = (classFilter === 'all' || classCell === classFilter);
+            var genderMatch = (genderFilter === 'all' || genderCell === genderFilter);
+            var classMatch = (classFilter === 'all' || classCell === classFilter);
 
-        if (genderMatch && classMatch) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
-    });
-}
-
-</script>
+            if (genderMatch && classMatch) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+    </script>
 </body>
+
 </html>
