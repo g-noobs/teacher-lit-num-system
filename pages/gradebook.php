@@ -48,6 +48,7 @@
                                 <option value="FEMALE">Female</option>
                             </select>
                         </div>
+                        <br>
                         <div class="form-group">
                             <!-- Mao ni siya ang dropdown selection for class section-->
                             <label for="classFilter">Filter by Class:</label>
