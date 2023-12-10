@@ -162,7 +162,7 @@ $hasNotifications = !empty($data);
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
+                            <li class="header">You have <?php echo $data2[0]['notif_count']; ?> notifications</li>
                             <li>
 
                                 <ul class="menu">
