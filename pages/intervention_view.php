@@ -48,6 +48,7 @@ $connection = $conn->getConnection();
                                         <label for="classFilter">Filter by Class:</label>
                                         <select name="classFilter" id="classFilter" onchange="this.form.submit()"
                                             class="form-control">
+                                            <option>All</option>
                                             <option value="all"
                                                 <?php echo ($_GET['classFilter'] == 'all') ? 'selected' : ''; ?>>Overall
                                             </option>
