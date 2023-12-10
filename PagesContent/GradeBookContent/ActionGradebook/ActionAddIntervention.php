@@ -32,10 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //execute
     $addIntervention->executePreState($sql, $params);
     if($addIntervention->getLastError() == null){
-        echo json_encode(array('success' => 'Intervention Added Successfully'));    
+        echo json_encode(array('success' => 'Intervention Added Successfully'));
+        exit();
 
     }else{
         echo json_encode(array('error' => 'Intervention Failed to Add'));
+        exit();
+
     }
 }
 
