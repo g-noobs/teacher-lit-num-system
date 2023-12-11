@@ -187,8 +187,11 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                 $comment = $row['comment'];
                                                 $start_date = $row['start_date'];
                                                 $end_date = $row['end_date'];
-                                                $attachment = $row['attachment'];
-                                            
+                                                if($row['status'] == 0){
+                                                    $status = "On Going";
+                                                }else{
+                                                    $status = "Completed";
+                                                }
                                                 // ... (your other code)
                                             
                                                 if ($filterClass == 0 || $filterClass !== '') {
@@ -197,7 +200,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         <td>$comment</td>
                                                         <td>$start_date</td>
                                                         <td>$end_date</td>
-                                                        <td>$attachment</td>
+                                                        <td>$status</td>
                                                         <td>";
                                             
                                                     // Check if $filterClass is not '1' (Completed) to display the "Finished" button
@@ -213,7 +216,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         <td>$comment</td>
                                                         <td>$start_date</td>
                                                         <td>$end_date</td>
-                                                        <td>$attachment</td>
+                                                        <td>$status</td>
                                                     </tr>";
                                                 }
                                             }
