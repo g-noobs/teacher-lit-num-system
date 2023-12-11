@@ -65,7 +65,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                 Completed</option>
                                         </select>
                                     </div>
-                                    <button id='admit_btn' type='button' class='btn btn-danger pull-right'>Archive Student</button>
+                                    <button id='admit_btn' type='button' class='btn btn-danger pull-right'><i class="fa fa-plus"></i>Intevention</button>
                                 </form>
                             </div>
                             <!-- /.box-header -->
