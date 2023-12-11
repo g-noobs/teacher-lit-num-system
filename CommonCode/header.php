@@ -203,7 +203,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 console.log(response);
-              
+                window.location.href ="../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
 
             },
             error: function(error) {

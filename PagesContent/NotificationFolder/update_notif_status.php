@@ -11,8 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $learnerId = $_POST['learnerId'];
     $assignmentId = $_POST['assignmentId'];
 
-    $conn = new mysqli($host, $user, $password, $database);
-
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
