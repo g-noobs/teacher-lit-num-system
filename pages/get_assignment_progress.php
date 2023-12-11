@@ -159,7 +159,7 @@ if (!$resultAssignments) {
                 <section class="content-header">
                     <h1>
                         <?php
-                            echo "<h2>Quiz Progress for {$userInfo['first_name']} {$userInfo['last_name']}</h2>";
+                            echo "<h2>Assignment Progress for {$userInfo['first_name']} {$userInfo['last_name']}</h2>";
                             echo "<p>Personal ID: {$userInfo['personal_id']}</p>"; 
                         ?>
                     </h1>
