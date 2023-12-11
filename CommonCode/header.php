@@ -97,12 +97,9 @@ $conn = $connections->getConnection();
                                 <!-- //start of notification -->
                                 <?php if ($hasNotifications) : ?>
                                 <ul class="menu">
-                                    <?php foreach ($data as $row) : ?>
-                                    <li class="text-center"><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section
-                                        <?= $row['class_sy'] ?> <a href="#" class="view-details text-center' data-userid="<?= $row['user_info_id'] ?>"
-                                            data-learnerid="<?= $row['learner_id'] ?>"
-                                            data-assignmentid="<?= $row['assignment_id'] ?>">View Details</a></li>
-                                    <?php endforeach; ?>
+                                <?php foreach ($data as $row) : ?>
+                                    <li><?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section <?= $row['class_sy'] ?> <a href="#" class="view-details text-center" data-userid="<?= $row['user_info_id'] ?>" data-learnerid="<?= $row['learner_id'] ?>" data-assignmentid="<?= $row['assignment_id'] ?>">View Details</a></li>
+                                <?php endforeach; ?>
                                 </ul>
                                 <?php else : ?>
                                 <!-- <p id="noNotificationPrompt"></p> -->
