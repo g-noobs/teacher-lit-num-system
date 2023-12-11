@@ -69,7 +69,7 @@ $result = mysqli_query($connection, $query);
                             <div class="box box-default container">
                                 <br>
                                 <div class="box-header with-">
-                                    <div class="form-inline">
+                                    <form class="form-inline">
                                         <div class="form-group col-xs-4">
                                             <label for="quizFilterSelect">Status</label>
                                             <select id='quizFilterSelect' onchange='applyQuizFilter()'
@@ -79,7 +79,7 @@ $result = mysqli_query($connection, $query);
                                                 <option value='not_taken'>Not Taken</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                                 <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                                     <div class="table-responsive">
