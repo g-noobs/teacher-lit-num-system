@@ -45,7 +45,10 @@
                         <label for="student_id">Student Name:</label>
                         <select name="student_id" id="student_id" class="form-control">
                             <?php
-                                $userQuery = "SELECT * FROM tbl_user_info WHERE user_level_id = 2";
+                                $userQuery = "SELECT u.first_name, u.last_name, u.personal_id
+                                FROM tbl_user_info u
+                                LEFT JOIN tbl_intervention i ON u.personal_id = i.student_id AND i.status = 1
+                                WHERE u.user_level_id = 2 AND (i.status = 1 OR i.status IS NULL);";
                                 $userResult = mysqli_query($connection, $userQuery);
 
                                 while ($userRow = mysqli_fetch_assoc($userResult)) {
