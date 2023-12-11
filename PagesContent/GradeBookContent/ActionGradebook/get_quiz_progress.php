@@ -1,10 +1,11 @@
 <?php
-$host = "localhost";
-$user = "u170333284_admin"; 
-$password = "Capstone1!"; 
-$database = "u170333284_db_tagakaulo"; 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$connection = mysqli_connect($host, $user, $password, $database);
+include_once '../../../Database/Connection.php';
+
+$conn = new Connection();
+$connection = $conn->getConnection();
 
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
@@ -24,7 +25,7 @@ $userInfo = mysqli_fetch_assoc($resultUserInfo);
 
 // Query to fetch quiz progress information for the selected student
 $query = "SELECT q.quiz_id, q.quiz_question, COALESCE(lqp.score, 'Not Taken') AS quiz_score FROM tbl_quiz q
-          LEFT JOIN tbl_learner_quiz_progress lqp ON q.quiz_id = lqp.quiz_id AND lqp.learner_id = '{$userInfo['personal_id']}' WHERE q.quiz_status = 1";
+        LEFT JOIN tbl_learner_quiz_progress lqp ON q.quiz_id = lqp.quiz_id AND lqp.learner_id = '{$userInfo['personal_id']}' WHERE q.quiz_status = 1";
 
 $result = mysqli_query($connection, $query);
 

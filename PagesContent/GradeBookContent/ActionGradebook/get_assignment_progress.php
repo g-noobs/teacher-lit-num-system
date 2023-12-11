@@ -1,10 +1,11 @@
 <?php
-$host = "localhost";
-$user = "u170333284_admin";
-$password = "Capstone1!";
-$database = "u170333284_db_tagakaulo";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$connection = mysqli_connect($host, $user, $password, $database);
+include_once '../../../Database/Connection.php';
+
+$conn = new Connection();
+$connection = $conn->getConnection();
 
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
@@ -130,7 +131,7 @@ echo "<head>
         </style>
     </head>";
 
-echo "<h2>Quiz Progress for {$userInfo['first_name']} {$userInfo['last_name']}</h2>";
+echo "<h2>Assignment Progress for {$userInfo['first_name']} {$userInfo['last_name']}</h2>";
 echo "<p>Personal ID: {$userInfo['personal_id']}</p>";
 
 echo "<table border='1' id='assignmentTable'>";
