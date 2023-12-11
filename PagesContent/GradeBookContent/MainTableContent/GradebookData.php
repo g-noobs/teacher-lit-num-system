@@ -205,7 +205,7 @@ function showProgress(userId) {
 }
 
 function showAssignmentProgress(userId) {
-    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" +
+    window.location.href = "get_assignment_progress.php?userId=" +
         userId;
 }
 
