@@ -151,6 +151,8 @@ if (!$resultAssignments) {
     style="height: auto; min-height: 100%;">
 
     <div class="wrapper" style="height: auto; min-height: 100%;">
+        <?php include_once("../CommonCode/header.php");?>
+
         <div class="content-wrapper" style="min-height: 606.2px;">
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
             <div class="container">
