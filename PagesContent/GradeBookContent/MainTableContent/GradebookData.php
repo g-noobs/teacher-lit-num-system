@@ -114,7 +114,7 @@ td {
                                 <th class="topicsTaken" onclick="sortTableByClass()"> Topics Taken</th>
                                 <th class="quizTaken" onclick="sortTableByClass()">Quiz Taken</th>
                                 <th class="assignmentTaken" onclick="sortTableByClass()">Assignment Taken</th>
-                                <th class="learnerProgress">Learner Story Progress</th>
+                                <th class="learnerProgress">Lesson Progress</th>
                                 <th class="quizProgress">Quiz Progress</th>
                                 <th class="assignmentProgress">Assignment Progress</th>
                                 <th>Admit For Intervention</th>
