@@ -116,7 +116,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                             <label for="studentName">Student Name:</label>
                             <select name="studentName" id="studentName">
                                 <?php
-                                $userQuery = "SELECT * FROM tbl_user_info";
+                                $userQuery = "SELECT * FROM tbl_user_info WHERE user_level_id = 2";
                                 $userResult = mysqli_query($connection, $userQuery);
 
                                 while ($userRow = mysqli_fetch_assoc($userResult)) {
@@ -387,8 +387,8 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
         }
     }
 
-mysqli_close($connection);
-?>
+    mysqli_close($connection);
+    ?>
 
     <?php include_once("../bootstrap/jquery.php");?>
     <!-- This Script Contain Common Script used on other pages  -->
