@@ -26,25 +26,7 @@ $result = mysqli_query($connection, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leadership Board & Badges</title>
-    <style>
-    .to-do-list-board-container {
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-    }
 
-    .to-do-list-board-container,
-    .to-do-list-board-container th,
-    .to-do-list-board-container td {
-        border: 1px solid black;
-    }
-
-    .to-do-list-board-container th,
-    .to-do-list-board-container td {
-        padding: 10px;
-        text-align: left;
-    }
-    </style>
     <?php include_once("../bootstrap/style.php");?>
     <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -56,7 +38,7 @@ $result = mysqli_query($connection, $query);
     style="height: auto; min-height: 100%;">
 
     <div class="wrapper" style="height: auto; min-height: 100%;">
-    <?php include_once("../CommonCode/header.php");?>
+        <?php include_once("../CommonCode/header.php");?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
@@ -94,7 +76,8 @@ $result = mysqli_query($connection, $query);
                                                     echo "<td>" . $row['fullname'] . "</td>";
                                                     echo "<td>" . $row['class_name'] . "</td>";
                                                     echo "<td>" . $row['assignment_name'] . "</td>"; 
-                                                    echo "<td class='assignmentProgress'><button onclick=\"showAssignmentProgress('{$row['user_info_id']}')\">show assignment</button></td>";
+                                                    echo "<td class='assignmentProgress'><button onclick=\"showAssignmentProgress('{$row['user_info_id']}')\" style='background-color: #00c0ef;'>show assignment</button></td>";
+
                                                     echo "</tr>";
                                                 }
                                             ?>
