@@ -61,7 +61,7 @@ $(function() {
 $(function() {
     $(document).on('click', '#intervention_admit_btn', function(e) {
         e.preventDefault();
-        $modal = $('#intervention_modal').show();
+        $modal = $('#add_intervention_modal').show();
         $modal.modal('show');
 
         // $(document).on('click', '#confirm_intervention', function() {

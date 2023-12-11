@@ -20,7 +20,7 @@
 </div>
 
 
-<div class="modal fade" id="intervention_modal" role="dialog">
+<div class="modal fade" id="add_intervention_modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <form id="interventionForm">
+            <form id="intervention_form">
                 <div class="modal-body">
 
                     <div class="form-group">
