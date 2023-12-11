@@ -99,63 +99,6 @@ if (!$resultAssignments) {
     echo "Error: " . mysqli_error($connection);
 }
 
-
-// mao ni ang modal design sa katong mag pop up na enter score pag pinduton ang Submit Score na button
-echo "<head>
-        <style>
-            #scoreModal {
-                display: none;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 300px; /* Adjust the width as needed */
-                padding: 20px;
-                border: 2px solid #000;
-                background-color: #fff;
-                z-index: 999;
-            }
-
-            #scoreModal h3 {
-                margin-top: 0;
-            }
-
-            #scoreModal .exitButton {
-                position: absolute;
-                top: 5px;
-                right: 5px;
-                cursor: pointer;
-            }
-        </style>
-    </head>";
-
-
-
-echo "<table border='1' id='assignmentTable'>";
-echo "<tr>
-        <th>Assignment ID</th>
-        <th>Assignment Name</th>
-        <th>Question</th>
-        <th>Answer</th>
-        <th>Score</th>
-        <th>Action</th>
-      </tr>";
-
-while ($assignment = mysqli_fetch_assoc($resultAssignments)) {
-    echo "<tr class='assignmentRow'>
-            <td>" . $assignment['assignment_id'] . "</td>
-            <td>" . $assignment['assignment_name'] . "</td>
-            <td>" . $assignment['question'] . "</td>
-            <td>" . $assignment['assignment_answer'] . "</td>
-            <td>" . $assignment['score'] . "</td>
-            <td><button onclick='openScoreModal(\"{$assignment['assignment_id']}\")'>Submit Score</button></td>
-          </tr>";
-}
-
-echo "</table>
-        <p><button onclick=\"goBack()\">Go Back</button></p>";
-
-mysqli_close($connection);
 ?>
 <html style="height: auto; min-height: 100%;">
 
