@@ -101,7 +101,7 @@ $result = mysqli_query($connection, $query);
                                             
                                             mysqli_close($connection);
                                             ?>
-                                            ?>
+                                            
                                         </table>
                                     </div>
                                 </div>
