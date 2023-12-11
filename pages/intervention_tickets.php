@@ -48,7 +48,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                 </section>
                 <br>
                 <!-- confirmation modal -->
-                <?php include_once "../PagesContent/InterventionContents/ConfirmatioModal.php"?>
+                <?php include_once "../PagesContent/InterventionContents/InterventionsModals.php"?>
                 <!-- Main Content-->
                 <section class="content">
                     <div class="row">
