@@ -76,7 +76,7 @@ $result = mysqli_query($connection, $query);
                                                     echo "<td>" . $row['fullname'] . "</td>";
                                                     echo "<td>" . $row['class_name'] . "</td>";
                                                     echo "<td>" . $row['assignment_name'] . "</td>"; 
-                                                    echo "<td class='assignmentProgress btn btn-default'><button onclick=\"showAssignmentProgress('{$row['user_info_id']}')\" style='background-color: #00c0ef;'>show assignment</button></td>";
+                                                    echo "<td class='assignmentProgress btn btn-success'><button onclick=\"showAssignmentProgress('{$row['user_info_id']}')\" '>show assignment</button></td>";
 
                                                     echo "</tr>";
                                                 }
