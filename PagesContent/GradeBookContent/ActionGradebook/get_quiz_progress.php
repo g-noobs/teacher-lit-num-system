@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include_once '../Database/Connection.php';
+include_once '../../Database/Connection.php';
 
 $conn = new Connection();
 $connection = $conn->getConnection();
