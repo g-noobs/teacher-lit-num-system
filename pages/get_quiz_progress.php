@@ -115,7 +115,7 @@ $result = mysqli_query($connection, $query);
         </div>
         <script>
         function applyQuizFilter() {
-            var filter = document.getElementById(' quizFilterSelect').value;
+            var filter = document.getElementById('quizFilterSelect').value;
             var
                 rows = document.getElementsByClassName('quizProgressRow');
             for (var i = 0; i <
