@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'intervention_id' => '',
         'added_byID' => $_SESSION['id'],
         'student_id' => $_POST['student_id'],
+        'start_date' => '',
         'date_created' => '',
     );
     // modified id
@@ -22,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // adding data for date_added
     $currentDate = new DateTime('now', new DateTimeZone('Asia/Kuala_Lumpur'));
     $values['date_created'] = $currentDate->format('Y-m-d H:i:s');
+    $values['start_date'] = $currentDate->format('Y-m-d H:i:s');
     
     //get alll array keys to be used as column name
     $columns = implode(', ', array_keys($values));

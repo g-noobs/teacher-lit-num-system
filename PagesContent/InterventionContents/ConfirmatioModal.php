@@ -12,7 +12,7 @@
                 <p>Click Button to Confirm!</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger pull-left" id="confirm_intervention">Update</button>
+                <button type="button" class="btn btn-danger pull-left" id="confirm_finish_intervention">Update</button>
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
             </div>
         </div>
