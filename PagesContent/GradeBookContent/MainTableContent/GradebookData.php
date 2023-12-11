@@ -197,11 +197,11 @@ function sortTableByClass() {
 }
 
 function showQuizProgress(userId) {
-    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_quiz_progress.php?userId=" + userId;
+    window.location.href = "get_quiz_progress.php?userId=" + userId;
 }
 
 function showProgress(userId) {
-    window.location.href = "../PagesContent/GradeBookContent/ActionGradebook/get_story_progress.php?userId=" + userId;
+    window.location.href = "get_story_progress.php?userId=" + userId;
 }
 
 function showAssignmentProgress(userId) {
