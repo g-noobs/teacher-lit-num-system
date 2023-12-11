@@ -202,7 +202,7 @@ if (!$resultAssignments) {
                                                             <td>" . $assignment['question'] . "</td>
                                                             <td>" . $assignment['assignment_answer'] . "</td>
                                                             <td>" . $assignment['score'] . "</td>
-                                                            <td><button onclick='openScoreModal(\"{$assignment['assignment_id']}\")'>Submit Score</button></td>
+                                                            <td><button onclick='openScoreModal(\"{$assignment['assignment_id']}\")' class='btn btn-primary'>Submit Score</button></td>
                                                         </tr>";
                                                     }
                                             ?>
