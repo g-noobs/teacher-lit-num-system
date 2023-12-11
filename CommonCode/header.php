@@ -199,7 +199,7 @@ $(document).ready(function() {
 
 <script>
 $(document).ready(function() {
-    $(".view-details").click(function() {
+    $(document).on('click', '.view-details', function() {
         var userId = $(this).data("userid");
         var learnerId = $(this).data("learnerid");
         var assignmentId = $(this).data("assignmentid");
