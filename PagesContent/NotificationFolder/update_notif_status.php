@@ -31,6 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 } else {
     http_response_code(400);
-    echo "Invalid request";
+    echo json_encode("Invalid request");
 }
 ?>
