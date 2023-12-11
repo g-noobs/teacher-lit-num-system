@@ -66,7 +66,7 @@ $(function() {
 
         $(document).on('submit', '#intervention_form', function(e){
             e.preventDefault();
-            var fromData = new FromData(this);
+            var formData = new FromData(this);
             var actionUrl = '../PagesContent/InterventionContents/ActionAddIntervention.php';
 
             $.ajax({
