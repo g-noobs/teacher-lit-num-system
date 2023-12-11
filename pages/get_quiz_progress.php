@@ -113,7 +113,8 @@ $result = mysqli_query($connection, $query);
             </div>
             <?php include_once("../CommonCode/footer.php");?>
         </div>
-        <?php include_once("../bootstrap/script.php");?>
+        <?php include_once("../bootstrap/jquery.php");?>
+
         <script>
         function applyQuizFilter() {
             var filter = document.getElementById('quizFilterSelect').value;
