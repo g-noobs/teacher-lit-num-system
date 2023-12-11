@@ -31,27 +31,23 @@
 
             <?php include_once "../CommonCode/ModifiedAlert.php";?>
 
-            <!-- View quiz Data Modal -->
-            <div class="container">
+            <section class="content-header">
+                <h1>
+                    Gradebook
+                    <small>Teacher Portal</small>
+                </h1>
+            </section>
+            <br>
+            <br>
 
-                <section class="content-header">
-                    <h1>
-                        Gradebook
-                        <small>Teacher Portal</small>
-                    </h1>
-                </section>
-                <br>
-                <br>
+            <!-- Intervention Confirmation Modal -->
+            <?php include_once "../PagesContent/GradeBookContent/AllModal/ModalIntervention.php"?>
 
-                <!-- Intervention Confirmation Modal -->
-                <?php include_once "../PagesContent/GradeBookContent/AllModal/ModalIntervention.php"?>
+            <!-- Main Content-->
+            <section class="content" id="main_content">
+                <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
 
-                <!-- Main Content-->
-                <section class="content" id="main_content">
-                    <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
-
-                </section>
-            </div>
+            </section>
         </div>
         <?php 
         include_once("../CommonCode/footer.php");
