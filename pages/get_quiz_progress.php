@@ -69,7 +69,7 @@ $result = mysqli_query($connection, $query);
                             <div class="box box-default container">
                                 <br>
                                 <div class="box-header with-">
-                                    <div class="form-group">
+                                    <div class="form-group col-xs-4">
                                         <select id='quizFilterSelect' onchange='applyQuizFilter()' class='form-control'>
                                             <option value='all'>All</option>
                                             <option value='taken'>Taken</option>
