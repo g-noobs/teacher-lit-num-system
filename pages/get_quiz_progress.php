@@ -69,12 +69,16 @@ $result = mysqli_query($connection, $query);
                             <div class="box box-default container">
                                 <br>
                                 <div class="box-header with-">
-                                    <div class="form-group col-xs-4">
-                                        <select id='quizFilterSelect' onchange='applyQuizFilter()' class='form-control'>
-                                            <option value='all'>All</option>
-                                            <option value='taken'>Taken</option>
-                                            <option value='not_taken'>Not Taken</option>
-                                        </select>
+                                    <div class="form-inline">
+                                        <div class="form-group col-xs-4">
+                                            <label for="quizFilterSelect">Status</label>
+                                            <select id='quizFilterSelect' onchange='applyQuizFilter()'
+                                                class='form-control'>
+                                                <option value='all'>All</option>
+                                                <option value='taken'>Taken</option>
+                                                <option value='not_taken'>Not Taken</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
@@ -136,7 +140,7 @@ $result = mysqli_query($connection, $query);
             window.history.back();
         }
         </script>
-        
+
 
 </body>
 <html>
