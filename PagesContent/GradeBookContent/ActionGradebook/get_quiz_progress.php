@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include_once '../../../Database/Connection.php';
+include_once '../Database/Connection.php';
 
 $conn = new Connection();
 $connection = $conn->getConnection();
@@ -39,21 +39,21 @@ $result = mysqli_query($connection, $query);
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <?php include_once("../../../bootstrap/style.php");?>
+    <?php include_once("../bootstrap/style.php");?>
     <!-- jQuery 3 -->
 
-    <script src="../../../design/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="../../../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <?php include_once "../../../CommonCode/ModifiedSearchStyle.php";?>
+    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 </head>
 
 <body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
     style="height: auto; min-height: 100%;">
     <div class="wrapper" style="height: auto; min-height: 100%;">
-        <?php include_once("../../../CommonCode/header.php");?>
+        <?php include_once("../CommonCode/header.php");?>
         <div class="content-wrapper" style="min-height: 606.2px;">
-            <?php include_once "../../../CommonCode/ModifiedAlert.php";?>
+            <?php include_once "../CommonCode/ModifiedAlert.php";?>
             <div class="container">
                 <section class="content-header">
                     <h1>
@@ -111,9 +111,9 @@ $result = mysqli_query($connection, $query);
                     </div>
                 </section>
             </div>
-            <?php include_once("../../../CommonCode/footer.php");?>
+            <?php include_once("../CommonCode/footer.php");?>
         </div>
-        <?php include_once("../../../bootstrap/script.php");?>
+        <?php include_once("../bootstrap/script.php");?>
         <script>
         function applyQuizFilter() {
             var filter = document.getElementById(' quizFilterSelect').value;
