@@ -45,7 +45,7 @@
 
                 <!-- Intervention Confirmation Modal -->
                 <?php include_once "../PagesContent/GradeBookContent/AllModal/ModalIntervention.php"?>
-                
+
                 <!-- Main Content-->
                 <section class="content" id="main_content">
                     <?php include_once "../PagesContent/GradeBookContent/MainTableContent/GradebookData.php"?>
@@ -63,7 +63,7 @@
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
 
-   <!-- add to intervention script -->
+    <!-- add to intervention script -->
     <?php include_once "../PagesContent/GradeBookContent/GradebookScripts/AddToInterventionScript.php"?>
 
 
@@ -74,7 +74,7 @@
         $("#quiz_progress_content").hide();
     });
     </script>
-    
+
 
 </body>
 

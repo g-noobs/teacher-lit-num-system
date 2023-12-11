@@ -41,7 +41,7 @@ td {
 
 <div class="row" id="gradebook_content">
     <div class="col-xs-12">
-        <div class="box box-default container">
+        <div class="box box-default">
             <br>
             <div class="box-header with-">
 
