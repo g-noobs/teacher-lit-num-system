@@ -1,7 +1,9 @@
 <?php
-include_once '../../Database/Connection.php';
+include_once "../../Database/Connection.php";
 $conn = new Connection();
 $connection = $conn->getConnection();
+
+$connection = mysqli_connect($host, $username, $password, $database);
 
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());

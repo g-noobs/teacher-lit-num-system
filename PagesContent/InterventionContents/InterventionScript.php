@@ -64,6 +64,74 @@ $(function() {
         $modal = $('#add_intervention_modal').show();
         $modal.modal('show');
 
+        $(document).on('submit', '#intervention_form', function(e){
+            e.preventDefault();
+            var fromData = new FromData(this);
+            var actionUrl = '../PagesContent/InterventionContents/ActionAddIntervention.php';
+
+            $.ajax({
+                url: actionUrl,
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: 'json',
+                success: function(response) {
+                    // Check if the response contains an array of errors
+                    if (Array.isArray(response)) {
+                        // Clear previous error messages
+                        $("#add_user_modal_alert_text").empty();
+                        $("#add_user_modal_alert").show();
+
+                        // Update the element with the received errors
+                        $.each(response, function(index, error) {
+                            $("#add_user_modal_alert_text").append(
+                                "<p class='error'>" +
+                                error +
+                                "</p><br>");
+                            console.log(error);
+                        });
+
+                        setTimeout(function() {
+                            $("#add_user_modal_alert").fadeOut("slow");
+
+                        }, 10500);
+                    } else {
+                        // Check if the form submission was successful
+                        if (response.hasOwnProperty('success')) {
+                            $modal.modal('hide');
+                            $('#successAlert').text(response.success);
+                            $('#successBanner').show();
+                            setTimeout(function() {
+                                $("#successBanner").fadeOut("slow");
+                                location.reload();
+                            }, 1500);
+                        } else if (response.hasOwnProperty('error')) {
+                            $modal.modal('hide');
+                            $('#errorAlert').text(response.error);
+                            $('#errorBanner').show();
+                            setTimeout(function() {
+                                $("#errorBanner").fadeOut("slow");
+                                location.reload();
+                            }, 5500);
+                        }
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    $modal.modal('hide');
+                    //show alert banner id = errorBanner
+                    $('#errorAlert').text(
+                        'An error occurred during the AJAX request.');
+                    $('#errorBanner').show();
+                    setTimeout(function() {
+                        $("#errorBanner").fadeOut("slow");
+                        location.reload();
+                    }, 1500);
+                }
+            });
+        });
+
         // $(document).on('click', '#confirm_intervention', function() {
         //     $.ajax({
         //         type: 'POST',

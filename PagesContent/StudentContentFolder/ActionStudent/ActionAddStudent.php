@@ -112,7 +112,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (!empty($errors)) {
             echo json_encode($errors);
 
-            //start adding if no error catched
         } else {
             $values = array(
                 'user_info_id'=>'',

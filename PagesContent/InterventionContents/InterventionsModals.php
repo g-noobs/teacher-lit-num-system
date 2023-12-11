@@ -42,8 +42,8 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label for="studentName">Student Name:</label>
-                        <select name="studentName" id="studentName" class="form-control">
+                        <label for="student_id">Student Name:</label>
+                        <select name="student_id" id="student_id" class="form-control">
                             <?php
                                 $userQuery = "SELECT * FROM tbl_user_info WHERE user_level_id = 2";
                                 $userResult = mysqli_query($connection, $userQuery);
@@ -69,7 +69,7 @@
 
                     <div class="form-group">
                         <label for="comments">Comments:</label>
-                        <textarea name="comments" id="comments" rows="4" class="form-control">></textarea>
+                        <textarea name="comments" id="comments" rows="4" class="form-control"></textarea>
                     </div>
 
                 </div>
