@@ -2,11 +2,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+include_once "../../Database/Connection.php";
+$connection = new Connection();
+$conn = $connection->getConnection();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $host = "localhost";
-    $user = "u170333284_admin";
-    $password = "Capstone1!";
-    $database = "u170333284_db_tagakaulo";
 
     $learnerId = $_POST['learnerId'];
     $assignmentId = $_POST['assignmentId'];
