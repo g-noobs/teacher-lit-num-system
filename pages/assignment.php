@@ -10,8 +10,12 @@
     <?php 
         include_once("../bootstrap/style.php");
     ?>
+    <!-- jQuery 3 -->
+    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    
     <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
-
 </head>
 
 <body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
@@ -37,7 +41,7 @@
                     </h1>
                 </section>
                 <br>
-                
+
 
                 <section>
                     <div class="align-items-start">
@@ -64,7 +68,7 @@
                 <br>
 
                 <!-- activate and archive confirmation modal -->
-                
+
                 <!-- edit modal -->
                 <?php include_once "../PagesContent/AssignmentFolder/ModalAssignment/AddNewAssignModal.php"?>
                 <?php include_once "../PagesContent/AssignmentFolder/ModalAssignment/AssingClassModal.php"?>

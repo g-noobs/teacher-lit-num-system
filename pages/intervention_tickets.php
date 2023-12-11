@@ -12,6 +12,10 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Intervention | Tickets</title>
+    <!-- jQuery 3 -->
+    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
 
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

@@ -10,6 +10,10 @@
     <?php 
         include_once("../bootstrap/style.php");
     ?>
+    <!-- jQuery 3 -->
+    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
     <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
 
 </head>
