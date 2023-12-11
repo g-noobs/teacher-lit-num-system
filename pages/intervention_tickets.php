@@ -34,6 +34,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
         ?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
+            <?php include_once "../CommonCode/ModifiedAlert.php";?>
 
 
             <!-- View quiz Data Modal -->
@@ -46,7 +47,8 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                     </h1>
                 </section>
                 <br>
-
+                <!-- confirmation modal -->
+                <?php include_once "../PagesContent/InterventionContents/ConfirmatioModal.php"?>
                 <!-- Main Content-->
                 <section class="content">
                     <div class="row">
@@ -110,10 +112,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                             
                                                     // Check if $filterClass is not '1' (Completed) to display the "Finished" button
                                                     if ($filterClass != '1') {
-                                                        echo "<form action='intervention_tickets.php' method='POST'>
-                                                                <input type='hidden' name='status' value='1'>
-                                                                <button type='button' onclick='insertDate()'>Finished</button>
-                                                            </form>";
+                                                        echo "<button class='btn btn-default remove_inter_btn' data-id='{$row['intervention_id']}'Finished</button>";
                                                     }
                                             
                                                     echo "</td>
@@ -144,28 +143,6 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
         ?>
     </div>
     <script>
-    function insertDate() {
-        // Get form data
-        var status = document.getElementById('status').value;
-
-        // Create a new FormData object
-        var formData = new FormData();
-        formData.append('status', status);
-
-        // Send data to the server using AJAX
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>', true);
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                alert("Successfully udpated data"); // Display the response from the server
-                location.reload();
-            } else {
-                alert('Error: ' + xhr.status);
-            }
-        };
-        xhr.send(formData);
-    }
-
     function sortTable(columnIndex) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.querySelector(".sub-leadership-board-container");
@@ -195,7 +172,8 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
             }
 
             if (shouldSwitch) {
-                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+
+                +rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                 switching = true;
                 switchcount++;
             } else {
@@ -227,6 +205,10 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
     <?php include_once("../bootstrap/jquery.php");?>
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
+
+    <!-- removing from intervention script -->
+    <?php include_once "../PagesContent/InterventionContents/InterventionScript.php"?>
+
 </body>
 
 </html>

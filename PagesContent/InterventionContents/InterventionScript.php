@@ -1,10 +1,8 @@
 <script>
 $(function() {
-    $(document).on('submit', function(e){
+    $(document).on('click', '.remove_inter_btn',function(e){
         e.preventDefault();
-        var formData = new FormData(this);
-
-        $(doucment).on();
+        var id = $(this).data('id');
     });
 
 });
