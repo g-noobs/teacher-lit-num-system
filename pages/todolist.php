@@ -45,7 +45,7 @@ $result = mysqli_query($connection, $query);
             <div class="container">
                 <section class="content-header">
                     <h1>
-                        Gradebook
+                        To Do List
                         <small>Teacher Portal</small>
                     </h1>
                 </section>
@@ -56,7 +56,6 @@ $result = mysqli_query($connection, $query);
                             <div class="box box-default container">
                                 <br>
                                 <div class="box-header with-">
-                                    <h3 class="box-title">To do list</h3>
                                 </div>
                                 <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                                     <div class="table-responsive">
