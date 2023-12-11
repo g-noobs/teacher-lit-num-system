@@ -1,10 +1,10 @@
 <?php
-$host = "localhost";
-$user = "u170333284_admin";
-$password = "Capstone1!";
-$database = "u170333284_db_tagakaulo";
 
-$connection = mysqli_connect($host, $user, $password, $database);
+
+include_once "../Database/Connection.php";
+$conn = new Connection();
+$connection = $conn->getConnection();
+
 
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
