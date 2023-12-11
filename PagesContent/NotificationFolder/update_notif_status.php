@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($conn->query($updateQuery) === TRUE) {
         echo "Notif status updated successfully";
     } else {
-        echo "Error updating notif status: " . $conn->error;
+        echo json_encode("Error updating notif status: " . $conn->error);
     }
 
     $conn->close();
