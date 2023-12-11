@@ -213,7 +213,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 console.log(response);
-                window.location.href = "../filtermodule/get_assignment_progress.php?userId=" + userId;
+                window.location.href = "../PagesContent/NotificationFolder/get_assignment_progress.php?userId=" + userId;
 
             },
             error: function(error) {
