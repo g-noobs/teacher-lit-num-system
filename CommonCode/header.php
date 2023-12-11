@@ -167,17 +167,9 @@ $conn = $connections->getConnection();
 
 <script>
 $(document).ready(function() {
-    $("#notificationButton").click(function() {
-        if (!$("#notificationModal ul li").length) {
-            alert("No notifications found");
-        } else {
-            $("#notificationModal").toggle();
-        }
-    });
-
     $("#markAllReadButton").click(function() {
         $.ajax({
-            url: 'mark_all_read.php',
+            url: '../PagesContent/NotificationFolder/mark_all_read.php',
             type: 'GET',
             success: function(response) {
                 alert(response);
@@ -189,29 +181,12 @@ $(document).ready(function() {
         });
     });
 
-    $("#exitButton").click(function() {
-        $("#notificationModal").hide();
-    });
-
-    function redirectToDetails(userId) {
-        window.location.href = "../filtermodule/get_assignment_progress.php?userId=" + userId;
-    }
-
-    $("#notificationModal ul li a").on("click", function(e) {
-        e.preventDefault();
-        var userId = $(this).data("userid");
-        redirectToDetails(userId);
-    });
 });
 </script>
 
 <script>
 $(document).ready(function() {
-    $("#notificationButton").click(function() {
-        $("#notificationModal").show();
-    });
-
-    $(".view-details").click(function() {
+    $(document).on('click', '.view-details', function() {
         var userId = $(this).data("userid");
         var learnerId = $(this).data("learnerid");
         var assignmentId = $(this).data("assignmentid");
@@ -221,20 +196,21 @@ $(document).ready(function() {
     function redirectToDetails(userId, learnerId, assignmentId) {
         $.ajax({
             type: "POST",
-            url: "update_notif_status.php",
+            url: "../PagesContent/NotificationFolder/update_notif_status.php",
             data: {
                 learnerId: learnerId,
                 assignmentId: assignmentId
             },
             success: function(response) {
                 console.log(response);
+                window.location.href ="../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
+
             },
             error: function(error) {
                 console.error(error);
             }
         });
 
-        window.location.href = "../filtermodule/get_assignment_progress.php?userId=" + userId;
     }
 });
 </script>
