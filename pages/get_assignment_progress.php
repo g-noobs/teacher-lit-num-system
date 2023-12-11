@@ -1,10 +1,8 @@
 <?php
-$host = "localhost";
-$user = "u170333284_admin";
-$password = "Capstone1!";
-$database = "u170333284_db_tagakaulo";
+include_once "../Database/Connection.php";
 
-$connection = mysqli_connect($host, $user, $password, $database);
+$conn = new Connection();
+$connection = $conn->getConnection();
 
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
@@ -101,6 +99,7 @@ if (!$resultAssignments) {
     echo "Error: " . mysqli_error($connection);
 }
 
+
 // mao ni ang modal design sa katong mag pop up na enter score pag pinduton ang Submit Score na button
 echo "<head>
         <style>
@@ -130,8 +129,7 @@ echo "<head>
         </style>
     </head>";
 
-echo "<h2>Quiz Progress for {$userInfo['first_name']} {$userInfo['last_name']}</h2>";
-echo "<p>Personal ID: {$userInfo['personal_id']}</p>";
+
 
 echo "<table border='1' id='assignmentTable'>";
 echo "<tr>
@@ -157,19 +155,127 @@ while ($assignment = mysqli_fetch_assoc($resultAssignments)) {
 echo "</table>
         <p><button onclick=\"goBack()\">Go Back</button></p>";
 
-//  ,ao ni ang modal for the scoring
-echo "<div id='scoreModal'>
-        <span class='exitButton' onclick='closeScoreModal()'>&times;</span>
-        <h3>Enter Score</h3>
-        <input type='number' id='scoreInput' placeholder='Enter score' oninput='validateScore()'>
-        <p id='maxScoreInfo'></p>
-        <button onclick='submitScore()'>Submit</button>
-        <button onclick='closeScoreModal()'>Cancel</button>
-      </div>";
-
 mysqli_close($connection);
 ?>
-<script>
+<html style="height: auto; min-height: 100%;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gradebook</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <?php 
+        include_once("../bootstrap/style.php");
+    ?>
+    <!-- jQuery 3 -->
+    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <?php include_once "../CommonCode/ModifiedSearchStyle.php";?>
+
+    <style>
+    #scoreModal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        /* Adjust the width as needed */
+        padding: 20px;
+        border: 2px solid #000;
+        background-color: #fff;
+        z-index: 999;
+    }
+
+    #scoreModal h3 {
+        margin-top: 0;
+    }
+
+    #scoreModal .exitButton {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+    </style>
+
+</head>
+
+<body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
+    style="height: auto; min-height: 100%;">
+
+    <div class="wrapper" style="height: auto; min-height: 100%;">
+        <div class="content-wrapper" style="min-height: 606.2px;">
+            <?php include_once "../CommonCode/ModifiedAlert.php";?>
+            <div class="container">
+                <section class="content-header">
+                    <h1>
+                        <?php
+                            echo "<h2>Quiz Progress for {$userInfo['first_name']} {$userInfo['last_name']}</h2>";
+                            echo "<p>Personal ID: {$userInfo['personal_id']}</p>"; 
+                        ?>
+                    </h1>
+                </section>
+
+                <!-- Score Modal -->
+                <div id='scoreModal'>
+                    <span class='exitButton' onclick='closeScoreModal()'>&times;</span>
+                    <h3>Enter Score</h3>
+                    <input type='number' id='scoreInput' placeholder='Enter score' oninput='validateScore()'>
+                    <p id='maxScoreInfo'></p>
+                    <button onclick='submitScore()'>Submit</button>
+                    <button onclick='closeScoreModal()'>Cancel</button>
+                </div>
+                <section class="content" id="main_content">
+
+                    <div class="row" id="gradebook_content">
+                        <div class="col-xs-12">
+                            <div class="box box-default container">
+                                <br>
+                                <div class="box-header with-">
+                                    <h3 class="box-title"></h3>
+                                </div>
+                                <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
+                                    <div class="table-responsive">
+                                        <table id="userTable" class="table table-bordered table-hover text-center">
+                                            <tr>
+                                                <th>Assignment ID</th>
+                                                <th>Assignment Name</th>
+                                                <th>Question</th>
+                                                <th>Answer</th>
+                                                <th>Score</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            <?php
+                                                while ($assignment = mysqli_fetch_assoc($resultAssignments)) {
+                                                    echo "<tr class='assignmentRow'>
+                                                            <td>" . $assignment['assignment_id'] . "</td>
+                                                            <td>" . $assignment['assignment_name'] . "</td>
+                                                            <td>" . $assignment['question'] . "</td>
+                                                            <td>" . $assignment['assignment_answer'] . "</td>
+                                                            <td>" . $assignment['score'] . "</td>
+                                                            <td><button onclick='openScoreModal(\"{$assignment['assignment_id']}\")'>Submit Score</button></td>
+                                                        </tr>";
+                                                    }
+                                            ?>
+                                        </table>
+                                        <p><button onclick="goBack()">Go Back</button></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+        <?php include_once("../CommonCode/footer.php");?>
+    </div>
+    <?php include_once("../bootstrap/jquery.php");?>
+    <script>
     function goBack() {
         window.history.back();
     }
@@ -178,7 +284,7 @@ mysqli_close($connection);
     function openScoreModal(assignmentId) {
         // Fetch max_score from tbl_assignment
         let xhrMaxScore = new XMLHttpRequest();
-        xhrMaxScore.onreadystatechange = function () {
+        xhrMaxScore.onreadystatechange = function() {
             if (xhrMaxScore.readyState === 4 && xhrMaxScore.status === 200) {
                 let maxScore = JSON.parse(xhrMaxScore.responseText).max_score;
                 document.getElementById('maxScoreInfo').innerText = 'Max Score: ' + maxScore;
@@ -197,7 +303,7 @@ mysqli_close($connection);
         let scoreInput = document.getElementById('scoreInput');
         let maxScoreInfo = document.getElementById('maxScoreInfo');
         let maxScore = maxScoreInfo.innerText.replace('Max Score: ', '');
-        
+
         if (isNaN(scoreInput.value)) {
             maxScoreInfo.style.color = 'black';
             return;
@@ -222,7 +328,7 @@ mysqli_close($connection);
 
         // Fetch max_score from tbl_assignment
         let xhrMaxScore = new XMLHttpRequest();
-        xhrMaxScore.onreadystatechange = function () {
+        xhrMaxScore.onreadystatechange = function() {
             if (xhrMaxScore.readyState === 4 && xhrMaxScore.status === 200) {
                 let maxScore = JSON.parse(xhrMaxScore.responseText).max_score;
 
@@ -231,7 +337,7 @@ mysqli_close($connection);
                 } else {
                     // ajax gamit naton for submission of score
                     let xhr = new XMLHttpRequest();
-                    xhr.onreadystatechange = function () {
+                    xhr.onreadystatechange = function() {
                         if (xhr.readyState === 4 && xhr.status === 200) {
                             alert(xhr.responseText);
                             closeScoreModal();
@@ -240,7 +346,8 @@ mysqli_close($connection);
                     };
                     xhr.open("POST", window.location.href, true);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    xhr.send("assignmentId=" + encodeURIComponent(assignmentId) + "&score=" + encodeURIComponent(score));
+                    xhr.send("assignmentId=" + encodeURIComponent(assignmentId) + "&score=" + encodeURIComponent(
+                        score));
                 }
             }
         };
@@ -251,4 +358,7 @@ mysqli_close($connection);
     function closeScoreModal() {
         document.getElementById('scoreModal').style.display = 'none';
     }
-</script>
+    </script>
+</body>
+
+</html>
