@@ -64,8 +64,8 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                             <option value="1" <?php echo ($filterClass == '1') ? 'selected' : '1'; ?>>
                                                 Completed</option>
                                         </select>
-                                        <button id='admit_btn' type='button' class='btn btn-danger pull-right'>Archive Student</button>
                                     </div>
+                                    <button id='admit_btn' type='button' class='btn btn-danger pull-right'>Archive Student</button>
                                 </form>
                             </div>
                             <!-- /.box-header -->
