@@ -23,6 +23,62 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
     <?php 
         include_once("../bootstrap/style.php");
     ?>
+    <style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 25px;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 2dp;
+        width: 50%;
+    }
+
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    </style>
 </head>
 
 <body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
@@ -49,22 +105,56 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                 <br>
                 <!-- confirmation modal -->
                 <?php include_once "../PagesContent/InterventionContents/ConfirmatioModal.php"?>
+
+                <!-- Add Intervention Modal -->
+                <div id="interventionModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <!-- Intervention Form -->
+                        <form id="interventionForm" action="" method="POST">
+                            <!-- mao ni ang dropdown for student -->
+                            <label for="studentName">Student Name:</label>
+                            <select name="studentName" id="studentName">
+                                <?php
+                                $userQuery = "SELECT * FROM tbl_user_info";
+                                $userResult = mysqli_query($connection, $userQuery);
+
+                                while ($userRow = mysqli_fetch_assoc($userResult)) {
+                                    $fullName = $userRow['first_name'] . ' ' . $userRow['last_name'];
+                                    $personalId = $userRow['personal_id'];
+                                    echo "<option value='$personalId'>$fullName</option>";
+                                }
+                                ?>
+                            </select>
+
+                            <label for="startDate">Start Date:</label>
+                            <input type="date" name="startDate" id="startDate">
+
+                            <label for="endDate">End Date:</label>
+                            <input type="date" name="endDate" id="endDate">
+
+                            <label for="comments">Comments:</label>
+                            <textarea name="comments" id="comments" rows="4"></textarea>
+
+                            <button type="button" onclick="submitForm()">Submit</button>
+                        </form>
+                    </div>
+                </div>
                 <!-- Main Content-->
                 <section class="content">
                     <div class="row">
                         <div class="box container">
                             <div class="box-header">
+                                <button type="button" onclick="openModal()">Add Intervention</button>
+                                <!-- Filter Form -->
                                 <form action="" method="GET" class="filter-form">
-                                    <div class="form-group col-xs-2">
-                                        <label for="classFilter">Filter by Class:</label>
-                                        <select name="status" id="status" onchange="this.form.submit()"
-                                            class="form-control">
-                                            <option value="0" <?php echo ($filterClass == '0') ? 'selected' : ''; ?>>On
-                                                Going</option>
-                                            <option value="1" <?php echo ($filterClass == '1') ? 'selected' : '1'; ?>>
-                                                Completed</option>
-                                        </select>
-                                    </div>
+                                    <label for="status">Filter by Status:</label>
+                                    <select name="status" id="status" onchange="this.form.submit()">
+                                        <option value="0" <?php echo ($filterClass == '0') ? 'selected' : ''; ?>>On
+                                            Going</option>
+                                        <option value="1" <?php echo ($filterClass == '1') ? 'selected' : ''; ?>>
+                                            Completed</option>
+                                    </select>
                                 </form>
                             </div>
                             <!-- /.box-header -->
@@ -143,6 +233,104 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
         ?>
     </div>
     <script>
+    function openModal() {
+        document.getElementById('interventionModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('interventionModal').style.display = 'none';
+    }
+
+    function submitForm() {
+        var formData = new FormData(document.getElementById('interventionForm'));
+        // ang 'pending' diri ang automated value for attachment_link sa tbl_intervention, pwede siya i change into anything na usto mo
+        formData.append('attachmentLink', 'Pending');
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>', true);
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                alert('Intervention added successfully!');
+                closeModal();
+                location
+                    .reload(); // mao ni para pag pindot sa submit button sa modal, mag auto refresh ang page para makita ang newly inserted data
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        };
+
+        xhr.send(formData);
+    }
+    </script>
+
+    <script>
+    function insertDate() {
+        // Get form data
+        var status = document.getElementById('status').value;
+
+        // Create a new FormData object
+        var formData = new FormData();
+        formData.append('status', status);
+
+        // Send data to the server using AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>', true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                alert("Successfully udpated data"); // Display the response from the server
+                location.reload();
+            } else {
+                alert('Error: ' + xhr.status);
+            }
+        };
+        xhr.send(formData);
+    }
+
+    function sortTable(columnIndex) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.querySelector(".sub-leadership-board-container");
+        switching = true;
+        dir = "asc"; // start with ascending order
+
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+
+            for (i = 1; i < rows.length - 1; i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("td")[columnIndex];
+                y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+
+                if (dir === "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir === "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+                if (switchcount === 0 && dir === "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+    </script>
+
+
+    <script>
     function sortTable(columnIndex) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.querySelector(".sub-leadership-board-container");
@@ -199,8 +387,8 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
         }
     }
 
-    mysqli_close($connection);
-    ?>
+mysqli_close($connection);
+?>
 
     <?php include_once("../bootstrap/jquery.php");?>
     <!-- This Script Contain Common Script used on other pages  -->
