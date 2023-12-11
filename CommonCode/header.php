@@ -181,16 +181,16 @@ $(document).ready(function() {
         });
     });
 
-    function redirectToDetails(userId) {
-        window.location.href =
-            "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
-    }
+    // function redirectToDetails(userId) {
+    //     window.location.href =
+    //         "../PagesContent/GradeBookContent/ActionGradebook/get_assignment_progress.php?userId=" + userId;
+    // }
 
-    $("#notificationModal ul li a").on("click", function(e) {
-        e.preventDefault();
-        var userId = $(this).data("userid");
-        redirectToDetails(userId);
-    });
+    // $("#notificationModal ul li a").on("click", function(e) {
+    //     e.preventDefault();
+    //     var userId = $(this).data("userid");
+    //     redirectToDetails(userId);
+    // });
 });
 </script>
 
