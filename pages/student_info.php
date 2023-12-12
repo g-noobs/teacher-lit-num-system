@@ -103,7 +103,7 @@ if (!$connection) {
 
                     <button class="back-button" type="submit" onclick="window.history.back()">Back</button>
 
-                    <button class="print-button" onclick="printContent()">Print</button>
+                    <button class="print-button btn btn-default" onclick="printContent()">Print</button>
                     <h2><?php echo $fullName; ?>'s Progress</h2>
                     <h2>Summary</h2>
                 </section>
