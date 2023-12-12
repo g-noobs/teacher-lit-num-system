@@ -105,7 +105,7 @@ $conn = $connections->getConnection();
                                             <?= $row['class_sy'] ?> 
                                                 data-userid="<?= $row['user_info_id'] ?>"
                                                 data-learnerid="<?= $row['learner_id'] ?>"
-                                                data-assignmentid="<?= $row['assignment_id'] ?>
+                                                data-assignmentid="<?= $row['assignment_id'] ?>"
                                         </a></li>
                                     <?php endforeach; ?>
                                 </ul>
