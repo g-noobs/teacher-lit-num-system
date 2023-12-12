@@ -14,13 +14,12 @@ function establishConnection() {
 }
 
 function displayTable($headers, $data, $actionName, $hiddenFieldName) {
-    $connection= establishConnection();
+    $conn = establishConnection();
 
-    $result = $connection->query($data);
+    $result = $conn->query($data);
 
     if ($result->num_rows > 0) {
-        echo '<table class="table table-bordered table-hover text-center">';
-
+        echo '<table border="1">';
         echo '<tr>';
         foreach ($headers as $header) {
             echo '<th>' . $header . '</th>';
@@ -45,7 +44,7 @@ function displayTable($headers, $data, $actionName, $hiddenFieldName) {
         echo "No results found";
     }
 
-    $connection->close();
+    $conn->close();
 }
 
 function displayStudents() {
