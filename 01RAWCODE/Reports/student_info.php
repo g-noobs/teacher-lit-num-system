@@ -1,4 +1,5 @@
 <?php
+include_once '../../Database/Connection.php';
 $conn = new Connection();
 $connection = $conn->getConnection();
 
