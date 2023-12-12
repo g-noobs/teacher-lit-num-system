@@ -278,28 +278,29 @@ function displayIntervention() {
             </section>
             <br>
             <section class="content">
-                <div class="col-xs-12">
-                    <div class="box box-default">
-                        <div class="box-header with-border">
-                            <form method="post">
-                                <button class="btn btn-default" type="submit" name="list_students">List of
-                                    Students</button>
-                                <button class="btn btn-default" type="submit"
-                                    name="list_assignments">Assignments</button>
-                                <button class="btn btn-default" type="submit" name="list_quiz">Quiz</button>
-                                <button class="btn btn-default" type="submit" name="list_story">Story</button>
-                                <button class="btn btn-default" type="submit"
-                                    name="list_intervention">Intervention</button>
-                            </form>
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                        class="fa fa-minus"></i>
-                                </button>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <form method="post">
+                                    <button class="btn btn-default" type="submit" name="list_students">List of
+                                        Students</button>
+                                    <button class="btn btn-default" type="submit"
+                                        name="list_assignments">Assignments</button>
+                                    <button class="btn btn-default" type="submit" name="list_quiz">Quiz</button>
+                                    <button class="btn btn-default" type="submit" name="list_story">Story</button>
+                                    <button class="btn btn-default" type="submit"
+                                        name="list_intervention">Intervention</button>
+                                </form>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="box-body">
-                            <div class="table-responsive">
-                                <?php
+                            <div class="box-body">
+                                <div class="table-responsive">
+                                    <?php
                                     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_students"])) {
                                         $_SESSION["show_results"] = !isset($_SESSION["show_results"]) || $_SESSION["show_results"] == false;
                                     }
@@ -340,9 +341,10 @@ function displayIntervention() {
                                         displayIntervention();
                                     }
                                 ?>
+                                </div>
                             </div>
+                            <br>
                         </div>
-                        <br>
                     </div>
                 </div>
             </section>
