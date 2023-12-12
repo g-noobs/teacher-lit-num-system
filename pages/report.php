@@ -34,7 +34,7 @@ function displayTable($headers, $data, $actionName, $hiddenFieldName) {
             echo '<td>
                     <form method="get" action="' . $actionName . '">
                         <input type="hidden" name="' . $hiddenFieldName . '" value="' . $row[$hiddenFieldName] . '">
-                        <button type="submit" name="view_info">View Information</button>
+                        <button type="submit" name="view_info" class="btn btn-primary">View Information</button>
                     </form>
                 </td>';
             echo '</tr>';
