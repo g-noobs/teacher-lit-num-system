@@ -112,13 +112,6 @@ if (!$connection) {
                         <div class="col-xs-12">
                             <div class="box box-default container">
                                 <br>
-                                <div class="box-header with-border">
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                                class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                </div>
                                 <table class="summary-table">
                                     <tr>
                                         <th>Quiz Score</th>
@@ -412,7 +405,7 @@ if (!$connection) {
                                     ?>
 
                                 </table>
-                            </div>
+                            <!-- END -->
                         </div>
                     </div>
                 </section>
