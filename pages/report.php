@@ -265,7 +265,7 @@ function displayIntervention() {
 <body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
     style="height: auto; min-height: 100%;">
 
-    <div class="wrapper" style="height: auto; min-height: 100%;">
+    <div class="wrapper" style="min-height: 100%;">
         <?php include_once("../CommonCode/header.php");?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
