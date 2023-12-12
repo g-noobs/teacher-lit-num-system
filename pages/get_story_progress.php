@@ -38,41 +38,6 @@ if ($filterCondition === 'completed') {
 
 $result = mysqli_query($connection, $query);
 
-if ($result) {
-    // Output HTML table with topic_id, topic_name, and status values
-    echo "<div>
-            <h2>Learner Story Progress for {$userInfo['first_name']} {$userInfo['last_name']}</h2>
-            <p>Personal ID: {$userInfo['personal_id']}</p> <!-- Display personal_id -->
-
-            <select id='filterSelect' onchange='applyFilter()'>
-                <option value='all'>All</option>
-                <option value='completed'>Completed</option>
-                <option value='not_completed'>Not Completed</option>
-            </select>
-
-            <table border='1' id='progressTable'>
-                <tr>
-                    <th>Topic ID</th>
-                    <th>Topic Name</th>
-                    <th>Status</th>
-                </tr>";
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr class='progressRow' data-status='{$row['progress_status']}'>
-                <td>{$row['topic_id']}</td>
-                <td>{$row['topic_name']}</td>
-                <td>{$row['progress_status']}</td>
-            </tr>";
-    }
-
-    echo "</table>
-        <p><button onclick=\"goBack()\">Go Back</button></p>
-    </div>";
-} else {
-    echo "Error: " . mysqli_error($connection);
-}
-
-mysqli_close($connection);
 ?>
 
 <html style="height: auto; min-height: 100%;">
