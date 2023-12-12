@@ -20,7 +20,7 @@ function displayTable($headers, $data, $actionName, $hiddenFieldName) {
 
     if ($result->num_rows > 0) {
         echo '<table class="table table-bordered table-hover text-center">';
-        echo '<thead>tr>';
+        echo '<thead><tr>';
         foreach ($headers as $header) {
             echo '<th>' . $header . '</th>';
         }
