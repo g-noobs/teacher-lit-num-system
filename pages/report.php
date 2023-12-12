@@ -217,7 +217,6 @@ function displayIntervention() {
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <?php include_once("../bootstrap/style.php") ?>
 
-    <?php include_once("../bootstrap/jquery.php");?>
     <style>
     body {
         font-family: 'Arial', sans-serif;
@@ -254,62 +253,92 @@ function displayIntervention() {
 <body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
     style="height: auto; min-height: 100%;">
 
-    <h2>Reports</h2>;
+    <div class="wrapper" style="height: auto; min-height: 100%;">
+        <?php include_once("../CommonCode/header.php");?>
+        <div class="content-wrapper" style="min-height: 606.2px;">
+            <section class="content-header">
+                <!-- Header name -->
+                <h1>
+                    Reports
+                    <small>View Reports</small>
+                </h1>
+            </section>
+            <br>
+            <section class="content">
+                <div class="col-xs-12">
+                    <div class="box box-default container">
+                        <br>
+                        <div class="box-header with-border">
+                            <div class="box-tools pull-right">
+                                <form method="post">
+                                    <button class="btn btn-default" type="submit" name="list_students">List of
+                                        Students</button>
+                                    <button class="btn btn-default" type="submit"
+                                        name="list_assignments">Assignments</button>
+                                    <button class="btn btn-default" type="submit" name="list_quiz">Quiz</button>
+                                    <button class="btn btn-default" type="submit" name="list_story">Story</button>
+                                    <button class="btn btn-default" type="submit"
+                                        name="list_intervention">Intervention</button>
+                                </form>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                        class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
+                            <div class="table-responsive">
+                                <?php
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_students"])) {
+                                        $_SESSION["show_results"] = !isset($_SESSION["show_results"]) || $_SESSION["show_results"] == false;
+                                    }
 
-    <form method="post">
-        <button class="btn btn-default" type="submit" name="list_students">List of Students</button>
-        <button class="btn btn-default" type="submit" name="list_assignments">Assignments</button>
-        <button class="btn btn-default" type="submit" name="list_quiz">Quiz</button>
-        <button class="btn btn-default" type="submit" name="list_story">Story</button>
-        <button class="btn btn-default" type="submit" name="list_intervention">Intervention</button>
-    </form>
-    
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_assignments"])) {
+                                        $_SESSION["show_assignments"] = !isset($_SESSION["show_assignments"]) || $_SESSION["show_assignments"] == false;
+                                    }
 
-<?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_students"])) {
-        $_SESSION["show_results"] = !isset($_SESSION["show_results"]) || $_SESSION["show_results"] == false;
-    }
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_quiz"])) {
+                                        $_SESSION["show_quiz"] = !isset($_SESSION["show_quiz"]) || $_SESSION["show_quiz"] == false;
+                                    }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_assignments"])) {
-        $_SESSION["show_assignments"] = !isset($_SESSION["show_assignments"]) || $_SESSION["show_assignments"] == false;
-    }
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_story"])) {
+                                        $_SESSION["show_story"] = !isset($_SESSION["show_story"]) || $_SESSION["show_story"] == false;
+                                    }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_quiz"])) {
-        $_SESSION["show_quiz"] = !isset($_SESSION["show_quiz"]) || $_SESSION["show_quiz"] == false;
-    }
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_intervention"])) {
+                                        $_SESSION["show_intervention"] = !isset($_SESSION["show_intervention"]) || $_SESSION["show_intervention"] == false;
+                                    }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_story"])) {
-        $_SESSION["show_story"] = !isset($_SESSION["show_story"]) || $_SESSION["show_story"] == false;
-    }
+                                    if ($_SESSION["show_results"] ?? false) {
+                                        displayStudents();
+                                    }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_intervention"])) {
-        $_SESSION["show_intervention"] = !isset($_SESSION["show_intervention"]) || $_SESSION["show_intervention"] == false;
-    }
+                                    if ($_SESSION["show_assignments"] ?? false) {
+                                        displayAssignments();
+                                    }
 
-    if ($_SESSION["show_results"] ?? false) {
-        displayStudents();
-    }
+                                    if ($_SESSION["show_quiz"] ?? false) {
+                                        displayQuiz();
+                                    }
 
-    if ($_SESSION["show_assignments"] ?? false) {
-        displayAssignments();
-    }
+                                    if ($_SESSION["show_story"] ?? false) {
+                                        displayStory();
+                                    }
 
-    if ($_SESSION["show_quiz"] ?? false) {
-        displayQuiz();
-    }
-
-    if ($_SESSION["show_story"] ?? false) {
-        displayStory();
-    }
-
-    if ($_SESSION["show_intervention"] ?? false) {
-        displayIntervention();
-    }
-
-?>
-
-<?php include_once "../CommonScript/CommonAllScript.php";?>
-
+                                    if ($_SESSION["show_intervention"] ?? false) {
+                                        displayIntervention();
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <?php include_once("../CommonCode/footer.php");?>
+    </div>
+    <?php include_once("../bootstrap/jquery.php");?>
+    <?php include_once "../CommonScript/CommonAllScript.php";?>
 </body>
 
 </html>
