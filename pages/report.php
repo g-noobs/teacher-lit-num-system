@@ -71,7 +71,7 @@ function displayStudents() {
 
             echo '<td><form method="get" action="student_info.php">
                       <input type="hidden" name="personal_id" value="' . $row["personal_id"] . '">
-                      <button type="submit" name="view_info">View Information & Gradebook</button>
+                      <button type="submit" name="view_info" class="btn btn-default">View Information & Gradebook</button>
                   </form></td>';
             
             echo '</tr>';
