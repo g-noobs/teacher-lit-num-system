@@ -145,7 +145,7 @@
                                                         <td>$storyCount</td>
                                                         <td>$assignmentCount</td>
                                                         <td>$totalCount</td>
-                                                        <td><form action='student_record.php' method='GET'>
+                                                        <td><form action='student_info.php' method='GET'>
                                                             <input type='hidden' name='personal_id' value='$personalId'>
                                                             <button type='submit' class='btn btn-primary'>Show more</button>
                                                             </form>
