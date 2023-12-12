@@ -229,37 +229,6 @@ function displayIntervention() {
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <?php include_once("../bootstrap/style.php") ?>
 
-    <style>
-    body {
-        font-family: 'Arial', sans-serif;
-        margin: 20px;
-    }
-
-    form {
-        margin-bottom: 10px;
-    }
-
-    button {
-        padding: 8px;
-        cursor: pointer;
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th,
-    td {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
-    </style>
 </head>
 
 <body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
