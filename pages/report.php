@@ -250,8 +250,7 @@ function displayIntervention() {
     </style>
 </head>
 
-<body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
-    style="height: auto; min-height: 100%;">
+<body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed style="height: auto; min-height: 100%;">
 
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <?php include_once("../CommonCode/header.php");?>
@@ -268,8 +267,7 @@ function displayIntervention() {
             <section class="content">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="box box-default container">
-                            <br>
+                        <div class="box box-default">
                             <div class="box-header with-border">
                                 <form method="post">
                                     <button class="btn btn-default" type="submit" name="list_students">List of
