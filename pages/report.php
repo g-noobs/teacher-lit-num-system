@@ -19,7 +19,7 @@ function displayTable($headers, $data, $actionName, $hiddenFieldName) {
     $result = $connection->query($data);
 
     if ($result->num_rows > 0) {
-        echo '<table border="1">';
+        echo '<table class="table table-bordered table-hover text-center">';
         echo '<tr>';
         foreach ($headers as $header) {
             echo '<th>' . $header . '</th>';
@@ -58,7 +58,7 @@ function displayStudents() {
 
     if ($result->num_rows > 0) {
         echo '<h2>List of Student Table</h2>';
-        echo '<table border="1">';
+        echo '<table class="table table-bordered table-hover text-center">';
         echo '<tr><th>Full Name</th><th>Gender</th><th>Class Name</th><th>School Year ID</th><th>Personal ID</th><th>Action</th></tr>';
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
@@ -95,7 +95,7 @@ function displayAssignments() {
     if ($resultAssignments->num_rows > 0) {
 
         echo '<h2>Assignment Table</h2>';
-        echo '<table border="1">';
+        echo '<table class="table table-bordered table-hover text-center">';
         echo '<tr><th>Assignment ID</th><th>Assignment Name</th><th>Question</th><th>Max Score</th><th>Date Added</th></tr>';
         while ($rowAssignment = $resultAssignments->fetch_assoc()) {
             echo '<tr>';
@@ -125,7 +125,7 @@ function displayQuiz() {
 
     if ($resultQuiz->num_rows > 0) {
         echo '<h2>Quiz Table</h2>';
-        echo '<table border="1">';
+        echo '<table class="table table-bordered table-hover text-center">';
         echo '<tr><th>Quiz ID</th><th>Quiz Name</th><th>Max Attempts</th><th>Max Score</th><th>Date Added</th></tr>';
         while ($rowQuiz = $resultQuiz->fetch_assoc()) {
             echo '<tr>';
@@ -154,7 +154,7 @@ function displayStory() {
 
     if ($resultTopic->num_rows > 0) {
         echo '<h2>Story Table</h2>';
-        echo '<table border="1">';
+        echo '<table class="table table-bordered table-hover text-center">';
         echo '<tr><th>Topic ID</th><th>Topic Name</th><th>Topic Description</th><th>Date Added</th></tr>';
         while ($rowTopic = $resultTopic->fetch_assoc()) {
             echo '<tr>';
@@ -184,7 +184,7 @@ function displayIntervention() {
 
     if ($resultIntervention->num_rows > 0) {
         echo '<h2>Intervention Table</h2>';
-        echo '<table border="1">';
+        echo '<table class="table table-bordered table-hover text-center">';
         echo '<tr><th>Full Name</th><th>Date Created</th><th>Date Started</th><th>Date Ended</th><th>Comments</th><th>Status</th></tr>';
         while ($rowIntervention = $resultIntervention->fetch_assoc()) {
             echo '<tr>';
@@ -207,97 +207,109 @@ function displayIntervention() {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<html style="height: auto; min-height: 100%;">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>List of Students and Assignments</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <?php include_once("../bootstrap/style.php") ?>
+
+    <?php include_once("../bootstrap/jquery.php");?>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-        }
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 20px;
+    }
 
-        form {
-            margin-bottom: 10px;
-        }
+    form {
+        margin-bottom: 10px;
+    }
 
-        button {
-            padding: 8px;
-            cursor: pointer;
-        }
+    button {
+        padding: 8px;
+        cursor: pointer;
+    }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+    th,
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
-        th {
-            background-color: #f2f2f2;
-        }
+    th {
+        background-color: #f2f2f2;
+    }
     </style>
 </head>
-<body>
 
-<h2>Reports</h2>;
+<body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
+    style="height: auto; min-height: 100%;">
 
-<form method="post">
-    <button type="submit" name="list_students">List of Students</button>
-    <button type="submit" name="list_assignments">Assignments</button>
-    <button type="submit" name="list_quiz">Quiz</button>
-    <button type="submit" name="list_story">Story</button>
-    <button type="submit" name="list_intervention">Intervention</button>
-</form>
+    <h2>Reports</h2>;
+
+    <form method="post">
+        <button class="btn btn-default" type="submit" name="list_students">List of Students</button>
+        <button class="btn btn-default" type="submit" name="list_assignments">Assignments</button>
+        <button class="btn btn-default" type="submit" name="list_quiz">Quiz</button>
+        <button class="btn btn-default" type="submit" name="list_story">Story</button>
+        <button class="btn btn-default" type="submit" name="list_intervention">Intervention</button>
+    </form>
+    
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_students"])) {
-    $_SESSION["show_results"] = !isset($_SESSION["show_results"]) || $_SESSION["show_results"] == false;
-}
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_students"])) {
+        $_SESSION["show_results"] = !isset($_SESSION["show_results"]) || $_SESSION["show_results"] == false;
+    }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_assignments"])) {
-    $_SESSION["show_assignments"] = !isset($_SESSION["show_assignments"]) || $_SESSION["show_assignments"] == false;
-}
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_assignments"])) {
+        $_SESSION["show_assignments"] = !isset($_SESSION["show_assignments"]) || $_SESSION["show_assignments"] == false;
+    }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_quiz"])) {
-    $_SESSION["show_quiz"] = !isset($_SESSION["show_quiz"]) || $_SESSION["show_quiz"] == false;
-}
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_quiz"])) {
+        $_SESSION["show_quiz"] = !isset($_SESSION["show_quiz"]) || $_SESSION["show_quiz"] == false;
+    }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_story"])) {
-    $_SESSION["show_story"] = !isset($_SESSION["show_story"]) || $_SESSION["show_story"] == false;
-}
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_story"])) {
+        $_SESSION["show_story"] = !isset($_SESSION["show_story"]) || $_SESSION["show_story"] == false;
+    }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_intervention"])) {
-    $_SESSION["show_intervention"] = !isset($_SESSION["show_intervention"]) || $_SESSION["show_intervention"] == false;
-}
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_intervention"])) {
+        $_SESSION["show_intervention"] = !isset($_SESSION["show_intervention"]) || $_SESSION["show_intervention"] == false;
+    }
 
-if ($_SESSION["show_results"] ?? false) {
-    displayStudents();
-}
+    if ($_SESSION["show_results"] ?? false) {
+        displayStudents();
+    }
 
-if ($_SESSION["show_assignments"] ?? false) {
-    displayAssignments();
-}
+    if ($_SESSION["show_assignments"] ?? false) {
+        displayAssignments();
+    }
 
-if ($_SESSION["show_quiz"] ?? false) {
-    displayQuiz();
-}
+    if ($_SESSION["show_quiz"] ?? false) {
+        displayQuiz();
+    }
 
-if ($_SESSION["show_story"] ?? false) {
-    displayStory();
-}
+    if ($_SESSION["show_story"] ?? false) {
+        displayStory();
+    }
 
-if ($_SESSION["show_intervention"] ?? false) {
-    displayIntervention();
-}
+    if ($_SESSION["show_intervention"] ?? false) {
+        displayIntervention();
+    }
 
 ?>
 
+<?php include_once "../CommonScript/CommonAllScript.php";?>
+
 </body>
+
 </html>

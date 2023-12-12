@@ -7,9 +7,7 @@
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <?php 
-        include_once("../bootstrap/style.php");
-    ?>
+    <?php include_once("../bootstrap/style.php") ?>
 </head>
 
 <body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
