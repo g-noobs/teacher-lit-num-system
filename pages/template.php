@@ -17,14 +17,9 @@
 
 
     <div class="wrapper" style="height: auto; min-height: 100%;">
-    <!-- Header  -->
-        <?php 
-            include_once("../CommonCode/header.php");
-        ?>
-
+        <!-- Header  -->
+        <?php include_once("../CommonCode/header.php");?>
         <div class="content-wrapper" style="min-height: 606.2px;">
-
-
             <!-- View quiz Data Modal -->
             <div class="container">
                 <section class="content-header">
@@ -35,15 +30,60 @@
                     </h1>
                 </section>
                 <br>
-
                 <!-- Main Content-->
                 <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box box-default container">
+                                <br>
+                                <div class="box-header with-border">
+                                    <button id="add_qzui_btn" type="button" class="btn btn-primary"
+                                        data-toggle="tooltip" title="Add New Assignment">
+                                        <i class="glyphicon glyphicon-plus"></i></button>
+                                    </button>
+
+                                    <button id="archive_btn" type="button" class="btn btn-danger" data-toggle="tooltip"
+                                        title="Archive Assignment">
+                                        <i class="glyphicon glyphicon-trash"></i><span></span>
+                                    </button>
+                                    <div class="box-tools pull-right">
+                                        <div class="search-box" style="margin-right: 35px;">
+                                            <i class="fa fa-search"></i>
+                                            <input type="text" id="userInput" class="form-control"
+                                                placeholder="Search..">
+                                        </div>
+                                    </div>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                                class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- /.box-header -->
+                                <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
+                                    <div class="table-responsive">
+                                        <table id="example2" class="table table-bordered table-hover text-center">
+                                            <thead>
+                                                <tr>
+                                                    <!-- Table Header -->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- table data -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
                 </section>
-
             </div>
-
         </div>
-
         <?php 
         include_once("../CommonCode/footer.php");
         ?>

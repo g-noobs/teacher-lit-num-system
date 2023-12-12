@@ -1,11 +1,4 @@
 <?php
-$host = "localhost";
-$username = "u170333284_admin";
-$password = "Capstone1!";
-$database = "u170333284_db_tagakaulo";
-
-$connection = mysqli_connect($host, $username, $password, $database);
-
 include_once "../Database/Connection.php";
 $conn = new Connection();
 $connection = $conn->getConnection();
