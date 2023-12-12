@@ -226,7 +226,9 @@ function displayIntervention() {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>List of Students and Assignments</title>
+
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
     <?php include_once("../bootstrap/style.php") ?>
 
 </head>
@@ -234,12 +236,12 @@ function displayIntervention() {
 <body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
     style="height: auto; min-height: 100%;">
 
-    <div class="wrapper" style="min-height: 100%;">
+    <div class="wrapper" style="height: auto; min-height: 100%;">
+        <!-- Header  -->
         <?php include_once("../CommonCode/header.php");?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
             <section class="content-header">
-                <!-- Header name -->
                 <h1>
                     Reports
                     <small>View Reports</small>
@@ -249,7 +251,8 @@ function displayIntervention() {
             <section class="content">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="box box-default">
+                        <div class="box box-default container">
+                            <br>
                             <div class="box-header with-border">
                                 <form method="post">
                                     <button class="btn btn-default" type="submit" name="list_students">List of

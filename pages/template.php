@@ -17,7 +17,7 @@
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <!-- Header  -->
         <?php include_once("../CommonCode/header.php");?>
-        
+
         <div class="content-wrapper" style="min-height: 606.2px;">
             <!-- View quiz Data Modal -->
             <div class="container">
@@ -44,7 +44,7 @@
                                 </div>
                                 <br>
                                 <!-- /.box-header -->
-                                <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
+                                <div class="box-body" style="overflow-y: scroll; max-height: auto;">
                                     <div class="table-responsive">
                                         <table id="example2" class="table table-bordered table-hover text-center">
                                             <thead>
