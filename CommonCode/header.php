@@ -104,6 +104,7 @@ $conn = $connections->getConnection();
                                             data-userid="<?= $row['user_info_id'] ?>"
                                             data-learnerid="<?= $row['learner_id'] ?>"
                                             data-assignmentid="<?= $row['assignment_id'] ?>">
+                                            <i class="fa  fa-exclamation text-yellow"></i>
                                         <?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section
                                         <?= $row['class_sy'] ?></a></li>
                                     <?php endforeach; ?>
