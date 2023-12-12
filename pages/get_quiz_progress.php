@@ -108,8 +108,8 @@ $result = mysqli_query($connection, $query);
 
                                         </table>
                                     </div>
-                                    <button onclick="goBack()" class="btn btn-default">Go Back</button>
                                 </div>
+                                <button onclick="goBack()" class="btn btn-default">Go Back</button>
                             </div>
                         </div>
                     </div>
@@ -118,29 +118,29 @@ $result = mysqli_query($connection, $query);
         </div>
         <?php include_once("../CommonCode/footer.php");?>
     </div>
-        <?php include_once("../bootstrap/jquery.php");?>
+    <?php include_once("../bootstrap/jquery.php");?>
 
-        <script>
-        function applyQuizFilter() {
-            var filter = document.getElementById('quizFilterSelect').value;
-            var
-                rows = document.getElementsByClassName('quizProgressRow');
-            for (var i = 0; i <
-                rows.length; i++) {
-                var score = rows[i].getAttribute('data-score');
-                if (filter === 'all' || (filter === 'taken' && score !== 'Not Taken') ||
-                    (filter === 'not_taken' && score === 'Not Taken')) {
-                    rows[i].style.display = 'table-row';
-                } else {
-                    rows[i].style.display = 'none';
-                }
+    <script>
+    function applyQuizFilter() {
+        var filter = document.getElementById('quizFilterSelect').value;
+        var
+            rows = document.getElementsByClassName('quizProgressRow');
+        for (var i = 0; i <
+            rows.length; i++) {
+            var score = rows[i].getAttribute('data-score');
+            if (filter === 'all' || (filter === 'taken' && score !== 'Not Taken') ||
+                (filter === 'not_taken' && score === 'Not Taken')) {
+                rows[i].style.display = 'table-row';
+            } else {
+                rows[i].style.display = 'none';
             }
         }
+    }
 
-        function goBack() {
-            window.history.back();
-        }
-        </script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
 
 
 </body>
