@@ -110,19 +110,18 @@ if (!$connection) {
                 <section class="content">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="box box-default container">
-                                <br>
-                                <table class="summary-table">
-                                    <tr>
-                                        <th>Quiz Score</th>
-                                        <th>Story Point</th>
-                                        <th>Assignment Score</th>
-                                        <th>Overall Total Score</th>
-                                        <th>Attendance</th>
-                                        <th>Overall Grade</th>
-                                    </tr>
+                            <br>
+                            <table class="summary-table">
+                                <tr>
+                                    <th>Quiz Score</th>
+                                    <th>Story Point</th>
+                                    <th>Assignment Score</th>
+                                    <th>Overall Total Score</th>
+                                    <th>Attendance</th>
+                                    <th>Overall Grade</th>
+                                </tr>
 
-                                    <?php
+                                <?php
                                     $totalQuizScoreQuery = "SELECT COALESCE(SUM(CAST(score AS DECIMAL(5, 2))), 0.00) AS total_quiz_score FROM tbl_learner_quiz_progress WHERE learner_id = '$personalId'";
                                     $totalQuizScoreResult = mysqli_query($connection, $totalQuizScoreQuery);
                                     $quiz_progress = mysqli_fetch_assoc($totalQuizScoreResult);
@@ -179,17 +178,17 @@ if (!$connection) {
                                         </tr>";
                                 ?>
 
-                                </table>
-                                <h2>Quiz</h2>
-                                <table class="summary-table">
-                                    <tr>
-                                        <th>Quiz Name</th>
-                                        <th>Date Taken</th>
-                                        <th>Attempts</th>
-                                        <th>Score</th>
-                                    </tr>
+                            </table>
+                            <h2>Quiz</h2>
+                            <table class="summary-table">
+                                <tr>
+                                    <th>Quiz Name</th>
+                                    <th>Date Taken</th>
+                                    <th>Attempts</th>
+                                    <th>Score</th>
+                                </tr>
 
-                                    <?php
+                                <?php
                                     $totalQuizScoreQuery = "SELECT quiz_name, quiz_score, attempts, date_taken
                                                             FROM (
                                                                 SELECT q.quiz_title AS quiz_name, SUM(lqp.score) AS quiz_score, lqp.attempt AS attempts, lqp.date_taken AS date_taken
@@ -240,18 +239,18 @@ if (!$connection) {
                                 ?>
 
 
-                                </table>
+                            </table>
 
-                                <h2>Assignment</h2>
-                                <table class="summary-table">
-                                    <tr>
-                                        <th>Assignment</th>
-                                        <th>Date Submitted</th>
-                                        <th>Attempts</th>
-                                        <th>Score</th>
-                                    </tr>
+                            <h2>Assignment</h2>
+                            <table class="summary-table">
+                                <tr>
+                                    <th>Assignment</th>
+                                    <th>Date Submitted</th>
+                                    <th>Attempts</th>
+                                    <th>Score</th>
+                                </tr>
 
-                                    <?php
+                                <?php
                                         $totalAssignmentScoreQuery = "SELECT lap.score, lap.date_taken, lap.attempt, 
                                         (SELECT assignment_name FROM tbl_assignment a WHERE a.assignment_id = lap.assignment_id COLLATE utf8mb4_unicode_ci) AS assignment_name
                                         FROM tbl_learner_assignment_progress lap
@@ -300,18 +299,18 @@ if (!$connection) {
                                             </tr>";
                                     ?>
 
-                                </table>
-                                <h2>Attendance</h2>
-                                <table class="summary-table">
-                                    <tr>
-                                        <th>Quiz Score</th>
-                                        <th>Story Point</th>
-                                        <th>Assignment Score</th>
-                                        <th>Overall Total Score</th>
-                                        <th>Attendance</th>
-                                    </tr>
+                            </table>
+                            <h2>Attendance</h2>
+                            <table class="summary-table">
+                                <tr>
+                                    <th>Quiz Score</th>
+                                    <th>Story Point</th>
+                                    <th>Assignment Score</th>
+                                    <th>Overall Total Score</th>
+                                    <th>Attendance</th>
+                                </tr>
 
-                                    <?php
+                                <?php
                                         // Fetch the sum of all quiz scores
                                         $totalQuizScoreQuery = "SELECT COALESCE(SUM(CAST(score AS DECIMAL(5, 2))), 0.00) AS total_quiz_score FROM (SELECT DISTINCT(quiz_id) AS quiz_id, score AS score FROM tbl_learner_quiz_progress WHERE learner_id = '$personalId') AS new_query";
                                         $totalQuizScoreResult = mysqli_query($connection, $totalQuizScoreQuery);
@@ -373,16 +372,16 @@ if (!$connection) {
                                             </tr>";
                                     ?>
 
-                                </table>
-                                <h2>Story</h2>
-                                <table class="summary-table">
-                                    <tr>
-                                        <th>Topic</th>
-                                        <th>Date Started</th>
-                                        <th>Date Completed</th>
-                                    </tr>
+                            </table>
+                            <h2>Story</h2>
+                            <table class="summary-table">
+                                <tr>
+                                    <th>Topic</th>
+                                    <th>Date Started</th>
+                                    <th>Date Completed</th>
+                                </tr>
 
-                                    <?php
+                                <?php
                                         $totalTopicScoreQuery = "SELECT t.topic_name AS topic_name, lsp.date_started AS date_started, lsp.date_completed AS date_completed
                                                                 FROM tbl_topic t
                                                                 INNER JOIN tbl_learner_story_progress lsp ON t.topic_id = lsp.story_id
@@ -404,10 +403,9 @@ if (!$connection) {
                                         }
                                     ?>
 
-                                </table>
+                            </table>
                             <!-- END -->
                         </div>
-                    </div>
                 </section>
             </div>
         </div>
