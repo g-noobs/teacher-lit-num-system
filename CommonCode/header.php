@@ -50,7 +50,7 @@ $conn = $connections->getConnection();
                     </li>
                     <li><a href="gradebook.php">Gradebook</a></li>
                     <li><a href="intervention_tickets.php">Intervention</a></li>
-                    <li><a href="leaderboard.php">Leader Board</a></li>
+                    <li><a href="leaderboard.php">LEADERBOARD</a></li>
                     <li><a href="report.php">Reports</a></li>
 
                 </ul>
