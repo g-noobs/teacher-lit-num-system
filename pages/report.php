@@ -20,12 +20,13 @@ function displayTable($headers, $data, $actionName, $hiddenFieldName) {
 
     if ($result->num_rows > 0) {
         echo '<table class="table table-bordered table-hover text-center">';
-        echo '<tr>';
+        echo '<thead>tr>';
         foreach ($headers as $header) {
             echo '<th>' . $header . '</th>';
         }
         echo '<th>Action</th>';
-        echo '</tr>';
+        echo '</tr></thead>';
+        echo '<tbody>';
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             foreach ($row as $key => $value) {
@@ -39,6 +40,7 @@ function displayTable($headers, $data, $actionName, $hiddenFieldName) {
                 </td>';
             echo '</tr>';
         }
+        echo '</tbody>';
         echo '</table>';
     } else {
         echo "No results found";
@@ -59,7 +61,8 @@ function displayStudents() {
     if ($result->num_rows > 0) {
         echo '<h2>List of Student Table</h2>';
         echo '<table class="table table-bordered table-hover text-center">';
-        echo '<tr><th>Full Name</th><th>Gender</th><th>Class Name</th><th>School Year ID</th><th>Personal ID</th><th>Action</th></tr>';
+        echo '<thead><tr><th>Full Name</th><th>Gender</th><th>Class Name</th><th>School Year ID</th><th>Personal ID</th><th>Action</th></tr></thead>';
+        echo '<table>';
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $row["full_name"] . '</td>';
@@ -75,6 +78,7 @@ function displayStudents() {
             
             echo '</tr>';
         }
+        echo '</table>';
         echo '</table>';
     } else {
         echo "No results found";
@@ -96,7 +100,8 @@ function displayAssignments() {
 
         echo '<h2>Assignment Table</h2>';
         echo '<table class="table table-bordered table-hover text-center">';
-        echo '<tr><th>Assignment ID</th><th>Assignment Name</th><th>Question</th><th>Max Score</th><th>Date Added</th></tr>';
+        echo '<thead><tr><th>Assignment ID</th><th>Assignment Name</th><th>Question</th><th>Max Score</th><th>Date Added</th></tr></thead>';
+        echo '<tbody>';
         while ($rowAssignment = $resultAssignments->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $rowAssignment["assignment_id"] . '</td>';
@@ -106,6 +111,7 @@ function displayAssignments() {
             echo '<td>' . $rowAssignment["date_added"] . '</td>';
             echo '</tr>';
         }
+        echo '</tbody>';
         echo '</table>';
     } else {
         echo "No assignments found";
@@ -126,7 +132,8 @@ function displayQuiz() {
     if ($resultQuiz->num_rows > 0) {
         echo '<h2>Quiz Table</h2>';
         echo '<table class="table table-bordered table-hover text-center">';
-        echo '<tr><th>Quiz ID</th><th>Quiz Name</th><th>Max Attempts</th><th>Max Score</th><th>Date Added</th></tr>';
+        echo '<thead><tr><th>Quiz ID</th><th>Quiz Name</th><th>Max Attempts</th><th>Max Score</th><th>Date Added</th></tr></thead>';
+        echo '<tbody>';
         while ($rowQuiz = $resultQuiz->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $rowQuiz["quiz_id"] . '</td>';
@@ -136,6 +143,7 @@ function displayQuiz() {
             echo '<td>' . $rowQuiz["date_created"] . '</td>';
             echo '</tr>';
         }
+        echo '</tbody>';
         echo '</table>';
     } else {
         echo "No quiz found";
@@ -155,7 +163,8 @@ function displayStory() {
     if ($resultTopic->num_rows > 0) {
         echo '<h2>Story Table</h2>';
         echo '<table class="table table-bordered table-hover text-center">';
-        echo '<tr><th>Topic ID</th><th>Topic Name</th><th>Topic Description</th><th>Date Added</th></tr>';
+        echo '<thead><tr><th>Topic ID</th><th>Topic Name</th><th>Topic Description</th><th>Date Added</th></tr></thead>';
+        echo '<tbody>';
         while ($rowTopic = $resultTopic->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $rowTopic["topic_id"] . '</td>';
@@ -164,6 +173,7 @@ function displayStory() {
             echo '<td>' . $rowTopic["date_added"] . '</td>';
             echo '</tr>';
         }
+        echo '</tbody>';
         echo '</table>';
     } else {
         echo "No topic found";
@@ -185,7 +195,8 @@ function displayIntervention() {
     if ($resultIntervention->num_rows > 0) {
         echo '<h2>Intervention Table</h2>';
         echo '<table class="table table-bordered table-hover text-center">';
-        echo '<tr><th>Full Name</th><th>Date Created</th><th>Date Started</th><th>Date Ended</th><th>Comments</th><th>Status</th></tr>';
+        echo '<thead><tr><th>Full Name</th><th>Date Created</th><th>Date Started</th><th>Date Ended</th><th>Comments</th><th>Status</th></tr></thead>';
+        echo '<tbody>';
         while ($rowIntervention = $resultIntervention->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $rowIntervention["learner_name"] . '</td>';
@@ -196,6 +207,7 @@ function displayIntervention() {
             echo '<td>' . $rowIntervention["attachments_link"] . '</td>';
             echo '</tr>';
         }
+        echo '</tbody>';
         echo '</table>';
     } else {
         echo "No topic found";
@@ -250,11 +262,12 @@ function displayIntervention() {
     </style>
 </head>
 
-<body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed style="height: auto; min-height: 100%;">
+<body class="skin-blue layout-top-nav fixed" data-new-gr-c-s-check-loaded="14.1131.0" data-gr-ext-installed
+    style="height: auto; min-height: 100%;">
 
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <?php include_once("../CommonCode/header.php");?>
-        
+
         <div class="content-wrapper" style="min-height: 606.2px;">
             <section class="content-header">
                 <!-- Header name -->
@@ -265,29 +278,28 @@ function displayIntervention() {
             </section>
             <br>
             <section class="content">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="box box-default">
-                            <div class="box-header with-border">
-                                <form method="post">
-                                    <button class="btn btn-default" type="submit" name="list_students">List of
-                                        Students</button>
-                                    <button class="btn btn-default" type="submit"
-                                        name="list_assignments">Assignments</button>
-                                    <button class="btn btn-default" type="submit" name="list_quiz">Quiz</button>
-                                    <button class="btn btn-default" type="submit" name="list_story">Story</button>
-                                    <button class="btn btn-default" type="submit"
-                                        name="list_intervention">Intervention</button>
-                                </form>
-                                <div class="box-tools pull-right">
-                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                            class="fa fa-minus"></i>
-                                    </button>
-                                </div>
+                <div class="col-xs-12">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <form method="post">
+                                <button class="btn btn-default" type="submit" name="list_students">List of
+                                    Students</button>
+                                <button class="btn btn-default" type="submit"
+                                    name="list_assignments">Assignments</button>
+                                <button class="btn btn-default" type="submit" name="list_quiz">Quiz</button>
+                                <button class="btn btn-default" type="submit" name="list_story">Story</button>
+                                <button class="btn btn-default" type="submit"
+                                    name="list_intervention">Intervention</button>
+                            </form>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                        class="fa fa-minus"></i>
+                                </button>
                             </div>
-                            <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
-                                <div class="table-responsive">
-                                    <?php
+                        </div>
+                        <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
+                            <div class="table-responsive">
+                                <?php
                                     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_students"])) {
                                         $_SESSION["show_results"] = !isset($_SESSION["show_results"]) || $_SESSION["show_results"] == false;
                                     }
@@ -328,10 +340,9 @@ function displayIntervention() {
                                         displayIntervention();
                                     }
                                 ?>
-                                </div>
                             </div>
-                            <br>
                         </div>
+                        <br>
                     </div>
                 </div>
             </section>
