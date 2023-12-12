@@ -61,6 +61,8 @@
                                                 // Fetch class names with class_status = 1
                                                 $classQuery = "SELECT class_name FROM tbl_class WHERE class_status = 1";
                                                 $classResult = mysqli_query($connection, $classQuery);
+                                                echo "<option value='all'>All</option>";
+                                                
                                                 while ($classRow = mysqli_fetch_assoc($classResult)) {
                                                     $className = $classRow['class_name'];
                                                     $selected = ($_GET['classFilter'] == $className) ? 'selected' : '';
