@@ -64,6 +64,7 @@
                                                 while ($classRow = mysqli_fetch_assoc($classResult)) {
                                                     $className = $classRow['class_name'];
                                                     $selected = ($_GET['classFilter'] == $className) ? 'selected' : '';
+                                                    echo "<option value='all'>All</option>";
                                                     echo "<option value='$className' $selected>$className</option>";
                                                 }
                                             ?>
