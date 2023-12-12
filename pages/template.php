@@ -17,6 +17,7 @@
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <!-- Header  -->
         <?php include_once("../CommonCode/header.php");?>
+        
         <div class="content-wrapper" style="min-height: 606.2px;">
             <!-- View quiz Data Modal -->
             <div class="container">

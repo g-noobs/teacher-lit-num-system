@@ -255,6 +255,7 @@ function displayIntervention() {
 
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <?php include_once("../CommonCode/header.php");?>
+        
         <div class="content-wrapper" style="min-height: 606.2px;">
             <section class="content-header">
                 <!-- Header name -->
