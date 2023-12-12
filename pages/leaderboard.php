@@ -47,10 +47,10 @@
                                         <label for="classFilter">Filter by Class:</label>
                                         <select name="classFilter" id="classFilter" onchange="this.form.submit()"
                                             class="form-control">
-                                            
-                                            <option value="all"
-                                                <?php echo ($_GET['classFilter'] == 'all') ? 'selected' : ''; ?>>All
-                                            </option>
+                                            <option value='all'>All</option>
+                                            <!-- <option value="all"
+                                                <?php //echo ($_GET['classFilter'] == 'all') ? 'selected' : ''; ?>>All
+                                            </option> -->
                                             <?php
                                                 include_once "../Database/Connection.php";
                                                 $conn = new Connection();
