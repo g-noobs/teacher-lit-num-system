@@ -3,7 +3,6 @@ session_start();
 
 function establishConnection() {
     include_once "../../Database/Connection.php";
-    $conn = new Connection();
     $connection = $conn->getConnection(); 
 
     if ($connection->connect_error) {
