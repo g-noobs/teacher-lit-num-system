@@ -395,7 +395,10 @@ if (!$connection) {
 
             </table>
         </div>
+        <?php include_once("../CommonCode/footer.php");?>
     </div>
+    <?php include_once("../bootstrap/jquery.php");?>
+    <?php include_once "../CommonScript/CommonAllScript.php";?>
 
     <script>
     function goBack() {
