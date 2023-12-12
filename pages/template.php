@@ -37,22 +37,6 @@
                             <div class="box box-default container">
                                 <br>
                                 <div class="box-header with-border">
-                                    <button id="add_qzui_btn" type="button" class="btn btn-primary"
-                                        data-toggle="tooltip" title="Add New Assignment">
-                                        <i class="glyphicon glyphicon-plus"></i></button>
-                                    </button>
-
-                                    <button id="archive_btn" type="button" class="btn btn-danger" data-toggle="tooltip"
-                                        title="Archive Assignment">
-                                        <i class="glyphicon glyphicon-trash"></i><span></span>
-                                    </button>
-                                    <div class="box-tools pull-right">
-                                        <div class="search-box" style="margin-right: 35px;">
-                                            <i class="fa fa-search"></i>
-                                            <input type="text" id="userInput" class="form-control"
-                                                placeholder="Search..">
-                                        </div>
-                                    </div>
                                     <div class="box-tools pull-right">
                                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
                                                 class="fa fa-minus"></i>
