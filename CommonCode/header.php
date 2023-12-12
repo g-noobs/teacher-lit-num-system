@@ -51,6 +51,8 @@ $conn = $connections->getConnection();
                     <li><a href="gradebook.php">Gradebook</a></li>
                     <li><a href="intervention_tickets.php">Intervention</a></li>
                     <li><a href="leaderboard.php">Leader Board</a></li>
+                    <li><a href="report.php">Reports</a></li>
+
                 </ul>
 
                 <!-- Search Bar
