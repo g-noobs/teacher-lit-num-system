@@ -147,7 +147,7 @@
                                                         <td>$totalCount</td>
                                                         <td><form action='student_record.php' method='GET'>
                                                             <input type='hidden' name='personal_id' value='$personalId'>
-                                                            <button type='submit'>Show more</button>
+                                                            <button type='submit' class='btn btn-primary'>Show more</button>
                                                             </form>
                                                         </td>
                                                     </tr>";
