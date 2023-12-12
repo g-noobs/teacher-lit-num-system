@@ -107,16 +107,17 @@ $result = mysqli_query($connection, $query);
                                             ?>
 
                                         </table>
+                                        <p><button onclick="goBack()">Go Back</button></p>
                                     </div>
                                 </div>
-                                <p><button onclick="goBack()">Go Back</button></p>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
-            <?php include_once("../CommonCode/footer.php");?>
         </div>
+        <?php include_once("../CommonCode/footer.php");?>
+    </div>
         <?php include_once("../bootstrap/jquery.php");?>
 
         <script>
