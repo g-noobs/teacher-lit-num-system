@@ -269,17 +269,17 @@ function displayIntervention() {
                     <div class="box box-default container">
                         <br>
                         <div class="box-header with-border">
+                            <form method="post">
+                                <button class="btn btn-default" type="submit" name="list_students">List of
+                                    Students</button>
+                                <button class="btn btn-default" type="submit"
+                                    name="list_assignments">Assignments</button>
+                                <button class="btn btn-default" type="submit" name="list_quiz">Quiz</button>
+                                <button class="btn btn-default" type="submit" name="list_story">Story</button>
+                                <button class="btn btn-default" type="submit"
+                                    name="list_intervention">Intervention</button>
+                            </form>
                             <div class="box-tools pull-right">
-                                <form method="post">
-                                    <button class="btn btn-default" type="submit" name="list_students">List of
-                                        Students</button>
-                                    <button class="btn btn-default" type="submit"
-                                        name="list_assignments">Assignments</button>
-                                    <button class="btn btn-default" type="submit" name="list_quiz">Quiz</button>
-                                    <button class="btn btn-default" type="submit" name="list_story">Story</button>
-                                    <button class="btn btn-default" type="submit"
-                                        name="list_intervention">Intervention</button>
-                                </form>
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
                                         class="fa fa-minus"></i>
                                 </button>
