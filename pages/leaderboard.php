@@ -47,6 +47,7 @@
                                         <label for="classFilter">Filter by Class:</label>
                                         <select name="classFilter" id="classFilter" onchange="this.form.submit()"
                                             class="form-control">
+                                            
                                             <option value="all"
                                                 <?php echo ($_GET['classFilter'] == 'all') ? 'selected' : ''; ?>>All
                                             </option>
@@ -71,7 +72,7 @@
                                                     WHERE status = 1
                                                     );";
                                                 $classResult = mysqli_query($connection, $classQuery);
-                                                echo "<option value='all'>All</option>";
+                                                
                                                 
                                                 while ($classRow = mysqli_fetch_assoc($classResult)) {
                                                     $className = $classRow['class_name'];
