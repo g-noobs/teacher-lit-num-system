@@ -60,7 +60,7 @@ function displayStudents() {
         echo '<h2>List of Student Table</h2>';
         echo '<table class="table table-bordered table-hover text-center">';
         echo '<thead><tr><th>Full Name</th><th>Gender</th><th>Class Name</th><th>School Year ID</th><th>Personal ID</th><th>Action</th></tr></thead>';
-        echo '<table>';
+        echo '<tbody>';
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $row["full_name"] . '</td>';
@@ -76,7 +76,7 @@ function displayStudents() {
             
             echo '</tr>';
         }
-        echo '</table>';
+        echo '</tbody>';
         echo '</table>';
     } else {
         echo "No results found";
