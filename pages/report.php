@@ -297,7 +297,7 @@ function displayIntervention() {
                                 </button>
                             </div>
                         </div>
-                        <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
+                        <div class="box-body" max-height: 400px;">
                             <div class="table-responsive">
                                 <?php
                                     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["list_students"])) {
