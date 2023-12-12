@@ -67,11 +67,8 @@
                 </section>
             </div>
         </div>
-        <?php 
-        include_once("../CommonCode/footer.php");
-        ?>
+        <?php include_once("../CommonCode/footer.php");?>
     </div>
-
     <?php include_once("../bootstrap/jquery.php");?>
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
