@@ -207,9 +207,9 @@ if (!$resultAssignments) {
                                                     }
                                             ?>
                                         </table>
-                                        <p><button onclick="goBack()">Go Back</button></p>
                                     </div>
                                 </div>
+                                <button onclick="goBack()" class="btn btn-default">Go Back</button>
                             </div>
                         </div>
                     </div>
