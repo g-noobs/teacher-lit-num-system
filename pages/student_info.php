@@ -13,8 +13,11 @@ if (!$connection) {
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Leadership Board & Badges</title>
+    
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <?php include_once("../bootstrap/style.php") ?>
+
     <style>
     body {
         font-family: 'Arial', sans-serif;
