@@ -14,7 +14,7 @@ if (!$connection) {
 <head>
     <meta charset="UTF-8">
     <title>Leadership Board & Badges</title>
-    
+
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <?php include_once("../bootstrap/style.php") ?>
 
@@ -84,25 +84,28 @@ if (!$connection) {
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <?php include_once("../CommonCode/header.php");?>
         <div class="content-wrapper" style="min-height: 606.2px;">
-            <?php
-                $personalId = $_GET['personal_id'];
+            <div class="container">
+                <section class="content-header">
+                    <!-- Header name -->
+                    <?php
+                        $personalId = $_GET['personal_id'];
 
-                // Fetch full name using personal_id as a reference
-                $fullNameQuery = "SELECT CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name FROM tbl_user_info WHERE personal_id = '$personalId'";
-                $fullNameResult = mysqli_query($connection, $fullNameQuery);
-                $fullNameRow = mysqli_fetch_assoc($fullNameResult);
-                $fullName = $fullNameRow['full_name'];
+                        // Fetch full name using personal_id as a reference
+                        $fullNameQuery = "SELECT CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name FROM tbl_user_info WHERE personal_id = '$personalId'";
+                        $fullNameResult = mysqli_query($connection, $fullNameQuery);
+                        $fullNameRow = mysqli_fetch_assoc($fullNameResult);
+                        $fullName = $fullNameRow['full_name'];
 
-            ?>
+                    ?>
 
-            <button class="back-button" type="submit" onclick="window.history.back()">Back</button>
+                    <button class="back-button" type="submit" onclick="window.history.back()">Back</button>
 
-            <button class="print-button" onclick="printContent()">Print</button>
+                    <button class="print-button" onclick="printContent()">Print</button>
+                    <h2><?php echo $fullName; ?>'s Progress</h2>
+                    <h2>Summary</h2>
+                </section>
+            </div>
 
-
-
-            <h2><?php echo $fullName; ?>'s Progress</h2>
-            <h2>Summary</h2>
             <table class="summary-table">
                 <tr>
                     <th>Quiz Score</th>
