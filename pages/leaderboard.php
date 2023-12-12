@@ -1,13 +1,3 @@
-<?php
-include_once "../../Database/Connection.php";
-$conn = new Connection();
-$connection = $conn->getConnection();
-
-if (!$connection) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-?>
-
 <!DOCTYPE html>
 <html style="height: auto; min-height: 100%;">
 
@@ -84,6 +74,13 @@ if (!$connection) {
                                                 <?php echo ($_GET['classFilter'] == 'all') ? 'selected' : ''; ?>>All
                                             </option>
                                             <?php
+                                                include_once "../Database/Connection.php";
+                                                $conn = new Connection();
+                                                $connection = $conn->getConnection();
+
+                                                if (!$connection) {
+                                                    die("Connection failed: " . mysqli_connect_error());
+                                                }
                                                 // Fetch class names with class_status = 1
                                                 $classQuery = "SELECT class_name FROM tbl_class WHERE class_status = 1";
                                                 $classResult = mysqli_query($connection, $classQuery);
