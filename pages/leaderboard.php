@@ -11,25 +11,6 @@
     <?php include_once("../bootstrap/style.php");?>
 
     <style>
-    .sub-leadership-board-container {
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .sub-leadership-board-container,
-    .sub-leadership-board-container th,
-    .sub-leadership-board-container td {
-        border: 1px solid black;
-    }
-
-    .sub-leadership-board-container th,
-    .sub-leadership-board-container td {
-        padding: 10px;
-        text-align: left;
-        cursor: pointer;
-    }
-
     .filter-form {
         margin-bottom: 20px;
     }
@@ -41,13 +22,9 @@
 
     <div class="wrapper" style="height: auto; min-height: 100%;">
         <!-- Header  -->
-        <?php 
-            include_once("../CommonCode/header.php");
-        ?>
+        <?php include_once("../CommonCode/header.php");?>
 
         <div class="content-wrapper" style="min-height: 606.2px;">
-
-
             <!-- View quiz Data Modal -->
             <div class="container">
                 <section class="content-header">
