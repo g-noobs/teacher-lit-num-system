@@ -20,15 +20,13 @@ function displayTable($headers, $data, $actionName, $hiddenFieldName) {
 
     if ($result->num_rows > 0) {
         echo '<table class="table table-bordered table-hover text-center">';
-        echo '<thead>';
+
         echo '<tr>';
         foreach ($headers as $header) {
             echo '<th>' . $header . '</th>';
         }
         echo '<th>Action</th>';
         echo '</tr>';
-        echo '</thead>';
-        echo '<tbody>';
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             foreach ($row as $key => $value) {
@@ -42,12 +40,10 @@ function displayTable($headers, $data, $actionName, $hiddenFieldName) {
                 </td>';
             echo '</tr>';
         }
-        echo '</tbody>';
         echo '</table>';
     } else {
         echo "No results found";
     }
-    
 
     $connection->close();
 }
