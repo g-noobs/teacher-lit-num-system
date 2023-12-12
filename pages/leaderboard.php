@@ -58,8 +58,18 @@
                                                 if (!$connection) {
                                                     die("Connection failed: " . mysqli_connect_error());
                                                 }
-                                                // Fetch class names with class_status = 1
-                                                $classQuery = "SELECT class_name FROM tbl_class WHERE class_status = 1";
+
+                                                $teacher_id = $_SESSION['id'];
+                                                $table = 'view_teacher_class_info';
+                                                $classQuery = "SELECT class_name FROM $table
+                                                WHERE user_info_id = '$teacher_id' 
+                                                AND class_assign_status = 1 
+                                                AND class_status = 1 
+                                                AND class_id IN (
+                                                    SELECT class_id
+                                                    FROM tbl_teacher_class_assignment
+                                                    WHERE status = 1
+                                                    );";
                                                 $classResult = mysqli_query($connection, $classQuery);
                                                 echo "<option value='all'>All</option>";
                                                 
