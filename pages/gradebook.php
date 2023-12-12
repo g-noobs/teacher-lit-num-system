@@ -33,7 +33,7 @@
 
             <section class="content-header">
                 <h1>
-                    Gradebook
+                    Enrolled Subjects
                     <small>Teacher Portal</small>
                 </h1>
             </section>
