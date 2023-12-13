@@ -109,12 +109,9 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         <td>$end_date</td>
                                                         <td>$attachment</td>";
                                             
-                                                    // Check if $filterClass is not '1' (Completed) to display the "Finished" button
-                                                    if ($filterClass != '1') {
                                                         echo "<td>";
                                                         echo "<button class='btn btn-default remove_inter_btn' data-id='{$row['intervention_id']}'>Finished</button>";
                                                         echo "</td>";
-                                                    }
                                             
                                                     
                                                 } elseif($filterClass == 2) {
