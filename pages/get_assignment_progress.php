@@ -89,9 +89,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['assignmentId']) && is
 }
 
 // Retrieve assignments
+session_start();
+$teacher_id = $_SESSION['id'];
 $queryAssignments = "SELECT a.assignment_id, a.assignment_name, a.question, lap.score AS score, COALESCE(lap.assignment_answer, 'Not Taken') AS assignment_answer FROM tbl_assignment a 
                     LEFT JOIN tbl_learner_assignment_progress lap ON a.assignment_id COLLATE utf8mb4_unicode_ci = lap.assignment_id COLLATE utf8mb4_unicode_ci
-                    AND lap.learner_id COLLATE utf8mb4_unicode_ci = '{$userInfo['personal_id']}' WHERE a.status = 1";
+                    AND lap.learner_id COLLATE utf8mb4_unicode_ci = '{$userInfo['personal_id']}' WHERE a.status = 1 AND a.created_by = '$teacher_id'";
 
 $resultAssignments = mysqli_query($connection, $queryAssignments);
 
