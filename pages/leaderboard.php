@@ -117,8 +117,7 @@
                                             $userInfoQuery.= " AND tbl_class.class_id IN (
                                                 SELECT class_id
                                                 FROM tbl_teacher_class_assignment
-                                                WHERE status = 1
-                                                ) ";
+                                                WHERE status = 1) ";
                                             if ($filterClass !== 'all') {
                                                 $userInfoQuery .= " AND tbl_class.class_name = '$filterClass'";
                                             }
