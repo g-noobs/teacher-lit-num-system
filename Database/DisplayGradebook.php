@@ -44,8 +44,8 @@ class DisplayGradebook extends Connection{
             $topicsTakenQuery = "SELECT COUNT(DISTINCT lsp.story_id) AS total_topics FROM tbl_learner_story_progress lsp
                     JOIN tbl_topic t ON lsp.story_id = t.topic_id
                     WHERE lsp.learner_id = '$learnerId' AND t.topic_status = 1";
+
             $topicsTakenResult = mysqli_query($connection, $topicsTakenQuery);
-            $topicsTakenRow = mysqli_fetch_assoc($topicsTakenResult);
             $totalTopicsTaken = mysqli_fetch_assoc($topicsTakenResult)['total_topics'];
             // mao ni ang query for the overall total result sa stories sa database
             $totalTopicsQuery = "SELECT COUNT(DISTINCT topic_id) AS total_topics FROM tbl_topic WHERE topic_status = 1";
