@@ -41,10 +41,12 @@ class DisplayGradebook extends Connection{
         while ($row = mysqli_fetch_assoc($result)) {
             // mao ni ang query for the result of total story taken by student
             $learnerId = $row['personal_id'];
-            $topicsTakenQuery = "SELECT COUNT(DISTINCT story_id) AS total_topics FROM tbl_learner_story_progress WHERE learner_id = '$learnerId'";
+            $topicsTakenQuery = "SELECT COUNT(DISTINCT lsp.story_id) AS total_topics FROM tbl_learner_story_progress lsp
+                    JOIN tbl_topic t ON lsp.story_id = t.topic_id
+                    WHERE lsp.learner_id = '$learnerId' AND t.topic_status = 1";
             $topicsTakenResult = mysqli_query($connection, $topicsTakenQuery);
             $topicsTakenRow = mysqli_fetch_assoc($topicsTakenResult);
-            $totalTopicsTaken = $topicsTakenRow['total_topics'];
+            $totalTopicsTaken = mysqli_fetch_assoc($topicsTakenResult)['total_topics'];
             // mao ni ang query for the overall total result sa stories sa database
             $totalTopicsQuery = "SELECT COUNT(DISTINCT topic_id) AS total_topics FROM tbl_topic WHERE topic_status = 1";
             $totalTopicsResult = mysqli_query($connection, $totalTopicsQuery);
