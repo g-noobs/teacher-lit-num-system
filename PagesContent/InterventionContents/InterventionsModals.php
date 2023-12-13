@@ -62,12 +62,12 @@
 
                     <div class="form-group">
                         <label for="startDate">Start Date:</label>
-                        <input type="date" name="startDate" id="startDate" class="form-control">
+                        <input type="date" name="startDate" id="startDate" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="endDate">End Date:</label>
-                        <input type="date" name="endDate" id="endDate" class="form-control">
+                        <input type="date" name="endDate" id="endDate" class="form-control" required>
                     </div>
 
                     <div class="form-group">
