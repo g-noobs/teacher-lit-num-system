@@ -72,7 +72,7 @@ class DisplayGradebook extends Connection{
             $assignmentTakenRow = mysqli_fetch_assoc($assignmentTakenResult);
             $totalAssignmentTaken = $assignmentTakenRow['total_assignment'];
             // mao ni ang query for the overall total result sa assignments sa database
-            $totalAssignmentQuery = "SELECT COUNT(DISTINCT assignment_id) AS total_assignment FROM tbl_assignment";
+            $totalAssignmentQuery = "SELECT COUNT(DISTINCT assignment_id) AS total_assignment FROM tbl_assignment WHERE status  = 1 AND created_by = '$teacher_id'";
             $totalAssignmentResult = mysqli_query($connection, $totalAssignmentQuery);
             $totalAssignmentRow = mysqli_fetch_assoc($totalAssignmentResult);
             $totalAssignment = $totalAssignmentRow['total_assignment'];
