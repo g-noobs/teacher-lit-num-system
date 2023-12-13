@@ -27,8 +27,27 @@ $userInfo = mysqli_fetch_assoc($resultUserInfo);
 session_start();
 $teacher_id = $_SESSION['id'];
 // Query to fetch quiz progress information for the selected student
-$query = "SELECT q.quiz_id, q.quiz_question, COALESCE(lqp.score, 'Not Taken') AS quiz_score FROM tbl_quiz q
-        LEFT JOIN tbl_learner_quiz_progress lqp ON q.quiz_id = lqp.quiz_id AND lqp.learner_id = '{$userInfo['personal_id']}' WHERE q.quiz_status = 1 AND added_byID = '$teacher_id'";
+// $query = "SELECT q.quiz_id, q.quiz_question, COALESCE(lqp.score, 'Not Taken') AS quiz_score FROM tbl_quiz q
+//         LEFT JOIN tbl_learner_quiz_progress lqp ON q.quiz_id = lqp.quiz_id AND lqp.learner_id = '{$userInfo['personal_id']}' WHERE q.quiz_status = 1 AND added_byID = '$teacher_id'";
+
+$query = "SELECT quiz_id, quiz_question, COALESCE(quiz_score, 'Not Taken') AS quiz_score
+FROM (
+    SELECT
+        q.quiz_id,
+        q.quiz_question,
+        COALESCE(lqp.score, 'Not Taken') AS quiz_score,
+        ROW_NUMBER() OVER (PARTITION BY q.quiz_id ORDER BY lqp.score DESC NULLS LAST) AS row_num
+    FROM
+        tbl_quiz q
+        LEFT JOIN tbl_learner_quiz_progress lqp ON q.quiz_id = lqp.quiz_id
+        AND lqp.learner_id = '{$userInfo['personal_id']}'
+    WHERE
+        q.quiz_status = 1
+        AND added_byID = '$teacher_id'
+) AS ranked
+WHERE
+    row_num = 1;
+";
 
 $result = mysqli_query($connection, $query);
 
