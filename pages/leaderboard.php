@@ -12,10 +12,6 @@
     <!-- jQuery UI 1.11.4 -->
     <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js">
-    </script>
-
 
     <?php include_once("../bootstrap/style.php");?>
 
@@ -97,7 +93,7 @@
                             <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                                 <div class="table-responsive">
                                     <table
-                                        class="sub-leadership-board-container table table-bordered table-hover text-center" id=lboard_table">
+                                        class="sub-leadership-board-container table table-bordered table-hover text-center">
                                         <tr>
                                             <th onclick="sortTable(0)">Name</th>
                                             <th onclick="sortTable(1)">Class Section</th>
@@ -111,55 +107,56 @@
                                         <?php
                                             // Fetch user information along with the total story count
                                             $filterClass = isset($_GET['classFilter']) ? $_GET['classFilter'] : 'all';
-                                            $userInfoQuery = "SELECT CONCAT(UPPER(last_name), ', ' , first_name, ' ', middle_name) AS full_name, CONCAT(UPPER(SUBSTRING(class_name, 1, 1)), LOWER(SUBSTRING(class_name, 2))) AS class_name, personal_id
-                                                            FROM tbl_user_info 
-                                                            JOIN tbl_class ON tbl_user_info.class_id = tbl_class.class_id
-                                                            WHERE tbl_user_info.status_id = 1 AND tbl_user_info.user_level_id = 2";
-                                            
-                                            if ($filterClass !== 'all') {
-                                                $userInfoQuery .= " AND tbl_class.class_name = '$filterClass'";
-                                            }
-                                            
-                                            $userInfoQuery .= " GROUP BY tbl_user_info.user_info_id ORDER BY tbl_class.class_name, tbl_user_info.last_name";
-                                            
-                                            $userInfoResult = mysqli_query($connection, $userInfoQuery);
-                                            
-                                            while ($row = mysqli_fetch_assoc($userInfoResult)) {
-                                                $fullName = $row['full_name'];
-                                                $className = $row['class_name'];
-                                                $personalId = $row['personal_id'];
-                                            
-                                                $totalStoryPointsQuery = "SELECT COUNT(DISTINCT story_id) AS total_story_points FROM tbl_learner_story_progress WHERE learner_id = '$personalId' AND date_completed != 0000-00-00";
-                                                $totalStoryPointsResult = mysqli_query($connection, $totalStoryPointsQuery);
-                                                $story_progress = mysqli_fetch_assoc($totalStoryPointsResult);
-                                                $storyCount = $story_progress['total_story_points'];
-                                                
-                                                // Fetch count of unique quiz_id from tbl_learner_quiz_progress
-                                                $quizCountQuery = "SELECT COUNT(DISTINCT lqp.quiz_id) AS quiz_count FROM tbl_learner_quiz_progress lqp WHERE lqp.learner_id = '$personalId'";
-                                                $quizCountResult = mysqli_query($connection, $quizCountQuery);
-                                                $quizCountRow = mysqli_fetch_assoc($quizCountResult);
-                                                $quizCount = $quizCountRow['quiz_count'];
+    $userInfoQuery = "SELECT CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name, class_name, 
+                            COUNT(DISTINCT lsp.story_id) AS story_count, personal_id
+                      FROM tbl_user_info 
+                      JOIN tbl_class ON tbl_user_info.class_id = tbl_class.class_id
+                      LEFT JOIN tbl_learner_story_progress lsp ON tbl_user_info.personal_id = lsp.learner_id
+                      WHERE tbl_user_info.status_id = 1 AND tbl_user_info.user_level_id = 2";
+    
+    if ($filterClass !== 'all') {
+        $userInfoQuery .= " AND tbl_class.class_name = '$filterClass'";
+    }
+    
+    $userInfoQuery .= " GROUP BY tbl_user_info.user_info_id";
+    $userInfoQuery .= " ORDER BY (COUNT(DISTINCT lsp.story_id) + 
+                                   (SELECT COUNT(DISTINCT lqp.quiz_id) FROM tbl_learner_quiz_progress lqp WHERE lqp.learner_id = tbl_user_info.personal_id) + 
+                                   (SELECT COUNT(DISTINCT lap.assignment_id) FROM tbl_learner_assignment_progress lap WHERE lap.learner_id = tbl_user_info.personal_id)) DESC";
+    $userInfoResult = mysqli_query($connection, $userInfoQuery);
+   
+    while ($row = mysqli_fetch_assoc($userInfoResult)) {
+        $fullName = $row['full_name'];
+        $className = $row['class_name'];
+        $personalId = $row['personal_id'];
 
-                                                // Fetch count of unique assignment_id from tbl_learner_assignment_progress
-                                                $assignmentCountQuery = "SELECT COUNT(DISTINCT lap.assignment_id) AS assignment_count FROM tbl_learner_assignment_progress lap WHERE lap.learner_id = '$personalId' AND date_taken != NULL";
-                                                $assignmentCountResult = mysqli_query($connection, $assignmentCountQuery);
-                                                $assignmentCountRow = mysqli_fetch_assoc($assignmentCountResult);
-                                                $assignmentCount = $assignmentCountRow['assignment_count'];
-                                                
-                                                echo "<tr>
-                                                        <td>$fullName</td>
-                                                        <td>$className</td>
-                                                        <td>$quizCount</td>
-                                                        <td>$storyCount</td>
-                                                        <td>$assignmentCount</td>
-                                                        <td>$totalCount</td>
-                                                        <td><form action='student_info.php' method='GET'>
-                                                            <input type='hidden' name='personal_id' value='$personalId'>
-                                                            <button type='submit' class='btn btn-primary'>Show more</button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>";
-                                            }
+        // Fetch count of unique quiz_id from tbl_learner_quiz_progress
+        $quizCountQuery = "SELECT COUNT(DISTINCT lqp.quiz_id) AS quiz_count FROM tbl_learner_quiz_progress lqp WHERE lqp.learner_id = '$personalId'";
+        $quizCountResult = mysqli_query($connection, $quizCountQuery);
+        $quizCountRow = mysqli_fetch_assoc($quizCountResult);
+        $quizCount = $quizCountRow['quiz_count'];
+
+        // Fetch count of unique assignment_id from tbl_learner_assignment_progress
+        $assignmentCountQuery = "SELECT COUNT(DISTINCT lap.assignment_id) AS assignment_count FROM tbl_learner_assignment_progress lap WHERE lap.learner_id = '$personalId'";
+        $assignmentCountResult = mysqli_query($connection, $assignmentCountQuery);
+        $assignmentCountRow = mysqli_fetch_assoc($assignmentCountResult);
+        $assignmentCount = $assignmentCountRow['assignment_count'];
+
+        $totalCount = $assignmentCount + $quizCount + $row['story_count'];
+
+        echo "<tr>
+                <td>$fullName</td>
+                <td>$className</td>
+                <td>$quizCount</td>
+                <td>{$row['story_count']}</td>
+                <td>$assignmentCount</td>
+                <td>$totalCount</td>
+                <td><form action='moar.php' method='GET'>
+                      <input type='hidden' name='personal_id' value='$personalId'>
+                      <button type='submit'>Show more</button>
+                    </form>
+                </td>
+              </tr>";
+    }
                                             mysqli_close($connection);
                                         ?>
                                     </table>
@@ -226,16 +223,6 @@
             }
         }
     }
-    </script>
-    <script>
-    $(document).ready(function() {
-        // Initialize DataTables with sorting based on the 5th column (index 4)
-        $('#lboard_table').DataTable({
-            "order": [
-                [5, "desc"]
-            ] // Sort by the 5th column in descending order
-        });
-    });
     </script>
 
 </body>
