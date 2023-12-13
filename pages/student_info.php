@@ -428,7 +428,7 @@ if (!$connection) {
         });
 
         document.dispatchEvent(ctrlPEvent);
-
+        printContent();
     }
     </script>
 </body>
