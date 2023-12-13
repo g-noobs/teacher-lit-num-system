@@ -59,9 +59,9 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                         <label for="classFilter">Filter by Class:</label>
                                         <select name="status" id="status" onchange="this.form.submit()"
                                             class="form-control">
-                                            <option value="0" <?php echo ($filterClass == '0') ? 'selected' : ''; ?>>On
+                                            <option value="1" <?php echo ($filterClass == '1') ? 'selected' : ''; ?>>On
                                                 Going</option>
-                                            <option value="1" <?php echo ($filterClass == '1') ? 'selected' : '1'; ?>>
+                                            <option value="2" <?php echo ($filterClass == '2') ? 'selected' : '2'; ?>>
                                                 Completed</option>
                                         </select>
                                     </div>
@@ -117,7 +117,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                     }
                                             
                                                     
-                                                } else {
+                                                } elseif($filterClass == 2) {
                                                     echo "<td>$fullName</td>
                                                         <td>$comment</td>
                                                         <td>$start_date</td>
