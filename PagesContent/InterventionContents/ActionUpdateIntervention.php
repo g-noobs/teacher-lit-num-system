@@ -19,5 +19,18 @@ if(!empty($id) || !empty($status)){
     $params = array($link, $status, $id);
     $updateIntervention = new SanitizeCrudClass();
     $updateIntervention->executePreState($sql, $params);
+    if($updateIntervention->getLastError() === null){
+        $response = array('success' => 'Successfully set to ' .$link);
+        echo json_encode($response);
+        exit();
+    }else{
+        $response = array('error' => 'Error updating to ' .$link);
+        echo json_encode($response);
+        exit();
+    }
+}else{
+    $response = array('error' => 'Error updating to ' .$link. ' .One of the Data is empty!');
+    echo json_encode($response);
+    exit();
 }
 ?>
