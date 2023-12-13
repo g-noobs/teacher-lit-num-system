@@ -25,6 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($comment === false) {
         $errors[] = 'Invalid Comment';
     }
+    if($values['start_date'] === null || $values['end_date'] === null){
+        $errors[] = 'One of the dates is empty';
+    }
     if (!empty($errors)) {
         echo json_encode($errors);
         exit();
