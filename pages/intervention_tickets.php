@@ -114,7 +114,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         echo '<div class="form-control">
                                                                 <select name="status_update" id="status_update">
                                                                     <option value="1">Pending</option>
-                                                                    <option value="2">Completed</option>
+                                                                    <option value="2">Finish</option>
                                                                     <option value="3">Remove</option>
                                                                 </select>
                                                                 </div>';
