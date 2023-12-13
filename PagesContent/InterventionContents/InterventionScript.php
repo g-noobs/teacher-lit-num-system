@@ -7,7 +7,8 @@ $(function() {
 
         // Get the intervention_id from the data-id attribute
         var interventionId = $(this).data('id');
-        var actionUrl = '';
+        var actionUrl = '../PagesContent/InterventionContents/ActionAddIntervention.php';
+
 
         console.log("Received value: " + selectedValue + " Received intervention ID: " +
             interventionId);
