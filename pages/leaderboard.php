@@ -108,11 +108,12 @@
                                             // Fetch user information along with the total story count
                                             $filterClass = isset($_GET['classFilter']) ? $_GET['classFilter'] : 'all';
                                             $userInfoQuery = "SELECT CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name, class_name, 
-                                                                    COUNT(DISTINCT lsp.story_id) AS story_count, personal_id
-                                                            FROM tbl_user_info 
-                                                            JOIN tbl_class ON tbl_user_info.class_id = tbl_class.class_id
-                                                            LEFT JOIN tbl_learner_story_progress lsp ON tbl_user_info.personal_id = lsp.learner_id
-                                                            WHERE tbl_user_info.status_id = 1 AND tbl_user_info.user_level_id = 2";
+                            COUNT(DISTINCT CASE WHEN tp.topic_status = 1 THEN lsp.story_id END) AS story_count, personal_id
+                      FROM tbl_user_info 
+                      JOIN tbl_class ON tbl_user_info.class_id = tbl_class.class_id
+                      LEFT JOIN tbl_learner_story_progress lsp ON tbl_user_info.personal_id = lsp.learner_id
+                      LEFT JOIN tbl_topic tp ON lsp.story_id = tp.topic_id
+                      WHERE tbl_user_info.status_id = 1 AND tbl_user_info.user_level_id = 2";
                                             
                                             if ($filterClass !== 'all') {
                                                 $userInfoQuery .= " AND tbl_class.class_name = '$filterClass'";
