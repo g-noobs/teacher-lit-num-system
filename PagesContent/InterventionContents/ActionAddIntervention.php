@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($comment === false) {
         $errors[] = 'Invalid Comment';
     }
-    $startDate = $values['start_date'];
-    $endDate = $values['end_date'];
-    
+    $startDate = $values['start_date'] ?? null;
+    $endDate = $values['end_date'] ?? null;
+
     if ($startDate === null || $startDate === '0000-00-00') {
         echo "Start Date is empty or invalid.";
     }
