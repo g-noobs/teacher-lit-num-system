@@ -58,7 +58,6 @@
     <?php include_once "../CommonScript/CommonAllScript.php";?>
 
     <!-- add to intervention script -->
-    <?php include_once "../PagesContent/GradeBookContent/GradebookScripts/AddToInterventionScript.php"?>
 
 
     <script>
