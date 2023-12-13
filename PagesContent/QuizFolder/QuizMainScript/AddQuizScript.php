@@ -41,6 +41,7 @@ $(function() {
                         if (response.hasOwnProperty('success')) {
                             var msg = response.success;
                             $('#successAlert').text(msg);
+                            $modal.modal('hide');
                             $('#successBanner').show();
                             setTimeout(function() {
                                 $("#successBanner").fadeOut("slow");
@@ -49,6 +50,7 @@ $(function() {
                         } else if (response.hasOwnProperty('error')) {
                             var msg = response.error;
                             $('#errorAlert').text(msg);
+                            $modal.modal('hide');
                             $('#errorBanner').show();
                             setTimeout(function() {
                                 $("#errorBanner").fadeOut("slow");
@@ -59,7 +61,7 @@ $(function() {
                 },
                 error: function() {
                     $("#addQuizForm")[0].reset();
-                    $hideModal.modal('hide');
+                    $modal.modal('hide');
                     //show alert banner id = errorBanner
                     $('#errorAlert').text(
                         'An error occurred during the AJAX request.');
