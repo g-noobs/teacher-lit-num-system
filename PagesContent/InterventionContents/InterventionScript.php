@@ -1,6 +1,6 @@
 <script>
 $(function() {
-    $(document).on('change', '#status_update', function(e){
+    $(document).on('change', '.status_update', function(e){
         e.preventDefault();
          // Get the selected value
         var selectedValue = $(this).val();

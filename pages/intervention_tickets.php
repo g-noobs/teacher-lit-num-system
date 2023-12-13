@@ -110,7 +110,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         <td>$attachment</td>";
                                             
                                                         echo "<td>";
-                                                        echo "<select name='status_update' id='status_update' class='form-control' data-id='{$row['intervention_id']}'>
+                                                        echo "<select name='status_update' class='form-control status_update' data-id='{$row['intervention_id']}'>
                                                                     <option value='1'>Pending</option>
                                                                     <option value='2'>Finish</option>
                                                                     <option value='3'>Remove</option>
