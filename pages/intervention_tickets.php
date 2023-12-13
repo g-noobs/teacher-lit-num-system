@@ -102,7 +102,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                             
                                                 echo "<tr>";
 
-                                                if ($filterClass == 1 || $filterClass !== '') {
+                                                if ($filterClass == 1) {
                                                     echo "<td>$fullName</td>
                                                         <td>$comment</td>
                                                         <td>$start_date</td>
