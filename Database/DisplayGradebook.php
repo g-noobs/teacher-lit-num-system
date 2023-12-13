@@ -21,25 +21,25 @@ class DisplayGradebook extends Connection{
         mysqli_query($connection, $notTakenYetQuery);
 
         // Query to fetch user information including class_id and class_name
+        $teacher_id = $_SESSION['id'];
         $query = "SELECT 
-            ui.user_info_id,
-            ui.personal_id,
-            ui.first_name,
-            ui.last_name,
-            ui.gender,
-            ui.class_id,
-            cls.class_name
-        FROM 
-            tbl_user_info ui
-        LEFT JOIN
-            tbl_class cls ON ui.class_id = cls.class_id
-        WHERE 
-            ui.user_level_id = 2
+                ui.user_info_id,
+                ui.personal_id,
+                ui.first_name,
+                ui.last_name,
+                ui.gender,
+                ui.class_id,
+                cls.class_name
+            FROM 
+                tbl_user_info ui
+            LEFT JOIN
+                tbl_class cls ON ui.class_id = cls.class_id
+            WHERE 
+                ui.user_level_id = 2
             AND class_id IN (
-                SELECT class_id
-                FROM tbl_teacher_class_assignment
-                WHERE status = 1
-            );";
+                    SELECT class_id
+                    FROM tbl_teacher_class_assignment
+                    WHERE status = 1 AND user_info_id = '$teacher_id')";
 
         $result = mysqli_query($connection, $query);
         while ($row = mysqli_fetch_assoc($result)) {
