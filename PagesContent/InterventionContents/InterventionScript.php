@@ -3,7 +3,7 @@ $(function() {
     $(document).on('change', '#status_update', function(e){
         e.preventDefault();
          // Get the selected value
-        var selectedValue = $(this).val().text();
+        var selectedValue = $(this).val();
 
         // Get the intervention_id from the data-id attribute
         var interventionId = $(this).data('id');
