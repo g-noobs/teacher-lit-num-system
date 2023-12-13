@@ -24,7 +24,7 @@ if (!$resultUserInfo) {
 $userInfo = mysqli_fetch_assoc($resultUserInfo);
 
 // Query to fetch all topic_id values with topic_status = 1 for the selected student
-$teacher_id = $_SESSION['user_id'];
+$teacher_id = $_SESSION['id'];
 $query = "SELECT tp.topic_id, tp.topic_name, COALESCE(CONCAT('Completed on ', DATE_FORMAT(lsp.date_completed, '%Y-%m-%d')), 'Not Yet Taken') AS progress_status FROM tbl_topic tp
           LEFT JOIN tbl_learner_story_progress lsp ON tp.topic_id = lsp.story_id AND lsp.learner_id = '{$userInfo['personal_id']}' WHERE tp.topic_status = 1 AND tp.added_byID = '$teacher_id'";  
 
