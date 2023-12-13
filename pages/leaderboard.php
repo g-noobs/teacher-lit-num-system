@@ -118,6 +118,7 @@
                                             
                                             $userInfoQuery .= " GROUP BY tbl_user_info.user_info_id ORDER BY tbl_class.class_name, tbl_user_info.last_name";
                                             $userInfoQuery .= " ORDER BY $totalCount DESC";
+                                            
                                             $userInfoResult = mysqli_query($connection, $userInfoQuery);
                                             
                                             while ($row = mysqli_fetch_assoc($userInfoResult)) {
@@ -141,8 +142,6 @@
                                                 $assignmentCountResult = mysqli_query($connection, $assignmentCountQuery);
                                                 $assignmentCountRow = mysqli_fetch_assoc($assignmentCountResult);
                                                 $assignmentCount = $assignmentCountRow['assignment_count'];
-
-                                                $totalCount = $storyCount + $quizCount + $assignmentCount;
                                                 
                                                 echo "<tr>
                                                         <td>$fullName</td>
