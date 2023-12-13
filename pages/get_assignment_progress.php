@@ -15,7 +15,7 @@ $teacher_id = $_SESSION['id'];
 $queryUserInfo = "SELECT ui.first_name, ui.last_name, ui.personal_id FROM tbl_user_info ui WHERE ui.user_info_id = '$userId' AND ui.class_id IN (
     SELECT class_id
     FROM tbl_teacher_class_assignment
-    WHERE status = 1";
+    WHERE status = 1)";
 
 $resultUserInfo = mysqli_query($connection, $queryUserInfo);
 
