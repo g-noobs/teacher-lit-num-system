@@ -57,7 +57,7 @@ class DisplayGradebook extends Connection{
             $totalTopicsRow = mysqli_fetch_assoc($totalTopicsResult);
             $totalTopics = $totalTopicsRow['total_topics'];
             // mao ni ang query for the result of total quiz taken by student
-            $quizTakenQuery = "SELECT learner_id, COUNT(DISTINCT quiz_id) AS total_quizzes FROM tbl_learner_quiz_progress WHERE learner_id = '$learnerId' AND quiz_id IN (SELECT quiz_id FROM tbl_quiz WHERE quiz_status = 1)";
+            $quizTakenQuery = "SELECT learner_id, COUNT(DISTINCT quiz_id) AS total_quizzes FROM tbl_learner_quiz_progress WHERE learner_id = '$learnerId' AND quiz_id IN (SELECT quiz_id FROM tbl_quiz WHERE quiz_status = 1 AND added_byID = '$teacher_id')";
             $quizTakenResult = mysqli_query($connection, $quizTakenQuery);
             $quizTakenRow = mysqli_fetch_assoc($quizTakenResult);
             $totalQuizTaken = $quizTakenRow['total_quizzes'];
