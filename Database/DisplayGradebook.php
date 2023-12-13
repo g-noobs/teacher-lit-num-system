@@ -62,7 +62,7 @@ class DisplayGradebook extends Connection{
             $quizTakenRow = mysqli_fetch_assoc($quizTakenResult);
             $totalQuizTaken = $quizTakenRow['total_quizzes'];
             // mao ni ang query for the overall total result sa quizzes sa database
-            $totalQuizQuery = "SELECT COUNT(DISTINCT quiz_id) AS total_quizzes FROM tbl_quiz WHERE quiz_status = 1";
+            $totalQuizQuery = "SELECT COUNT(DISTINCT quiz_id) AS total_quizzes FROM tbl_quiz WHERE quiz_status = 1 AND added_byID = '$teacher_id'";
             $totalQuizResult = mysqli_query($connection, $totalQuizQuery);
             $totalQuizRow = mysqli_fetch_assoc($totalQuizResult);
             $totalQuiz = $totalQuizRow['total_quizzes'];
