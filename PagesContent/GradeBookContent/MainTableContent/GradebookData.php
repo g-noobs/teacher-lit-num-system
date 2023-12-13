@@ -117,7 +117,6 @@ td {
                                 <th class="learnerProgress">Lesson Progress</th>
                                 <th class="quizProgress">Quiz Progress</th>
                                 <th class="assignmentProgress">Assignment Progress</th>
-                                <th>Admit For Intervention</th>
                             </tr>
                         </thead>
                         <tbody>
