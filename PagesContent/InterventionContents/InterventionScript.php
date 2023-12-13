@@ -7,7 +7,7 @@ $(function() {
 
         // Get the intervention_id from the data-id attribute
         var interventionId = $(this).data('id');
-        var actionUrl = '../PagesContent/InterventionContents/ActionAddIntervention.php';
+        var actionUrl = '../PagesContent/InterventionContents/ActionUpdateIntervention.php';
 
 
         console.log("Received value: " + selectedValue + " Received intervention ID: " +
@@ -32,10 +32,10 @@ $(function() {
                 } else if (response.hasOwnProperty('error')) {
                     $('#errorAlert').text(response.error);
                     $('#errorBanner').show();
-                    setTimeout(function() {
-                        $("#errorBanner").fadeOut("slow");
-                        location.reload();
-                    }, 5500);
+                    // setTimeout(function() {
+                    //     $("#errorBanner").fadeOut("slow");
+                    //     location.reload();
+                    // }, 5500);
                 }
             },
             error: function(xhr, status, error) {
@@ -43,10 +43,10 @@ $(function() {
                 //show alert banner id = errorBanner
                 $('#errorAlert').text('An error occurred during the AJAX request.');
                 $('#errorBanner').show();
-                setTimeout(function() {
-                    $("#errorBanner").fadeOut("slow");
-                    location.reload();
-                }, 1500);
+                // setTimeout(function() {
+                //     $("#errorBanner").fadeOut("slow");
+                //     location.reload();
+                // }, 1500);
             }
         });
     });
