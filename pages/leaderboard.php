@@ -113,7 +113,7 @@
                                             JOIN tbl_class ON tbl_user_info.class_id = tbl_class.class_id
                                             LEFT JOIN tbl_learner_story_progress lsp ON tbl_user_info.personal_id = lsp.learner_id
                                             LEFT JOIN tbl_topic tp ON lsp.story_id = tp.topic_id
-                                            WHERE tbl_user_info.class_id IN (
+                                            WHERE tbl_class.class_id IN (
                                                     SELECT class_id
                                                     FROM tbl_teacher_class_assignment
                                                     WHERE status = 1
