@@ -7,6 +7,11 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <title>Leadership Board & Badges</title>
+    <!-- jQuery 3 -->
+    <script src="../design/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
+
 
     <?php include_once("../bootstrap/style.php");?>
 
@@ -87,7 +92,8 @@
                             <!-- /.box-header -->
                             <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                                 <div class="table-responsive">
-                                    <table class="sub-leadership-board-container table table-bordered table-hover text-center">
+                                    <table
+                                        class="sub-leadership-board-container table table-bordered table-hover text-center">
                                         <tr>
                                             <th onclick="sortTable(0)">Name</th>
                                             <th onclick="sortTable(1)">Class Section</th>
