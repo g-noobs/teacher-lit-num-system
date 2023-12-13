@@ -49,7 +49,7 @@ $conn = $connections->getConnection();
                         </ul>
                     </li>
                     <li><a href="gradebook.php">Enrolled</a></li>
-                    <li><a href="intervention_tickets.php">Intervention</a></li>
+                    <li><a href="intervention_tickets.php?status=1">Intervention</a></li>
                     <li><a href="leaderboard.php">LEADERBOARD</a></li>
                     <li><a href="report.php">Reports</a></li>
 
