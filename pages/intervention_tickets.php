@@ -65,7 +65,8 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                 Completed</option>
                                         </select>
                                     </div>
-                                    <button id='intervention_admit_btn' type='button' class='btn btn-danger pull-right'><i class="fa fa-plus"></i>Intevention</button>
+                                    <button id='intervention_admit_btn' type='button'
+                                        class='btn btn-danger pull-right'><i class="fa fa-plus"></i>Intevention</button>
                                 </form>
                             </div>
                             <!-- /.box-header -->
@@ -126,8 +127,8 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         <td>$attachment</td>";
                                                         echo "<td>";
                                                         echo "<select name='status_update' class='form-control status_update' data-id='{$row['intervention_id']}'>
-                                                                    <option value='1'>Pending</option>
                                                                     <option value='2'>Completed</option>
+                                                                    <option value='1'>Pending</option>
                                                                 </select>";
                                                         echo "</td>";
                                                 }
@@ -147,7 +148,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
         <?php 
         include_once("../CommonCode/footer.php");
         ?>
-        
+
     </div>
     <script>
     function sortTable(columnIndex) {
