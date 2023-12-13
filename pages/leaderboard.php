@@ -12,6 +12,10 @@
     <!-- jQuery UI 1.11.4 -->
     <script src="../design/bower_components/jquery-ui/jquery-ui.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js">
+    </script>
+
 
     <?php include_once("../bootstrap/style.php");?>
 
@@ -93,7 +97,7 @@
                             <div class="box-body" style="overflow-y: scroll; max-height: 400px;">
                                 <div class="table-responsive">
                                     <table
-                                        class="sub-leadership-board-container table table-bordered table-hover text-center">
+                                        class="sub-leadership-board-container table table-bordered table-hover text-center" id=lboard_table">
                                         <tr>
                                             <th onclick="sortTable(0)">Name</th>
                                             <th onclick="sortTable(1)">Class Section</th>
@@ -223,6 +227,16 @@
             }
         }
     }
+    </script>
+    <script>
+    $(document).ready(function() {
+        // Initialize DataTables with sorting based on the 5th column (index 4)
+        $('#lboard_table').DataTable({
+            "order": [
+                [4, "desc"]
+            ] // Sort by the 5th column in descending order
+        });
+    });
     </script>
 
 </body>
