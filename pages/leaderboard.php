@@ -154,7 +154,7 @@
                                                         <td>{$row['story_count']}</td>
                                                         <td>$assignmentCount</td>
                                                         <td>$totalCount</td>
-                                                        <td><form action='moar.php' method='GET'>
+                                                        <td><form action='student_info.php' method='GET'>
                                                             <input type='hidden' name='personal_id' value='$personalId'>
                                                             <button type='submit' class='btn btn-default'>Show more</button>
                                                             </form>
