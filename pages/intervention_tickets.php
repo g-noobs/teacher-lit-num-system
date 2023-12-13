@@ -112,7 +112,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         echo "<td>";
                                                         echo "<button class='btn btn-default remove_inter_btn' data-id='{$row['intervention_id']}'>Finished</button>";
                                                         echo '<div class="form-control">
-                                                                <select name="status_update" id="status_update" form-control>
+                                                                <select name="status_update" id="status_update" class="form-control">
                                                                     <option value="1">Pending</option>
                                                                     <option value="2">Finish</option>
                                                                     <option value="3">Remove</option>
