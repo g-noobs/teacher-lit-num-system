@@ -36,10 +36,10 @@ class DisplayGradebook extends Connection{
                 tbl_class cls ON ui.class_id = cls.class_id
             WHERE 
                 ui.user_level_id = 2
-            AND class_id IN (
-                    SELECT class_id
-                    FROM tbl_teacher_class_assignment
-                    WHERE status = 1 AND user_info_id = '$teacher_id')";
+            AND ui.class_id IN (
+                SELECT tca.class_id
+                FROM tbl_teacher_class_assignment tca
+                WHERE tca.status = 1 AND tca.user_info_id = '$teacher_id')";
 
         $result = mysqli_query($connection, $query);
         while ($row = mysqli_fetch_assoc($result)) {
