@@ -110,7 +110,6 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         <td>$attachment</td>";
                                             
                                                         echo "<td>";
-                                                        echo "<button class='btn btn-default remove_inter_btn' >Finished</button>";
                                                         echo "<select name='status_update' id='status_update' class='form-control' data-id='{$row['intervention_id']}'>
                                                                     <option value='1'>Pending</option>
                                                                     <option value='2'>Finish</option>
