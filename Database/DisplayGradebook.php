@@ -46,7 +46,7 @@ class DisplayGradebook extends Connection{
             $topicsTakenRow = mysqli_fetch_assoc($topicsTakenResult);
             $totalTopicsTaken = $topicsTakenRow['total_topics'];
             // mao ni ang query for the overall total result sa stories sa database
-            $totalTopicsQuery = "SELECT COUNT(DISTINCT topic_id) AS total_topics FROM tbl_topic";
+            $totalTopicsQuery = "SELECT COUNT(DISTINCT topic_id) AS total_topics FROM topic_status = 1";
             $totalTopicsResult = mysqli_query($connection, $totalTopicsQuery);
             $totalTopicsRow = mysqli_fetch_assoc($totalTopicsResult);
             $totalTopics = $totalTopicsRow['total_topics'];
