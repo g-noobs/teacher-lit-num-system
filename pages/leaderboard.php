@@ -114,7 +114,7 @@
                                             LEFT JOIN tbl_learner_story_progress lsp ON tbl_user_info.personal_id = lsp.learner_id
                                             LEFT JOIN tbl_topic tp ON lsp.story_id = tp.topic_id
                                             WHERE tbl_user_info.status_id = 1 AND tbl_user_info.user_level_id = 2";
-                                            $userInfoQuery.= " AND tbl_user_info.class_id IN (
+                                            $userInfoQuery.= " AND tbl_class.class_id IN (
                                                 SELECT class_id
                                                 FROM tbl_teacher_class_assignment
                                                 WHERE status = 1
