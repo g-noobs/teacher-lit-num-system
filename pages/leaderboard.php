@@ -152,7 +152,7 @@
                                                         <td>$totalCount</td>
                                                         <td><form action='moar.php' method='GET'>
                                                             <input type='hidden' name='personal_id' value='$personalId'>
-                                                            <button type='submit'>Show more</button>
+                                                            <button type='submit' class='btn btn-default'>Show more</button>
                                                             </form>
                                                         </td>
                                                     </tr>";
