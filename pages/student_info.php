@@ -421,13 +421,17 @@ if (!$connection) {
     </script>
 
     <script>
-    function printContent() {
+    function printWithCtrlP() {
+        // Create a new keyboard event with the Ctrl key pressed
         const ctrlPEvent = new KeyboardEvent('keydown', {
             key: 'p',
             ctrlKey: true
         });
 
+        // Dispatch the event to simulate Ctrl+P
         document.dispatchEvent(ctrlPEvent);
+
+        // You can also call your existing printContent() function if needed
         printContent();
     }
     </script>
