@@ -112,7 +112,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         echo "<td>";
                                                         echo "<select name='status_update' class='form-control status_update' data-id='{$row['intervention_id']}'>
                                                                     <option value='1'>Pending</option>
-                                                                    <option value='2'>Finish</option>
+                                                                    <option value='2'>Completed</option>
                                                                     <option value='3'>Remove</option>
                                                                 </select>";
                                                         echo "</td>";
@@ -127,7 +127,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                                         echo "<td>";
                                                         echo "<select name='status_update' class='form-control status_update' data-id='{$row['intervention_id']}'>
                                                                     <option value='1'>Pending</option>
-                                                                    <option value='2'>Finish</option>
+                                                                    <option value='2'>Completed</option>
                                                                 </select>";
                                                         echo "</td>";
                                                 }
