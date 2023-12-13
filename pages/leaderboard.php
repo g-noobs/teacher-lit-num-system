@@ -123,7 +123,7 @@
                                             $userInfoQuery .= " ORDER BY (COUNT(DISTINCT lsp.story_id) + 
                                                                         (SELECT COUNT(DISTINCT lqp.quiz_id) FROM tbl_learner_quiz_progress lqp WHERE lqp.learner_id = tbl_user_info.personal_id) + 
                                                                         (SELECT COUNT(DISTINCT lap.assignment_id) FROM tbl_learner_assignment_progress lap WHERE lap.learner_id = tbl_user_info.personal_id)) DESC";
-                                            $userInfoQuery.= "AND tbl_user_info.class_id IN (
+                                            $userInfoQuery.= " AND tbl_user_info.class_id IN (
                                                 SELECT class_id
                                                 FROM tbl_teacher_class_assignment
                                                 WHERE status = 1
