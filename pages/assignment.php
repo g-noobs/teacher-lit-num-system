@@ -96,7 +96,6 @@
     <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AssignClasScript.php";?>
 
     <!-- view assigned class -->
-    <?php include_once "../PagesContent/AssignmentFolder/ScriptAssignment/AssignedTableScript.php"?>
 
     <!-- This Script Contain Common Script used on other pages  -->
     <?php include_once "../CommonScript/CommonAllScript.php";?>
