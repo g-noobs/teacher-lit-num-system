@@ -7,9 +7,9 @@ $id = $_POST['id'];
 $status = $_POST['status'];
 $link = '';
 
-if($status === 1){
+if($status == 1){
     $link = 'Pending';
-}elseif($status === 2){
+}elseif($status == 2){
     $link = 'Completed';
 }else{
     $link = 'Removed';
