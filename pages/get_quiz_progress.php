@@ -27,8 +27,11 @@ $userInfo = mysqli_fetch_assoc($resultUserInfo);
 session_start();
 $teacher_id = $_SESSION['id'];
 // Query to fetch quiz progress information for the selected student
-$query = "SELECT q.quiz_id, q.quiz_question, COALESCE(lqp.score, 'Not Taken') AS quiz_score FROM tbl_quiz q
-        LEFT JOIN tbl_learner_quiz_progress lqp ON q.quiz_id = lqp.quiz_id AND lqp.learner_id = '{$userInfo['personal_id']}' WHERE q.quiz_status = 1 AND added_byID = '$teacher_id'";
+$query = "SELECT DISTINCT q.quiz_id, q.quiz_question, COALESCE(lqp.score, 'Not Taken') AS quiz_score 
+            FROM tbl_quiz q
+            LEFT JOIN tbl_learner_quiz_progress lqp 
+            ON q.quiz_id = lqp.quiz_id AND lqp.learner_id = '{$userInfo['personal_id']}' 
+            WHERE q.quiz_status = 1 AND added_byID = '$teacher_id'";
 
 
 $result = mysqli_query($connection, $query);
