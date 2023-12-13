@@ -233,7 +233,7 @@
         // Initialize DataTables with sorting based on the 5th column (index 4)
         $('#lboard_table').DataTable({
             "order": [
-                [4, "desc"]
+                [5, "desc"]
             ] // Sort by the 5th column in descending order
         });
     });
