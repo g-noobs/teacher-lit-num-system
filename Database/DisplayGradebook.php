@@ -35,7 +35,11 @@ class DisplayGradebook extends Connection{
             tbl_class cls ON ui.class_id = cls.class_id
         WHERE 
             ui.user_level_id = 2
-        ";
+            AND class_id IN (
+                SELECT class_id
+                FROM tbl_teacher_class_assignment
+                WHERE status = 1
+            );";
 
         $result = mysqli_query($connection, $query);
         while ($row = mysqli_fetch_assoc($result)) {

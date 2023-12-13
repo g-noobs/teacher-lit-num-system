@@ -31,7 +31,7 @@
 
             <section class="content-header">
                 <h1>
-                    Enrolled Subjects
+                    Enrolled Lesson/ Quiz/ Assignment
                     <small>Teacher Portal</small>
                 </h1>
             </section>
