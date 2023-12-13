@@ -43,20 +43,20 @@
                             $('#successAlert').text(msg);
                             $('#successBanner').show();
                             $modal.modal('hide');
-                            // setTimeout(function() {
-                            //     $("#successBanner").fadeOut("slow");
-                            //     location.reload();
-                            // }, 4500);
+                            setTimeout(function() {
+                                $("#successBanner").fadeOut("slow");
+                                location.reload();
+                            }, 2500);
                         } else if (response.hasOwnProperty('error')) {
                             var msg = response.error;
                             $('#errorAlert').text(msg);
                             $('#errorBanner').show();
                             $modal.modal('hide');
 
-                            // setTimeout(function() {
-                            //     $("#errorBanner").fadeOut("slow");
-                            //     location.reload();
-                            // }, 4500);
+                            setTimeout(function() {
+                                $("#errorBanner").fadeOut("slow");
+                                location.reload();
+                            }, 2500);
                         }
                     }
                 },
