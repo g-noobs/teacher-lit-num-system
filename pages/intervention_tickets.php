@@ -111,6 +111,13 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                             
                                                         echo "<td>";
                                                         echo "<button class='btn btn-default remove_inter_btn' data-id='{$row['intervention_id']}'>Finished</button>";
+                                                        echo '<div class="form-control">
+                                                                <select name="status_update" id="status_update">
+                                                                    <option value="1">Pending</option>
+                                                                    <option value="2">Completed</option>
+                                                                    <option value="3">Remove</option>
+                                                                </select>
+                                                                </div>';
                                                         echo "</td>";
                                             
                                                     
@@ -137,6 +144,7 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
         <?php 
         include_once("../CommonCode/footer.php");
         ?>
+        
     </div>
     <script>
     function sortTable(columnIndex) {
