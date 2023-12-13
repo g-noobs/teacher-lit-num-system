@@ -8,7 +8,7 @@ $status = $_POST['status'];
 $link = '';
 
 if($status == 1){
-    $link = 'Pending';
+    $link = 'Ongoing';
 }elseif($status == 2){
     $link = 'Completed';
 }else{
