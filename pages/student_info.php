@@ -422,13 +422,13 @@ if (!$connection) {
 
     <script>
     function printContent() {
-        var printWindow = window.open('', '_blank');
-        printWindow.document.write('<html><head><title>Print</title>');
-        printWindow.document.write('</head><body>');
-        printWindow.document.write(document.getElementsByClassName('container')[0].innerHTML);
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
+        const ctrlPEvent = new KeyboardEvent('keydown', {
+            key: 'p',
+            ctrlKey: true
+        });
+
+        document.dispatchEvent(ctrlPEvent);
+
     }
     </script>
 </body>
