@@ -67,6 +67,41 @@ $conn = $connections->getConnection();
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+                    <!-- TASK Dropdown -->
+                    <li class="dropdown tasks-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-flag-o"></i>
+                            <span class="label label-danger">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 9 tasks</li>
+                            <li>
+
+                                <ul class="menu">
+                                    <!-- list of tasks -->
+                                    <li>
+                                        <a href="#">
+                                            <h3>
+                                                Design some buttons
+                                                <small class="pull-right">20%</small>
+                                            </h3>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                    role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <span class="sr-only">20% Complete</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="#">View all tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Notification Dropdown -->
                     <li class="dropdown notifications-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-bell-o"></i>
@@ -105,8 +140,9 @@ $conn = $connections->getConnection();
                                             data-learnerid="<?= $row['learner_id'] ?>"
                                             data-assignmentid="<?= $row['assignment_id'] ?>">
                                             <i class="fa  fa-exclamation text-yellow"></i>
-                                        <?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from section
-                                        <?= $row['class_sy'] ?></a></li>
+                                            <?= $row['fullname'] ?> submitted '<?= $row['assignment_name'] ?>' from
+                                            section
+                                            <?= $row['class_sy'] ?></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                                 <?php else : ?>
@@ -121,7 +157,7 @@ $conn = $connections->getConnection();
                             <li class="footer"><a href="#" id="markAllReadButton">Mark All as Read</a></li>
                         </ul>
                     </li>
-                    <!-- end of notification  -->
+                    <!-- Profile Dropdown -->
                     <li class="dropdown user user-menu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -207,7 +243,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 console.log(response);
-                window.location.href ="get_assignment_progress.php?userId=" + userId;
+                window.location.href = "get_assignment_progress.php?userId=" + userId;
 
             },
             error: function(error) {
