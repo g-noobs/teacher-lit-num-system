@@ -91,11 +91,11 @@ function displayStudents() {
 
 function displayAssignments() {
     $connection= establishConnection();
-
+    $teacher_id = $_SESSION["id"];
     // Query to fetch assignment data
     $assignmentlist = "SELECT assignment_id, assignment_name, question, max_score, date_added
                       FROM tbl_assignment
-                      WHERE status = 1 AND create_by = {$_SESSION['id']}";
+                      WHERE status = 1 AND create_by = '$teacher_id'";
     $resultAssignments = $connection->query($assignmentlist);
 
     if ($resultAssignments->num_rows > 0) {
