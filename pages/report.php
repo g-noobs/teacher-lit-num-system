@@ -188,12 +188,14 @@ function displayStory() {
 
 function displayIntervention() {
     $connection= establishConnection();
+    $teacher_id = $_SESSION["id"];
 
     // Query to fetch intervention data with learner's full name
     $interventionlist = "SELECT CONCAT(ui.first_name, ' ', ui.last_name) AS learner_name, date_created, start_date, end_date, comments, attachments_link 
                         FROM tbl_intervention i
-                        JOIN tbl_user_info ui ON i.student_id = ui.personal_id";
-
+                        JOIN tbl_user_info ui ON i.student_id = ui.personal_id
+                        AND i.added_byID = '$teacher_id'";
+    
     $resultIntervention = $connection->query($interventionlist);
 
     if ($resultIntervention->num_rows > 0) {
