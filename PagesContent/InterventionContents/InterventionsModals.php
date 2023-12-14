@@ -45,6 +45,7 @@
                         <label for="student_id">Student Name:</label>
                         <select name="student_id" id="student_id" class="form-control">
                             <?php
+                                $teacher_id = $_SESSION['id'];
                                 $userQuery = "SELECT u.first_name, u.last_name, u.personal_id
                                 FROM tbl_user_info u
                                 LEFT JOIN tbl_intervention i ON u.personal_id = i.student_id AND i.status = 1
@@ -52,7 +53,7 @@
                                 AND u.class_id IN (
                                         SELECT class_id
                                         FROM tbl_teacher_class_assignment
-                                        WHERE status = 1);";
+                                        WHERE status = 1 AND user_info_id = '$teacher_id');";
 
                                 $userResult = mysqli_query($connection, $userQuery);
 
