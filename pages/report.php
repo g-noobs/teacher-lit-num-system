@@ -157,10 +157,11 @@ function displayQuiz() {
 
 function displayStory() {
     $connection= establishConnection();
-    // Query to fetch assignment data
+    // Query to fetch topic data
+    $teacher_id = $_SESSION["id"];
     $topiclist = "SELECT topic_id, topic_name, topic_description, date_added
-                      FROM tbl_topic
-                      WHERE topic_status = 1";
+                    FROM tbl_topic
+                    WHERE topic_status = 1 AND added_byID = '$teacher_id'";
     $resultTopic = $connection->query($topiclist);
 
     if ($resultTopic->num_rows > 0) {
