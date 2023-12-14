@@ -114,14 +114,15 @@
                                             LEFT JOIN tbl_learner_story_progress lsp ON tbl_user_info.personal_id = lsp.learner_id
                                             LEFT JOIN tbl_topic tp ON lsp.story_id = tp.topic_id
                                             WHERE tbl_user_info.status_id = 1 AND tbl_user_info.user_level_id = 2";
-                                            $userInfoQuery.= " AND tbl_class.class_id IN (
-                                                SELECT class_id
-                                                FROM tbl_teacher_class_assignment
-                                                WHERE status = 1) ";
+                                            
                                             if ($filterClass !== 'all') {
                                                 $userInfoQuery .= " AND tbl_class.class_name = '$filterClass'";
                                             }
-                                            
+                                            $userInfoQuery.= " AND tbl_user_info.class_id IN (
+                                                SELECT class_id
+                                                FROM tbl_teacher_class_assignment
+                                                WHERE status = 1 AND user_info_id = '$teacher_id') ";
+                                                
                                             $userInfoQuery .= " GROUP BY tbl_user_info.user_info_id";
                                             $userInfoQuery .= " ORDER BY (COUNT(DISTINCT lsp.story_id) + 
                                                                         (SELECT COUNT(DISTINCT lqp.quiz_id) FROM tbl_learner_quiz_progress lqp WHERE lqp.learner_id = tbl_user_info.personal_id) + 
