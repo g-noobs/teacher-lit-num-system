@@ -126,9 +126,10 @@ function displayQuiz() {
     $connection= establishConnection();
 
     // Query to fetch assignment data
+    $teacher_id = $_SESSION["id"];
     $quizlist = "SELECT quiz_id, quiz_question, quiz_attempts, score, date_created
                       FROM tbl_quiz
-                      WHERE quiz_status = 1";
+                      WHERE quiz_status = 1 AND added_byID = '$teacher_id'";
     $resultQuiz = $connection->query($quizlist);
 
     if ($resultQuiz->num_rows > 0) {
