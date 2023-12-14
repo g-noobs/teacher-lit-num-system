@@ -48,7 +48,12 @@
                                 $userQuery = "SELECT u.first_name, u.last_name, u.personal_id
                                 FROM tbl_user_info u
                                 LEFT JOIN tbl_intervention i ON u.personal_id = i.student_id AND i.status = 1
-                                WHERE u.user_level_id = 2 AND (i.status = 1 OR i.status IS NULL);";
+                                WHERE u.user_level_id = 2 AND (i.status = 1 OR i.status IS NULL)
+                                AND u.class_id IN (
+                                        SELECT class_id
+                                        FROM tbl_teacher_class_assignment
+                                        WHERE status = 1);";
+
                                 $userResult = mysqli_query($connection, $userQuery);
 
                                 while ($userRow = mysqli_fetch_assoc($userResult)) {
