@@ -216,7 +216,7 @@ function displayIntervention() {
         echo '</tbody>';
         echo '</table>';
     } else {
-        echo "No topic found";
+        echo "No Intervention Data found";
     }
 
     $connection->close();
