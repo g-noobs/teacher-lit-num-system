@@ -49,11 +49,15 @@ function displayTable($headers, $data, $actionName, $hiddenFieldName) {
 
 function displayStudents() {
     $connection= establishConnection();
-
+    $teacher_id = $_SESSION["id"];
     $studlist = "SELECT CONCAT(ui.first_name, ' ', ui.last_name) AS full_name, ui.gender, c.class_name, c.sy_id, ui.personal_id
-                 FROM tbl_user_info ui
-                 JOIN tbl_class c ON ui.class_id = c.class_id
-                 WHERE ui.user_level_id = 2 AND ui.status_id = 1";
+                FROM tbl_user_info ui
+                JOIN tbl_class c ON ui.class_id = c.class_id
+                WHERE ui.user_level_id = 2 AND ui.status_id = 1";
+    $studlist.= " AND ui.class_id IN (
+        SELECT class_id
+        FROM tbl_teacher_class_assignment
+        WHERE status = 1 AND user_info_id = '$teacher_id') ";           
     $result = $connection->query($studlist);
 
     if ($result->num_rows > 0) {
