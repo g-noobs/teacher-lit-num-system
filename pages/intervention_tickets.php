@@ -89,6 +89,9 @@ $filterClass = isset($_GET['status']) ? $_GET['status'] : 'all';
                                             if ($filterClass !== '') {
                                                 $userInfoQuery .= " WHERE status = '$filterClass'";
                                             }
+                                            session_start();
+                                            $teacher_id = $_SESSION['id'];
+                                            $userInfoQuery .= " AND view_intervention.added_byID = '$teacher_id'";
 
                                             $userInfoQuery .= " ORDER BY view_intervention.date_created AND view_intervention.start_date";
 
