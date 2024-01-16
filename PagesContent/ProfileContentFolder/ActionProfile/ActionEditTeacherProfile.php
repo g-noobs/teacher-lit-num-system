@@ -99,7 +99,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $validate = new CommonValidationClass();
         $data = array($values['first_name'], $values['last_name']);
         $column = array('first_name', 'last_name');
-        $isValid = $validate -> updatevalidateColumns($table, $column, $data);
+        $isValid = $validate -> updatevalidateColumns($table, $column, $data, $id);
 
         if($isValid){
             $sql = "UPDATE $table SET last_name = ?, first_name = ?, middle_name = ?, gender = ? WHERE user_info_id = '$id'";
